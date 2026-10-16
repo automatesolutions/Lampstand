@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lampstand
 
-## Getting Started
+A Bible study web app that helps you read the Bible each day and understand what you read.
 
-First, run the development server:
+Built with Next.js 16, TypeScript and Tailwind CSS 4. Every screen follows [DESIGN.md](DESIGN.md).
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm test         # streak and plan logic
+npm run build    # prerenders all 1,189 KJV chapters
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Server keys go in `.env.local` (never committed):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+NLT_API_KEY=...        # New Living Translation, from api.nlt.to (non-commercial: 500 verses a request, 5,000 requests a day)
+ESV_API_KEY=...        # English Standard Version, from api.esv.org (non-commercial: 5,000 queries a day, at most 500 verses stored)
+ANTHROPIC_API_KEY=...  # the Pray button
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Without it, Pray shows "Prayer isn't set up on this server yet."
 
-## Learn More
+## Where things live
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/` contains the routes. `(onboarding)` holds welcome, start and goal. `(tabs)` holds Today, Read, Notes and Me, plus plans and streak. The reader lives at `read/[version]/[book]/[chapter]`.
+- `components/ui/` has the design-system parts. `components/reader/` has the reader and its sheets.
+- `lib/bible/` is the version layer. The UI only uses `BibleProvider`, so licensed versions plug in as new providers.
+- `lib/store/` is the on-device store for guest mode. `lib/streak/` and `lib/plans/` hold pure, tested logic.
+- `content/kjv/` holds the KJV text (public domain), made by `scripts/import-kjv.mjs`.
+- `lib/bible/providers/nlt-api.ts` fetches the NLT a chapter at a time from Tyndale's API and caches each chapter for days. The NLT copyright notice shows under every NLT chapter and on Me.
+- `lib/bible/providers/esv-api.ts` fetches the ESV from Crossway's API. Crossway allows at most 500 verses stored, so chapters live in a small in-memory cache capped at 500 verses. Every page showing ESV text carries Crossway's notice and a link to www.esv.org.
+- `content/context-cards.json` holds the book background notes. Their status is `draft` until reviewed.
+- `content/chapters/` holds the "In this chapter" explanation and key verse for every chapter, also `draft` until reviewed. Check them with `node scripts/check-chapter-notes.mjs`.
+- `public/plates/` holds one photoreal plate per book, made with Higgsfield.
+- `app/api/prayer/` writes a prayer from recent chapters with the Claude API.
+- `supabase/migrations/` holds the database schema with row-level security.

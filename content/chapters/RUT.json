@@ -1,0 +1,9 @@
+{
+  "status": "draft",
+  "chapters": [
+    { "title": "Where you go, I will go", "summary": "During a famine, Naomi loses her husband and two sons in Moab. Her daughter-in-law Ruth refuses to leave her and returns with her to Bethlehem: your people shall be my people.", "key": 16 },
+    { "title": "Ruth gleans in Boaz's field", "summary": "Ruth gathers leftover grain in the field of Boaz, a relative of Naomi, who treats her with kindness and protection.", "key": 12 },
+    { "title": "At the threshing floor", "summary": "At Naomi's urging, Ruth goes to Boaz at night and asks him to act as her kinsman-redeemer. Boaz promises to do so if a closer relative declines.", "key": 9 },
+    { "title": "Boaz redeems Ruth", "summary": "Boaz settles the matter at the city gate and marries Ruth. Their son Obed brings Naomi joy and becomes the grandfather of King David.", "key": 14 }
+  ]
+}

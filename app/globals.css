@@ -1,26 +1,403 @@
 @import "tailwindcss";
+@plugin "@iconify/tailwind4";
+@source not "../DESIGN.md";
+
+/* Lampstand tokens: the illuminated page. Source of truth: DESIGN.md. Keep names in sync. */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  color-scheme: light;
+  --bg: #f5efe3;
+  --bg-soft: #f5efe3;
+  --surface: #ece3d1;
+  --surface-raised: #fbf8f1;
+  --text: #241c13;
+  --text-secondary: #5d5244;
+  --text-tertiary: #8a7d6a;
+  --divider: #d9ccb4;
+  --gold: #a8791f;
+  --gold-text: #77560f;
+  --gold-wash: #efdfb8;
+  --gold-strong: #7a5810;
+  --on-gold: #fffaf0;
+  --leaf-1: #d9ad4b;
+  --leaf-2: #8d6214;
+  --leaf-3: #e8c877;
+  --glow: rgba(214, 160, 52, 0.28);
+  --danger: #b23a2c;
+  --nav-glass: color-mix(in srgb, #f5efe3 86%, transparent);
+  --scrim: rgba(30, 20, 8, 0.32);
+  --elev-soft: 0 1px 1px rgba(60, 40, 10, 0.05), 0 10px 30px -12px rgba(60, 40, 10, 0.22);
+  --elev-float: 0 18px 50px -18px rgba(30, 20, 8, 0.45), 0 0 0 1px var(--divider);
+  --on-pigment: #fff8ea;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --pg-law: #3b5888;
+  --pg-history: #426d5d;
+  --pg-poetry: #8a5d16;
+  --pg-prophets: #a4473a;
+  --pg-gospels: #94506a;
+  --pg-letters: #6a4d86;
+
+  --grain-blend: multiply;
+  --grain-opacity: 0.5;
+
+  --ui-stack: var(--ff-ui), "Segoe UI", system-ui, -apple-system, sans-serif;
+  --display-stack: var(--ff-display), Garamond, "Times New Roman", serif;
+  --serif-stack: var(--ff-literata), Georgia, "Times New Roman", serif;
+  --scripture-size: 19px;
+  --scripture-leading: 1.78;
+  --scripture-font: var(--serif-stack);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #16120d;
+    --bg-soft: #16120d;
+    --surface: #1f1912;
+    --surface-raised: #261f16;
+    --text: #f1e7d3;
+    --text-secondary: #b7a78c;
+    --text-tertiary: #7d705c;
+    --divider: #3b3125;
+    --gold: #dcaf55;
+    --gold-text: #e8c579;
+    --gold-wash: #3d311c;
+    --gold-strong: #dcaf55;
+    --on-gold: #1b150e;
+    --leaf-1: #f0cd7a;
+    --leaf-2: #b8862c;
+    --leaf-3: #ffe3a1;
+    --glow: rgba(240, 180, 70, 0.3);
+    --danger: #f07a6c;
+    --nav-glass: color-mix(in srgb, #16120d 86%, transparent);
+    --scrim: rgba(0, 0, 0, 0.55);
+    --elev-soft: none;
+    --elev-float: 0 18px 50px -18px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--divider);
+    --on-pigment: #1b150e;
+    --pg-law: #8ea8d8;
+    --pg-history: #8cc4ae;
+    --pg-poetry: #e0b366;
+    --pg-prophets: #e48e7d;
+    --pg-gospels: #d995b0;
+    --pg-letters: #b9a0de;
+    --grain-blend: soft-light;
+    --grain-opacity: 0.35;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #16120d;
+  --bg-soft: #16120d;
+  --surface: #1f1912;
+  --surface-raised: #261f16;
+  --text: #f1e7d3;
+  --text-secondary: #b7a78c;
+  --text-tertiary: #7d705c;
+  --divider: #3b3125;
+  --gold: #dcaf55;
+  --gold-text: #e8c579;
+  --gold-wash: #3d311c;
+  --gold-strong: #dcaf55;
+  --on-gold: #1b150e;
+  --leaf-1: #f0cd7a;
+  --leaf-2: #b8862c;
+  --leaf-3: #ffe3a1;
+  --glow: rgba(240, 180, 70, 0.3);
+  --danger: #f07a6c;
+  --nav-glass: color-mix(in srgb, #16120d 86%, transparent);
+  --scrim: rgba(0, 0, 0, 0.55);
+  --elev-soft: none;
+  --elev-float: 0 18px 50px -18px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--divider);
+  --on-pigment: #1b150e;
+  --pg-law: #8ea8d8;
+  --pg-history: #8cc4ae;
+  --pg-poetry: #e0b366;
+  --pg-prophets: #e48e7d;
+  --pg-gospels: #d995b0;
+  --pg-letters: #b9a0de;
+  --grain-blend: soft-light;
+  --grain-opacity: 0.35;
+}
+
+:root[data-scripture-font="sans"] {
+  --scripture-font: var(--ui-stack);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-divider: var(--divider);
+  --color-gold: var(--gold);
+  --color-gold-text: var(--gold-text);
+  --color-gold-wash: var(--gold-wash);
+  --color-gold-strong: var(--gold-strong);
+  --color-on-gold: var(--on-gold);
+  --color-on-pigment: var(--on-pigment);
+  --color-danger: var(--danger);
+  --color-nav-glass: var(--nav-glass);
+  --color-scrim: var(--scrim);
+
+  --font-sans: var(--ui-stack);
+  --font-display: var(--display-stack);
+  --font-scripture: var(--scripture-font);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-soft: var(--elev-soft);
+  --shadow-float: var(--elev-float);
+
+  --ease-calm: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Type scale (DESIGN.md §3). Sizes in rem so browser zoom works. */
+@utility text-display {
+  font-family: var(--display-stack);
+  font-size: 2.375rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  @media (width >= 960px) {
+    font-size: 2.75rem;
+  }
+}
+@utility text-title {
+  font-family: var(--display-stack);
+  font-size: 1.875rem;
+  line-height: 2.0625rem;
+  font-weight: 600;
+  text-wrap: balance;
+}
+@utility text-numeral {
+  font-family: var(--display-stack);
+  font-size: 5rem;
+  line-height: 0.9;
+  font-weight: 600;
+}
+@utility text-eyebrow {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+@utility text-headline {
+  font-size: 1.0625rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@utility text-body {
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+}
+@utility text-callout {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+@utility text-subhead {
+  font-size: 0.9375rem;
+  line-height: 1.3125rem;
+}
+@utility text-footnote {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+/* Older names, kept so every screen speaks the same scale. */
+@utility text-large-title {
+  font-family: var(--display-stack);
+  font-size: 2.375rem;
+  line-height: 1;
+  font-weight: 600;
+  text-wrap: balance;
+}
+@utility text-title-1 {
+  font-family: var(--display-stack);
+  font-size: 1.875rem;
+  line-height: 2.0625rem;
+  font-weight: 600;
+  text-wrap: balance;
+}
+@utility text-title-2 {
+  font-family: var(--display-stack);
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  font-weight: 600;
+}
+@utility text-title-3 {
+  font-family: var(--display-stack);
+  font-size: 1.375rem;
+  line-height: 1.625rem;
+  font-weight: 600;
+}
+@utility text-caption {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility glass {
+  background-color: var(--nav-glass);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  backdrop-filter: saturate(160%) blur(18px);
+}
+
+@utility px-gutter {
+  padding-inline: max(16px, env(safe-area-inset-left));
+  @media (width >= 960px) {
+    padding-inline: 40px;
+  }
+}
+
+/* Gold leaf: drop caps and the lamp flame only (DESIGN.md §1). */
+@utility leaf-text {
+  color: var(--gold-text);
+  background: linear-gradient(160deg, var(--leaf-3) 0%, var(--leaf-1) 28%, var(--leaf-2) 62%, var(--leaf-1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--ui-stack);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Paper grain (DESIGN.md §2). */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    mix-blend-mode: var(--grain-blend);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .36 0 0 0 0 .22 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+  ::selection {
+    background: var(--gold-wash);
+  }
+}
+
+/* Scripture reading column (DESIGN.md §3). */
+.scripture {
+  font-family: var(--scripture-font);
+  font-size: var(--scripture-size);
+  line-height: var(--scripture-leading);
+  max-width: 64ch;
+  hyphens: manual;
+}
+
+.dropcap {
+  float: left;
+  font-family: var(--display-stack);
+  font-weight: 700;
+  font-size: 4.1em;
+  line-height: 0.78;
+  margin: 0.06em 0.1em 0 0;
+  padding-right: 0.02em;
+}
+
+/* The lamp (DESIGN.md §6). */
+.lamp-flame {
+  transform-box: view-box;
+  transform-origin: 40px 27px;
+  transition: scale 0.9s var(--ease-out);
+}
+.lamp-flicker {
+  transform-box: view-box;
+  transform-origin: 40px 27px;
+  animation: flicker 3.2s ease-in-out infinite;
+}
+.lamp-glow {
+  transition: scale 0.9s var(--ease-out), opacity 0.9s var(--ease-out);
+}
+.lamp-kindle .lamp-flame {
+  animation: kindle 0.9s var(--ease-out);
+}
+.lamp-kindle .lamp-glow {
+  animation: bloom 1.4s var(--ease-out);
+}
+@keyframes flicker {
+  0%,
+  100% {
+    transform: rotate(0) scaleY(1);
+  }
+  30% {
+    transform: rotate(-2.5deg) scaleY(1.04);
+  }
+  60% {
+    transform: rotate(1.5deg) scaleY(0.97);
+  }
+}
+@keyframes kindle {
+  from {
+    scale: 0.2;
+  }
+  60% {
+    scale: 1.15;
+  }
+}
+@keyframes bloom {
+  from {
+    scale: 0.2;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.arrive {
+  animation: arrive 0.35s var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .lamp-flicker {
+    animation: none !important;
+  }
 }

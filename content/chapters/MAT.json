@@ -1,0 +1,33 @@
+{
+  "status": "draft",
+  "chapters": [
+    { "title": "The birth of Jesus", "summary": "Matthew traces Jesus' family line from Abraham through David. An angel tells Joseph that Mary's child is from the Holy Spirit and will save His people from their sins: Emmanuel, God with us.", "key": 21 },
+    { "title": "The wise men", "summary": "Wise men follow a star to worship the newborn King. Herod tries to kill the child, but Joseph takes the family to Egypt and later settles in Nazareth.", "key": 11 },
+    { "title": "John the Baptist", "summary": "John preaches repentance in the wilderness: the kingdom of heaven is at hand. He baptizes Jesus, the Spirit descends like a dove, and a voice says, This is my beloved Son.", "key": 17 },
+    { "title": "Temptation and first disciples", "summary": "Jesus is tempted by the devil in the wilderness and answers each time with Scripture. He begins preaching in Galilee and calls fishermen: follow me, and I will make you fishers of men.", "key": 19 },
+    { "title": "The Beatitudes", "summary": "The Sermon on the Mount begins: blessed are the poor in spirit, the meek, the merciful, the peacemakers. You are the salt of the earth and the light of the world. Love your enemies.", "key": 16 },
+    { "title": "The Lord's Prayer", "summary": "Give, pray and fast in secret, not for show. Jesus teaches the Lord's Prayer and says: do not worry about tomorrow, but seek first the kingdom of God.", "key": 33 },
+    { "title": "Ask, seek, knock", "summary": "Do not judge. Ask, seek and knock. Treat others as you want to be treated. Build your life on Jesus' words, like a house built on rock.", "key": 7 },
+    { "title": "Healings and a storm", "summary": "Jesus heals a leper, a centurion's servant and Peter's mother-in-law. He calms a storm on the lake and frees two men from demons.", "key": 26 },
+    { "title": "Mercy, not sacrifice", "summary": "Jesus forgives and heals a paralyzed man, calls Matthew the tax collector, heals a bleeding woman and raises a girl. The harvest is plentiful but the workers are few.", "key": 37 },
+    { "title": "The twelve sent out", "summary": "Jesus sends out the twelve apostles with authority, warning of persecution. Not a sparrow falls without your Father; you are worth more than many sparrows.", "key": 31 },
+    { "title": "Come to me, all who labor", "summary": "Jesus answers John the Baptist's question with His works and rebukes unrepentant towns. Come to me, all you who labor and are heavy laden, and I will give you rest.", "key": 28 },
+    { "title": "Lord of the Sabbath", "summary": "Jesus heals on the Sabbath and is accused of working by Beelzebub. A tree is known by its fruit, and whoever does God's will is His family.", "key": 50 },
+    { "title": "Parables of the kingdom", "summary": "Jesus teaches in parables: the sower, the weeds, the mustard seed, the yeast, the hidden treasure and the pearl of great price.", "key": 23 },
+    { "title": "Feeding five thousand", "summary": "John the Baptist is beheaded. Jesus feeds five thousand with five loaves and two fish, then walks on water. Peter steps out, sinks, and Jesus catches him.", "key": 27 },
+    { "title": "What defiles a person", "summary": "What defiles is what comes out of the heart, not unwashed hands. A Canaanite woman's faith is honored, and Jesus feeds four thousand.", "key": 28 },
+    { "title": "You are the Christ", "summary": "Peter confesses, \"Thou art the Christ, the Son of the living God.\" Jesus foretells His death and says whoever would follow Him must take up their cross.", "key": 16 },
+    { "title": "The transfiguration", "summary": "On a mountain Jesus is transfigured before Peter, James and John, with Moses and Elijah. He heals a boy and says faith as small as a mustard seed can move mountains.", "key": 5 },
+    { "title": "Forgive seventy times seven", "summary": "Become like little children. The shepherd seeks the lost sheep. Forgive not seven times but seventy times seven, as the parable of the unforgiving servant shows.", "key": 22 },
+    { "title": "The rich young man", "summary": "Jesus teaches on marriage and blesses children. A rich young man goes away sad. With God all things are possible, and the first shall be last.", "key": 26 },
+    { "title": "To serve, not be served", "summary": "Workers in a vineyard all receive the same wage. James and John ask for the best seats, but Jesus came not to be served but to serve and give His life.", "key": 28 },
+    { "title": "The triumphal entry", "summary": "Jesus enters Jerusalem on a donkey to cries of Hosanna, clears the temple, curses a fig tree, and tells parables against the religious leaders.", "key": 9 },
+    { "title": "The greatest commandment", "summary": "A parable of a wedding feast. Render unto Caesar what is Caesar's. The greatest commandments: love God with all your heart and love your neighbor as yourself.", "key": 37 },
+    { "title": "Woe to the hypocrites", "summary": "Jesus condemns the scribes and Pharisees for hypocrisy, then grieves over Jerusalem like a hen longing to gather her chicks.", "key": 37 },
+    { "title": "Signs of the end", "summary": "On the Mount of Olives Jesus foretells the temple's destruction, troubles to come and His return. Heaven and earth will pass away, but His words will not.", "key": 35 },
+    { "title": "Ready for His return", "summary": "Parables of the ten bridesmaids and the talents, and the sheep and the goats: whatever you did for the least of these, you did for me.", "key": 40 },
+    { "title": "The Last Supper and Gethsemane", "summary": "A woman anoints Jesus and Judas agrees to betray Him. At the Passover meal Jesus gives the bread and cup. He prays in Gethsemane, not my will but yours, and is arrested. Peter denies Him.", "key": 39 },
+    { "title": "The crucifixion", "summary": "Jesus is handed to Pilate, who releases Barabbas. Jesus is mocked and crucified, cries out, \"My God, why hast thou forsaken me?\" and dies. The centurion says, Truly this was the Son of God.", "key": 54 },
+    { "title": "He is risen", "summary": "At dawn the women find the tomb empty; an angel says, He is not here, for He is risen. Jesus meets His disciples and sends them to make disciples of all nations: I am with you always.", "key": 20 }
+  ]
+}
