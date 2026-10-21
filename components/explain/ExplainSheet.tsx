@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Fleuron } from "@/components/brand/LampMark";
+import { Feedback } from "@/components/Feedback";
 import { Button } from "@/components/ui/Button";
 import { Sheet } from "@/components/ui/Sheet";
 import { formatRef } from "@/lib/bible/refs";
@@ -18,7 +19,9 @@ import { useTextStream } from "@/lib/use-text-stream";
 export function ExplainSheet() {
   const [open, setOpen] = useState(false);
   const [ref, setRef] = useState<ChapterRef | null>(null);
-  const { text, phase, error, start, stop } = useTextStream("/api/explain");
+  const { text, phase, error, headers, start, stop } = useTextStream("/api/explain");
+  const status = headers["x-explain-status"];
+  const reviewer = headers["x-explain-reviewer"] ? decodeURIComponent(headers["x-explain-reviewer"]) : null;
 
   useEffect(
     () =>
@@ -100,8 +103,16 @@ export function ExplainSheet() {
           <>
             <Fleuron className="mx-auto mt-3 w-[140px]" />
             <p className="text-footnote text-text-secondary">
-              Written by AI from the text of {title} (KJV). Read it alongside the chapter itself; scholars and church traditions see some passages differently.
+              {status === "reviewed"
+                ? `Written with AI from the text of ${title} (KJV) and reviewed${reviewer ? ` by ${reviewer}` : ""}.`
+                : `Written by AI from the text of ${title} (KJV); not yet reviewed.`}{" "}
+              Read it alongside the chapter itself; scholars and church traditions see some passages differently. Cross-references from{" "}
+              <a href="https://www.openbible.info/labs/cross-references/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+                OpenBible.info
+              </a>
+              .
             </p>
+            {ref && <Feedback key={`${ref.book}.${ref.chapter}`} target={{ kind: "explanation", book: ref.book, chapter: ref.chapter }} />}
           </>
         )}
       </div>

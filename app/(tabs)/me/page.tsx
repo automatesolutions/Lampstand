@@ -65,6 +65,13 @@ export default function MePage() {
           </a>
         </p>
         <p>Book background notes are short summaries. Some are still being reviewed.</p>
+        <p>
+          &ldquo;In depth&rdquo; explanations are written with AI and reviewed before they are marked as reviewed. Cross-references from{" "}
+          <a href="https://www.openbible.info/labs/cross-references/" target="_blank" rel="noopener noreferrer" className="font-medium text-gold-text underline underline-offset-2">
+            OpenBible.info
+          </a>
+          , licensed CC BY.
+        </p>
       </section>
 
       <Sheet

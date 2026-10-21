@@ -35,5 +35,9 @@ Without it, Pray shows "Prayer isn't set up on this server yet."
 - `content/context-cards.json` holds the book background notes. Their status is `draft` until reviewed.
 - `content/chapters/` holds the "In this chapter" explanation and key verse for every chapter, also `draft` until reviewed. Check them with `node scripts/check-chapter-notes.mjs`.
 - `public/plates/` holds one photoreal plate per book, made with Higgsfield.
+- `content/xrefs/` holds each chapter's best-supported cross-references from OpenBible.info (CC BY), made by `node scripts/import-xrefs.mjs`.
+- `content/explanations/` holds the pre-written "In depth" explanations, drafts until reviewed. Write them with `npx tsx scripts/generate-explanations.mts` (`--sample GEN.1,JHN.3`, `--estimate`, `--batch`, `--collect`). They are grounded in the chapter text and cross-references, and every Bible reference is checked against real verse counts (`lib/bible/check-refs.ts`).
+- `/review` (only with `npm run dev`) is where a pastor or teacher reads, edits and approves explanations; commit `content/explanations` to publish.
+- `lib/explain/examples.ts` holds the model explanation and prayer that set the style. Edit them to change every future explanation and prayer.
 - `app/api/prayer/` writes a prayer from recent chapters with the Claude API.
 - `supabase/migrations/` holds the database schema with row-level security.

@@ -9,6 +9,7 @@ export function useTextStream(url: string) {
   const [text, setText] = useState("");
   const [phase, setPhase] = useState<StreamPhase>("idle");
   const [error, setError] = useState("");
+  const [headers, setHeaders] = useState<Record<string, string>>({});
   const ctrl = useRef<AbortController | null>(null);
 
   const stop = useCallback(() => ctrl.current?.abort(), []);
@@ -21,6 +22,7 @@ export function useTextStream(url: string) {
       ctrl.current = c;
       setText("");
       setError("");
+      setHeaders({});
       setPhase("streaming");
       try {
         const res = await fetch(url, {
@@ -33,6 +35,7 @@ export function useTextStream(url: string) {
           const d = (await res.json().catch(() => null)) as { error?: string } | null;
           throw new Error(d?.error ?? "That couldn't be written just now.");
         }
+        setHeaders(Object.fromEntries(res.headers.entries()));
         const reader = res.body.getReader();
         const decoder = new TextDecoder();
         for (;;) {
@@ -57,5 +60,5 @@ export function useTextStream(url: string) {
     setPhase("idle");
   }, [stop]);
 
-  return { text, phase, error, start, stop, reset };
+  return { text, phase, error, headers, start, stop, reset };
 }

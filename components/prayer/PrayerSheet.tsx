@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Fleuron } from "@/components/brand/LampMark";
+import { Feedback } from "@/components/Feedback";
+import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Sheet } from "@/components/ui/Sheet";
 import { formatRef } from "@/lib/bible/refs";
@@ -34,10 +36,14 @@ export function PrayerSheet() {
     readsRef.current = reads;
   }, [reads]);
 
+  // An optional line of the reader's own to pray for. Sent only with this request; never saved.
+  const [intentionOpen, setIntentionOpen] = useState(false);
+  const [intention, setIntention] = useState("");
+
   function pray(chapters: ChapterRef[]) {
     setCopied(false);
     setCopyError("");
-    start({ refs: chapters });
+    start({ refs: chapters, intention: intention.trim() || undefined });
   }
 
   useEffect(
@@ -48,6 +54,8 @@ export function PrayerSheet() {
         setOpen(true);
         setCopied(false);
         setCopyError("");
+        setIntention("");
+        setIntentionOpen(false);
         if (chapters.length) start({ refs: chapters });
         else reset();
       }),
@@ -117,9 +125,39 @@ export function PrayerSheet() {
           {phase === "done" && (
             <>
               <Fleuron className="mx-auto w-[140px]" />
+              {intentionOpen ? (
+                <form
+                  className="flex flex-col gap-2.5"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    pray(refs);
+                  }}
+                >
+                  <label className="flex flex-col gap-1.5">
+                    <span className="text-footnote text-text-secondary">Something to pray for (optional)</span>
+                    <input
+                      value={intention}
+                      onChange={(e) => setIntention(e.target.value)}
+                      maxLength={200}
+                      placeholder="For example: my mother's health, patience at work"
+                      className="min-h-[52px] rounded-md bg-surface px-4 text-body outline-none ring-1 ring-divider placeholder:text-text-tertiary focus:ring-2 focus:ring-gold"
+                    />
+                  </label>
+                  <p className="text-footnote text-text-secondary">This is sent only to write this prayer. It isn&apos;t saved.</p>
+                  <Button type="submit" variant="primary" icon="hand-heart" disabled={!intention.trim()}>
+                    Pray with this
+                  </Button>
+                </form>
+              ) : (
+                <button type="button" onClick={() => setIntentionOpen(true)} className="inline-flex min-h-11 items-center gap-1.5 self-start font-medium text-gold-text">
+                  <Icon name="plus" className="size-[18px]" />
+                  Add something to pray for
+                </button>
+              )}
               <p className="text-footnote text-text-secondary">
                 Written by AI from what these chapters say. Let it start your own words to God, not replace them.
               </p>
+              <Feedback key={text.length} target={{ kind: "prayer", refs: listRefs(refs), content: text }} />
             </>
           )}
         </div>
