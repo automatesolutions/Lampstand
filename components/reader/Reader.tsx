@@ -15,6 +15,7 @@ import { formatRef, readerHref } from "@/lib/bible/refs";
 import type { ChapterNote } from "@/lib/chapter-notes";
 import type { ContextCard } from "@/lib/context-cards";
 import { setScreenActions } from "@/lib/palette";
+import { openExplain } from "@/lib/explain";
 import { openPrayer } from "@/lib/prayer";
 import {
   HIGHLIGHT_COLORS,
@@ -208,6 +209,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
     () =>
       setScreenActions([
         ...(chapterReadToday ? [] : [{ id: "mark", title: `Mark ${title} as read`, subtitle: "Lights your lamp", icon: "circle-check" as const, run: finish }]),
+        { id: "explain", title: `Explain ${title} in depth`, subtitle: "Background, key words, connections", icon: "sparkles", run: () => openExplain(ref) },
         { id: "pray-here", title: `Pray over ${title}`, subtitle: "With your recent chapters", icon: "hand-heart", run: () => openPrayer(ref) },
         { id: "note", title: `Add a note on ${title}`, subtitle: "Notes", icon: "notebook-pen", run: () => setNoteTarget({ verse: null }) },
         { id: "text", title: "Text settings", subtitle: "Size and line spacing", icon: "type", run: () => setTextOpen(true) },
@@ -319,14 +321,25 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
                   {note.title}
                 </h2>
                 <p className="text-callout">{note.summary}</p>
-                <button
-                  type="button"
-                  onClick={() => select(note.key, true)}
-                  className="inline-flex min-h-11 items-center gap-1.5 self-start rounded-md font-medium text-gold-text"
-                >
-                  <Icon name="target" className="size-[18px]" />
-                  Key verse {chapter.chapter}:{note.key}
-                </button>
+                <div className="flex flex-wrap gap-x-5">
+                  <button
+                    type="button"
+                    onClick={() => select(note.key, true)}
+                    className="inline-flex min-h-11 items-center gap-1.5 rounded-md font-medium text-gold-text"
+                  >
+                    <Icon name="target" className="size-[18px]" />
+                    Key verse {chapter.chapter}:{note.key}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => openExplain(ref)}
+                    aria-haspopup="dialog"
+                    className="inline-flex min-h-11 items-center gap-1.5 rounded-md font-medium text-gold-text"
+                  >
+                    <Icon name="sparkles" className="size-[18px]" />
+                    Explain in depth
+                  </button>
+                </div>
               </div>
             )}
             {card && (
@@ -456,9 +469,14 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
                   <ButtonLink href="/">Today</ButtonLink>
                 )}
               </div>
-              <Button variant="plain" icon="hand-heart" onClick={() => openPrayer(ref)} className="-mb-2 w-full">
-                Pray over what you read
-              </Button>
+              <div className="-mb-2 flex w-full flex-col border-t border-divider pt-1.5 min-[480px]:flex-row min-[480px]:justify-center min-[480px]:gap-4">
+                <Button variant="plain" icon="sparkles" onClick={() => openExplain(ref)} aria-haspopup="dialog">
+                  Explain in depth
+                </Button>
+                <Button variant="plain" icon="hand-heart" onClick={() => openPrayer(ref)} aria-haspopup="dialog">
+                  Pray over what you read
+                </Button>
+              </div>
             </div>
           ) : (
             <Button variant="primary" size="large" onClick={finish}>

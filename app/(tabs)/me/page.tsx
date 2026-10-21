@@ -7,6 +7,8 @@ import { Sheet } from "@/components/ui/Sheet";
 import { Stepper } from "@/components/ui/Stepper";
 import { ReaderSettings } from "@/components/reader/ReaderSettings";
 import { VERSIONS } from "@/lib/bible/provider";
+import { AccountSheet, useAccountSummary } from "@/components/AccountSheet";
+import { StartOverSheet, useBibleProgress } from "@/components/StartOver";
 import { currentGoal, setGoal, useHydrated, useStore } from "@/lib/store";
 
 const NLT_NOTICE = VERSIONS.find((v) => v.id === "NLT")?.copyright;
@@ -20,19 +22,29 @@ export default function MePage() {
   const goal = hydrated ? currentGoal(goals) : 1;
   const [goalOpen, setGoalOpen] = useState(false);
   const [saveOpen, setSaveOpen] = useState(false);
+  const [startOverOpen, setStartOverOpen] = useState(false);
+  const progress = useBibleProgress();
+  const account = useAccountSummary();
 
   return (
     <div className="arrive flex flex-col gap-8">
-      <PageTitle eyebrow="Reading on this device">Me</PageTitle>
+      <PageTitle eyebrow={account.title === "Save your progress" ? "Reading on this device" : "Saved to your account"}>Me</PageTitle>
 
       <ListGroup label="Account">
-        <ListRow title="Save your progress" subtitle="Your reading is on this device only" icon="user" chevron onClick={() => setSaveOpen(true)} />
+        <ListRow title={account.title} subtitle={account.subtitle} icon="user" chevron onClick={() => setSaveOpen(true)} />
       </ListGroup>
 
       <ListGroup label="Reading">
         <ListRow title="Daily goal" value={hydrated ? `${goal} ${goal === 1 ? "chapter" : "chapters"}` : ""} chevron onClick={() => setGoalOpen(true)} />
         <ListRow title="Plans" href="/plans" />
         <ListRow title="Streak" href="/streak" />
+        <ListRow
+          title="Start over"
+          subtitle={hydrated ? `${progress.read.toLocaleString("en-US")} of ${progress.total.toLocaleString("en-US")} chapters read${progress.round > 1 ? ` in round ${progress.round}` : ""}` : ""}
+          icon="refresh"
+          chevron
+          onClick={() => setStartOverOpen(true)}
+        />
       </ListGroup>
 
       <section className="flex flex-col gap-2">
@@ -67,14 +79,9 @@ export default function MePage() {
         </div>
       </Sheet>
 
-      <Sheet open={saveOpen} onOpenChange={setSaveOpen} title="Save your progress">
-        <div className="flex flex-col gap-4 pb-2">
-          <p className="text-body">Right now, your reading, notes and goal are saved in this browser.</p>
-          <p className="text-body text-text-secondary">
-            Accounts are coming soon. With an account, your reading moves with you to any device, and nothing is lost if you clear your browser.
-          </p>
-        </div>
-      </Sheet>
+      <StartOverSheet open={startOverOpen} onOpenChange={setStartOverOpen} />
+
+      <AccountSheet open={saveOpen} onOpenChange={setSaveOpen} />
     </div>
   );
 }

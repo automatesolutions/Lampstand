@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { BOOKS, bookByCode } from "@/lib/bible/books";
 import { kindOf } from "@/lib/bible/kinds";
-import { useHydrated, useStore } from "@/lib/store";
+import { useHydrated, useRoundReads, useStore } from "@/lib/store";
 import type { ChapterRef } from "@/lib/bible/types";
 import { Sheet } from "@/components/ui/Sheet";
 import { ListGroup, ListRow } from "@/components/ui/List";
@@ -27,7 +27,7 @@ export function BookPicker({ open, onOpenChange, onSelect, initialBook = null }:
   }
   const meta = book ? bookByCode(book) : null;
   const hydrated = useHydrated();
-  const reads = useStore((s) => s.reads);
+  const reads = useRoundReads();
   const position = useStore((s) => s.position);
   const read = useMemo(() => new Set(hydrated && book ? reads.filter((r) => r.book === book).map((r) => r.chapter) : []), [hydrated, reads, book]);
   const here = hydrated && position?.book === book ? position.chapter : null;

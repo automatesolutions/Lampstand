@@ -3,7 +3,8 @@
 // On-device store for guest mode. Shapes mirror supabase/migrations so the data
 // can sync to an account later without reshaping.
 
-import { useSyncExternalStore } from "react";
+import { useMemo, useSyncExternalStore } from "react";
+import { BOOKS } from "@/lib/bible/books";
 import type { ChapterRef, VersionId } from "@/lib/bible/types";
 import { toISODate, type ISODate } from "@/lib/streak";
 
@@ -52,6 +53,7 @@ export interface Goal {
 export interface Position extends ChapterRef {
   version: VersionId;
   verse: number;
+  updatedAt?: string; // ISO time; used to settle sync between devices
 }
 
 export interface AppState {
@@ -65,6 +67,13 @@ export interface AppState {
   notes: Note[];
   highlights: Highlight[];
   contextSeen: Record<string, ISODate>; // book code -> last date the card was shown
+  /**
+   * Reading the Bible through again. Read marks and progress count only reads from
+   * the current round; the streak and history use every read. null = the first round.
+   */
+  round: Round | null;
+  /** When prefs, onboarding, plan or round last changed (ISO time), so account sync knows which side is newer. */
+  settingsAt?: string;
 }
 
 const KEY = "lampstand:v1";
@@ -80,7 +89,15 @@ export const DEFAULT_STATE: AppState = {
   notes: [],
   highlights: [],
   contextSeen: {},
+  round: null,
 };
+
+export interface Round {
+  number: number; // 2 for the second time through
+  startedAt: string; // ISO time
+}
+
+export const TOTAL_CHAPTERS = BOOKS.reduce((n, b) => n + b.chapters, 0);
 
 let state: AppState = DEFAULT_STATE;
 let loaded = false;
@@ -118,6 +135,14 @@ export function update(fn: (s: AppState) => AppState) {
   state = fn(state);
   persist();
   listeners.forEach((l) => l());
+}
+
+/** Called after every change made on this device (account sync uses it). */
+export function onChange(l: () => void) {
+  listeners.add(l);
+  return () => {
+    listeners.delete(l);
+  };
 }
 
 function subscribe(l: () => void) {
@@ -166,6 +191,22 @@ export function currentGoal(goals: Goal[]): number {
   return goalOn(goals, today());
 }
 
+/** Reads that count toward the current round. */
+export function roundReads(reads: ChapterRead[], round: Round | null): ChapterRead[] {
+  return round ? reads.filter((r) => r.completedAt >= round.startedAt) : reads;
+}
+
+/** Different chapters read in the current round, out of TOTAL_CHAPTERS. */
+export function chaptersReadInRound(reads: ChapterRead[], round: Round | null): number {
+  return new Set(roundReads(reads, round).map((r) => `${r.book}.${r.chapter}`)).size;
+}
+
+export function useRoundReads(): ChapterRead[] {
+  const reads = useStore((s) => s.reads);
+  const round = useStore((s) => s.round);
+  return useMemo(() => roundReads(reads, round), [reads, round]);
+}
+
 export function readsPerDay(reads: ChapterRead[]): Record<ISODate, number> {
   const out: Record<ISODate, number> = {};
   for (const r of reads) out[r.readOn] = (out[r.readOn] ?? 0) + 1;
@@ -197,20 +238,33 @@ export function markRead(ref: ChapterRef, version: VersionId) {
   });
 }
 
-export function setPosition(position: Position) {
-  update((s) => ({ ...s, position }));
+/** Start reading the Bible through again from Genesis 1. Keeps the streak, notes, highlights and history. */
+export function startNewRound() {
+  update((s) => ({
+    ...s,
+    round: { number: (s.round?.number ?? 1) + 1, startedAt: new Date().toISOString() },
+    position: { book: "GEN", chapter: 1, verse: 1, version: s.prefs.version, updatedAt: new Date().toISOString() },
+    contextSeen: {},
+    ...touched(),
+  }));
 }
 
+export function setPosition(position: Position) {
+  update((s) => ({ ...s, position: { ...position, updatedAt: new Date().toISOString() } }));
+}
+
+const touched = () => ({ settingsAt: new Date().toISOString() });
+
 export function startPlan(slug: string | null) {
-  update((s) => ({ ...s, plan: slug ? { slug, startedOn: today() } : null }));
+  update((s) => ({ ...s, plan: slug ? { slug, startedOn: today() } : null, ...touched() }));
 }
 
 export function setPrefs(prefs: Partial<AppState["prefs"]>) {
-  update((s) => ({ ...s, prefs: { ...s.prefs, ...prefs } }));
+  update((s) => ({ ...s, prefs: { ...s.prefs, ...prefs }, ...touched() }));
 }
 
 export function completeOnboarding() {
-  update((s) => ({ ...s, onboarded: true }));
+  update((s) => ({ ...s, onboarded: true, ...touched() }));
 }
 
 export function markContextSeen(book: string) {

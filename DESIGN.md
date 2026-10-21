@@ -180,9 +180,13 @@ One box finds anything and runs any action, after Raycast's command palette, siz
 
 **Verse bar.** Reference and Close, four highlight swatches (44px, check when on), Note, Copy.
 
-**Chapter done.** Replaces the Mark as read button in place: the lamp kindles, "John 3 is read", today's count, then Add a note and the next chapter, and a plain "Pray over what you read".
+**Chapter done.** Replaces the Mark as read button in place: the lamp kindles, "John 3 is read", today's count, then Add a note and the next chapter, then, under a rule, two plain actions: "Explain in depth" and "Pray over what you read" (stacked on phones, side by side from 480px).
 
-**Pray sheet.** Opens from the chapter done card, a row on Today, or Go to. It prays over the chapter on screen plus the most recent reads, three in all, named at the top ("Praying over John 3, John 2 and John 1"). The prayer streams in Literata at reading size; Copy and Pray again sit in the footer. A footnote says it was written by AI and should start, not replace, the reader's own prayer. Only chapter references leave the device, never notes or highlights.
+**In depth sheet.** Opens from the chapter done card, the In this chapter card, or Go to. A Claude-written explanation in five sections (Background, What happens, Key words and ideas, Connections, For reflection), streamed; headings are gold eyebrows, lists use gold diamonds. Grounded in the KJV text of the chapter whatever version is on screen, so licensed text never leaves the app. Finished explanations are reused for every reader. Footer: Pray over what you read.
+
+**Start over.** Reading rounds: once all 1,189 chapters are read, Today and Read show "You've read the whole Bible" with a lamp and a Start over button; Me has a Start over row any time, with this round's progress. A confirm sheet (Not now / Begin again) explains that read marks clear while streak, notes, highlights and history stay, then opens Genesis 1. Read shows a thin gold "Through the Bible" bar with the round's count.
+
+**Pray sheet.** Opens from the chapter done card, a row on Today, or Go to. It prays over the chapter on screen plus the most recent reads, three in all, named at the top ("Praying over John 3, John 2 and John 1"). The prayer streams in Literata at reading size and always ends "In Jesus' Name, Amen." (added by the app, not left to the model); Copy and Pray again sit in the footer. A footnote says it was written by AI and should start, not replace, the reader's own prayer. Only chapter references leave the device, never notes or highlights.
 
 **Go to palette.** §5.3. 60px input, 52px rows with icon or pigment swatch, title, subtitle, and an ↵ key cap on the active row.
 

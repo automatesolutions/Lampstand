@@ -24,7 +24,7 @@ export function Sheet({ open, onOpenChange, title, description, children, footer
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 z-40 bg-scrim" />
         <Drawer.Content
-          className="fixed inset-x-0 bottom-0 z-50 mx-auto flex max-h-[92dvh] w-full max-w-[640px] flex-col rounded-t-xl bg-surface-raised shadow-soft outline-none sm:bottom-auto sm:top-1/2 sm:max-h-[80dvh] sm:-translate-y-1/2 sm:rounded-xl"
+          className="fixed inset-x-0 bottom-0 z-50 mx-auto flex max-h-[92dvh] w-full max-w-[640px] flex-col rounded-t-xl bg-surface-raised shadow-soft outline-none sm:bottom-auto sm:top-1/2 sm:max-h-[80dvh] sm:-translate-y-1/2 sm:rounded-xl sm:after:hidden!"
         >
           <div aria-hidden="true" className="mx-auto mt-2 h-1.5 w-9 shrink-0 rounded-full bg-divider sm:hidden" />
           <header className="flex shrink-0 items-center justify-between gap-2 pl-5 pr-2 pt-2 sm:pt-3">

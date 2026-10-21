@@ -11,7 +11,8 @@ import { KINDS, booksOfKind, kindOf } from "@/lib/bible/kinds";
 import { VERSIONS } from "@/lib/bible/provider";
 import { formatRef, readerHref } from "@/lib/bible/refs";
 import { openPalette } from "@/lib/palette";
-import { useHydrated, useStore } from "@/lib/store";
+import { BibleCompleteCard, useBibleProgress } from "@/components/StartOver";
+import { useHydrated, useRoundReads, useStore } from "@/lib/store";
 
 /** Spine height grows with chapter count, so Psalms stands tallest (DESIGN.md §8). */
 const spineHeight = (chapters: number) => Math.round(88 + Math.sqrt(chapters) * 9);
@@ -20,7 +21,8 @@ export default function ReadPage() {
   const router = useRouter();
   const hydrated = useHydrated();
   const position = useStore((s) => s.position);
-  const reads = useStore((s) => s.reads);
+  const reads = useRoundReads();
+  const progress = useBibleProgress();
   const version = useStore((s) => s.prefs.version);
   const [book, setBook] = useState<string | null>(null);
 
@@ -40,6 +42,22 @@ export default function ReadPage() {
         <p className="text-eyebrow text-text-secondary">{VERSIONS.find((v) => v.id === version)?.name ?? "King James Version"} · 66 books</p>
         <h1 className="text-display">Read</h1>
       </header>
+
+      {hydrated && progress.read > 0 && !progress.done && (
+        <div className="flex flex-col gap-2" role="group" aria-label="Through the Bible">
+          <div className="flex items-baseline justify-between gap-3 text-footnote text-text-secondary">
+            <span>Through the Bible{progress.round > 1 ? ` · round ${progress.round}` : ""}</span>
+            <span className="tabular-nums">
+              {progress.read.toLocaleString("en-US")} of {progress.total.toLocaleString("en-US")} chapters
+            </span>
+          </div>
+          <span aria-hidden="true" className="block h-1.5 overflow-hidden rounded-full bg-surface">
+            <span className="block h-full rounded-full bg-gold" style={{ width: `${Math.max(1, (progress.read / progress.total) * 100)}%` }} />
+          </span>
+        </div>
+      )}
+
+      <BibleCompleteCard />
 
       <div className="hidden min-[960px]:block">
         <GoToButton />

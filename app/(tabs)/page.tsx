@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { DayLamp, Lamp } from "@/components/brand/LampMark";
+import { BibleCompleteCard } from "@/components/StartOver";
 import { ButtonLink } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { kindOf } from "@/lib/bible/kinds";
@@ -128,6 +129,7 @@ export default function TodayPage() {
         </section>
 
         <div className="flex min-w-0 flex-col gap-5">
+          <BibleCompleteCard />
           <section aria-labelledby="next-heading" className="flex flex-col gap-4 rounded-xl bg-surface-raised px-[22px] pb-6 shadow-soft ring-1 ring-divider/60">
             <Image
               src={plateSrc(next.book)}

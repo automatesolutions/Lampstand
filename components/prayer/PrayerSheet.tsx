@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Fleuron } from "@/components/brand/LampMark";
 import { Button } from "@/components/ui/Button";
 import { Sheet } from "@/components/ui/Sheet";
@@ -9,8 +9,7 @@ import { formatRef } from "@/lib/bible/refs";
 import type { ChapterRef } from "@/lib/bible/types";
 import { onOpenPrayer, recentChapters } from "@/lib/prayer";
 import { useStore } from "@/lib/store";
-
-type Phase = "idle" | "praying" | "done" | "error";
+import { useTextStream } from "@/lib/use-text-stream";
 
 function listRefs(refs: ChapterRef[]) {
   const names = refs.map((r) => formatRef(r));
@@ -19,55 +18,27 @@ function listRefs(refs: ChapterRef[]) {
 
 /**
  * Pray (mounted once in the root layout): writes a short prayer from the
- * chapters read most recently. Opens with openPrayer().
+ * chapters read most recently, always closing "In Jesus' Name, Amen." Opens with openPrayer().
  */
 export function PrayerSheet() {
   const reads = useStore((s) => s.reads);
   const [open, setOpen] = useState(false);
   const [refs, setRefs] = useState<ChapterRef[]>([]);
-  const [text, setText] = useState("");
-  const [phase, setPhase] = useState<Phase>("idle");
-  const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
-  const ctrl = useRef<AbortController | null>(null);
+  const [copyError, setCopyError] = useState("");
+  const prayer = useTextStream("/api/prayer");
+  const { text, phase, start, stop, reset } = prayer;
+  const error = copyError || prayer.error;
   const readsRef = useRef(reads);
   useEffect(() => {
     readsRef.current = reads;
   }, [reads]);
 
-  const pray = useCallback(async (chapters: ChapterRef[]) => {
-    ctrl.current?.abort();
-    const c = new AbortController();
-    ctrl.current = c;
-    setText("");
-    setError("");
+  function pray(chapters: ChapterRef[]) {
     setCopied(false);
-    setPhase("praying");
-    try {
-      const res = await fetch("/api/prayer", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ refs: chapters }),
-        signal: c.signal,
-      });
-      if (!res.ok || !res.body) {
-        const d = (await res.json().catch(() => null)) as { error?: string } | null;
-        throw new Error(d?.error ?? "The prayer couldn't be written just now.");
-      }
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      for (;;) {
-        const { value, done } = await reader.read();
-        if (done) break;
-        setText((t) => t + decoder.decode(value, { stream: true }));
-      }
-      setPhase("done");
-    } catch (e) {
-      if (c.signal.aborted) return;
-      setError(e instanceof Error && e.message !== "Failed to fetch" ? e.message : "You seem to be offline. Try again when you're connected.");
-      setPhase("error");
-    }
-  }, []);
+    setCopyError("");
+    start({ refs: chapters });
+  }
 
   useEffect(
     () =>
@@ -75,15 +46,17 @@ export function PrayerSheet() {
         const chapters = recentChapters(readsRef.current, current);
         setRefs(chapters);
         setOpen(true);
-        if (chapters.length) pray(chapters);
-        else setPhase("idle");
+        setCopied(false);
+        setCopyError("");
+        if (chapters.length) start({ refs: chapters });
+        else reset();
       }),
-    [pray],
+    [start, reset],
   );
 
   function onOpenChange(o: boolean) {
     setOpen(o);
-    if (!o) ctrl.current?.abort();
+    if (!o) stop();
   }
 
   async function copy() {
@@ -91,11 +64,11 @@ export function PrayerSheet() {
       await navigator.clipboard.writeText(`${text.trim()}\n\n(After reading ${listRefs(refs)})`);
       setCopied(true);
     } catch {
-      setError("Copy isn't available in this browser.");
+      setCopyError("Copy isn't available in this browser.");
     }
   }
 
-  const busy = phase === "praying";
+  const busy = phase === "streaming";
 
   return (
     <Sheet
@@ -133,7 +106,7 @@ export function PrayerSheet() {
             )}
             {busy && !text && <span className="text-text-secondary">Writing a prayer…</span>}
           </div>
-          {phase === "error" && (
+          {error && (
             <p role="alert" className="rounded-md bg-surface px-4 py-3 text-callout">
               {error}
             </p>

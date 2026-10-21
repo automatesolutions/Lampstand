@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Hanken_Grotesk, Literata } from "next/font/google";
 import { LampDefs } from "@/components/brand/LampMark";
 import { CommandPalette } from "@/components/palette/CommandPalette";
+import { ExplainSheet } from "@/components/explain/ExplainSheet";
 import { PrayerSheet } from "@/components/prayer/PrayerSheet";
+import { SyncAgent } from "@/components/SyncAgent";
 import { ThemeSync, themeBootScript } from "@/components/ThemeSync";
 import "./globals.css";
 
@@ -52,10 +54,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-dvh">
         <ThemeSync />
+        <SyncAgent />
         <LampDefs />
         {children}
         <CommandPalette />
         <PrayerSheet />
+        <ExplainSheet />
       </body>
     </html>
   );
