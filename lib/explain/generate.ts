@@ -92,7 +92,7 @@ export interface Explanation {
   /** References Claude was asked to correct, and any lines removed because they stayed wrong. */
   fixed: string[];
   dropped: string[];
-  usage: { input: number; output: number; cacheRead: number };
+  usage: { input: number; output: number; cacheRead: number; cacheWrite: number };
 }
 
 const textOf = (m: Anthropic.Message) =>
@@ -119,7 +119,12 @@ export async function finishExplanation(client: Anthropic, input: ExplainInput, 
   const label = chapterName(input.ref);
   assertComplete(first, label);
   let text = textOf(first);
-  const usage = { input: first.usage.input_tokens, output: first.usage.output_tokens, cacheRead: first.usage.cache_read_input_tokens ?? 0 };
+  const usage = {
+    input: first.usage.input_tokens,
+    output: first.usage.output_tokens,
+    cacheRead: first.usage.cache_read_input_tokens ?? 0,
+    cacheWrite: first.usage.cache_creation_input_tokens ?? 0,
+  };
   let problems: RefProblem[] = checkRefs(text, input.ref);
   const missing = missingSections(text);
   const fixed = problems.map((p) => `${p.text} (${p.reason})`);
@@ -145,6 +150,7 @@ export async function finishExplanation(client: Anthropic, input: ExplainInput, 
     usage.input += second.usage.input_tokens;
     usage.output += second.usage.output_tokens;
     usage.cacheRead += second.usage.cache_read_input_tokens ?? 0;
+    usage.cacheWrite += second.usage.cache_creation_input_tokens ?? 0;
     problems = checkRefs(text, input.ref);
   }
 

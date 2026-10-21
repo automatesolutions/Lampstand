@@ -1,4 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { budgetReached, overBudget, recordUsage } from "@/lib/ai/budget";
 import { MODEL, notSetUp, rateLimited, textResponse } from "@/lib/ai/server";
 import { bookByCode } from "@/lib/bible/books";
 import { formatRef } from "@/lib/bible/refs";
@@ -50,6 +51,7 @@ export async function POST(req: Request) {
   // Angle brackets are removed so the intention can't close its own tag.
   const intention = typeof body?.intention === "string" ? body.intention.replace(/[<>]/g, "").trim().slice(0, MAX_INTENTION) : "";
   if (rateLimited(req, "prayer", 8)) return Response.json({ error: "That's a lot of prayers in a few minutes. Try again shortly." }, { status: 429 });
+  if (await overBudget()) return budgetReached("Prayer");
 
   const lines = await Promise.all(
     refs.map(async (r) => {
@@ -67,5 +69,5 @@ export async function POST(req: Request) {
   });
 
   // Hold back the last characters so a stray closing from the model can be swapped for ours.
-  return textResponse(stream, { holdBack: 80, finish: closePrayer });
+  return textResponse(stream, { holdBack: 80, finish: closePrayer, onDone: (_text, _complete, final) => void recordUsage("prayer", MODEL, final.usage) });
 }

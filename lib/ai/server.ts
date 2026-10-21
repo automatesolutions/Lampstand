@@ -1,4 +1,5 @@
 import "server-only";
+import type Anthropic from "@anthropic-ai/sdk";
 import type { MessageStream } from "@anthropic-ai/sdk/lib/MessageStream";
 
 // Shared by the Claude API routes (Pray, Explain).
@@ -27,8 +28,8 @@ interface StreamOptions {
   /** Rewrites the very end of the text once it is complete (the last `holdBack` characters are held until then). */
   finish?: (tail: string) => string;
   holdBack?: number;
-  /** Called with the whole text and whether the model finished on its own (not cut off by the length limit). */
-  onDone?: (text: string, complete: boolean) => void;
+  /** Called with the whole text, whether the model finished on its own (not cut off), and the final message (for usage). */
+  onDone?: (text: string, complete: boolean, final: Anthropic.Message) => void;
 }
 
 /** Streams the model's text to the browser as plain text. */
@@ -54,7 +55,7 @@ export function textResponse(stream: MessageStream, { finish, holdBack = 0, onDo
         }
         send(finish ? finish(pending) : pending);
         const final = await stream.finalMessage();
-        onDone?.(all, final.stop_reason === "end_turn");
+        onDone?.(all, final.stop_reason === "end_turn", final);
         controller.close();
       } catch (err) {
         console.error("Claude stream failed", err);

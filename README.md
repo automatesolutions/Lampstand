@@ -18,10 +18,23 @@ Server keys go in `.env.local` (never committed):
 ```bash
 NLT_API_KEY=...        # New Living Translation, from api.nlt.to (non-commercial: 500 verses a request, 5,000 requests a day)
 ESV_API_KEY=...        # English Standard Version, from api.esv.org (non-commercial: 5,000 queries a day, at most 500 verses stored)
-ANTHROPIC_API_KEY=...  # the Pray button
+ANTHROPIC_API_KEY=...  # Pray and Explain in depth
+NEXT_PUBLIC_SUPABASE_URL=...              # accounts and sync (public)
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=...  # accounts and sync (public)
+SUPABASE_SECRET_KEY=...   # server only: daily AI cap and saved explanations
+DAILY_AI_BUDGET_USD=2     # optional: Claude API spend per day before Pray and Explain pause (default 2)
 ```
 
-Without it, Pray shows "Prayer isn't set up on this server yet."
+Without the Anthropic key, Pray shows "Prayer isn't set up on this server yet." Without the secret key, the daily cap still works but only per server instance, and on-the-spot explanations are kept in memory only.
+
+Run the Supabase migrations in order in the SQL Editor: `0001_init.sql` to `0004_ai.sql`.
+
+### Deploying (Cloud Run)
+
+- The two `NEXT_PUBLIC_…` values are built into the app, so pass them as build arguments: `--build-arg NEXT_PUBLIC_SUPABASE_URL=… --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=…`.
+- Set the server secrets on the Cloud Run service (Secret Manager is best): `ANTHROPIC_API_KEY`, `SUPABASE_SECRET_KEY`, `NLT_API_KEY`, `ESV_API_KEY`, and optionally `DAILY_AI_BUDGET_USD`.
+- Add the live address to Supabase **Authentication → URL Configuration** (Site URL and `https://your-domain/**` in Redirect URLs).
+- Also set a monthly spend limit in the Claude Console as a backstop.
 
 ## Where things live
 
@@ -37,7 +50,7 @@ Without it, Pray shows "Prayer isn't set up on this server yet."
 - `public/plates/` holds one photoreal plate per book, made with Higgsfield.
 - `content/xrefs/` holds each chapter's best-supported cross-references from OpenBible.info (CC BY), made by `node scripts/import-xrefs.mjs`.
 - `content/explanations/` holds the pre-written "In depth" explanations, drafts until reviewed. Write them with `npx tsx scripts/generate-explanations.mts` (`--sample GEN.1,JHN.3`, `--estimate`, `--batch`, `--collect`). They are grounded in the chapter text and cross-references, and every Bible reference is checked against real verse counts (`lib/bible/check-refs.ts`).
-- `/review` (only with `npm run dev`) is where a pastor or teacher reads, edits and approves explanations; commit `content/explanations` to publish.
+- `/review` (only with `npm run dev`) is where a pastor or teacher reads, edits and approves explanations; commit `content/explanations` to publish. Explanations written when a reader first asked are kept in Supabase; copy them in for review with `npx tsx scripts/pull-explanations.mts` (free).
 - `lib/explain/examples.ts` holds the model explanation and prayer that set the style. Edit them to change every future explanation and prayer.
 - `app/api/prayer/` writes a prayer from recent chapters with the Claude API.
 - `supabase/migrations/` holds the database schema with row-level security.
