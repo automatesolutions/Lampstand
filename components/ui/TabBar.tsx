@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
 import { LampMark } from "@/components/brand/LampMark";
+import { useCirclesBadge } from "@/lib/lamplighters/badge";
 import { openPalette } from "@/lib/palette";
 import { Icon, type IconName } from "./Icon";
 import { ModK } from "./Kbd";
@@ -11,6 +13,7 @@ const TABS: { href: string; label: string; icon: IconName; match: (p: string) =>
   { href: "/", label: "Today", icon: "house", match: (p) => p === "/" || p.startsWith("/streak") || p.startsWith("/plans") },
   { href: "/read", label: "Read", icon: "book-open", match: (p) => p.startsWith("/read") },
   { href: "/notes", label: "Notes", icon: "notebook-pen", match: (p) => p.startsWith("/notes") },
+  { href: "/circles", label: "Circles", icon: "users", match: (p) => p.startsWith("/circles") || p.startsWith("/chat") },
   { href: "/me", label: "Me", icon: "user", match: (p) => p.startsWith("/me") },
 ];
 
@@ -19,7 +22,21 @@ const TABS: { href: string; label: string; icon: IconName; match: (p: string) =>
  * `railOnly` is for the reader, which has its own thumb bar on phones.
  */
 export function TabBar({ railOnly = false }: { railOnly?: boolean }) {
-  const pathname = usePathname();
+  // On pages whose address is only known at request time (a Circle), the bar streams
+  // in; until then it shows with no tab marked.
+  return (
+    <Suspense fallback={<Bar railOnly={railOnly} pathname="" />}>
+      <ActiveBar railOnly={railOnly} />
+    </Suspense>
+  );
+}
+
+function ActiveBar({ railOnly }: { railOnly: boolean }) {
+  return <Bar railOnly={railOnly} pathname={usePathname()} />;
+}
+
+function Bar({ railOnly, pathname }: { railOnly: boolean; pathname: string }) {
+  const badge = useCirclesBadge();
   return (
     <nav
       aria-label="Main"
@@ -38,7 +55,7 @@ export function TabBar({ railOnly = false }: { railOnly?: boolean }) {
         <span className="flex-1">Go to…</span>
         <ModK always />
       </button>
-      <ul className="mx-auto grid h-14 w-full max-w-[680px] grid-cols-4 min-[960px]:m-0 min-[960px]:h-auto min-[960px]:grid-cols-1 min-[960px]:gap-1">
+      <ul className="mx-auto grid h-14 w-full max-w-[680px] grid-cols-5 min-[960px]:m-0 min-[960px]:h-auto min-[960px]:grid-cols-1 min-[960px]:gap-1">
         {TABS.map((t) => {
           const active = t.match(pathname);
           return (
@@ -52,8 +69,12 @@ export function TabBar({ railOnly = false }: { railOnly?: boolean }) {
                     : "text-text-secondary"
                 }`}
               >
-                <Icon name={t.icon} className="size-6" />
+                <span className="relative">
+                  <Icon name={t.icon} className="size-6" />
+                  {t.href === "/circles" && badge > 0 && <span aria-hidden="true" className="absolute -right-1 -top-0.5 size-2.5 rounded-full bg-danger ring-2 ring-bg" />}
+                </span>
                 {t.label}
+                {t.href === "/circles" && badge > 0 && <span className="sr-only">, {badge} new</span>}
               </Link>
             </li>
           );

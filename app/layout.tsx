@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Hanken_Grotesk, Literata } from "next/font/google";
 import { LampDefs } from "@/components/brand/LampMark";
 import { CommandPalette } from "@/components/palette/CommandPalette";
 import { ExplainSheet } from "@/components/explain/ExplainSheet";
+import { CelebrationHost } from "@/components/lamplighters/CelebrationHost";
 import { PrayerSheet } from "@/components/prayer/PrayerSheet";
 import { SyncAgent } from "@/components/SyncAgent";
 import { ThemeSync, themeBootScript } from "@/components/ThemeSync";
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <CommandPalette />
         <PrayerSheet />
         <ExplainSheet />
+        <CelebrationHost />
       </body>
     </html>
   );

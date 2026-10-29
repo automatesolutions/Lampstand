@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/build-lamplighter-assets.mjs",
     "dev": "next dev",
+    "assets": "node scripts/build-lamplighter-assets.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -23,6 +25,7 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.13",
     "@iconify-json/lucide": "^1.2.144",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/turbopack": "^4",
@@ -31,6 +34,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.1",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5",

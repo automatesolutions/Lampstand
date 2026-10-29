@@ -9,6 +9,7 @@ import { ReaderSettings } from "@/components/reader/ReaderSettings";
 import { VERSIONS } from "@/lib/bible/provider";
 import { AccountSheet, useAccountSummary } from "@/components/AccountSheet";
 import { StartOverSheet, useBibleProgress } from "@/components/StartOver";
+import { LamplighterSettings, MascotSetting } from "@/components/lamplighters/Settings";
 import { currentGoal, setGoal, useHydrated, useStore } from "@/lib/store";
 
 const NLT_NOTICE = VERSIONS.find((v) => v.id === "NLT")?.copyright;
@@ -34,6 +35,8 @@ export default function MePage() {
         <ListRow title={account.title} subtitle={account.subtitle} icon="user" chevron onClick={() => setSaveOpen(true)} />
       </ListGroup>
 
+      <LamplighterSettings />
+
       <ListGroup label="Reading">
         <ListRow title="Daily goal" value={hydrated ? `${goal} ${goal === 1 ? "chapter" : "chapters"}` : ""} chevron onClick={() => setGoalOpen(true)} />
         <ListRow title="Plans" href="/plans" />
@@ -45,6 +48,7 @@ export default function MePage() {
           chevron
           onClick={() => setStartOverOpen(true)}
         />
+        <MascotSetting />
       </ListGroup>
 
       <section className="flex flex-col gap-2">

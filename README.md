@@ -8,8 +8,8 @@ Built with Next.js 16, TypeScript and Tailwind CSS 4. Every screen follows [DESI
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm test         # streak and plan logic
+npm run dev      # http://localhost:3000 (builds the avatar and mascot images first)
+npm test         # streak, plan and milestone logic, and the Circles database rules
 npm run build    # prerenders all 1,189 KJV chapters
 ```
 
@@ -23,11 +23,21 @@ NEXT_PUBLIC_SUPABASE_URL=...              # accounts and sync (public)
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=...  # accounts and sync (public)
 SUPABASE_SECRET_KEY=...   # server only: daily AI cap and saved explanations
 DAILY_AI_BUDGET_USD=2     # optional: Claude API spend per day before Pray and Explain pause (default 2)
+APP_URL=https://your-domain   # Circles: the address used in invite and nudge emails
+RESEND_API_KEY=...            # Circles: send invite and nudge emails through resend.com (optional)
+EMAIL_FROM="Lampstand <hello@your-domain>"  # Circles: a sender on a domain verified in Resend
 ```
+
+Without `RESEND_API_KEY`, `EMAIL_FROM` and `APP_URL`, invites still work: the inviter copies the link and sends it themselves, and nudges are in-app only.
 
 Without the Anthropic key, Pray shows "Prayer isn't set up on this server yet." Without the secret key, the daily cap still works but only per server instance, and on-the-spot explanations are kept in memory only.
 
-Run the Supabase migrations in order in the SQL Editor: `0001_init.sql` to `0004_ai.sql`.
+Run the Supabase migrations in order in the SQL Editor: `0001_init.sql` to `0005_lamplighters.sql`.
+
+For Circles (Lamplighters), also in the Supabase dashboard:
+- **Realtime → Settings:** keep private channels allowed. Chat messages stream through row-level security; the typing indicator uses the members-only `circle:<id>` channel set up by `0005`.
+- **Authentication → URL Configuration:** the Redirect URLs entry `https://your-domain/**` also covers invite links (`/auth/callback?next=/circles/join…`).
+- Abuse reports land in the `reports` table (Table Editor). Nobody can read them through the app.
 
 ### Deploying (Cloud Run)
 
@@ -54,3 +64,15 @@ Run the Supabase migrations in order in the SQL Editor: `0001_init.sql` to `0004
 - `lib/explain/examples.ts` holds the model explanation and prayer that set the style. Edit them to change every future explanation and prayer.
 - `app/api/prayer/` writes a prayer from recent chapters with the Claude API.
 - `supabase/migrations/` holds the database schema with row-level security.
+- **Lamplighters (Circles)**: `0005_lamplighters.sql` holds every rule (membership, invites, nudge and chat limits, sharing choices) in the database; `lib/lamplighters/db.test.ts` runs them in PGlite. Screens are in `app/(tabs)/circles`, `app/chat` and `components/lamplighters/`; routes that may send email are in `app/api/lamplighters/`. Limits for the screens are in `lib/lamplighters/config.ts` (the database cap is `public.circle_member_limit()`).
+- `content/mascot.json` holds everything the mascot says and the milestone thresholds. Edit freely; `{count}`, `{days}` and `{book}` are filled in.
+
+### Adding avatars and mascot images
+
+1. Drop `.png`, `.jpg` or `.webp` files into `assets/avatars` or `assets/mascot`. Square images of at least 256px (avatars) or 640px (mascot) look best.
+2. Run `npm run dev` (or `npm run assets`). It makes small WebP copies in `public/lamplighters/` and lists them in `lib/lamplighters/assets.json`.
+3. Commit `public/lamplighters/` and `lib/lamplighters/assets.json` (the Docker build doesn't include `assets/` or `scripts/`).
+
+- An avatar's id is its file name in kebab case. Renaming or removing a file sends anyone who chose it back to the default lamp avatar until they pick again.
+- Mascot moods come from the file name: include `cheer`, `wave`, `read` or `gentle` (for example `lamp-waving.png`). A file without a mood word stands in for any mood. Each message in `content/mascot.json` names the mood it wants.
+- Optional alt text: add `labels.json` next to the images, like `{ "lamp-waving.png": "The lamp waving hello" }`.

@@ -59,7 +59,8 @@ export interface Position extends ChapterRef {
 export interface AppState {
   schema: 1;
   onboarded: boolean;
-  prefs: { theme: Theme; textSize: number; leading: number; scriptureFont: ScriptureFont; version: VersionId };
+  /** `mascot`: the Lamplighters mascot's messages and celebrations. */
+  prefs: { theme: Theme; textSize: number; leading: number; scriptureFont: ScriptureFont; version: VersionId; mascot: boolean };
   goals: Goal[];
   reads: ChapterRead[];
   position: Position | null;
@@ -81,7 +82,7 @@ const KEY = "lampstand:v1";
 export const DEFAULT_STATE: AppState = {
   schema: 1,
   onboarded: false,
-  prefs: { theme: "system", textSize: 19, leading: 1.78, scriptureFont: "serif", version: "KJV" },
+  prefs: { theme: "system", textSize: 19, leading: 1.78, scriptureFont: "serif", version: "KJV", mascot: true },
   goals: [],
   reads: [],
   position: null,

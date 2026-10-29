@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { DayLamp, Lamp } from "@/components/brand/LampMark";
 import { BibleCompleteCard } from "@/components/StartOver";
+import { TodayMascot } from "@/components/lamplighters/TodayMascot";
 import { ButtonLink } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { kindOf } from "@/lib/bible/kinds";
@@ -89,6 +90,8 @@ export default function TodayPage() {
         <p className="text-eyebrow text-text-secondary">{dateLabel()}</p>
         <h1 className="text-display">Today</h1>
       </header>
+
+      <TodayMascot readToday={readToday} />
 
       <div className="grid gap-5 min-[960px]:grid-cols-[340px_1fr] min-[960px]:items-start">
         <section

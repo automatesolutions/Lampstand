@@ -8,19 +8,21 @@
 import { useSyncExternalStore } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase/client";
-import { getState, onChange, update, type AppState, type HighlightColor } from "@/lib/store";
+import { getState, goalOn, onChange, readsPerDay, today, update, type AppState, type HighlightColor } from "@/lib/store";
+import { computeStreak } from "@/lib/streak";
 import type { VersionId } from "@/lib/bible/types";
 import { changesToPush, mergeState, type Remote } from "./merge";
 
 export interface SyncStatus {
   ready: boolean; // the session check has finished
   email: string | null;
+  userId: string | null;
   syncing: boolean;
   lastSynced: string | null; // ISO time
   error: string | null;
 }
 
-const INITIAL: SyncStatus = { ready: false, email: null, syncing: false, lastSynced: null, error: null };
+const INITIAL: SyncStatus = { ready: false, email: null, userId: null, syncing: false, lastSynced: null, error: null };
 let status: SyncStatus = INITIAL;
 const listeners = new Set<() => void>();
 const setStatus = (s: Partial<SyncStatus>) => {
@@ -108,6 +110,7 @@ async function pull(db: SupabaseClient): Promise<Remote> {
               textSize: Number(p.text_size),
               leading: Number(p.line_spacing),
               scriptureFont: p.scripture_font as AppState["prefs"]["scriptureFont"],
+              mascot: p.mascot_enabled !== false,
             },
             onboarded: Boolean(p.onboarded),
             plan: p.plan_slug ? { slug: String(p.plan_slug), startedOn: String(p.plan_started_on) } : null,
@@ -175,6 +178,8 @@ async function push(db: SupabaseClient) {
     );
   }
 
+  await pushCircleStatus(db, user_id, local);
+
   // The account now matches this device.
   known = {
     ...known,
@@ -185,6 +190,32 @@ async function push(db: SupabaseClient) {
     position: local.position,
     settings: { prefs: local.prefs, onboarded: local.onboarded, plan: local.plan, round: local.round, settingsAt },
   };
+}
+
+let lastCircleStatus = "";
+
+/**
+ * What Circles show (supabase/migrations/0005): the streak worked out here, the time
+ * zone that decides "read today", and the mascot setting. Never blocks sync, so it's
+ * harmless before that migration is run.
+ */
+async function pushCircleStatus(db: SupabaseClient, user_id: string, local: AppState) {
+  const date = today();
+  const streak = computeStreak(readsPerDay(local.reads), (d) => goalOn(local.goals, d), date);
+  const lastMet = streak.days.find((d) => d.met)?.date ?? null;
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const key = `${user_id}|${streak.current}|${lastMet}|${timezone}|${local.prefs.mascot}`;
+  if (key === lastCircleStatus) return;
+  try {
+    const [a, b] = await Promise.all([
+      db.from("user_streaks").upsert({ user_id, current: streak.current, last_met_on: lastMet }, { onConflict: "user_id" }),
+      db.from("profiles").update({ timezone, mascot_enabled: local.prefs.mascot }).eq("id", user_id),
+    ]);
+    if (a.error || b.error) throw a.error ?? b.error;
+    lastCircleStatus = key;
+  } catch (e) {
+    console.warn("Couldn't save the Circle status", e);
+  }
 }
 
 async function syncNow(force = false) {
@@ -256,7 +287,7 @@ export function startSync() {
     const id = session?.user.id ?? null;
     const changed = id !== userId;
     userId = id;
-    setStatus({ ready: true, email: session?.user.email ?? null });
+    setStatus({ ready: true, email: session?.user.email ?? null, userId: id });
     if (!id) {
       known = null;
       return;
@@ -266,10 +297,13 @@ export function startSync() {
   });
 }
 
-export async function sendSignInLink(email: string): Promise<string | null> {
+/** @param next where to go after signing in: a path on this site (for example an invite). */
+export async function sendSignInLink(email: string, next?: string): Promise<string | null> {
   const db = supabase();
   if (!db) return "Accounts aren't set up on this server yet.";
-  const { error } = await db.auth.signInWithOtp({ email, options: { emailRedirectTo: `${location.origin}/auth/callback`, shouldCreateUser: true } });
+  const redirect = new URL("/auth/callback", location.origin);
+  if (next?.startsWith("/") && !next.startsWith("//")) redirect.searchParams.set("next", next);
+  const { error } = await db.auth.signInWithOtp({ email, options: { emailRedirectTo: redirect.href, shouldCreateUser: true } });
   if (!error) return null;
   if (error.status === 429) return "Too many sign-in emails just now. Wait a few minutes and try again.";
   return error.message || "That email couldn't be sent. Check the address and try again.";
@@ -279,7 +313,7 @@ export async function signOut() {
   await supabase()?.auth.signOut();
   known = null;
   userId = null;
-  setStatus({ email: null, lastSynced: null, error: null });
+  setStatus({ email: null, userId: null, lastSynced: null, error: null });
 }
 
 export { syncNow };

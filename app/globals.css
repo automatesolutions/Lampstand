@@ -388,6 +388,40 @@
   animation: arrive 0.35s var(--ease-out);
 }
 
+/* Lamplighters milestone confetti (DESIGN.md §11). Hidden with reduced motion. */
+@keyframes confetti-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotate(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(240px) rotate(var(--turn, 180deg));
+  }
+}
+.confetti {
+  opacity: 0;
+  animation: confetti-fall 1.8s cubic-bezier(0.2, 0.6, 0.4, 1) both;
+}
+
+/* Typing dots in Circle chat. */
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+.typing-dot {
+  animation: typing 1.2s infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

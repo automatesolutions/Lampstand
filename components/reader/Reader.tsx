@@ -10,17 +10,19 @@ import { Button, ButtonLink } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { Kbd, ModK } from "@/components/ui/Kbd";
 import { Sheet } from "@/components/ui/Sheet";
+import { MascotSays } from "@/components/lamplighters/Mascot";
 import type { Chapter, ChapterRef, VersionId } from "@/lib/bible/types";
 import { formatRef, readerHref } from "@/lib/bible/refs";
 import type { ChapterNote } from "@/lib/chapter-notes";
 import type { ContextCard } from "@/lib/context-cards";
+import type { MascotMessage } from "@/lib/lamplighters/assets";
+import { finishChapter } from "@/lib/lamplighters/celebrate";
 import { setScreenActions } from "@/lib/palette";
 import { openExplain } from "@/lib/explain";
 import { openPrayer } from "@/lib/prayer";
 import {
   HIGHLIGHT_COLORS,
   markContextSeen,
-  markRead,
   setPosition,
   setPrefs,
   today,
@@ -100,6 +102,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   const [textOpen, setTextOpen] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [justDone, setJustDone] = useState(false);
+  const [cheer, setCheer] = useState<MascotMessage | null>(null);
   const [status, setStatus] = useState("");
   const [cardOpen, setCardOpen] = useState<boolean | null>(null);
   const topVerse = useRef(1);
@@ -195,7 +198,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   }
 
   const finish = useCallback(() => {
-    markRead(ref, chapter.version);
+    setCheer(finishChapter(ref, chapter.version));
     setJustDone(true);
     requestAnimationFrame(() => document.getElementById("chapter-done")?.scrollIntoView({ block: "center" }));
   }, [ref, chapter.version]);
@@ -457,6 +460,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
                   {shown} of {goal} today. {left > 0 ? "Your lamp is brighter." : "Today's reading is done."}
                 </p>
               </div>
+              {justDone && cheer && <MascotSays message={cheer} size={64} className="w-full max-w-[340px] text-left" />}
               <div className="grid w-full grid-cols-2 gap-2.5">
                 <Button onClick={() => openNote(null)} icon="notebook-pen">
                   {chapterNotes.length ? "Edit note" : "Add a note"}

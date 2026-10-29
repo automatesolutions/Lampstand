@@ -22,10 +22,18 @@ function useLinkError() {
   return /expired|invalid/i.test(err) ? "This link has expired or was already used. Ask for a new one on Me." : err;
 }
 
+/** Where to go after signing in: a path on this site from `?next=`, or Me. */
+function useNext() {
+  const href = useSyncExternalStore(noop, () => location.href, () => "");
+  const next = href ? new URL(href).searchParams.get("next") : null;
+  return next?.startsWith("/") && !next.startsWith("//") ? next : "/me";
+}
+
 export default function AuthCallbackPage() {
   const router = useRouter();
   const sync = useSyncStatus();
   const linkError = useLinkError();
+  const next = useNext();
   const [noSession, setNoSession] = useState<string | null>(null);
   const failed = linkError ?? noSession;
 
@@ -40,8 +48,8 @@ export default function AuthCallbackPage() {
   }, [linkError]);
 
   useEffect(() => {
-    if (sync.email && sync.lastSynced) router.replace("/me");
-  }, [sync.email, sync.lastSynced, router]);
+    if (sync.email && sync.lastSynced) router.replace(next);
+  }, [sync.email, sync.lastSynced, router, next]);
 
   return (
     <main className="mx-auto flex min-h-dvh max-w-[440px] flex-col items-center justify-center gap-5 px-gutter text-center">

@@ -1,0 +1,53 @@
+{
+  "_readme": "What the mascot says, and when it celebrates. Edit freely: {count}, {days} and {book} are filled in. A message picks a mood (cheering, waving, reading, gentle) and the app shows the mascot image for that mood if one exists. Keep it warm, short, never preachy or guilt-y.",
+  "milestones": {
+    "chapters": [5, 10, 25, 50, 100, 250, 500, 750, 1000, 1189],
+    "streak": [3, 7, 14, 30, 60, 100, 365]
+  },
+  "messages": {
+    "chapterDone": [
+      { "text": "Nice work!", "mood": "cheering" },
+      { "text": "Another chapter in. Nice work!", "mood": "cheering" },
+      { "text": "Lamp's a little brighter. Nice work!", "mood": "cheering" },
+      { "text": "That's one more. Proud of you!", "mood": "cheering" },
+      { "text": "You showed up today. That counts.", "mood": "reading" }
+    ],
+    "chapters": [
+      { "title": "You've read {count} chapters!", "text": "Every one of them was a choice to show up. Keep the lamp burning.", "mood": "cheering" },
+      { "title": "You've read {count} chapters!", "text": "That's a lot of good words in your heart. On to the next.", "mood": "cheering" }
+    ],
+    "streak": [
+      { "title": "{days} days in a row!", "text": "You've opened the Word {days} days running. That's a rhythm worth keeping.", "mood": "cheering" },
+      { "title": "{days} days in a row!", "text": "Small, steady, every day. Look at you go.", "mood": "cheering" }
+    ],
+    "book": [
+      { "title": "You finished {book}!", "text": "Start to end, every chapter. Take a second to enjoy that.", "mood": "cheering" },
+      { "title": "{book}: done!", "text": "A whole book of the Bible, read. What stayed with you?", "mood": "reading" }
+    ],
+    "welcomeBack": [
+      { "text": "Welcome back, let's pick up where you left off.", "mood": "waving" },
+      { "text": "Hey, good to see you. Your place is saved.", "mood": "waving" },
+      { "text": "No catching up needed. Just today's chapter.", "mood": "gentle" }
+    ],
+    "daily": [
+      { "text": "One chapter is plenty. Let's light the lamp.", "mood": "reading" },
+      { "text": "Grab a seat. Today's reading is waiting for you.", "mood": "waving" },
+      { "text": "A few quiet minutes with the Word? I'll keep the light on.", "mood": "gentle" },
+      { "text": "Ready when you are.", "mood": "reading" },
+      { "text": "Today's a good day to read something good.", "mood": "cheering" }
+    ],
+    "readToday": [
+      { "text": "Lamp's lit for today. Nice work!", "mood": "cheering" },
+      { "text": "Today's reading: done. Rest easy.", "mood": "gentle" }
+    ],
+    "emptyCircles": [
+      { "text": "Reading's better with friends. Start a Circle and invite your first Lamplighter.", "mood": "waving" }
+    ],
+    "emptyCircle": [
+      { "text": "It's just you so far. Invite your first Lamplighter!", "mood": "waving" }
+    ],
+    "signedOut": [
+      { "text": "Circles keep you and your friends reading together. Sign in to start one.", "mood": "waving" }
+    ]
+  }
+}

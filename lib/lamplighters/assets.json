@@ -1,0 +1,73 @@
+{
+  "avatars": [
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min.2b265ced.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min1",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min1.6feb1f85.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min1.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min2",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min2.6c563a1f.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min2.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min3",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min3.b7d92e15.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min3.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min4",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min4.3e894492.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min4.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min5",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min5.00fffc46.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min5.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min6",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min6.69995769.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min6.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min7",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min7.0bcb991d.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min7.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-avatar-headshot-min8",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-avatar-headshot-min8.f794ebda.webp",
+      "file": "Flat-vector-cartoon-avatar-headshot-min8.png",
+      "alt": null
+    },
+    {
+      "id": "flat-vector-cartoon-mascot-minimal-geom",
+      "src": "/lamplighters/avatars/flat-vector-cartoon-mascot-minimal-geom.040a5b83.webp",
+      "file": "Flat-vector-cartoon-mascot-minimal-geom.png",
+      "alt": null
+    }
+  ],
+  "mascot": [
+    {
+      "id": "flat-vector-cartoon-mascot-for-a-bible-s",
+      "src": "/lamplighters/mascot/flat-vector-cartoon-mascot-for-a-bible-s.b8cc481a.webp",
+      "file": "Flat-vector-cartoon-mascot-for-a-Bible-s.png",
+      "alt": null,
+      "moods": []
+    }
+  ]
+}

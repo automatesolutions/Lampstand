@@ -212,3 +212,28 @@ Follow `/my-tone`. Lampstand rules:
 - [ ] Reduced motion respected.
 - [ ] At most one filled button.
 - [ ] Copy passes `/my-tone`.
+
+## 11. Lamplighters (Circles)
+
+Private, invite-only groups of friends who read together. Same tokens, type and touch sizes as everywhere else, with one **playful layer** (approved 2026-10-29) that applies only to the mascot and Lamplighters moments:
+
+- **Mascot.** The flat lamp character from `assets/mascot`, chosen by mood from its file name (`cheer`, `wave`, `read`, `gentle`). Its flat colors (including the navy) live in the art only; the UI keeps gold and cream. It is decorative (`alt=""`); the words beside it carry the meaning. The art is cropped to its top so a wordmark under the character never shows.
+- **Exclamation marks are allowed** in mascot lines, celebrations and nudge presets ("Nice work!", "Time to light your lamp!"). Everything else keeps §9. Never guilt: missed days get "Welcome back", not a broken-streak warning.
+- **Confetti** only in the milestone sheet: about 28 pieces in leaf gold and the pigments, 1.5–2.4s, once. Hidden with reduced motion. The chapter done card gets a speech bubble, not confetti.
+- **Mascot celebrations** can be turned off on Me (Reading → Mascot celebrations). Off hides the bubble, the milestone sheet and Today's line; empty states keep the mascot.
+
+Components:
+
+**Avatar.** A round image from `assets/avatars` (made small by `npm run assets`), with a 1px `divider` ring. Missing or unchosen: the lamp on `gold-wash`. Sizes 28 (chat header), 32 (feed, chat), 40–44 (rows), 56–84 (sheets).
+
+**Read-today lamp.** A 22px badge on the avatar's corner: lit flame when they've read today, muted outline when not. It only ever means "read today", never what or how much. Always visible to the Circle, whatever the member's sharing choice.
+
+**Avatar picker.** A radio group grid (4 columns, 5 from 420px), each cell at least 64px, the chosen one with `gold-wash`, a 2px `gold` ring and a check. Arrow keys move. A large preview with the name sits above.
+
+**Circle card.** Three stacked avatars, name, "3 of 5 lamps lit today", an unread count pill (`gold-strong`).
+
+**Circle dashboard.** The week strip (lamps + "Your Circle read 18 chapters this week", counting only members who share chapters), Chat (primary) and Nudge all, the members list (avatar with lamp, name, Owner tag, "Read today" / "Not yet today", streak and week count when shared, a bell to nudge), Recently (chapters, milestones, nudges, joins, with 🙏 and 🔥 reactions at 44px), then the Circle's settings. A new Circle shows the mascot asking for the first Lamplighter.
+
+**Nudge sheet.** Preset lines as a radio list, an optional note (140), a preview with both avatars, the daily limits in a footnote.
+
+**Chat.** Full screen like the reader (no tab bar): header with back, name and "Maria is typing…", bubbles (mine `gold-wash` on the right, others `surface-raised` with name and avatar), day separators, verse cards (Literata with a gold rule, always KJV), a composer pinned to the bottom with Share a verse and Send (44px each). Tapping a message opens Copy, Delete, Report and Block.
