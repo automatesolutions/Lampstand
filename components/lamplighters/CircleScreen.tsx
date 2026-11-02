@@ -68,7 +68,11 @@ export function CircleScreen({ id }: { id: string }) {
 
   const [nudging, setNudging] = useState<Person | "all" | null>(null);
   const [member, setMember] = useState<Person | null>(null);
-  const [inviteOpen, setInviteOpen] = useState(false);
+  // A new Circle arrives with ?invite so the invite sheet opens straight away.
+  const [inviteOpen, setInviteOpen] = useState(() => typeof window !== "undefined" && new URLSearchParams(location.search).has("invite"));
+  useEffect(() => {
+    if (new URLSearchParams(location.search).has("invite")) history.replaceState(null, "", location.pathname);
+  }, []);
   const [leaveOpen, setLeaveOpen] = useState(false);
   const [renameOpen, setRenameOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);

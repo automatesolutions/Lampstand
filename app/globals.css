@@ -422,7 +422,226 @@
   animation: typing 1.2s infinite;
 }
 
+/* The mascot says hello: pops up with a little wiggle, then breathes gently while
+   sparkles twinkle and the speech bubble pops in beside it (DESIGN.md §11). */
+@keyframes mascot-hello {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.4);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.08);
+  }
+  55% {
+    transform: translateY(0) scale(1) rotate(-7deg);
+  }
+  70% {
+    transform: rotate(6deg);
+  }
+  85% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes mascot-breathe {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-3px) rotate(-1.5deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(1.5deg);
+  }
+}
+@keyframes mascot-wiggle {
+  0%,
+  100% {
+    transform: none;
+  }
+  20% {
+    transform: translateY(-5px) rotate(-8deg);
+  }
+  45% {
+    transform: translateY(-2px) rotate(7deg);
+  }
+  70% {
+    transform: rotate(-4deg);
+  }
+}
+.mascot-cheer {
+  transform-origin: 50% 100%;
+  animation:
+    mascot-hello 1.1s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    mascot-breathe 3.4s ease-in-out 1.1s infinite;
+}
+.mascot-cheer:hover {
+  animation: mascot-wiggle 0.7s ease-in-out;
+}
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(0);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+  30% {
+    opacity: 0;
+    transform: scale(0.3) rotate(90deg);
+  }
+}
+.mascot-sparkle {
+  opacity: 0;
+  animation: sparkle 2.8s ease-out infinite;
+}
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.85);
+  }
+}
+.mascot-bubble {
+  transform-origin: 0 100%;
+  animation: bubble-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s both;
+}
+
+/* Tap the mascot: a squashy bounce and a handful of stars. */
+@keyframes mascot-boing {
+  0%,
+  100% {
+    transform: none;
+  }
+  25% {
+    transform: translateY(-22%) scale(1.06, 0.96) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(0) scale(1.1, 0.88);
+  }
+  70% {
+    transform: translateY(-6%) rotate(5deg);
+  }
+}
+.mascot-boing {
+  transform-origin: 50% 100%;
+  animation: mascot-boing 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes star-burst {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+  to {
+    opacity: 0;
+    transform: translate(calc(var(--dx) - 50%), calc(var(--dy) - 50%)) scale(1) rotate(180deg);
+  }
+}
+.star-burst {
+  animation: star-burst 0.8s ease-out both;
+}
+
+/* A quick cheer springs up from the bottom of the screen, and drops away again. */
+@keyframes pop-out {
+  0% {
+    opacity: 0;
+    transform: translateY(110%) scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8%) scale(1.04);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes pop-away {
+  to {
+    opacity: 0;
+    transform: translateY(40%) scale(0.85);
+  }
+}
+.mascot-pop {
+  animation: pop-out 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.mascot-pop[data-leaving] {
+  animation: pop-away 0.28s ease-in both;
+}
+
+/* Milestones: the mascot bursts out of a turning glow, with confetti all around. */
+@keyframes mascot-burst-in {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-30deg);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.18) rotate(8deg);
+  }
+  75% {
+    transform: scale(0.95) rotate(-4deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+.mascot-burst-in {
+  animation: mascot-burst-in 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+@keyframes rays-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+.mascot-rays {
+  background: repeating-conic-gradient(color-mix(in oklab, var(--gold) 40%, transparent) 0deg 9deg, transparent 9deg 24deg);
+  mask: radial-gradient(circle, #000 25%, transparent 68%);
+  animation:
+    fade-in 0.6s both,
+    rays-spin 16s linear infinite;
+}
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+}
+.milestone-card {
+  animation: card-rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.fade-in {
+  animation: fade-in 0.3s both;
+}
+@keyframes confetti-burst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--dx) - 50%), calc(var(--dy) - 50%)) rotate(var(--turn));
+  }
+}
+.confetti-burst {
+  opacity: 0;
+  animation: confetti-burst 1.3s cubic-bezier(0.15, 0.7, 0.3, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .mascot-sparkle,
+  .mascot-rays,
+  .star-burst,
+  .confetti-burst {
+    display: none;
+  }
   *,
   *::before,
   *::after {

@@ -219,7 +219,8 @@ Private, invite-only groups of friends who read together. Same tokens, type and 
 
 - **Mascot.** The flat lamp character from `assets/mascot`, chosen by mood from its file name (`cheer`, `wave`, `read`, `gentle`). Its flat colors (including the navy) live in the art only; the UI keeps gold and cream. It is decorative (`alt=""`); the words beside it carry the meaning. The art is cropped to its top so a wordmark under the character never shows.
 - **Exclamation marks are allowed** in mascot lines, celebrations and nudge presets ("Nice work!", "Time to light your lamp!"). Everything else keeps §9. Never guilt: missed days get "Welcome back", not a broken-streak warning.
-- **Confetti** only in the milestone sheet: about 28 pieces in leaf gold and the pigments, 1.5–2.4s, once. Hidden with reduced motion. The chapter done card gets a speech bubble, not confetti.
+- **The mascot pops out.** A finished chapter springs a small cheer up from the bottom (above the tab bar; bottom right on desktop), which leaves after 5s, or stays while hovered. A milestone is a centered card: the mascot bursts out of a turning gold glow with a ring of confetti (36 pieces, leaf gold and the pigments, about 1.3s). Wherever it shows, the mascot says hello with a hop, then breathes. Tap it to make it bounce, throw a few stars and reply with a line from `tap` in content/mascot.json; at milestones a tap throws more confetti. With reduced motion, the confetti, stars and glow are hidden.
+- **Confetti** only at milestones.
 - **Mascot celebrations** can be turned off on Me (Reading → Mascot celebrations). Off hides the bubble, the milestone sheet and Today's line; empty states keep the mascot.
 
 Components:

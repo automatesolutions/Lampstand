@@ -29,7 +29,7 @@ export function CreateCircleSheet({ open, onOpenChange }: { open: boolean; onOpe
       onOpenChange(false);
       setName("");
       setDescription("");
-      router.push(`/circles/${id}`);
+      router.push(`/circles/${id}?invite`);
     } catch (err) {
       setError(friendly(err));
     } finally {
@@ -50,7 +50,7 @@ export function CreateCircleSheet({ open, onOpenChange }: { open: boolean; onOpe
           ]}
         />
         <p className="text-footnote text-text-secondary">
-          {kind === "pair" ? "A 1-on-1 Lamplighter: you and one accountability partner." : "Friends, a small group, your roommates. Invite-only, always private."} You'll invite people next.
+          {kind === "pair" ? "A 1-on-1 Lamplighter: you and one accountability partner." : "Friends, a small group, your roommates. Invite-only, always private."} You’ll invite people next.
         </p>
         <label className="flex flex-col gap-1.5">
           <span className="text-caption text-text-secondary">Name</span>
@@ -73,7 +73,7 @@ export function CreateCircleSheet({ open, onOpenChange }: { open: boolean; onOpe
           </p>
         )}
         <Button type="submit" variant="primary" size="large" disabled={saving}>
-          {saving ? "Starting…" : "Start the Circle"}
+          {saving ? "Starting…" : "Next: invite people"}
         </Button>
       </form>
     </Sheet>
