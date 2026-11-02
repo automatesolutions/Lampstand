@@ -1,7 +1,7 @@
 "use client";
 
-// Marking a chapter read, with the mascot's moments: a short "Nice work!" in the chapter
-// done card, a celebration for milestones (shown by CelebrationHost), and sharing to
+// Marking a chapter read, with the mascot's moments: it pops out with a short "Nice work!",
+// or a big celebration for milestones (both shown by CelebrationHost), and sharing to
 // Circles as each person's sharing choice allows (the database checks it again).
 
 import { useSyncExternalStore } from "react";
@@ -12,9 +12,10 @@ import { mascotMessage, type MascotMessage } from "./assets";
 import { shareProgress } from "./client";
 import { detectMilestones, type Milestone } from "./milestones";
 
+/** A pop-out: a quick cheer, or (with a milestone) the big celebration. */
 export interface Celebration extends MascotMessage {
   id: string;
-  milestone: Milestone;
+  milestone?: Milestone;
 }
 
 let queue: Celebration[] = [];
@@ -37,6 +38,12 @@ export function dismissCelebration() {
   emit();
 }
 
+/** Pops the mascot out with a quick line of encouragement. */
+export function cheer(message: MascotMessage, id = `cheer.${Date.now()}`) {
+  queue = [...queue, { id, ...message }];
+  emit();
+}
+
 export function celebrationFor(m: Milestone, seed: string): MascotMessage {
   if (m.type === "book") return mascotMessage("book", seed, { book: bookByCode(m.book)?.name ?? m.book });
   if (m.type === "streak") return mascotMessage("streak", seed, { days: m.value });
@@ -44,25 +51,23 @@ export function celebrationFor(m: Milestone, seed: string): MascotMessage {
 }
 
 /**
- * Marks the chapter read and returns the short cheer for the chapter done card
- * (null when the mascot is off). Milestones queue a celebration.
+ * Marks the chapter read. The mascot (unless turned off) pops out to cheer, or with a
+ * celebration for each milestone reached.
  */
-export function finishChapter(ref: ChapterRef, version: VersionId): MascotMessage | null {
+export function finishChapter(ref: ChapterRef, version: VersionId): void {
   const before = getState();
   markRead(ref, version);
   const after = getState();
-  if (after.reads.length === before.reads.length) return null; // already read today
+  if (after.reads.length === before.reads.length) return; // already read today
 
   const date = today();
   const milestones = detectMilestones(before, after, ref, date);
   shareProgress("chapter", { book: ref.book, chapter: ref.chapter });
   for (const m of milestones) shareProgress("milestone", m.type === "book" ? { type: "book", book: m.book } : { type: m.type, value: m.value });
 
-  if (!after.prefs.mascot) return null;
+  if (!after.prefs.mascot) return;
   const seed = `${date}.${after.reads.length}`;
-  if (milestones.length) {
-    queue = [...queue, ...milestones.map((m, i) => ({ id: `${seed}.${i}`, milestone: m, ...celebrationFor(m, seed) }))];
-    emit();
-  }
-  return mascotMessage("chapterDone", seed);
+  if (!milestones.length) return cheer(mascotMessage("chapterDone", seed), seed);
+  queue = [...queue, ...milestones.map((m, i) => ({ id: `${seed}.${i}`, milestone: m, ...celebrationFor(m, seed) }))];
+  emit();
 }

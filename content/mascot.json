@@ -40,6 +40,14 @@
       { "text": "Lamp's lit for today. Nice work!", "mood": "cheering" },
       { "text": "Today's reading: done. Rest easy.", "mood": "gentle" }
     ],
+    "tap": [
+      { "text": "Hehe! That tickles.", "mood": "cheering" },
+      { "text": "High five!", "mood": "cheering" },
+      { "text": "Keep shining!", "mood": "cheering" },
+      { "text": "You've got this!", "mood": "cheering" },
+      { "text": "Boing! Still glowing.", "mood": "cheering" },
+      { "text": "I believe in you!", "mood": "waving" }
+    ],
     "emptyCircles": [
       { "text": "Reading's better with friends. Start a Circle and invite your first Lamplighter.", "mood": "waving" }
     ],
