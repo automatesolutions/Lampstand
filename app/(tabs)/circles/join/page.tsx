@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useSyncExternalStore, type FormEvent } from "react";
+import { GoogleSignIn } from "@/components/GoogleSignIn";
 import { Mascot } from "@/components/lamplighters/Mascot";
 import { ProfileSheet } from "@/components/lamplighters/ProfileSheet";
 import { ErrorState, LoadingRows } from "@/components/lamplighters/States";
@@ -111,8 +112,10 @@ export default function JoinPage() {
             </p>
           ) : (
             <form onSubmit={signIn} className="flex w-full flex-col gap-3 text-left" noValidate>
+              <p className="text-callout text-text-secondary">Sign in with the invited address, {p!.email_hint}.</p>
+              <GoogleSignIn next={`/circles/join?token=${token}`} onError={setError} />
               <label className="flex flex-col gap-1.5">
-                <span className="text-caption text-text-secondary">Sign in with the invited email ({p!.email_hint})</span>
+                <span className="text-caption text-text-secondary">Email</span>
                 <input
                   type="email"
                   inputMode="email"

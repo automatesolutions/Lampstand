@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fleuron, Lamp } from "@/components/brand/LampMark";
-import { ButtonLink } from "@/components/ui/Button";
+import { WelcomeActions } from "./WelcomeActions";
 
 export const metadata: Metadata = { title: "Welcome" };
 
@@ -17,12 +17,7 @@ export default function WelcomePage() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-3">
-        <ButtonLink href="/start" variant="primary" size="large">
-          Begin reading
-        </ButtonLink>
-        <p className="text-center text-footnote text-text-secondary">No account needed. Your reading stays on this device.</p>
-      </div>
+      <WelcomeActions />
     </>
   );
 }

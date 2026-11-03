@@ -39,6 +39,10 @@ For Circles (Lamplighters), also in the Supabase dashboard:
 - **Authentication → URL Configuration:** the Redirect URLs entry `https://your-domain/**` also covers invite links (`/auth/callback?next=/circles/join…`).
 - Abuse reports land in the `reports` table (Table Editor). Nobody can read them through the app.
 
+**Sign in with Google** (beside the email link): in Google Cloud, create an OAuth client (APIs & Services → Credentials → Web application) with the authorized redirect URI `https://<project-ref>.supabase.co/auth/v1/callback`. Then in Supabase, Authentication → Sign In / Providers → Google: switch it on and paste the client ID and secret. Until then the button says Google sign-in isn't switched on.
+
+**Emails from your own address:** verify the domain in Resend (it adds DNS records; with Cloudflare it can add them for you), then set `EMAIL_FROM="Lampstand <hello@your-domain>"`. Cloudflare Email Routing only receives mail, so replies to that address still reach your inbox. To send Supabase's sign-in emails the same way, use Resend's SMTP in Authentication → Emails → SMTP Settings (host `smtp.resend.com`, port 465, user `resend`, password: the API key).
+
 ### Deploying (Cloud Run)
 
 - The two `NEXT_PUBLIC_…` values are built into the app, so pass them as build arguments: `--build-arg NEXT_PUBLIC_SUPABASE_URL=… --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=…`.

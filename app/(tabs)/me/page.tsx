@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { PageTitle } from "@/components/ui/NavBar";
 import { ListGroup, ListRow } from "@/components/ui/List";
@@ -58,8 +59,26 @@ export default function MePage() {
         </div>
       </section>
 
+      <section aria-labelledby="maker" className="flex flex-col gap-2">
+        <h2 id="maker" className="px-1 text-eyebrow text-text-secondary">
+          About Lampstand
+        </h2>
+        <div className="flex items-center gap-4 rounded-lg bg-surface-raised p-4 shadow-soft ring-1 ring-divider/60">
+          <Image src="/brand/bezalel.webp" alt="NG-BEZALEL STAINLESS CRAFTERS logo" width={64} height={62} className="shrink-0 rounded-md bg-[#141414]" />
+          <div className="min-w-0 text-subhead">
+            <p>
+              Made by <strong className="font-semibold">ZALEL LABS</strong>. We build software, cybersecurity, and AI products.
+            </p>
+            <p className="mt-1 text-footnote text-text-secondary">ZALEL LABS is part of NG-BEZALEL STAINLESS CRAFTERS.</p>
+          </div>
+        </div>
+        <ListGroup>
+          <ListRow title="Get help" subtitle="Email support@lampstand.dev" icon="mail" chevron href="mailto:support@lampstand.dev?subject=Lampstand%20support" />
+        </ListGroup>
+      </section>
+
       <section className="flex flex-col gap-2 px-1 text-footnote text-text-secondary">
-        <h2 className="text-eyebrow">About</h2>
+        <h2 className="text-eyebrow">Sources</h2>
         <p>King James Version: public domain.</p>
         <p>{NLT_NOTICE}</p>
         <p>

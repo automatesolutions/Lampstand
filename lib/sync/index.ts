@@ -309,6 +309,21 @@ export async function sendSignInLink(email: string, next?: string): Promise<stri
   return error.message || "That email couldn't be sent. Check the address and try again.";
 }
 
+/**
+ * Goes to Google to sign in, then back through /auth/callback (to `next`, if given).
+ * Returns a problem to show, or never returns (the page navigates away).
+ */
+export async function signInWithGoogle(next?: string): Promise<string | null> {
+  const db = supabase();
+  if (!db) return "Accounts aren't set up on this server yet.";
+  const redirect = new URL("/auth/callback", location.origin);
+  if (next?.startsWith("/") && !next.startsWith("//")) redirect.searchParams.set("next", next);
+  const { error } = await db.auth.signInWithOAuth({ provider: "google", options: { redirectTo: redirect.href, queryParams: { prompt: "select_account" } } });
+  if (!error) return null;
+  if (/not enabled|unsupported provider/i.test(error.message)) return "Google sign-in isn't switched on yet. Use your email for now.";
+  return error.message || "Couldn't reach Google. Try again, or use your email.";
+}
+
 export async function signOut() {
   await supabase()?.auth.signOut();
   known = null;

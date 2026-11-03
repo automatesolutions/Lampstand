@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { GoogleSignIn } from "@/components/GoogleSignIn";
 import { Button } from "@/components/ui/Button";
 import { Sheet } from "@/components/ui/Sheet";
 import { accountsEnabled } from "@/lib/supabase/client";
@@ -24,7 +25,7 @@ export function useAccountSummary() {
   return { title: sync.email, subtitle: sync.syncing ? "Syncing…" : sync.error ? sync.error : `Saved to your account · ${ago(sync.lastSynced)}` };
 }
 
-/** Sign in with an emailed link, or, when signed in, sync and sign out. */
+/** Sign in with Google or an emailed link, or, when signed in, sync and sign out. */
 export function AccountSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
   const sync = useSyncStatus();
   const [email, setEmail] = useState("");
@@ -101,7 +102,7 @@ export function AccountSheet({ open, onOpenChange }: { open: boolean; onOpenChan
   }
 
   return (
-    <Sheet open={open} onOpenChange={close} title="Save your progress" description="Sign in with a link sent to your email">
+    <Sheet open={open} onOpenChange={close} title="Save your progress" description="Sign in with Google or your email">
       {sentTo ? (
         <div role="status" className="flex flex-col gap-3 pb-2">
           <p className="text-body">
@@ -114,7 +115,8 @@ export function AccountSheet({ open, onOpenChange }: { open: boolean; onOpenChan
         </div>
       ) : (
         <form onSubmit={submit} className="flex flex-col gap-4 pb-2" noValidate>
-          <p className="text-body">Keep your reading, streak, notes and highlights safe, and on every device. No password: we email you a link.</p>
+          <p className="text-body">Keep your reading, streak, notes and highlights safe, and on every device. No password needed.</p>
+          <GoogleSignIn onError={setError} />
           <label className="flex flex-col gap-1.5">
             <span className="text-caption text-text-secondary">Email</span>
             <input
