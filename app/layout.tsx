@@ -35,6 +35,11 @@ export const metadata: Metadata = {
   description: "Read the Bible daily and understand what you read.",
   applicationName: "Lampstand",
   appleWebApp: { title: "Lampstand", statusBarStyle: "default" },
+  // Link previews need full image URLs. Icons and the preview image are made by
+  // scripts/build-icons.mjs (app/icon.png, app/opengraph-image.png).
+  metadataBase: new URL(process.env.APP_URL || "https://lampstand.dev"),
+  openGraph: { siteName: "Lampstand", type: "website" },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
