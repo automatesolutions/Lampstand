@@ -19,7 +19,7 @@ const TABS: { href: string; label: string; icon: IconName; match: (p: string) =>
 
 /**
  * Bottom tab bar on phones (56px + safe area), side rail from 960px (DESIGN.md §5).
- * `railOnly` is for the reader, which has its own thumb bar on phones.
+ * `railOnly` shows only the desktop rail (no bar on phones). The reader keeps the full bar.
  */
 export function TabBar({ railOnly = false }: { railOnly?: boolean }) {
   // On pages whose address is only known at request time (a Circle), the bar streams

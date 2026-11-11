@@ -287,7 +287,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-[760px] px-gutter pb-[calc(110px+env(safe-area-inset-bottom))] min-[960px]:pb-16">
+      <main className="mx-auto w-full max-w-[760px] px-gutter pb-[calc(57px+61px+40px+env(safe-area-inset-bottom))] min-[960px]:pb-16">
         <header className="flex flex-col items-center gap-1.5 pb-7 pt-10 text-center">
           <p className="text-eyebrow text-text-secondary">{bookName}</p>
           <h1 className="text-numeral text-gold-text">
@@ -531,12 +531,11 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
         </section>
       </main>
 
-      {/* Thumb bar (phones): the reader's controls where the thumb rests, always on screen (DESIGN.md §5.1). */}
+      {/* Thumb bar (phones): the reader's controls, just above the main tab bar, always on screen (DESIGN.md §5.1). */}
       <nav
         aria-label="Reader"
-        className={`glass fixed inset-x-0 bottom-0 z-30 grid grid-cols-[56px_56px_1fr_56px_56px] items-center gap-0.5 border-t border-divider pb-[calc(6px+env(safe-area-inset-bottom))] pl-[max(10px,env(safe-area-inset-left))] pr-[max(10px,env(safe-area-inset-right))] pt-1.5 min-[960px]:hidden`}
+        className={`glass fixed inset-x-0 bottom-[calc(57px+env(safe-area-inset-bottom))] z-30 grid grid-cols-[56px_1fr_56px_56px] items-center gap-0.5 border-t border-divider py-1 pl-[max(10px,env(safe-area-inset-left))] pr-[max(10px,env(safe-area-inset-right))] min-[960px]:hidden`}
       >
-        <ThumbLink href="/" label="Today" icon="house" />
         <ThumbLink href={prevHref} label={prev ? `Previous chapter: ${formatRef(prev)}` : "No previous chapter"} icon="chevron-left" />
         <button
           type="button"
@@ -560,7 +559,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
         aria-label={selected != null ? `Actions for ${formatRef({ ...ref, verse: selected })}` : "Verse actions"}
         aria-hidden={selected == null}
         inert={selected == null}
-        className={`fixed bottom-[calc(76px+env(safe-area-inset-bottom))] left-1/2 z-[35] flex w-[min(520px,calc(100%-32px))] -translate-x-1/2 flex-col gap-2.5 rounded-[22px] bg-surface-raised p-3 shadow-float transition-[translate,opacity] duration-300 ease-out min-[960px]:bottom-6 min-[960px]:ml-[116px] ${
+        className={`fixed bottom-[calc(57px+61px+10px+env(safe-area-inset-bottom))] left-1/2 z-[35] flex w-[min(520px,calc(100%-32px))] -translate-x-1/2 flex-col gap-2.5 rounded-[22px] bg-surface-raised p-3 shadow-float transition-[translate,opacity] duration-300 ease-out min-[960px]:bottom-6 min-[960px]:ml-[116px] ${
           selected == null ? "pointer-events-none translate-y-[140%] opacity-0" : ""
         }`}
       >
@@ -641,7 +640,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   );
 }
 
-function ThumbLink({ href, label, icon }: { href: string | null; label: string; icon: "house" | "chevron-left" | "chevron-right" }) {
+function ThumbLink({ href, label, icon }: { href: string | null; label: string; icon: "chevron-left" | "chevron-right" }) {
   if (!href)
     return (
       <span aria-hidden="true" className="grid h-[52px] place-items-center text-text-tertiary">

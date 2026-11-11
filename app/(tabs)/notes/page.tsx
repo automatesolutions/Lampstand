@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useId, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import { PageTitle } from "@/components/ui/NavBar";
 import { Icon } from "@/components/ui/Icon";
 import { BOOKS, bookIndex } from "@/lib/bible/books";
@@ -15,6 +15,44 @@ const SWATCH: Record<HighlightColor, { label: string; fill: string }> = {
   sage: { label: "Green", fill: "var(--pg-history)" },
   rose: { label: "Rose", fill: "var(--pg-gospels)" },
 };
+
+// Highlighted verse text, KJV (public domain) from /api/verse, kept for this visit.
+const verseCache = new Map<string, Promise<string | null>>();
+function kjvVerse(book: string, chapter: number, verse: number): Promise<string | null> {
+  const key = `${book}.${chapter}.${verse}`;
+  let p = verseCache.get(key);
+  if (!p) {
+    p = fetch(`/api/verse/${book}/${chapter}/${verse}`)
+      .then((r) => (r.ok ? (r.json() as Promise<{ text?: string }>) : null))
+      .then((d) => d?.text ?? null)
+      .catch(() => null);
+    p.then((t) => t == null && verseCache.delete(key)); // try again next time (offline)
+    verseCache.set(key, p);
+  }
+  return p;
+}
+
+/** The words of a highlighted verse (or range), so the row shows what was highlighted. Nothing when offline. */
+function HighlightedText({ book, chapter, verseStart, verseEnd }: { book: string; chapter: number; verseStart: number; verseEnd: number }) {
+  const [text, setText] = useState<string | null>(null);
+  useEffect(() => {
+    let live = true;
+    const nums = Array.from({ length: Math.min(verseEnd - verseStart + 1, 10) }, (_, i) => verseStart + i);
+    Promise.all(nums.map((n) => kjvVerse(book, chapter, n))).then((parts) => {
+      const t = parts.filter(Boolean).join(" ");
+      if (live && t) setText(t);
+    });
+    return () => {
+      live = false;
+    };
+  }, [book, chapter, verseStart, verseEnd]);
+  if (!text) return null;
+  return (
+    <span className="font-scripture text-[1.0625rem] leading-[1.6] text-text">
+      &ldquo;{text}&rdquo; <span className="font-sans text-footnote text-text-secondary">KJV</span>
+    </span>
+  );
+}
 
 const byBook = <T extends { book: string }>(items: T[]) => {
   const out = new Map<string, T[]>();
@@ -140,9 +178,10 @@ export default function NotesPage() {
                             {ref}
                             <span className="sr-only">, {SWATCH[h.color].label.toLowerCase()} highlight</span>
                           </span>
+                          <HighlightedText book={h.book} chapter={h.chapter} verseStart={h.verseStart} verseEnd={h.verseEnd} />
                           {h.summary ? (
                             <>
-                              <span className="text-body">{h.summary}</span>
+                              <span className="border-l-2 border-divider pl-3 text-callout">{h.summary}</span>
                               <span className="text-footnote text-text-secondary">Summary written by AI to help you remember this verse.</span>
                             </>
                           ) : (

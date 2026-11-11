@@ -104,8 +104,8 @@ The bottom third of the screen is the easy zone; the top corners are the hardest
 - **Tab bar** at the bottom, 56px + safe area, labels always shown.
 - **Today:** the lamp card is a compact strip so the passage sits high, and **Continue reading** is `position: sticky` just above the tab bar.
 - **Read:** the **Go to** search bar floats above the tab bar (§5.3).
-- **Reader:** the tab bar steps aside. A **thumb bar** replaces it: Home, Previous, chapter picker ("John 3 ▾"), Text, Next. Each 52px tall, at least 56px wide. Top-right reader icons are desktop only.
-- **Bars stay put.** The reader's top bar and thumb bar, and the tab bar on every other screen, stay on screen while you scroll, so the menu is always one tap away. Pages keep bottom padding (bar height + safe area + 40px) so the last row is never covered.
+- **Reader:** the tab bar stays (Today, Read, Notes, Circles, Me), so every tab is one tap away while reading. Just above it sits the reader's **thumb bar**: Previous, chapter picker ("John 3 ▾"), Text, Next. Each 52px tall, at least 56px wide. Top-right reader icons are desktop only.
+- **Bars stay put.** The tab bar (on every screen, the reader included), the reader's top bar and its thumb bar stay on screen while you scroll, so the menu is always one tap away. Pages keep bottom padding (bar height + safe area + 40px) so the last row is never covered.
 - **Swipe** sideways on the text (more than 70px, mostly horizontal) for the next or previous chapter.
 - **Sheets** open from the bottom on phones, centered from 640px, with a Close button, Escape, and focus returned to the trigger.
 - **The verse bar** (highlight, note, copy) docks at the bottom above the thumb bar, never as a popover near the top.
@@ -180,7 +180,7 @@ One box finds anything and runs any action, after Raycast's command palette, siz
 
 **Verse bar.** Reference and Close, four highlight swatches (44px, check when on), Note, Copy.
 
-**Highlights on Notes.** Below the notes, a Highlights section grouped by book like notes. Each row: the color dot (named for screen readers), the reference ("John 3:16"), and a two- or three-sentence summary of that verse with the footnote "Summary written by AI to help you remember this verse." Tapping a row opens the reader at that verse. The summary is written in the background when the highlight is made, from the verse's KJV text only (`app/api/highlight-summary`, cached per verse for every reader); until then the row says one will appear. A new color keeps the summary; removing the highlight removes it. Summaries sync with the account and are never shared with Circles.
+**Highlights on Notes.** Below the notes, a Highlights section grouped by book like notes. Each row: the color dot (named for screen readers), the reference ("John 3:16"), the highlighted words in Literata (KJV, marked "KJV"; left out when offline), and a two- or three-sentence summary under a thin rule of that verse with the footnote "Summary written by AI to help you remember this verse." Tapping a row opens the reader at that verse. The summary is written in the background when the highlight is made, from the verse's KJV text only (`app/api/highlight-summary`, cached per verse for every reader); until then the row says one will appear. A new color keeps the summary; removing the highlight removes it. Summaries sync with the account and are never shared with Circles.
 
 **Chapter done.** Replaces the Mark as read button in place: the lamp kindles, "John 3 is read", today's count, then Add a note and the next chapter, then, under a rule, three plain actions: "Explain in depth", "Pray over what you read" and "Make a song" (stacked on phones, side by side from 480px, wrapping as needed). Make a song appears only here, after Mark as read: never on the Mark as read button, Today or Go to.
 

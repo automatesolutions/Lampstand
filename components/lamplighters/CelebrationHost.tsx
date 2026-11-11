@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
@@ -50,6 +51,8 @@ function CheerPop({ c }: { c: Celebration }) {
   const [shown, tap] = useReply(c);
   const [leaving, setLeaving] = useState(false);
   const [held, setHeld] = useState(false);
+  // In the reader the thumb bar sits above the tab bar, so the cheer pops up higher.
+  const onReader = usePathname().startsWith("/read/");
 
   useEffect(() => {
     if (held || leaving) return;
@@ -64,7 +67,7 @@ function CheerPop({ c }: { c: Celebration }) {
   }, [leaving]);
 
   return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-[calc(env(safe-area-inset-bottom)+84px)] z-40 flex justify-center px-4 min-[960px]:bottom-8 min-[960px]:justify-end min-[960px]:px-8">
+    <div className={`pointer-events-none fixed inset-x-0 ${onReader ? "bottom-[calc(env(safe-area-inset-bottom)+144px)]" : "bottom-[calc(env(safe-area-inset-bottom)+84px)]"} z-40 flex justify-center px-4 min-[960px]:bottom-8 min-[960px]:justify-end min-[960px]:px-8`}>
       <div
         role="status"
         data-leaving={leaving || undefined}
