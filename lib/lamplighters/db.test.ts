@@ -264,3 +264,110 @@ describe("chat limits", () => {
     await expect(t.as(owner, "insert into public.messages (circle_id, sender_id, body) values ($1, $2, 'x')", [c, owner])).rejects.toThrow("rate_limited:message_minute");
   });
 });
+
+describe("notifications", () => {
+  const nudge = (from: string, c: string, to: string | null, note: string | null = "Psalm 1?") =>
+    t.as<{ sent: number }>(from, "select public.send_nudge($1, $2, 'Time to light your lamp!', $3) as sent", [c, to, note]).then((r) => r[0].sent);
+  const say = (from: string, c: string, body: string) =>
+    t.as<{ id: string }>(from, "insert into public.messages (circle_id, sender_id, body) values ($1, $2, $3) returning id", [c, from, body]).then((r) => r[0].id);
+  const feed = (who: string) => t.as<{ kind: string; body: string; sender_id: string; read_at: string | null }>(who, "select kind, body, sender_id, read_at from public.my_notifications()");
+  const claim = (sender: string, c: string, message: string | null = null) =>
+    t.admin<{ email: string; kind: string; body: string; note: string | null; circle_name: string; sender_name: string }>(
+      "select * from public.claim_notification_emails($1, $2, $3)",
+      [sender, c, message],
+    );
+  const emailOn = (who: string, col: "nudge_email" | "message_email") => t.admin(`update public.profiles set ${col} = true where id = $1`, [who]);
+
+  it("notifies every other member of a chat message, never the sender, and skips muted and blocked people", async () => {
+    const owner = await t.user(email("ana"));
+    const c = await circle(owner);
+    const [bob, carol, dan] = [await join(owner, c, "bob"), await join(owner, c, "carol"), await join(owner, c, "dan")];
+    await t.as(carol, "insert into public.nudge_mutes (user_id, muted_user_id) values ($1, $2)", [carol, owner]);
+    await t.as(dan, "insert into public.blocks (blocker_id, blocked_id) values ($1, $2)", [dan, owner]);
+
+    await say(owner, c, "Psalm 23 tonight?");
+    expect(await feed(bob)).toEqual([{ kind: "message", body: "Psalm 23 tonight?", sender_id: owner, read_at: null }]);
+    expect(await feed(owner)).toHaveLength(0);
+    expect(await feed(carol)).toHaveLength(0);
+    expect(await feed(dan)).toHaveLength(0);
+    // Nobody else can read them, not even the sender.
+    expect(await t.as(owner, "select * from public.notifications")).toHaveLength(0);
+    await expect(t.as(bob, "insert into public.notifications (user_id, kind, circle_id, sender_id) values ($1, 'nudge', $2, $3)", [bob, c, owner])).rejects.toThrow();
+
+    // Opening the chat marks them read.
+    await t.as(bob, "update public.circle_members set last_read_message_at = now() where circle_id = $1 and user_id = $2", [c, bob]);
+    expect((await feed(bob))[0].read_at).not.toBeNull();
+  });
+
+  it("notifies one person for a direct nudge, and only the people a Circle nudge reached", async () => {
+    const owner = await t.user(email("ana"));
+    const c = await circle(owner);
+    const [bob, carol, dan, eve] = [await join(owner, c, "bob"), await join(owner, c, "carol"), await join(owner, c, "dan"), await join(owner, c, "eve")];
+    await readToday(dan);
+    await t.as(eve, "insert into public.nudge_mutes (user_id, muted_circle_id) values ($1, $2)", [eve, c]);
+
+    expect(await nudge(owner, c, bob)).toBe(1);
+    expect((await feed(bob)).map((n) => n.kind)).toEqual(["nudge"]);
+    expect(await feed(carol)).toHaveLength(0);
+
+    // Bob had a nudge today and Dan already read: only Carol (Eve muted the Circle).
+    await nudge(owner, c, null);
+    expect(await feed(carol)).toHaveLength(1);
+    expect(await feed(bob)).toHaveLength(1);
+    expect(await feed(dan)).toHaveLength(0);
+    expect(await feed(eve)).toHaveLength(0);
+
+    // Opening the notification marks the nudge read too.
+    await t.as(carol, "update public.notifications set read_at = now() where user_id = $1", [carol]);
+    const [n] = await t.as<{ read_at: string | null }>(carol, "select read_at from public.my_nudges()");
+    expect(n.read_at).not.toBeNull();
+  });
+
+  it("claims emails once, only for people who turned them on, for one person and for the Circle", async () => {
+    const owner = await t.user(email("ana"));
+    const c = await circle(owner);
+    const [bob, carol, dan] = [await join(owner, c, "bob"), await join(owner, c, "carol"), await join(owner, c, "dan")];
+    await t.admin("update public.profiles set display_name = 'Ana' where id = $1", [owner]);
+    await emailOn(bob, "nudge_email");
+    await emailOn(carol, "nudge_email");
+    await emailOn(carol, "message_email");
+    await t.as(dan, "insert into public.nudge_mutes (user_id, muted_user_id) values ($1, $2)", [dan, owner]);
+    await emailOn(dan, "nudge_email");
+
+    // One person.
+    await nudge(owner, c, bob, null);
+    const one = await claim(owner, c);
+    expect(one).toEqual([expect.objectContaining({ kind: "nudge", email: expect.stringContaining("bob"), body: "Time to light your lamp!", note: null, circle_name: "Morning Lamps", sender_name: "Ana" })]);
+    expect(await claim(owner, c)).toHaveLength(0); // retried: nothing twice
+
+    // The whole Circle: Bob was already nudged; Dan muted Ana (skipped, never emailed).
+    await nudge(owner, c, null);
+    const all = await claim(owner, c);
+    expect(all.map((r) => r.email)).toEqual([expect.stringContaining("carol")]);
+    expect(all[0].note).toBe("Psalm 1?");
+    expect(await claim(owner, c)).toHaveLength(0);
+
+    // Chat: only Carol wants message emails, and never the sender.
+    const m = await say(owner, c, "Who's in for John 1?");
+    const chat = await claim(owner, c, m);
+    expect(chat).toEqual([expect.objectContaining({ kind: "message", email: expect.stringContaining("carol"), body: "Who's in for John 1?" })]);
+    expect(await claim(owner, c, m)).toHaveLength(0);
+    const bobsMessage = await say(bob, c, "Me!");
+    expect((await claim(bob, c, bobsMessage)).map((r) => r.email)).toEqual([expect.stringContaining("carol")]);
+
+    // Only the server may claim.
+    await expect(t.as(owner, "select * from public.claim_notification_emails($1, $2, null)", [owner, c])).rejects.toThrow(/permission denied/);
+  });
+
+  it("hides deleted messages and people blocked later", async () => {
+    const owner = await t.user(email("ana"));
+    const c = await circle(owner);
+    const bob = await join(owner, c, "bob");
+    const m = await say(owner, c, "oops");
+    await say(owner, c, "hello");
+    await t.as(owner, "select public.delete_message($1)", [m]);
+    expect((await feed(bob)).map((n) => n.body)).toEqual(["hello"]);
+    await t.as(bob, "insert into public.blocks (blocker_id, blocked_id) values ($1, $2)", [bob, owner]);
+    expect(await feed(bob)).toHaveLength(0);
+  });
+});

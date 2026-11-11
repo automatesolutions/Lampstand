@@ -63,6 +63,25 @@ async function all<T>(db: SupabaseClient, table: string, select: string): Promis
 
 type Row = Record<string, unknown>;
 
+// Highlight summaries need supabase/migrations/0007. Until it's run, sync works without them.
+let summaryColumn = true;
+const missingColumn = (e: unknown) => {
+  const err = e as { code?: string; message?: string } | null;
+  return err?.code === "42703" || err?.code === "PGRST204" || /summary/.test(err?.message ?? "");
+};
+
+async function pullHighlights(db: SupabaseClient): Promise<Row[]> {
+  if (summaryColumn) {
+    try {
+      return await all<Row>(db, "highlights", "id, book, chapter, verse_start, verse_end, color, created_at, summary");
+    } catch (e) {
+      if (!missingColumn(e)) throw e;
+      summaryColumn = false;
+    }
+  }
+  return all<Row>(db, "highlights", "id, book, chapter, verse_start, verse_end, color, created_at");
+}
+
 async function pull(db: SupabaseClient): Promise<Remote> {
   const [profile, goals, position, reads, notes, highlights, deletions] = await Promise.all([
     db.from("profiles").select("*").eq("id", userId!).maybeSingle(),
@@ -70,7 +89,7 @@ async function pull(db: SupabaseClient): Promise<Remote> {
     db.from("reading_position").select("*").eq("user_id", userId!).maybeSingle(),
     all<Row>(db, "chapter_reads", "book, chapter, version, read_on, completed_at"),
     all<Row>(db, "notes", "id, book, chapter, verse_start, verse_end, body, created_at, updated_at"),
-    all<Row>(db, "highlights", "id, book, chapter, verse_start, verse_end, color, created_at"),
+    pullHighlights(db),
     all<Row>(db, "deletions", "kind, item_id"),
   ]);
   if (profile.error) throw profile.error;
@@ -99,6 +118,7 @@ async function pull(db: SupabaseClient): Promise<Remote> {
       verseEnd: Number(h.verse_end),
       color: h.color as HighlightColor,
       createdAt: iso(h.created_at as string)!,
+      summary: typeof h.summary === "string" ? h.summary : null,
     })),
     position: pos ? { book: String(pos.book), chapter: Number(pos.chapter), verse: Number(pos.verse), version: pos.version as VersionId, updatedAt: iso(pos.updated_at as string) } : null,
     settings:
@@ -147,7 +167,14 @@ async function push(db: SupabaseClient) {
   await upsert(db, "chapter_reads", c.reads.map((r) => ({ user_id, book: r.book, chapter: r.chapter, version: r.version, read_on: r.readOn, completed_at: r.completedAt })), "user_id,book,chapter,read_on", true);
   await upsert(db, "daily_goals", c.goals.map((g) => ({ user_id, chapters_per_day: g.chaptersPerDay, effective_from: g.effectiveFrom })), "user_id,effective_from");
   await upsert(db, "notes", c.notes.map((n) => ({ id: n.id, user_id, book: n.book, chapter: n.chapter, verse_start: n.verseStart, verse_end: n.verseEnd, body: n.body, created_at: n.createdAt, updated_at: n.updatedAt })), "id");
-  await upsert(db, "highlights", c.highlights.map((h) => ({ id: h.id, user_id, book: h.book, chapter: h.chapter, verse_start: h.verseStart, verse_end: h.verseEnd, color: h.color, created_at: h.createdAt })), "user_id,book,chapter,verse_start");
+  const highlightRows = c.highlights.map((h) => ({ id: h.id, user_id, book: h.book, chapter: h.chapter, verse_start: h.verseStart, verse_end: h.verseEnd, color: h.color, created_at: h.createdAt, ...(summaryColumn ? { summary: h.summary ?? null } : {}) }));
+  try {
+    await upsert(db, "highlights", highlightRows, "user_id,book,chapter,verse_start");
+  } catch (e) {
+    if (!summaryColumn || !missingColumn(e)) throw e;
+    summaryColumn = false;
+    await upsert(db, "highlights", highlightRows.map(({ summary: _s, ...r }) => r), "user_id,book,chapter,verse_start"); // eslint-disable-line @typescript-eslint/no-unused-vars
+  }
   if (c.position) {
     const p = c.position;
     await upsert(db, "reading_position", [{ user_id, book: p.book, chapter: p.chapter, verse: p.verse, version: p.version, updated_at: p.updatedAt ?? new Date().toISOString() }], "user_id");

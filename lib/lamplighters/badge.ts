@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase/client";
 import { useSyncStatus } from "@/lib/sync";
-import { myCircles, myNudges, useLampVersion } from "./client";
+import { myCircles, myNotifications, myNudges, useLampVersion } from "./client";
 
-/** New nudges plus unread messages, for the dot on the Circles tab. 0 when signed out. */
+/** Unread notifications (chat messages and nudges), for the dot on the Circles tab. 0 when signed out. */
 export function useCirclesBadge(): number {
   const { userId } = useSyncStatus();
   const v = useLampVersion();
@@ -15,10 +15,14 @@ export function useCirclesBadge(): number {
     if (!userId || !supabase()) return;
     let live = true;
     const check = () =>
-      Promise.all([myNudges(), myCircles()]).then(
-        ([n, c]) => live && setCount(n.filter((x) => !x.read_at).length + c.reduce((s, x) => s + x.unread_count, 0)),
-        () => {}, // before migration 0005, or offline: no dot
-      );
+      myNotifications()
+        .then((n) => n.filter((x) => !x.read_at).length)
+        // Before migration 0006: new nudges plus unread messages, as before.
+        .catch(() => Promise.all([myNudges(), myCircles()]).then(([n, c]) => n.filter((x) => !x.read_at).length + c.reduce((s, x) => s + x.unread_count, 0)))
+        .then(
+          (total) => live && setCount(total),
+          () => {}, // before migration 0005, or offline: no dot
+        );
     check();
     const onVisible = () => document.visibilityState === "visible" && check();
     document.addEventListener("visibilitychange", onVisible);

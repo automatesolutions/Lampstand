@@ -8,7 +8,8 @@ import { Avatar } from "./Avatar";
 import { timeAgo } from "./States";
 
 /** Nudges sent to me. Opening the list marks them read. */
-export function NudgeInbox({ nudges, userId, onChange }: { nudges: Nudge[]; userId: string; onChange: () => void }) {
+/** `shown`: a nudge opened from Notifications, outlined for a moment. */
+export function NudgeInbox({ nudges, userId, onChange, shown = null }: { nudges: Nudge[]; userId: string; onChange: () => void; shown?: string | null }) {
   const [muting, setMuting] = useState<Nudge | null>(null);
   const [status, setStatus] = useState("");
   const unread = nudges.filter((n) => !n.read_at);
@@ -38,8 +39,8 @@ export function NudgeInbox({ nudges, userId, onChange }: { nudges: Nudge[]; user
         )}
       </div>
       <ul className="overflow-hidden rounded-lg bg-surface-raised shadow-soft ring-1 ring-divider/60">
-        {nudges.slice(0, 6).map((n) => (
-          <li key={n.id} className={`relative flex gap-3 px-4 py-3.5 after:absolute after:inset-x-4 after:bottom-0 after:h-px after:bg-divider last:after:hidden ${n.read_at ? "" : "bg-gold-wash/40"}`}>
+        {nudges.slice(0, shown && !nudges.slice(0, 6).some((n) => n.id === shown) ? 30 : 6).map((n) => (
+          <li key={n.id} id={`nudge-${n.id}`} className={`relative flex scroll-mt-24 gap-3 px-4 py-3.5 after:absolute after:inset-x-4 after:bottom-0 after:h-px after:bg-divider last:after:hidden ${n.read_at ? "" : "bg-gold-wash/40"} ${shown === n.id ? "outline-2 -outline-offset-2 outline-gold" : ""}`}>
             <Avatar id={n.sender_avatar} size={40} />
             <div className="min-w-0 flex-1">
               <p className="text-subhead text-text-secondary">
@@ -62,7 +63,7 @@ export function NudgeInbox({ nudges, userId, onChange }: { nudges: Nudge[]; user
       <Sheet open={!!muting} onOpenChange={(o) => !o && setMuting(null)} title="Mute nudges" description="Stop nudges without telling anyone">
         {muting && (
           <div className="flex flex-col gap-2.5 pb-2">
-            <p className="text-body text-text-secondary">They won&apos;t know. You can turn nudges back on from Me.</p>
+            <p className="text-body text-text-secondary">You won&apos;t get their nudges or message alerts. Their messages still show in the chat. They won&apos;t know, and you can turn this off on Me.</p>
             <Button onClick={() => mute({ user: muting.sender_id }, `nudges from ${muting.sender_name}`)}>Mute {muting.sender_name}</Button>
             <Button onClick={() => mute({ circle: muting.circle_id }, `nudges from ${muting.circle_name}`)}>Mute all of {muting.circle_name}</Button>
           </div>

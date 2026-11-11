@@ -2,7 +2,7 @@ import "server-only";
 import type Anthropic from "@anthropic-ai/sdk";
 import type { MessageStream } from "@anthropic-ai/sdk/lib/MessageStream";
 
-// Shared by the Claude API routes (Pray, Explain).
+// Shared by the Claude API routes (Pray, Explain, highlight summaries, songs).
 
 export const MODEL = "claude-sonnet-5-5";
 
@@ -10,11 +10,12 @@ export const MODEL = "claude-sonnet-5-5";
 const WINDOW_MS = 10 * 60_000;
 const hits = new Map<string, number[]>();
 
-export function rateLimited(req: Request, bucket: string, limit: number) {
+/** True when this address made `limit` requests in the window (10 minutes unless given). */
+export function rateLimited(req: Request, bucket: string, limit: number, windowMs = WINDOW_MS) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("x-real-ip") || "local";
   const key = `${bucket}:${ip}`;
   const now = Date.now();
-  const recent = (hits.get(key) ?? []).filter((t) => now - t < WINDOW_MS);
+  const recent = (hits.get(key) ?? []).filter((t) => now - t < windowMs);
   if (recent.length >= limit) return true;
   recent.push(now);
   hits.set(key, recent);

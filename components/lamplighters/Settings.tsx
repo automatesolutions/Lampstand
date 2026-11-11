@@ -52,7 +52,7 @@ export function LamplighterSettings() {
   async function unmuteAll() {
     try {
       for (const m of mutes.data ?? []) await setMute(uid, m.muted_user_id ? { user: m.muted_user_id } : { circle: m.muted_circle_id! }, false);
-      setStatus("Nudges are back on from everyone.");
+      setStatus("Nudges and message alerts are back on from everyone.");
     } catch (e) {
       setStatus(friendly(e));
     }
@@ -94,13 +94,20 @@ export function LamplighterSettings() {
           onClick={() => save({ nudge_email: !p.nudge_email }, p.nudge_email ? "Nudge emails are off." : "Nudges will be emailed to you too.")}
         />
         <ListRow
+          title="Email me Circle messages"
+          subtitle="Besides the in-app notification"
+          icon="mail"
+          selected={p.message_email}
+          onClick={() => save({ message_email: !p.message_email }, p.message_email ? "Message emails are off." : "Circle messages will be emailed to you too.")}
+        />
+        <ListRow
           title="Show my email to my Circles"
           subtitle={p.show_email ? "Members can see your email" : "Hidden. Members see only your name"}
           icon="user"
           selected={p.show_email}
           onClick={() => save({ show_email: !p.show_email }, p.show_email ? "Your email is hidden." : "Your Circles can see your email.")}
         />
-        {muteCount > 0 && <ListRow title="Turn muted nudges back on" subtitle={`${muteCount} muted`} icon="bell" onClick={unmuteAll} />}
+        {muteCount > 0 && <ListRow title="Turn muted people back on" subtitle={`${muteCount} muted`} icon="bell" onClick={unmuteAll} />}
         <ListRow title={<span className="text-danger">Delete account</span>} icon="trash" onClick={() => setDeleteOpen(true)} />
       </ListGroup>
       <p role="status" className="-mt-6 min-h-5 px-1 text-footnote text-text-secondary">

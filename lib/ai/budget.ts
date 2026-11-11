@@ -2,12 +2,12 @@ import "server-only";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { costUsd, type Usage } from "./cost";
 
-// Daily spending cap for the Claude API (Pray and Explain). Totals are kept in
+// Daily spending cap for the Claude API (Pray, Explain and highlight summaries). Totals are kept in
 // Supabase (ai_usage) so every Cloud Run instance shares them; without the
 // secret key it falls back to this instance's memory, which is weaker but safe.
 // Set DAILY_AI_BUDGET_USD to change the cap (default $2 a day, UTC).
 
-export type Feature = "prayer" | "explain";
+export type Feature = "prayer" | "explain" | "highlight" | "song";
 
 const budget = () => {
   const n = Number(process.env.DAILY_AI_BUDGET_USD ?? 2);

@@ -46,3 +46,26 @@ describe("changesToPush", () => {
     expect(c.deletedNotes).toEqual(["b"]);
   });
 });
+
+describe("highlight summaries", () => {
+  const at = "2026-11-01T00:00:00Z";
+  it("keeps a summary written on either side for the same highlight", () => {
+    const local: AppState = { ...DEFAULT_STATE, highlights: [hl("a", "gold", at)] };
+    const merged = mergeState(local, { ...empty(), highlights: [{ ...hl("a", "gold", at), summary: "God loves the world." }] });
+    expect(merged.highlights[0].summary).toBe("God loves the world.");
+
+    const local2: AppState = { ...DEFAULT_STATE, highlights: [{ ...hl("a", "gold", at), summary: "Written here." }] };
+    expect(mergeState(local2, { ...empty(), highlights: [hl("a", "gold", at)] }).highlights[0].summary).toBe("Written here.");
+  });
+
+  it("uploads a summary the account doesn't have yet", () => {
+    const local: AppState = { ...DEFAULT_STATE, highlights: [{ ...hl("a", "gold", at), summary: "New." }] };
+    expect(changesToPush(local, { ...empty(), highlights: [hl("a", "gold", at)] }).highlights).toHaveLength(1);
+    expect(changesToPush(local, { ...empty(), highlights: [{ ...hl("a", "gold", at), summary: "New." }] }).highlights).toHaveLength(0);
+  });
+
+  it("drops the summary with a removed highlight", () => {
+    const remote = { ...empty(), highlights: [{ ...hl("a", "gold", at), summary: "Gone." }], deleted: { notes: new Set<string>(), highlights: new Set(["a"]) } };
+    expect(mergeState({ ...DEFAULT_STATE, highlights: [] }, remote).highlights).toHaveLength(0);
+  });
+});

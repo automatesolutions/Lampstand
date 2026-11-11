@@ -2,7 +2,8 @@
 
 // Lamplighters from the browser. Reads and most writes go straight to Supabase, where
 // row-level security and the functions in supabase/migrations/0005 enforce every rule;
-// invites, nudges (they may send email) and deleting an account go through /api.
+// invites, nudges and chat messages (they may send email) and deleting an account go
+// through /api.
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { supabase } from "@/lib/supabase/client";
@@ -120,13 +121,24 @@ export interface LampProfile {
   avatar_id: string | null;
   share_level: ShareLevel;
   nudge_email: boolean;
+  /** Email me Circle chat messages (supabase/migrations/0006). */
+  message_email: boolean;
   show_email: boolean;
 }
 
 export async function getProfile(userId: string): Promise<LampProfile> {
-  const { data, error } = await db().from("profiles").select("display_name, avatar_id, share_level, nudge_email, show_email").eq("id", userId).maybeSingle();
+  // "*" so a server without migration 0006 (no message_email yet) still loads.
+  const { data, error } = await db().from("profiles").select("*").eq("id", userId).maybeSingle();
   if (error) throw new LampError(error.message);
-  return (data as LampProfile | null) ?? { display_name: null, avatar_id: null, share_level: "none", nudge_email: false, show_email: false };
+  const p = (data ?? {}) as Partial<LampProfile>;
+  return {
+    display_name: p.display_name ?? null,
+    avatar_id: p.avatar_id ?? null,
+    share_level: p.share_level ?? "none",
+    nudge_email: p.nudge_email === true,
+    message_email: p.message_email === true,
+    show_email: p.show_email === true,
+  };
 }
 
 export async function updateProfile(userId: string, patch: Partial<LampProfile>) {
@@ -290,6 +302,38 @@ export async function setMute(userId: string, target: { user: string } | { circl
   changed();
 }
 
+// ---- Notifications ------------------------------------------------------------------
+
+/** One chat message or nudge that reached me (supabase/migrations/0006). */
+export interface LampNotification {
+  id: string;
+  kind: "message" | "nudge";
+  circle_id: string;
+  circle_name: string;
+  sender_id: string;
+  sender_name: string;
+  sender_avatar: string | null;
+  message_id: string | null;
+  nudge_id: string | null;
+  /** The message text, or the nudge line. Null for a shared verse with no text. */
+  body: string | null;
+  verse_ref: string | null;
+  note: string | null;
+  to_circle: boolean;
+  created_at: string;
+  read_at: string | null;
+}
+
+export const myNotifications = () => rpc<LampNotification[]>("my_notifications", { p_limit: 50 });
+
+/** Marks them read; a nudge's notification marks the nudge read too (in the database). */
+export async function markNotificationsRead(ids: string[]) {
+  if (!ids.length) return;
+  const { error } = await db().from("notifications").update({ read_at: new Date().toISOString() }).in("id", ids).is("read_at", null);
+  if (error) throw new LampError(error.message);
+  changed();
+}
+
 // ---- Activity and reactions ---------------------------------------------------------
 
 export interface Activity {
@@ -358,11 +402,12 @@ export async function getMessage(id: string): Promise<Message | null> {
   return (data as Message | null) ?? null;
 }
 
-export async function sendMessage(circleId: string, senderId: string, body: string, verse: Message["verse"] = null): Promise<Message> {
-  const { data, error } = await db().from("messages").insert({ circle_id: circleId, sender_id: senderId, body: body || null, verse }).select(MESSAGE_COLUMNS).single();
-  if (error) throw new LampError(error.message);
-  return data as Message;
-}
+/**
+ * Posts through the server, which notifies the other members and emails those who
+ * asked. `id` is chosen here: sending again with the same id (a retry) never posts twice.
+ */
+export const sendMessage = (id: string, circleId: string, body: string, verse: Message["verse"] = null) =>
+  api<Message>("/api/lamplighters/message", { id, circleId, body, verse });
 
 export const deleteMessage = (id: string) => rpc<void>("delete_message", { p_message: id });
 export const reportMessage = (id: string, reason: string) => rpc<void>("report_message", { p_message: id, p_reason: reason || null });

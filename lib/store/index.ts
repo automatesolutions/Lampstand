@@ -26,6 +26,12 @@ export interface Highlight {
   verseEnd: number;
   color: HighlightColor;
   createdAt: string;
+  /**
+   * A few plain sentences on what the verse says, written by AI from that verse alone
+   * (app/api/highlight-summary) to help the reader remember it. Empty until written.
+   * Never shared with Circles.
+   */
+  summary?: string | null;
 }
 
 export interface ChapterRead extends ChapterRef {
@@ -289,14 +295,30 @@ export function deleteNote(id: string) {
   update((s) => ({ ...s, notes: s.notes.filter((n) => n.id !== id) }));
 }
 
-/** One color per verse; the same color again removes it. */
+/**
+ * One color per verse; the same color again removes it (and its summary). A new color
+ * keeps the summary already written. New highlights get theirs from lib/highlights.
+ */
 export function toggleHighlight(ref: ChapterRef, verse: number, color: HighlightColor) {
   update((s) => {
     const at = (h: Highlight) => h.book === ref.book && h.chapter === ref.chapter && h.verseStart === verse;
     const existing = s.highlights.find(at);
     const rest = s.highlights.filter((h) => !at(h));
     if (existing?.color === color) return { ...s, highlights: rest };
-    const h: Highlight = { id: crypto.randomUUID(), ...ref, verseStart: verse, verseEnd: verse, color, createdAt: new Date().toISOString() };
+    const h: Highlight = {
+      id: crypto.randomUUID(),
+      ...ref,
+      verseStart: verse,
+      verseEnd: existing?.verseEnd ?? verse,
+      color,
+      createdAt: new Date().toISOString(),
+      summary: existing?.summary ?? null,
+    };
     return { ...s, highlights: [...rest, h] };
   });
+}
+
+/** Saves a highlight's summary, if the highlight is still there. */
+export function setHighlightSummary(id: string, summary: string) {
+  update((s) => (s.highlights.some((h) => h.id === id) ? { ...s, highlights: s.highlights.map((h) => (h.id === id ? { ...h, summary } : h)) } : s));
 }

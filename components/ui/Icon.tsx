@@ -26,6 +26,7 @@ const ICONS = {
   "message-circle": "icon-[lucide--message-circle]",
   "minus": "icon-[lucide--minus]",
   "moon": "icon-[lucide--moon]",
+  "music": "icon-[lucide--music]",
   "notebook-pen": "icon-[lucide--notebook-pen]",
   "party-popper": "icon-[lucide--party-popper]",
   "pencil": "icon-[lucide--pencil]",

@@ -5,17 +5,18 @@ import { useEffect, useState } from "react";
 import { AccountSheet } from "@/components/AccountSheet";
 import { Avatar } from "@/components/lamplighters/Avatar";
 import { CreateCircleSheet } from "@/components/lamplighters/CreateCircleSheet";
+import { NotificationsSheet } from "@/components/lamplighters/NotificationsSheet";
 import { NudgeInbox } from "@/components/lamplighters/NudgeInbox";
 import { ProfileSheet } from "@/components/lamplighters/ProfileSheet";
 import { EmptyState, ErrorState, LoadingRows } from "@/components/lamplighters/States";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { PageTitle } from "@/components/ui/NavBar";
-import { myCircles, myNudges, useLampProfile, useLampVersion, useLoad } from "@/lib/lamplighters/client";
+import { myCircles, myNotifications, myNudges, useLampProfile, useLampVersion, useLoad } from "@/lib/lamplighters/client";
 import { accountsEnabled } from "@/lib/supabase/client";
 import { useHydrated } from "@/lib/store";
 
-/** Circles (Lamplighters): your private reading groups, and nudges sent to you. */
+/** Circles (Lamplighters): your private reading groups, notifications, and nudges sent to you. */
 export default function CirclesPage() {
   const hydrated = useHydrated();
   const me = useLampProfile();
@@ -23,6 +24,9 @@ export default function CirclesPage() {
   const v = useLampVersion();
   const circles = useLoad(signedIn ? myCircles : null, [me.userId, v]);
   const nudges = useLoad(signedIn ? myNudges : null, [me.userId, v]);
+  const notifications = useLoad(signedIn ? myNotifications : null, [me.userId, v]);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [shownNudge, setShownNudge] = useState<string | null>(null);
   const [createOpen, setCreateOpen] = useState(false);
   const [signInOpen, setSignInOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
@@ -69,18 +73,47 @@ export default function CirclesPage() {
   }
 
   const list = circles.data ?? [];
+  const newCount = (notifications.data ?? []).filter((n) => !n.read_at).length;
+
+  // A nudge opened from Notifications: scroll to it in the inbox and mark it for a moment.
+  function showNudge(id: string) {
+    setShownNudge(id);
+    requestAnimationFrame(() => {
+      const el = document.getElementById(`nudge-${id}`);
+      el?.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    });
+    window.setTimeout(() => setShownNudge((s) => (s === id ? null : s)), 2400);
+  }
   return (
     <div className="arrive flex flex-col gap-8">
       <div className="flex items-end justify-between gap-3">
         {header}
-        {me.data && (
-          <button type="button" onClick={() => setProfileOpen(true)} aria-label="Your profile" className="mb-1 rounded-full">
-            <Avatar id={me.data.avatar_id} size={44} />
-          </button>
-        )}
+        <div className="mb-1 flex items-center gap-2">
+          {!notifications.error && (
+            <button
+              type="button"
+              onClick={() => setNotificationsOpen(true)}
+              aria-haspopup="dialog"
+              aria-label={newCount ? `Notifications, ${newCount} new` : "Notifications"}
+              className="relative grid size-11 place-items-center rounded-full text-gold-text"
+            >
+              <Icon name="bell" className="size-6" />
+              {newCount > 0 && (
+                <span aria-hidden="true" className="absolute right-0.5 top-0.5 grid min-w-5 place-items-center rounded-full bg-danger px-1 text-[0.6875rem] font-semibold leading-5 text-bg ring-2 ring-bg">
+                  {newCount > 99 ? "99+" : newCount}
+                </span>
+              )}
+            </button>
+          )}
+          {me.data && (
+            <button type="button" onClick={() => setProfileOpen(true)} aria-label="Your profile" className="rounded-full">
+              <Avatar id={me.data.avatar_id} size={44} />
+            </button>
+          )}
+        </div>
       </div>
 
-      {nudges.data && <NudgeInbox nudges={nudges.data} userId={me.userId!} onChange={nudges.reload} />}
+      {nudges.data && <NudgeInbox nudges={nudges.data} userId={me.userId!} onChange={nudges.reload} shown={shownNudge} />}
 
       <section aria-labelledby="circles-heading" className="flex flex-col gap-2">
         <h2 id="circles-heading" className="px-1 text-eyebrow text-text-secondary">
@@ -131,6 +164,7 @@ export default function CirclesPage() {
         )}
       </section>
 
+      <NotificationsSheet open={notificationsOpen} onOpenChange={setNotificationsOpen} items={notifications.data ?? []} onShowNudge={showNudge} />
       <CreateCircleSheet open={createOpen} onOpenChange={setCreateOpen} />
       {me.data && (
         <ProfileSheet key={String(profileOpen)} open={profileOpen} onOpenChange={setProfileOpen} userId={me.userId!} profile={me.data} welcome={needsProfile} />

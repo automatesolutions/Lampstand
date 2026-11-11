@@ -5,6 +5,7 @@ import { CommandPalette } from "@/components/palette/CommandPalette";
 import { ExplainSheet } from "@/components/explain/ExplainSheet";
 import { CelebrationHost } from "@/components/lamplighters/CelebrationHost";
 import { PrayerSheet } from "@/components/prayer/PrayerSheet";
+import { SongSheet } from "@/components/song/SongSheet";
 import { SyncAgent } from "@/components/SyncAgent";
 import { ThemeSync, themeBootScript } from "@/components/ThemeSync";
 import "./globals.css";
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <CommandPalette />
         <PrayerSheet />
+        <SongSheet />
         <ExplainSheet />
         <CelebrationHost />
       </body>

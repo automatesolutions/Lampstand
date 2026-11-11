@@ -58,6 +58,9 @@ export function ChatScreen({ id }: { id: string }) {
   const restoreFrom = useRef<number | null>(null);
   const typingChannel = useRef<ReturnType<NonNullable<ReturnType<typeof supabase>>["channel"]> | null>(null);
   const lastTypingSent = useRef(0);
+  // One id per message being sent: trying again after a failure reuses it, so the
+  // server never posts (or emails) it twice.
+  const pending = useRef<{ key: string; id: string } | null>(null);
 
   const byId = useMemo(() => new Map((people.data ?? []).map((p) => [p.user_id, p])), [people.data]);
   const owner = (people.data ?? []).some((p) => p.is_me && p.role === "owner");
@@ -160,7 +163,10 @@ export function ChatScreen({ id }: { id: string }) {
     setSending(true);
     setError("");
     try {
-      const m = await sendMessage(id, uid, body.trim(), verse);
+      const key = JSON.stringify([body.trim(), verse]);
+      if (pending.current?.key !== key) pending.current = { key, id: crypto.randomUUID() };
+      const m = await sendMessage(pending.current.id, id, body.trim(), verse);
+      pending.current = null;
       keepBottom.current = true;
       setMessages((list) => mergeMessages(list, [m]));
       setDraft("");

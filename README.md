@@ -18,13 +18,14 @@ Server keys go in `.env.local` (never committed):
 ```bash
 NLT_API_KEY=...        # New Living Translation, from api.nlt.to (non-commercial: 500 verses a request, 5,000 requests a day)
 ESV_API_KEY=...        # English Standard Version, from api.esv.org (non-commercial: 5,000 queries a day, at most 500 verses stored)
-ANTHROPIC_API_KEY=...  # Pray and Explain in depth
+ANTHROPIC_API_KEY=...  # Pray, Explain in depth, highlight summaries and song lyrics
+ELEVENLABS_API_KEY=... # Make a song: records the lyrics with ElevenLabs Music (server only; without it, songs are off)
 NEXT_PUBLIC_SUPABASE_URL=...              # accounts and sync (public)
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=...  # accounts and sync (public)
 SUPABASE_SECRET_KEY=...   # server only: daily AI cap and saved explanations
 DAILY_AI_BUDGET_USD=2     # optional: Claude API spend per day before Pray and Explain pause (default 2)
 APP_URL=https://your-domain   # Circles: the address used in invite and nudge emails
-RESEND_API_KEY=...            # Circles: send invite and nudge emails through resend.com (optional)
+RESEND_API_KEY=...            # Circles: send invite, nudge and message emails through resend.com (optional)
 EMAIL_FROM="Lampstand <hello@your-domain>"  # Circles: a sender on a domain verified in Resend
 ```
 
@@ -46,7 +47,7 @@ For Circles (Lamplighters), also in the Supabase dashboard:
 ### Deploying (Cloud Run)
 
 - The two `NEXT_PUBLIC_…` values are built into the app, so pass them as build arguments: `--build-arg NEXT_PUBLIC_SUPABASE_URL=… --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=…`.
-- Set the server secrets on the Cloud Run service (Secret Manager is best): `ANTHROPIC_API_KEY`, `SUPABASE_SECRET_KEY`, `NLT_API_KEY`, `ESV_API_KEY`, and optionally `DAILY_AI_BUDGET_USD`.
+- Set the server secrets on the Cloud Run service (Secret Manager is best): `ANTHROPIC_API_KEY`, `SUPABASE_SECRET_KEY`, `NLT_API_KEY`, `ESV_API_KEY`, `ELEVENLABS_API_KEY`, and optionally `DAILY_AI_BUDGET_USD`.
 - Add the live address to Supabase **Authentication → URL Configuration** (Site URL and `https://your-domain/**` in Redirect URLs).
 - Also set a monthly spend limit in the Claude Console as a backstop.
 

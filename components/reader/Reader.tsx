@@ -18,6 +18,7 @@ import { finishChapter } from "@/lib/lamplighters/celebrate";
 import { setScreenActions } from "@/lib/palette";
 import { openExplain } from "@/lib/explain";
 import { openPrayer } from "@/lib/prayer";
+import { openSong } from "@/lib/song";
 import {
   HIGHLIGHT_COLORS,
   markContextSeen,
@@ -31,7 +32,6 @@ import {
   type Note,
 } from "@/lib/store";
 import { useReadingSummary } from "@/lib/store/hooks";
-import { useScrollAway } from "@/lib/use-scroll-away";
 import { NoteSheet } from "./NoteSheet";
 import { ReaderSettings } from "./ReaderSettings";
 import { VersionSheet } from "./VersionSheet";
@@ -103,7 +103,6 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   const [status, setStatus] = useState("");
   const [cardOpen, setCardOpen] = useState<boolean | null>(null);
   const topVerse = useRef(1);
-  const away = useScrollAway({ paused: selected != null });
 
   // The context card opens by itself the first time this book is opened each day, inline, never over the text.
   const cardDue = hydrated && card != null && contextSeen[chapter.book] !== today();
@@ -259,10 +258,8 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
 
   return (
     <div className="min-h-dvh bg-bg-soft">
-      {/* Top bar: back, title; version and text controls on desktop. Hides while reading down. */}
-      <header
-        className={`glass sticky top-0 z-30 pt-[env(safe-area-inset-top)] transition-transform duration-300 ease-out ${away ? "max-[959px]:-translate-y-full" : ""}`}
-      >
+      {/* Top bar: back, title; version and text controls on desktop. Stays on screen while reading. */}
+      <header className="glass sticky top-0 z-30 pt-[env(safe-area-inset-top)]">
         <div className="relative mx-auto grid h-[52px] max-w-[760px] grid-cols-[1fr_auto_1fr] items-center px-2">
           <Link href="/read" className="flex min-h-11 items-center gap-0.5 justify-self-start rounded-md pr-3 text-body font-medium text-gold-text">
             <Icon name="chevron-left" className="size-5" />
@@ -469,12 +466,15 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
                   <ButtonLink href="/">Today</ButtonLink>
                 )}
               </div>
-              <div className="-mb-2 flex w-full flex-col border-t border-divider pt-1.5 min-[480px]:flex-row min-[480px]:justify-center min-[480px]:gap-4">
+              <div className="-mb-2 flex w-full flex-col border-t border-divider pt-1.5 min-[480px]:flex-row min-[480px]:flex-wrap min-[480px]:justify-center min-[480px]:gap-x-4">
                 <Button variant="plain" icon="sparkles" onClick={() => openExplain(ref)} aria-haspopup="dialog">
                   Explain in depth
                 </Button>
                 <Button variant="plain" icon="hand-heart" onClick={() => openPrayer(ref)} aria-haspopup="dialog">
                   Pray over what you read
+                </Button>
+                <Button variant="plain" icon="music" onClick={() => openSong(ref)} aria-haspopup="dialog">
+                  Make a song
                 </Button>
               </div>
             </div>
@@ -531,12 +531,10 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
         </section>
       </main>
 
-      {/* Thumb bar (phones): the reader's controls where the thumb rests (DESIGN.md §5.1). */}
+      {/* Thumb bar (phones): the reader's controls where the thumb rests, always on screen (DESIGN.md §5.1). */}
       <nav
         aria-label="Reader"
-        className={`glass fixed inset-x-0 bottom-0 z-30 grid grid-cols-[56px_56px_1fr_56px_56px] items-center gap-0.5 border-t border-divider pb-[calc(6px+env(safe-area-inset-bottom))] pl-[max(10px,env(safe-area-inset-left))] pr-[max(10px,env(safe-area-inset-right))] pt-1.5 transition-transform duration-300 ease-out min-[960px]:hidden ${
-          away ? "translate-y-full" : ""
-        }`}
+        className={`glass fixed inset-x-0 bottom-0 z-30 grid grid-cols-[56px_56px_1fr_56px_56px] items-center gap-0.5 border-t border-divider pb-[calc(6px+env(safe-area-inset-bottom))] pl-[max(10px,env(safe-area-inset-left))] pr-[max(10px,env(safe-area-inset-right))] pt-1.5 min-[960px]:hidden`}
       >
         <ThumbLink href="/" label="Today" icon="house" />
         <ThumbLink href={prevHref} label={prev ? `Previous chapter: ${formatRef(prev)}` : "No previous chapter"} icon="chevron-left" />

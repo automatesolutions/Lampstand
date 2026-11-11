@@ -46,7 +46,12 @@ export function mergeState(local: AppState, remote: Remote): AppState {
     if (remote.deleted.highlights.has(h.id)) continue;
     const k = highlightKey(h);
     const have = highlights.get(k);
-    if (!have || newer(h.createdAt, have.createdAt)) highlights.set(k, h);
+    if (!have || newer(h.createdAt, have.createdAt)) {
+      // A summary written on either side stays with the same highlight.
+      highlights.set(k, have && have.id === h.id && !h.summary && have.summary ? { ...h, summary: have.summary } : h);
+    } else if (have.id === h.id && !have.summary && h.summary) {
+      highlights.set(k, { ...have, summary: h.summary });
+    }
   }
 
   const position = !remote.position ? local.position : !local.position ? remote.position : newer(local.position.updatedAt, remote.position.updatedAt) ? local.position : remote.position;
@@ -88,7 +93,7 @@ export function changesToPush(local: AppState, known: Remote) {
     notes: local.notes.filter((n) => knownNotes.get(n.id) !== n.updatedAt),
     highlights: local.highlights.filter((h) => {
       const k = knownHighlights.get(highlightKey(h));
-      return !k || k.id !== h.id || k.color !== h.color;
+      return !k || k.id !== h.id || k.color !== h.color || (!!h.summary && k.summary !== h.summary);
     }),
     deletedNotes: known.notes.filter((n) => !localNoteIds.has(n.id)).map((n) => n.id),
     deletedHighlights: known.highlights.filter((h) => !localHighlightIds.has(h.id)).map((h) => h.id),
