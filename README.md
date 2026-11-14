@@ -55,16 +55,15 @@ In the KJV, the words of Jesus show in green italics and the words God speaks di
 
 Select verses by dragging, by long-pressing and dragging on a phone, or with **Select more**. Tap a color to highlight them as one passage. **Share** sends the passage to your Circles, with your note and its summary if you choose.
 
-<table>
-  <tr>
-    <td><img src="docs/screenshots/phone-select-verses.png" alt="John 3:16 to 18 selected on a phone, with the verse bar showing Select more, four colors, Note, Copy, and Share" width="260"></td>
-    <td><img src="docs/screenshots/phone-share-sheet.png" alt="The Share to a Circle sheet for John 3:16 to 18" width="260"></td>
-  </tr>
-</table>
+<img src="docs/screenshots/phone-select-verses.png" alt="John 3:16 to 18 selected on a phone, with the verse bar showing Select more, four colors, Note, Copy, and Share" width="260">
+
+<img src="docs/screenshots/share-sheet.png" alt="Jeremiah 50:19 to 23 highlighted in gold, with the Share to a Circle sheet open and the Mens Group Circle ticked" width="700">
 
 ### Listen
 
 **Listen** reads any chapter aloud and underlines the verse being read. Choose the free device voice or the natural voice, change the speed, and skip from verse to verse. The Listen button is always in the bottom bar on phones and the top bar on desktop.
+
+<img src="docs/screenshots/listen-button.png" alt="Jeremiah 50 with the Listen to Jeremiah 50 button under the chapter number, above the In this chapter card" width="700">
 
 <img src="docs/screenshots/phone-listen.png" alt="John 11 on a phone with the Listen player open: play, previous and next verse, speed, and the device or natural voice" width="260">
 
@@ -85,16 +84,24 @@ Each chapter has an "In this chapter" note, a "Before you read" context card, an
   </tr>
 </table>
 
+When you finish a chapter, the mascot cheers you on. You can turn its celebrations off on Me.
+
+<img src="docs/screenshots/chapter-done-mascot.png" alt="Genesis 3 is read, 2 of 3 today, with the mascot saying Lamp's a little brighter. Nice work!" width="700">
+
 - **Pray** writes a short prayer from the chapters you read recently and always ends "In Jesus' Name, Amen."
 - **Make a song:** Claude writes original lyrics from your last three chapters, and ElevenLabs Music sings them in about 70 seconds. You need an account, and you can make three songs a day.
 
 ### Circles and the Bible challenge
 
-Circles are private, invite-only groups. See who has read today, send gentle nudges, chat, and share highlights. Messages and nudges show up under the bell and can also be emailed.
+Circles are private, invite-only groups. See who has read today, send gentle nudges, chat, and share highlights. Messages and nudges show up under the bell and can also be emailed. Tapping a Circle opens its chat at the first message you haven't read.
+
+<img src="docs/screenshots/circles.png" alt="Circles: a nudge saying Quick chapter together?, the Mens Group Circle with 1 of 2 lamps lit today, and the New Circle and Join a game buttons" width="900">
+
+<img src="docs/screenshots/circle-chat.png" alt="The Mens Group chat: a New messages line and a message saying Started a Bible challenge with the join code, and the verse and trophy buttons beside the message box" width="520">
 
 The **Bible challenge** is a quiz your Circle plays together. Start one from the Circle's page or from the trophy in its chat. Host a live game with a join code, a timer, a leaderboard, and a podium, or play the same questions on your own time and compare scores.
 
-<img src="docs/screenshots/challenge-setup.png" alt="The New Bible challenge sheet: questions from a book, John; Mixed difficulty; 10 questions; On our own time or Host a live game" width="480">
+<img src="docs/screenshots/challenge-setup.png" alt="The New Bible challenge sheet: questions from the whole Bible, Mixed difficulty, 10 questions, Tell the Circle in chat ticked, and On our own time or Host a live game" width="520">
 
 ### Guest first
 
