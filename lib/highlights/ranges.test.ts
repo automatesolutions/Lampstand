@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Highlight } from "@/lib/store";
-import { applyColor, colorOf, derivedId, erase, highlightAt, withoutOverlaps } from "./ranges";
+import { applyColor, colorOf, derivedId, ensureHighlight, erase, highlightAt, withoutOverlaps } from "./ranges";
 
 const JHN3 = { book: "JHN", chapter: 3 };
 const at = "2026-11-14T10:00:00.000Z";
@@ -111,5 +111,30 @@ describe("withoutOverlaps (after joining two devices)", () => {
   it("leaves highlights that don't overlap as they are", () => {
     const list = [hl("a", 1, 1), hl("b", 2, 5, "sky")];
     expect(withoutOverlaps(list)).toEqual(list);
+  });
+});
+
+describe("ensureHighlight (Share)", () => {
+  it("keeps a highlight that already covers exactly these verses", () => {
+    const list = [hl("a", 16, 18, "sky", undefined, "Kept.")];
+    const r = ensureHighlight(list, JHN3, { start: 16, end: 18 }, "gold", at, newId);
+    expect(r.list).toBe(list); // nothing changed
+    expect(r.highlight).toMatchObject({ id: "a", color: "sky", summary: "Kept." });
+  });
+
+  it("highlights unhighlighted verses in gold", () => {
+    const r = ensureHighlight([], JHN3, { start: 3, end: 5 }, "gold", at, newId);
+    expect(shape(r.list)).toEqual(["3-5 gold"]);
+    expect(r.highlight.verseStart).toBe(3);
+  });
+
+  it("joins verses that all have one color into one highlight in that color, never taking it off", () => {
+    const r = ensureHighlight([hl("a", 3, 3, "rose"), hl("b", 4, 5, "rose")], JHN3, { start: 3, end: 5 }, "gold", at, newId);
+    expect(shape(r.list)).toEqual(["3-5 rose"]);
+  });
+
+  it("uses gold when the verses have mixed colors, trimming what it covers", () => {
+    const r = ensureHighlight([hl("a", 1, 4, "sky")], JHN3, { start: 3, end: 5 }, "gold", at, newId);
+    expect(shape(r.list)).toEqual(["1-2 sky", "3-5 gold"]);
   });
 });

@@ -24,6 +24,7 @@ import { colorOf, type Span } from "@/lib/highlights/ranges";
 import { shiftSpans, speakerSegments, type SpeakerSpan } from "@/lib/bible/speakers";
 import {
   HIGHLIGHT_COLORS,
+  highlightForSharing,
   highlightVerses,
   markContextSeen,
   setPosition,
@@ -699,16 +700,20 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
                 Copy
                 <Kbd>C</Kbd>
               </button>
-              {(() => {
-                // The selection is exactly one highlight: it can be shared to a Circle.
-                const h = chapterHighlights.find((x) => x.verseStart === sel.start && x.verseEnd === sel.end);
-                return h ? (
-                  <button type="button" onClick={() => setSharing(h)} aria-haspopup="dialog" className="inline-flex min-h-11 items-center gap-1.5 rounded-[12px] px-3 font-medium text-gold-text">
-                    <Icon name="share" />
-                    Share
-                  </button>
-                ) : null;
-              })()}
+              {/* Share to a Circle: the selected verses become one highlight first if they aren't yet. */}
+              <button
+                type="button"
+                onClick={() => {
+                  const { highlight, created } = highlightForSharing(ref, sel.start, sel.end);
+                  if (created) say(`Highlighted ${label(sel)} in ${SWATCH[highlight.color].label.toLowerCase()} to share it`);
+                  setSharing(highlight);
+                }}
+                aria-haspopup="dialog"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-[12px] px-3 font-medium text-gold-text"
+              >
+                <Icon name="share" />
+                Share
+              </button>
             </div>
           </>
         )}

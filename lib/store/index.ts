@@ -6,7 +6,7 @@
 import { useMemo, useSyncExternalStore } from "react";
 import { BOOKS } from "@/lib/bible/books";
 import type { ChapterRef, VersionId } from "@/lib/bible/types";
-import { applyColor } from "@/lib/highlights/ranges";
+import { applyColor, ensureHighlight } from "@/lib/highlights/ranges";
 import { toISODate, type ISODate } from "@/lib/streak";
 
 export type Theme = "system" | "light" | "dark";
@@ -319,6 +319,22 @@ export function deleteNote(id: string) {
 export function highlightVerses(ref: ChapterRef, start: number, end: number, color: HighlightColor) {
   const span = { start: Math.min(start, end), end: Math.max(start, end) };
   update((s) => ({ ...s, highlights: applyColor(s.highlights, ref, span, color, new Date().toISOString(), () => crypto.randomUUID()) }));
+}
+
+/**
+ * Makes exactly these verses one highlight and returns it (for Share). Never removes a
+ * color: see ensureHighlight in lib/highlights/ranges.
+ */
+export function highlightForSharing(ref: ChapterRef, start: number, end: number): { highlight: Highlight; created: boolean } {
+  const span = { start: Math.min(start, end), end: Math.max(start, end) };
+  let result: { highlight: Highlight; created: boolean } | null = null;
+  update((s) => {
+    const before = s.highlights;
+    const r = ensureHighlight(before, ref, span, "gold", new Date().toISOString(), () => crypto.randomUUID());
+    result = { highlight: r.highlight, created: r.list !== before };
+    return r.list === before ? s : { ...s, highlights: r.list };
+  });
+  return result!;
 }
 
 /** One verse: the same color again removes it. */

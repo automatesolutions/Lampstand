@@ -98,6 +98,28 @@ export function applyColor(list: Highlight[], ref: ChapterRef, span: Span, color
 }
 
 /**
+ * Makes exactly these verses one highlight, for sharing. Unlike applyColor it never takes
+ * a color off: verses that are already exactly one highlight stay as they are (same id and
+ * summary); otherwise they become one highlight in the color they all share, or `fallback`.
+ * Returns the new list and the highlight.
+ */
+export function ensureHighlight(list: Highlight[], ref: ChapterRef, span: Span, fallback: HighlightColor, now: string, newId: () => string): { list: Highlight[]; highlight: Highlight } {
+  const same = list.find((h) => inChapter(h, ref) && h.verseStart === span.start && h.verseEnd === span.end);
+  if (same) return { list, highlight: same };
+  const highlight: Highlight = {
+    id: newId(),
+    book: ref.book,
+    chapter: ref.chapter,
+    verseStart: span.start,
+    verseEnd: span.end,
+    color: colorOf(list, ref, span) ?? fallback,
+    createdAt: now,
+    summary: null,
+  };
+  return { list: place(list, highlight), highlight };
+}
+
+/**
  * Settles overlaps after two devices' highlights are joined (lib/sync/merge): the newer
  * highlight wins the verses both cover, and the older one is trimmed around it.
  */
