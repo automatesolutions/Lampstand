@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Segmented } from "@/components/ui/Segmented";
 import { Sheet } from "@/components/ui/Sheet";
 import { BOOKS } from "@/lib/bible/books";
-import { useLoad } from "@/lib/lamplighters/client";
+import { sendMessage, useLoad } from "@/lib/lamplighters/client";
 import { circleSets, createSet, difficultyLabel, quizError, scopeLabel, startGame, type Difficulty, type Scope } from "@/lib/quiz/client";
 
 const PLAYABLE = BOOKS.filter((b) => b.canon === "all");
@@ -58,13 +58,17 @@ export function ChallengeSection({ circleId, version }: { circleId: string; vers
           ))}
         </ul>
       )}
-      {setupOpen && <SetupSheet circleId={circleId} onClose={() => setSetupOpen(false)} />}
+      {setupOpen && <ChallengeSetupSheet circleId={circleId} onClose={() => setSetupOpen(false)} />}
     </section>
   );
 }
 
-/** Choose what the challenge covers, then host it live or play it on your own time. */
-function SetupSheet({ circleId, onClose }: { circleId: string; onClose: () => void }) {
+/**
+ * Choose what the challenge covers, then host it live or play it on your own time. Used
+ * on the Circle's page and in its chat. Hosting live can tell the Circle in the chat, with
+ * the join code (on by default; a normal message, so the usual notifications follow).
+ */
+export function ChallengeSetupSheet({ circleId, onClose }: { circleId: string; onClose: () => void }) {
   const router = useRouter();
   const [kind, setKind] = useState<Scope["kind"]>("bible");
   const [book, setBook] = useState("JHN");
@@ -72,6 +76,7 @@ function SetupSheet({ circleId, onClose }: { circleId: string; onClose: () => vo
   const [to, setTo] = useState(3);
   const [difficulty, setDifficulty] = useState<Difficulty>("mixed");
   const [count, setCount] = useState("10");
+  const [announce, setAnnounce] = useState(true);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const chapters = PLAYABLE.find((b) => b.code === book)?.chapters ?? 1;
@@ -84,6 +89,11 @@ function SetupSheet({ circleId, onClose }: { circleId: string; onClose: () => vo
       const setId = await createSet(circleId, scope, difficulty, Number(count));
       if (live) {
         const g = await startGame(setId);
+        if (announce) {
+          const what = `${scopeLabel(scope)}, ${difficultyLabel(difficulty)}, ${count} questions`;
+          // A failed announcement doesn't stop the game: the code still shows in the lobby.
+          await sendMessage(crypto.randomUUID(), circleId, `Started a Bible challenge: ${what}. Join from this chat or with code ${g.code}.`).catch(() => {});
+        }
         router.push(`/challenge/${g.game_id}`);
       } else router.push(`/challenge/set/${setId}`);
     } catch (e) {
@@ -147,6 +157,13 @@ function SetupSheet({ circleId, onClose }: { circleId: string; onClose: () => vo
           <span className="text-caption text-text-secondary">Number of questions</span>
           <Segmented<string> label="Number of questions" value={count} onChange={setCount} options={[{ value: "5", label: "5" }, { value: "10", label: "10" }, { value: "15", label: "15" }]} />
         </div>
+        <label className="flex min-h-12 items-center gap-3">
+          <input type="checkbox" checked={announce} onChange={(e) => setAnnounce(e.target.checked)} className="size-5 accent-[var(--gold-strong)]" />
+          <span>
+            <span className="block text-headline">Tell the Circle in chat</span>
+            <span className="block text-footnote text-text-secondary">When you host live, a message with the join code</span>
+          </span>
+        </label>
         <p className="text-footnote text-text-secondary">20 seconds a question. Every answer comes from the KJV text, with the verse shown after each question.</p>
         {error && (
           <p role="alert" className="text-callout text-danger">

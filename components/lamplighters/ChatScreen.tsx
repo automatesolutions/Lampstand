@@ -30,7 +30,9 @@ import {
 } from "@/lib/lamplighters/client";
 import { LAMPLIGHTERS } from "@/lib/lamplighters/config";
 import { supabase } from "@/lib/supabase/client";
+import { ChallengeSetupSheet } from "@/components/quiz/ChallengeSection";
 import { loadedEnough, openingPoint } from "@/lib/lamplighters/chat-open";
+import { circleSets } from "@/lib/quiz/client";
 import { Avatar } from "./Avatar";
 import { ErrorState, LoadingRows } from "./States";
 
@@ -78,6 +80,10 @@ export function ChatScreen({ id }: { id: string }) {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState<Message | null>(null);
   const [verseOpen, setVerseOpen] = useState(false);
+  const [challengeOpen, setChallengeOpen] = useState(false);
+  // An open live game in this Circle: a banner to join it (checked again as messages arrive,
+  // so the host's "Started a Bible challenge" message brings it up). Hidden before 0012.
+  const [openGame, setOpenGame] = useState<{ id: string; label: string } | null>(null);
   const [now, setNow] = useState(() => Date.now());
   const scroller = useRef<HTMLDivElement>(null);
   const keepBottom = useRef(true);
@@ -176,6 +182,22 @@ export function ChatScreen({ id }: { id: string }) {
   useEffect(() => {
     if (uid && loaded === "ready" && document.visibilityState === "visible") markChatRead(id, uid).catch(() => {});
   }, [id, uid, loaded, messages.length]);
+
+  const messageCount = messages.length;
+  useEffect(() => {
+    if (!uid) return;
+    let live = true;
+    circleSets(id).then(
+      (sets) => {
+        const open = sets.find((x) => x.open_game);
+        if (live) setOpenGame(open ? { id: open.open_game!, label: `code ${open.open_code}` } : null);
+      },
+      () => {}, // before migration 0012: no banner
+    );
+    return () => {
+      live = false;
+    };
+  }, [id, uid, messageCount]);
 
   // Stay at the bottom for new messages; keep the place when older ones load above. On
   // opening, start at the target message instead (once).
@@ -297,6 +319,17 @@ export function ChatScreen({ id }: { id: string }) {
           <Icon name="info" className="size-6 text-gold-text" />
         </Link>
       </header>
+      {openGame && (
+        <div className="flex shrink-0 items-center gap-3 border-b border-divider bg-gold-wash px-4 py-2">
+          <Icon name="trophy" className="size-5 text-gold-text" />
+          <p className="min-w-0 flex-1 truncate text-subhead">
+            <span className="font-semibold">Bible challenge</span> · {openGame.label}
+          </p>
+          <Link href={`/challenge/${openGame.id}`} className="inline-flex min-h-11 items-center rounded-md bg-gold-strong px-3 font-semibold text-on-gold">
+            Join
+          </Link>
+        </div>
+      )}
 
       <div
         ref={scroller}
@@ -385,6 +418,7 @@ export function ChatScreen({ id }: { id: string }) {
         )}
         <div className="mx-auto flex max-w-[680px] items-end gap-1.5">
           <IconButton icon="quote" label="Share a verse" onClick={() => setVerseOpen(true)} />
+          <IconButton icon="trophy" label="Start a Bible challenge" onClick={() => setChallengeOpen(true)} />
           <label className="sr-only" htmlFor="chat-input">
             Message
           </label>
@@ -427,6 +461,7 @@ export function ChatScreen({ id }: { id: string }) {
         )}
       </Sheet>
 
+      {challengeOpen && <ChallengeSetupSheet circleId={id} onClose={() => setChallengeOpen(false)} />}
       {verseOpen && <VerseSheet onClose={() => setVerseOpen(false)} onShare={(verse, note) => send(note, verse).then(() => setVerseOpen(false))} />}
     </div>
   );

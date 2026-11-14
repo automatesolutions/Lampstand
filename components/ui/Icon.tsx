@@ -45,6 +45,7 @@ const ICONS = {
   "sun": "icon-[lucide--sun]",
   "target": "icon-[lucide--target]",
   "trash": "icon-[lucide--trash-2]",
+  "trophy": "icon-[lucide--trophy]",
   "type": "icon-[lucide--type]",
   "user": "icon-[lucide--circle-user-round]",
   "user-minus": "icon-[lucide--user-minus]",
