@@ -123,11 +123,22 @@ export function parseUsfm(usfm: string): UsfmVerse[] {
     }
   }
   for (const v of out) {
-    // Trim, keeping the flags in step.
-    const lead = v.text.length - v.text.trimStart().length;
-    const keep = v.text.trim().length;
-    v.text = v.text.slice(lead, lead + keep).replace(/ {2,}/g, " ");
-    v.jesus = v.jesus.slice(lead, lead + keep);
+    // One space between words, none at the ends, keeping each character's flag in step
+    // with it (a flag that slid by even one place would color the wrong letters).
+    let text = "";
+    const flags: boolean[] = [];
+    for (let i = 0; i < v.text.length; i++) {
+      const ch = /\s/.test(v.text[i]) ? " " : v.text[i];
+      if (ch === " " && (text === "" || text.endsWith(" "))) continue;
+      text += ch;
+      flags.push(v.jesus[i]);
+    }
+    if (text.endsWith(" ")) {
+      text = text.slice(0, -1);
+      flags.pop();
+    }
+    v.text = text;
+    v.jesus = flags;
   }
   return out;
 }
@@ -143,8 +154,14 @@ const fold = (ch: string) => ch.toLowerCase();
  * the letters don't match: then the verse is left uncolored and reported.
  */
 export function alignJesus(ours: string, usfm: UsfmVerse): SpeakerSpan[] | null {
+  // eBible writes "Cæsar" and "Alphæus" where our text has "Caesar" and "Alphaeus": æ and œ
+  // count as the two letters they stand for.
+  const LIGATURES: Record<string, string> = { æ: "ae", œ: "oe" };
   const theirs: { ch: string; j: boolean }[] = [];
-  for (let i = 0; i < usfm.text.length; i++) if (isLetter(usfm.text[i])) theirs.push({ ch: fold(usfm.text[i]), j: usfm.jesus[i] });
+  for (let i = 0; i < usfm.text.length; i++) {
+    if (!isLetter(usfm.text[i])) continue;
+    for (const ch of LIGATURES[fold(usfm.text[i])] ?? fold(usfm.text[i])) theirs.push({ ch, j: usfm.jesus[i] });
+  }
   if (!theirs.some((x) => x.j)) return [];
   const flags = new Array<boolean>(ours.length).fill(false);
   let k = 0;

@@ -63,6 +63,28 @@ describe("alignJesus", () => {
   });
 });
 
+describe("the real eBible format", () => {
+  // Copied from eng-kjv2006: Strong's numbers on each word, \+w inside \wj, double spaces.
+  const REAL = String.raw`\c 3
+\v 3 \w Jesus|strong="G2424"\w* \w answered|strong="G0611"\w* \w and|strong="G2532"\w* \w said|strong="G2036"\w* unto \w him|strong="G0846"\w*, \wj  \+w Verily|strong="G0281"\+w*, \+w verily|strong="G0281"\+w*, \+w I say|strong="G3004"\+w* \+w unto thee|strong="G4671"\+w*, \+w Except|strong="G3361"\+w* \+w a man|strong="G5100"\+w* \+w be born|strong="G1080"\+w* \+w again|strong="G0509"\+w*, \+w he cannot|strong="G1410"\+w* \+w see|strong="G1492"\+w* \+w the kingdom|strong="G0932"\+w* \+w of God|strong="G2316"\+w*.\wj*
+\c 22
+\v 21 \w They say|strong="G3004"\w* \w unto him|strong="G0846"\w*, \w Cæsar’s|strong="G2541"\w*. \w Then|strong="G5119"\w* \w saith he|strong="G3004"\w* \w unto them|strong="G0846"\w*, \wj  \+w Render|strong="G0591"\+w* \+w therefore|strong="G3767"\+w* \+w unto Cæsar|strong="G2541"\+w* \+w the things which are|strong="G3588"\+w* \+w Cæsar’s|strong="G2541"\+w*; \+w and|strong="G2532"\+w* \+w unto God|strong="G2316"\+w* \+w the things that are|strong="G3588"\+w* \+w God’s|strong="G2316"\+w*.\wj*
+`;
+  const [jhn, mat] = parseUsfm(REAL);
+
+  it("colors exactly the right letters, despite double spaces and Strong's numbers", () => {
+    const ours = "Jesus answered and said unto him, Verily, verily, I say unto thee, Except a man be born again, he cannot see the kingdom of God.";
+    const [[s, e]] = alignJesus(ours, jhn)!;
+    expect(ours.slice(s, e)).toBe("Verily, verily, I say unto thee, Except a man be born again, he cannot see the kingdom of God.");
+  });
+
+  it("matches Cæsar to Caesar", () => {
+    const ours = "They say unto him, Caesar’s. Then saith he unto them, Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s.";
+    const [[s, e]] = alignJesus(ours, mat)!;
+    expect(ours.slice(s, e)).toBe("Render therefore unto Caesar the things which are Caesar’s; and unto God the things that are God’s.");
+  });
+});
+
 describe("speakerSegments", () => {
   it("splits a verse into plain and spoken parts", () => {
     const text = "Jesus saith unto her, I that speak unto thee am he.";
