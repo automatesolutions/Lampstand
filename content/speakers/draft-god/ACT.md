@@ -14,12 +14,22 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 7:33 **the Lord**: Put off thy shoes from thy feet: for the place where thou standest is holy ground.
 - 7:34 **the Lord**: I have seen, I have seen the affliction of my people which is in Egypt, and I have heard their groaning, and am come down to deliver them. And now come, I will send thee into Egypt.
 
+## Acts 8
+
+
 ## Acts 10
 
 - 10:13 **a voice**: Rise, Peter; kill, and eat.
 - 10:15 **the voice**: What God hath cleansed, that call not thou common.
 - 10:19 **the Spirit**: Behold, three men seek thee.
 - 10:20 **the Spirit**: Arise therefore, and get thee down, and go with them, doubting nothing: for I have sent them.
+
+## Acts 13
+
+- 13:2 **the Holy Ghost**: Separate me Barnabas and Saul for the work whereunto I have called them.
+
+## Acts 19
+
 
 ## Acts 22
 

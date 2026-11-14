@@ -91,6 +91,9 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 ## Deuteronomy 13
 
 
+## Deuteronomy 15
+
+
 ## Deuteronomy 17
 
 - 17:16 **the LORD**: Ye shall henceforth return no more that way.
@@ -106,6 +109,9 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 
 
 ## Deuteronomy 26
+
+
+## Deuteronomy 27
 
 
 ## Deuteronomy 28

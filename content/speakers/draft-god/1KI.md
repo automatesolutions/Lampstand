@@ -2,6 +2,9 @@
 
 Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx scripts/tag-speakers.mts --approve 1KI --god
 
+## 1 Kings 1
+
+
 ## 1 Kings 2
 
 - 2:4 **the LORD**: If thy children take heed to their way, to walk before me in truth with all their heart and with all their soul, there shall not fail thee (said he) a man on the throne of Israel.
@@ -17,6 +20,11 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 ## 1 Kings 5
 
 - 5:5 **the LORD**: Thy son, whom I will set upon thy throne in thy room, he shall build an house unto my name.
+
+## 1 Kings 6
+
+- 6:12 **the LORD**: Concerning this house which thou art in building, if thou wilt walk in my statutes, and execute my judgments, and keep all my commandments to walk in them; then will I perform my word with thee, which I spake unto David thy father:
+- 6:13 **the LORD**: And I will dwell among the children of Israel, and will not forsake my people Israel.
 
 ## 1 Kings 8
 
@@ -69,6 +77,11 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 17:3 **the LORD**: Get thee hence, and turn thee eastward, and hide thyself by the brook Cherith, that is before Jordan.
 - 17:4 **the LORD**: And it shall be, that thou shalt drink of the brook; and I have commanded the ravens to feed thee there.
 - 17:9 **the LORD**: Arise, get thee to Zarephath, which belongeth to Zidon, and dwell there: behold, I have commanded a widow woman there to sustain thee.
+
+## 1 Kings 18
+
+- 18:1 **the LORD**: Go, shew thyself unto Ahab; and I will send rain upon the earth.
+- 18:31 **the LORD**: Israel shall be thy name:
 
 ## 1 Kings 19
 

@@ -86,7 +86,7 @@ if (args[0] === "--estimate") {
     const res = await client.messages.create(tagParams(nameOf(code), chapter, kjv(code)[chapter - 1], jesusIn(code, chapter), mode));
     const placed = saveDraft(code, chapter, claimsFrom(res));
     const cost = (res.usage.input_tokens * 4 + res.usage.output_tokens * 20) / 1e6;
-    console.log(`${ref}: ${Object.values(placed.spans).flat().length} speeches placed, ${placed.rejected.length} rejected, $${cost.toFixed(3)}. See content/speakers/draft/${code}.md`);
+    console.log(`${ref}: ${Object.values(placed.spans).flat().length} speeches placed, ${placed.rejected.length} rejected, $${cost.toFixed(3)}. See ${draftDir.replace(root, "").replace(/^[\/]/, "")}/${code}.md`);
   }
 } else if (args[0] === "--batch") {
   const client = new Anthropic();

@@ -15,6 +15,9 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 ## Psalms 18
 
 
+## Psalms 29
+
+
 ## Psalms 50
 
 - 50:5 **God**: Gather my saints together unto me; those that have made a covenant with me by sacrifice.

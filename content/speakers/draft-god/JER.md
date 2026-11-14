@@ -19,6 +19,10 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 1:18 **the LORD**: For, behold, I have made thee this day a defenced city, and an iron pillar, and brasen walls against the whole land, against the kings of Judah, against the princes thereof, against the priests thereof, and against the people of the land.
 - 1:19 **the LORD**: And they shall fight against thee; but they shall not prevail against thee; for I am with thee, saith the LORD, to deliver thee.
 
+## Jeremiah 2
+
+- 2:2 **the LORD**: Go and cry in the ears of Jerusalem, saying,
+
 ## Jeremiah 3
 
 - 3:6 **The LORD**: Hast thou seen that which backsliding Israel hath done? she is gone up upon every high mountain and under every green tree, and there hath played the harlot.
@@ -141,6 +145,16 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 17:19 **the LORD**: Go and stand in the gate of the children of the people, whereby the kings of Judah come in, and by the which they go out, and in all the gates of Jerusalem;
 - 17:20 **the LORD**: And say unto them, Hear ye the word of the LORD, ye kings of Judah, and all Judah, and all the inhabitants of Jerusalem, that enter in by these gates:
 
+## Jeremiah 18
+
+- 18:2 **the LORD**: Arise, and go down to the potter’s house, and there I will cause thee to hear my words.
+- 18:6 **the LORD**: O house of Israel, cannot I do with you as this potter? saith the LORD. Behold, as the clay is in the potter’s hand, so are ye in mine hand, O house of Israel.
+- 18:7 **the LORD**: At what instant I shall speak concerning a nation, and concerning a kingdom, to pluck up, and to pull down, and to destroy it;
+- 18:8 **the LORD**: If that nation, against whom I have pronounced, turn from their evil, I will repent of the evil that I thought to do unto them.
+- 18:9 **the LORD**: And at what instant I shall speak concerning a nation, and concerning a kingdom, to build and to plant it;
+- 18:10 **the LORD**: If it do evil in my sight, that it obey not my voice, then I will repent of the good, wherewith I said I would benefit them.
+- 18:11 **the LORD**: Now therefore go to, speak to the men of Judah, and to the inhabitants of Jerusalem, saying, Thus saith the LORD; Behold, I frame evil against you, and devise a device against you: return ye now every one from his evil way, and make your ways and your doings good.
+
 ## Jeremiah 20
 
 
@@ -166,10 +180,28 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 26:5 **the LORD**: To hearken to the words of my servants the prophets, whom I sent unto you, both rising up early, and sending them, but ye have not hearkened;
 - 26:6 **the LORD**: Then will I make this house like Shiloh, and will make this city a curse to all the nations of the earth.
 
+## Jeremiah 27
+
+- 27:2 **the LORD**: Make thee bonds and yokes, and put them upon thy neck,
+- 27:3 **the LORD**: And send them to the king of Edom, and to the king of Moab, and to the king of the Ammonites, and to the king of Tyrus, and to the king of Zidon, by the hand of the messengers which come to Jerusalem unto Zedekiah king of Judah;
+- 27:4 **the LORD**: And command them to say unto their masters, Thus saith the LORD of hosts, the God of Israel; Thus shall ye say unto your masters;
+- 27:5 **the LORD**: I have made the earth, the man and the beast that are upon the ground, by my great power and by my outstretched arm, and have given it unto whom it seemed meet unto me.
+- 27:6 **the LORD**: And now have I given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant; and the beasts of the field have I given him also to serve him.
+- 27:7 **the LORD**: And all nations shall serve him, and his son, and his son’s son, until the very time of his land come: and then many nations and great kings shall serve themselves of him.
+- 27:8 **the LORD**: And it shall come to pass, that the nation and kingdom which will not serve the same Nebuchadnezzar the king of Babylon, and that will not put their neck under the yoke of the king of Babylon, that nation will I punish, saith the LORD, with the sword, and with the famine, and with the pestilence, until I have consumed them by his hand.
+- 27:9 **the LORD**: Therefore hearken not ye to your prophets, nor to your diviners, nor to your dreamers, nor to your enchanters, nor to your sorcerers, which speak unto you, saying, Ye shall not serve the king of Babylon:
+- 27:10 **the LORD**: For they prophesy a lie unto you, to remove you far from your land; and that I should drive you out, and ye should perish.
+- 27:11 **the LORD**: But the nations that bring their neck under the yoke of the king of Babylon, and serve him, those will I let remain still in their own land, saith the LORD; and they shall till it, and dwell therein.
+
 ## Jeremiah 28
 
 - 28:13 **the LORD**: Go and tell Hananiah, saying, Thus saith the LORD; Thou hast broken the yokes of wood; but thou shalt make for them yokes of iron.
 - 28:14 **the LORD**: For thus saith the LORD of hosts, the God of Israel; I have put a yoke of iron upon the neck of all these nations, that they may serve Nebuchadnezzar king of Babylon; and they shall serve him: and I have given him the beasts of the field also.
+
+## Jeremiah 29
+
+- 29:31 **the LORD**: Send to all them of the captivity, saying, Thus saith the LORD concerning Shemaiah the Nehelamite; Because that Shemaiah hath prophesied unto you, and I sent him not, and he caused you to trust in a lie:
+- 29:32 **the LORD**: Therefore thus saith the LORD; Behold, I will punish Shemaiah the Nehelamite, and his seed: he shall not have a man to dwell among this people; neither shall he behold the good that I will do for my people, saith the LORD; because he hath taught rebellion against the LORD.
 
 ## Jeremiah 30
 
@@ -198,6 +230,32 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 32:43 **the LORD**: And fields shall be bought in this land, whereof ye say, It is desolate without man or beast; it is given into the hand of the Chaldeans.
 - 32:44 **the LORD**: Men shall buy fields for money, and subscribe evidences, and seal them, and take witnesses in the land of Benjamin, and in the places about Jerusalem, and in the cities of Judah, and in the cities of the mountains, and in the cities of the valley, and in the cities of the south: for I will cause their captivity to return,
 
+## Jeremiah 33
+
+- 33:3 **the LORD**: Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not.
+- 33:24 **the LORD**: Considerest thou not what this people have spoken, saying, The two families which the LORD hath chosen, he hath even cast them off? thus they have despised my people, that they should be no more a nation before them.
+
+## Jeremiah 34
+
+
+## Jeremiah 35
+
+- 35:2 **the LORD**: Go unto the house of the Rechabites, and speak unto them, and bring them into the house of the LORD, into one of the chambers, and give them wine to drink.
+- 35:13 **the LORD**: Go and tell the men of Judah and the inhabitants of Jerusalem, Will ye not receive instruction to hearken to my words?
+- 35:14 **the LORD**: The words of Jonadab the son of Rechab, that he commanded his sons not to drink wine, are performed; for unto this day they drink none, but obey their father’s commandment: notwithstanding I have spoken unto you, rising early and speaking; but ye hearkened not unto me.
+- 35:15 **the LORD**: I have sent also unto you all my servants the prophets, rising up early and sending them, saying, Return ye now every man from his evil way, and amend your doings, and go not after other gods to serve them, and ye shall dwell in the land which I have given to you and to your fathers: but ye have not inclined your ear, nor hearkened unto me.
+- 35:16 **the LORD**: Because the sons of Jonadab the son of Rechab have performed the commandment of their father, which he commanded them; but this people hath not hearkened unto me:
+- 35:17 **the LORD**: Behold, I will bring upon Judah and upon all the inhabitants of Jerusalem all the evil that I have pronounced against them: because I have spoken unto them, but they have not heard; and I have called unto them, but they have not answered.
+
+## Jeremiah 36
+
+- 36:2 **the LORD**: Take thee a roll of a book, and write therein all the words that I have spoken unto thee against Israel, and against Judah, and against all the nations, from the day I spake unto thee, from the days of Josiah, even unto this day.
+- 36:3 **the LORD**: It may be that the house of Judah will hear all the evil which I purpose to do unto them; that they may return every man from his evil way; that I may forgive their iniquity and their sin.
+- 36:28 **the LORD**: Take thee again another roll, and write in it all the former words that were in the first roll, which Jehoiakim the king of Judah hath burned.
+- 36:29 **the LORD**: And thou shalt say to Jehoiakim king of Judah, Thus saith the LORD; Thou hast burned this roll, saying, Why hast thou written therein, saying, The king of Babylon shall certainly come and destroy this land, and shall cause to cease from thence man and beast?
+- 36:30 **the LORD**: Therefore thus saith the LORD of Jehoiakim king of Judah; He shall have none to sit upon the throne of David: and his dead body shall be cast out in the day to the heat, and in the night to the frost.
+- 36:31 **the LORD**: And I will punish him and his seed and his servants for their iniquity; and I will bring upon them, and upon the inhabitants of Jerusalem, and upon the men of Judah, all the evil that I have pronounced against them; but they hearkened not.
+
 ## Jeremiah 37
 
 - 37:7 **the LORD**: Thus shall ye say to the king of Judah, that sent you unto me to enquire of me; Behold, Pharaoh’s army, which is come forth to help you, shall return to Egypt into their own land.
@@ -205,7 +263,27 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 37:9 **the LORD**: Deceive not yourselves, saying, The Chaldeans shall surely depart from us: for they shall not depart.
 - 37:10 **the LORD**: For though ye had smitten the whole army of the Chaldeans that fight against you, and there remained but wounded men among them, yet should they rise up every man in his tent, and burn this city with fire.
 
+## Jeremiah 38
+
+
+## Jeremiah 39
+
+- 39:16 **the LORD**: Go and speak to Ebedmelech the Ethiopian, saying, Thus saith the LORD of hosts, the God of Israel; Behold, I will bring my words upon this city for evil, and not for good; and they shall be accomplished in that day before thee.
+- 39:17 **the LORD**: But I will deliver thee in that day, saith the LORD: and thou shalt not be given into the hand of the men of whom thou art afraid.
+- 39:18 **the LORD**: For I will surely deliver thee, and thou shalt not fall by the sword, but thy life shall be for a prey unto thee: because thou hast put thy trust in me,
+
 ## Jeremiah 42
+
+
+## Jeremiah 43
+
+- 43:9 **the LORD**: Take great stones in thine hand, and hide them in the clay in the brickkiln, which is at the entry of Pharaoh’s house in Tahpanhes, in the sight of the men of Judah;
+- 43:10 **the LORD**: And say unto them, Thus saith the LORD of hosts, the God of Israel; Behold, I will send and take Nebuchadrezzar the king of Babylon, my servant, and will set his throne upon these stones that I have hid; and he shall spread his royal pavilion over them.
+- 43:11 **the LORD**: And when he cometh, he shall smite the land of Egypt, and deliver such as are for death to death; and such as are for captivity to captivity; and such as are for the sword to the sword.
+- 43:12 **the LORD**: And I will kindle a fire in the houses of the gods of Egypt; and he shall burn them, and carry them away captives: and he shall array himself with the land of Egypt, as a shepherd putteth on his garment; and he shall go forth from thence in peace.
+- 43:13 **the LORD**: He shall break also the images of Bethshemesh, that is in the land of Egypt; and the houses of the gods of the Egyptians shall he burn with fire.
+
+## Jeremiah 44
 
 
 ## Jeremiah 46

@@ -62,3 +62,6 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 20:18 **the LORD**: Judah shall go up first.
 - 20:23 **the LORD**: Go up against him.)
 - 20:28 **the LORD**: Go up; for to morrow I will deliver them into thine hand.
+
+## Judges 21
+

@@ -10,6 +10,9 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 2:1 **the LORD**: Go up.
 - 2:1 **the LORD**: Unto Hebron.
 
+## 2 Samuel 3
+
+
 ## 2 Samuel 5
 
 - 5:19 **the LORD**: Go up: for I will doubtless deliver the Philistines into thine hand.

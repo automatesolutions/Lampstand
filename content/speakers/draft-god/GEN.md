@@ -113,6 +113,23 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 13:16 **the LORD**: And I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered.
 - 13:17 **the LORD**: Arise, walk through the land in the length of it and in the breadth of it; for I will give it unto thee.
 
+## Genesis 15
+
+- 15:1 **the LORD**: Fear not, Abram: I am thy shield, and thy exceeding great reward.
+- 15:4 **the LORD**: This shall not be thine heir; but he that shall come forth out of thine own bowels shall be thine heir.
+- 15:5 **the LORD**: Look now toward heaven, and tell the stars, if thou be able to number them:
+- 15:5 **the LORD**: So shall thy seed be.
+- 15:7 **the LORD**: I am the LORD that brought thee out of Ur of the Chaldees, to give thee this land to inherit it.
+- 15:9 **the LORD**: Take me an heifer of three years old, and a she goat of three years old, and a ram of three years old, and a turtledove, and a young pigeon.
+- 15:13 **the LORD**: Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;
+- 15:14 **the LORD**: And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.
+- 15:15 **the LORD**: And thou shalt go to thy fathers in peace; thou shalt be buried in a good old age.
+- 15:16 **the LORD**: But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.
+- 15:18 **the LORD**: Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:
+- 15:19 **the LORD**: The Kenites, and the Kenizzites, and the Kadmonites,
+- 15:20 **the LORD**: And the Hittites, and the Perizzites, and the Rephaims,
+- 15:21 **the LORD**: And the Amorites, and the Canaanites, and the Girgashites, and the Jebusites.
+
 ## Genesis 16
 
 

@@ -7,6 +7,15 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 5:9 **the LORD of hosts**: Of a truth many houses shall be desolate, even great and fair, without inhabitant.
 - 5:10 **the LORD of hosts**: Yea, ten acres of vineyard shall yield one bath, and the seed of an homer shall yield an ephah.
 
+## Isaiah 6
+
+- 6:8 **the Lord**: Whom shall I send, and who will go for us?
+- 6:9 **the Lord**: Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.
+- 6:10 **the Lord**: Make the heart of this people fat, and make their ears heavy, and shut their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and convert, and be healed.
+- 6:11 **the Lord**: Until the cities be wasted without inhabitant, and the houses without man, and the land be utterly desolate,
+- 6:12 **the Lord**: And the LORD have removed men far away, and there be a great forsaking in the midst of the land.
+- 6:13 **the Lord**: But yet in it shall be a tenth, and it shall return, and shall be eaten: as a teil tree, and as an oak, whose substance is in them, when they cast their leaves: so the holy seed shall be the substance thereof.
+
 ## Isaiah 7
 
 - 7:3 **the LORD**: Go forth now to meet Ahaz, thou, and Shearjashub thy son, at the end of the conduit of the upper pool in the highway of the fuller’s field;
@@ -31,9 +40,21 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 8:14 **the LORD**: And he shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Israel, for a gin and for a snare to the inhabitants of Jerusalem.
 - 8:15 **the LORD**: And many among them shall stumble, and fall, and be broken, and be snared, and be taken.
 
+## Isaiah 14
+
+- 14:24 **The LORD of hosts**: Surely as I have thought, so shall it come to pass; and as I have purposed, so shall it stand:
+- 14:25 **The LORD of hosts**: That I will break the Assyrian in my land, and upon my mountains tread him under foot: then shall his yoke depart from off them, and his burden depart from off their shoulders.
+
+## Isaiah 16
+
+
 ## Isaiah 18
 
 - 18:4 **the LORD**: I will take my rest, and I will consider in my dwelling place like a clear heat upon herbs, and like a cloud of dew in the heat of harvest.
+
+## Isaiah 19
+
+- 19:25 **the LORD of hosts**: Blessed be Egypt my people, and Assyria the work of my hands, and Israel mine inheritance.
 
 ## Isaiah 20
 
@@ -49,7 +70,13 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 21:16 **the LORD**: Within a year, according to the years of an hireling, and all the glory of Kedar shall fail:
 - 21:17 **the LORD**: And the residue of the number of archers, the mighty men of the children of Kedar, shall be diminished:
 
+## Isaiah 30
+
+
 ## Isaiah 36
+
+
+## Isaiah 37
 
 
 ## Isaiah 38
@@ -68,4 +95,10 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 - 49:6 **the LORD**: It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Israel: I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.
 
 ## Isaiah 54
+
+
+## Isaiah 56
+
+
+## Isaiah 66
 

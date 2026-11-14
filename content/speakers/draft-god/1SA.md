@@ -57,6 +57,9 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 ## 1 Samuel 17
 
 
+## 1 Samuel 20
+
+
 ## 1 Samuel 23
 
 - 23:2 **the LORD**: Go, and smite the Philistines, and save Keilah.
@@ -67,5 +70,12 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 ## 1 Samuel 24
 
 
+## 1 Samuel 26
+
+
 ## 1 Samuel 28
 
+
+## 1 Samuel 30
+
+- 30:8 **the LORD**: Pursue: for thou shalt surely overtake them, and without fail recover all.

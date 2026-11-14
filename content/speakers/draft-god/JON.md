@@ -9,6 +9,10 @@ Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx sc
 ## Jonah 2
 
 
+## Jonah 3
+
+- 3:2 **the LORD**: Arise, go unto Nineveh, that great city, and preach unto it the preaching that I bid thee.
+
 ## Jonah 4
 
 - 4:4 **the LORD**: Doest thou well to be angry?
