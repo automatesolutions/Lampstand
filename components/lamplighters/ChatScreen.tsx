@@ -1,18 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { Button, IconButton } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { Sheet } from "@/components/ui/Sheet";
 import { parseRef, versesIn } from "@/lib/bible/parse";
+import { readerHref } from "@/lib/bible/refs";
+import { SWATCH } from "@/lib/highlights/colors";
+import { useStore } from "@/lib/store";
 import {
   circlePeople,
   deleteMessage,
   friendly,
   getCircle,
   getMessage,
+  lastReadAt,
   markChatRead,
+  openedFromCircles,
   messagesBefore,
   reportMessage,
   sendMessage,
@@ -20,13 +26,35 @@ import {
   useLampProfile,
   useLoad,
   type Message,
+  type SharedHighlight,
 } from "@/lib/lamplighters/client";
 import { LAMPLIGHTERS } from "@/lib/lamplighters/config";
 import { supabase } from "@/lib/supabase/client";
+import { ChallengeSetupSheet } from "@/components/quiz/ChallengeSection";
+import { loadedEnough, openingPoint } from "@/lib/lamplighters/chat-open";
+import { circleSets } from "@/lib/quiz/client";
 import { Avatar } from "./Avatar";
 import { ErrorState, LoadingRows } from "./States";
 
 const timeOf = (iso: string) => new Date(iso).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+/** A shared highlight in a bubble: the color's stripe, the reference, the KJV words, and the summary if shared. */
+function HighlightCard({ h }: { h: SharedHighlight }) {
+  return (
+    <span className="flex flex-col gap-1 rounded-md border-l-[3px] bg-bg/70 px-3 py-2" style={{ borderColor: SWATCH[h.color]?.fill ?? "var(--gold)" }}>
+      <span className="text-footnote font-semibold text-gold-text">
+        Highlighted {h.ref} KJV<span className="sr-only">, {SWATCH[h.color]?.label.toLowerCase() ?? ""} highlight</span>
+      </span>
+      <span className="line-clamp-6 font-scripture text-subhead leading-relaxed">{h.text}</span>
+      {h.summary && (
+        <span className="mt-1 border-t border-divider pt-1.5 text-callout text-text-secondary">
+          {h.summary}
+          <span className="mt-0.5 block text-footnote">Summary written by AI.</span>
+        </span>
+      )}
+    </span>
+  );
+}
+
 const dayOf = (iso: string) => new Date(iso).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
 
 /** Newest last, one copy of each message. */
@@ -52,6 +80,10 @@ export function ChatScreen({ id }: { id: string }) {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState<Message | null>(null);
   const [verseOpen, setVerseOpen] = useState(false);
+  const [challengeOpen, setChallengeOpen] = useState(false);
+  // An open live game in this Circle: a banner to join it (checked again as messages arrive,
+  // so the host's "Started a Bible challenge" message brings it up). Hidden before 0012.
+  const [openGame, setOpenGame] = useState<{ id: string; label: string } | null>(null);
   const [now, setNow] = useState(() => Date.now());
   const scroller = useRef<HTMLDivElement>(null);
   const keepBottom = useRef(true);
@@ -61,21 +93,42 @@ export function ChatScreen({ id }: { id: string }) {
   // One id per message being sent: trying again after a failure reuses it, so the
   // server never posts (or emails) it twice.
   const pending = useRef<{ key: string; id: string } | null>(null);
+  const router = useRouter();
+  // Opened from the Circles list (Back returns there through history) or from a link.
+  const [fromList] = useState(openedFromCircles);
+  // Where to open: the first unread message (with a "New messages" line above it), or the
+  // message a notification pointed at (?m=), or else the newest.
+  const [firstUnread, setFirstUnread] = useState<string | null>(null);
+  const [target, setTarget] = useState<string | null>(null);
+  const scrolledTo = useRef(false);
 
   const byId = useMemo(() => new Map((people.data ?? []).map((p) => [p.user_id, p])), [people.data]);
   const owner = (people.data ?? []).some((p) => p.is_me && p.role === "owner");
 
-  // First page.
+  // First page, plus enough earlier pages to reach the first unread message or the one a
+  // notification opened (at most 5 pages). Where I'd read up to is read before anything
+  // is marked read.
   const loadFirst = useCallback(() => {
     if (!uid) return;
-    messagesBefore(id, null, LAMPLIGHTERS.chatPageSize).then(
-      (page) => {
-        setMessages((m) => mergeMessages(m, page));
-        setHasMore(page.length === LAMPLIGHTERS.chatPageSize);
-        setLoaded("ready");
-      },
-      () => setLoaded("error"),
-    );
+    const wanted = new URLSearchParams(location.search).get("m");
+    (async () => {
+      const [readUpTo, wantedMessage] = await Promise.all([lastReadAt(id, uid).catch(() => null), wanted ? getMessage(wanted) : null]);
+      let all: Message[] = [];
+      let more = true;
+      for (let pages = 0; pages < 5 && more; pages++) {
+        const page = await messagesBefore(id, all.length ? all[0].created_at : null, LAMPLIGHTERS.chatPageSize);
+        all = mergeMessages(all, page);
+        more = page.length === LAMPLIGHTERS.chatPageSize;
+        if (loadedEnough(all, readUpTo, wantedMessage?.id ?? null)) break;
+      }
+      const open = openingPoint(all, readUpTo, uid, wantedMessage?.id ?? null);
+      setFirstUnread(open.firstUnread);
+      setTarget(open.target);
+      if (wanted) history.replaceState(history.state, "", location.pathname); // a reload opens at the newest
+      setMessages((m) => mergeMessages(m, all));
+      setHasMore(more);
+      setLoaded("ready");
+    })().catch(() => setLoaded("error"));
   }, [id, uid]);
   useEffect(loadFirst, [loadFirst]);
 
@@ -130,17 +183,43 @@ export function ChatScreen({ id }: { id: string }) {
     if (uid && loaded === "ready" && document.visibilityState === "visible") markChatRead(id, uid).catch(() => {});
   }, [id, uid, loaded, messages.length]);
 
-  // Stay at the bottom for new messages; keep the place when older ones load above.
+  const messageCount = messages.length;
+  useEffect(() => {
+    if (!uid) return;
+    let live = true;
+    circleSets(id).then(
+      (sets) => {
+        const open = sets.find((x) => x.open_game);
+        if (live) setOpenGame(open ? { id: open.open_game!, label: `code ${open.open_code}` } : null);
+      },
+      () => {}, // before migration 0012: no banner
+    );
+    return () => {
+      live = false;
+    };
+  }, [id, uid, messageCount]);
+
+  // Stay at the bottom for new messages; keep the place when older ones load above. On
+  // opening, start at the target message instead (once).
   useLayoutEffect(() => {
     const el = scroller.current;
     if (!el) return;
+    if (target && !scrolledTo.current && loaded === "ready") {
+      const row = document.getElementById(`msg-${target}`);
+      if (row) {
+        scrolledTo.current = true;
+        keepBottom.current = false;
+        row.scrollIntoView({ block: firstUnread === target ? "start" : "center" });
+        return;
+      }
+    }
     if (restoreFrom.current != null) {
       el.scrollTop = el.scrollHeight - restoreFrom.current;
       restoreFrom.current = null;
     } else if (keepBottom.current) {
       el.scrollTop = el.scrollHeight;
     }
-  }, [messages]);
+  }, [messages, target, firstUnread, loaded]);
 
   async function loadEarlier() {
     const el = scroller.current;
@@ -198,11 +277,21 @@ export function ChatScreen({ id }: { id: string }) {
   return (
     <div className="flex h-dvh flex-col bg-bg">
       <header className="glass z-10 flex shrink-0 items-center gap-2 border-b border-divider px-2 pt-[env(safe-area-inset-top)]">
-        <Link href={`/circles/${id}`} className="flex min-h-11 items-center gap-0.5 rounded-md pr-2 text-body text-gold-text">
+        <Link
+          href="/circles"
+          onClick={(e) => {
+            // From the list: go back through history, like the phone's back gesture.
+            if (fromList) {
+              e.preventDefault();
+              router.back();
+            }
+          }}
+          className="flex min-h-11 items-center gap-0.5 rounded-md pr-2 text-body text-gold-text"
+        >
           <Icon name="chevron-left" className="size-6" />
-          <span className="sr-only">Back to </span>Circle
+          <span className="sr-only">Back to </span>Circles
         </Link>
-        <div className="min-w-0 flex-1 py-1.5 text-center">
+        <Link href={`/circles/${id}`} aria-label={`${title}: members, shared highlights and settings`} className="min-w-0 flex-1 rounded-md py-1.5 text-center">
           <h1 className="truncate text-headline">{title}</h1>
           <p aria-live="polite" className="h-[18px] truncate text-footnote text-text-secondary">
             {typingNames.length ? (
@@ -220,13 +309,27 @@ export function ChatScreen({ id }: { id: string }) {
               ""
             )}
           </p>
-        </div>
-        <span aria-hidden="true" className="flex w-[76px] justify-end -space-x-2 pr-1">
-          {(people.data ?? []).slice(0, 3).map((p) => (
-            <Avatar key={p.user_id} id={p.avatar_id} size={28} className="rounded-full ring-2 ring-bg" />
-          ))}
-        </span>
+        </Link>
+        <Link href={`/circles/${id}`} aria-label={`About ${title}`} className="flex min-h-11 items-center gap-1 rounded-md pl-1 pr-1">
+          <span aria-hidden="true" className="flex -space-x-2">
+            {(people.data ?? []).slice(0, 2).map((p) => (
+              <Avatar key={p.user_id} id={p.avatar_id} size={28} className="rounded-full ring-2 ring-bg" />
+            ))}
+          </span>
+          <Icon name="info" className="size-6 text-gold-text" />
+        </Link>
       </header>
+      {openGame && (
+        <div className="flex shrink-0 items-center gap-3 border-b border-divider bg-gold-wash px-4 py-2">
+          <Icon name="trophy" className="size-5 text-gold-text" />
+          <p className="min-w-0 flex-1 truncate text-subhead">
+            <span className="font-semibold">Bible challenge</span> · {openGame.label}
+          </p>
+          <Link href={`/challenge/${openGame.id}`} className="inline-flex min-h-11 items-center rounded-md bg-gold-strong px-3 font-semibold text-on-gold">
+            Join
+          </Link>
+        </div>
+      )}
 
       <div
         ref={scroller}
@@ -258,14 +361,21 @@ export function ChatScreen({ id }: { id: string }) {
                 const newDay = !prev || dayOf(prev.created_at) !== dayOf(m.created_at);
                 const grouped = !newDay && prev?.sender_id === m.sender_id && Date.parse(m.created_at) - Date.parse(prev.created_at) < 5 * 60_000;
                 return (
-                  <div key={m.id} className="flex flex-col">
+                  <div key={m.id} id={`msg-${m.id}`} className={`flex scroll-mt-4 flex-col rounded-lg ${target === m.id && firstUnread !== m.id ? "outline-2 outline-offset-2 outline-gold" : ""}`}>
                     {newDay && <p className="my-3 self-center rounded-full bg-surface px-3 py-1 text-footnote text-text-secondary">{dayOf(m.created_at)}</p>}
+                    {firstUnread === m.id && (
+                      <p className="my-2 flex items-center gap-3 text-footnote font-semibold text-gold-text">
+                        <span aria-hidden="true" className="h-px flex-1 bg-gold" />
+                        New messages
+                        <span aria-hidden="true" className="h-px flex-1 bg-gold" />
+                      </p>
+                    )}
                     <div className={`flex items-end gap-2 ${mine ? "flex-row-reverse" : ""} ${grouped ? "" : "mt-2"}`}>
                       {!mine && (grouped ? <span className="w-8 shrink-0" /> : <Avatar id={person?.avatar_id} size={32} />)}
                       <button
                         type="button"
                         onClick={() => !m.deleted_at && setSelected(m)}
-                        aria-label={`${mine ? "You" : (person?.display_name ?? "Former member")}, ${timeOf(m.created_at)}: ${m.deleted_at ? "message deleted" : (m.verse ? `${m.verse.ref}. ${m.verse.text}. ` : "") + (m.body ?? "")}. Options`}
+                        aria-label={`${mine ? "You" : (person?.display_name ?? "Former member")}, ${timeOf(m.created_at)}: ${m.deleted_at ? "message deleted" : (m.verse ? `${m.verse.ref}. ${m.verse.text}. ` : "") + (m.highlight ? `Highlighted ${m.highlight.ref}. ${m.highlight.text}. ` : "") + (m.body ?? "")}. Options`}
                         className={`flex max-w-[78%] flex-col gap-1 rounded-lg px-3.5 py-2.5 text-left ${mine ? "rounded-br-[6px] bg-gold-wash" : "rounded-bl-[6px] bg-surface-raised shadow-soft ring-1 ring-divider/60"}`}
                       >
                         {!mine && !grouped && <span className="text-footnote font-semibold text-gold-text">{person?.display_name ?? "Former member"}</span>}
@@ -279,6 +389,7 @@ export function ChatScreen({ id }: { id: string }) {
                                 <span className="text-footnote font-semibold text-gold-text">{m.verse.ref} KJV</span>
                               </span>
                             )}
+                            {m.highlight && <HighlightCard h={m.highlight} />}
                             {m.body && <span className="whitespace-pre-wrap break-words text-body">{m.body}</span>}
                           </>
                         )}
@@ -307,6 +418,7 @@ export function ChatScreen({ id }: { id: string }) {
         )}
         <div className="mx-auto flex max-w-[680px] items-end gap-1.5">
           <IconButton icon="quote" label="Share a verse" onClick={() => setVerseOpen(true)} />
+          <IconButton icon="trophy" label="Start a Bible challenge" onClick={() => setChallengeOpen(true)} />
           <label className="sr-only" htmlFor="chat-input">
             Message
           </label>
@@ -349,6 +461,7 @@ export function ChatScreen({ id }: { id: string }) {
         )}
       </Sheet>
 
+      {challengeOpen && <ChallengeSetupSheet circleId={id} onClose={() => setChallengeOpen(false)} />}
       {verseOpen && <VerseSheet onClose={() => setVerseOpen(false)} onShare={(verse, note) => send(note, verse).then(() => setVerseOpen(false))} />}
     </div>
   );
@@ -374,7 +487,9 @@ function MessageOptions({
   const [reporting, setReporting] = useState(false);
   const [reason, setReason] = useState("");
   const [busy, setBusy] = useState(false);
-  const text = [message.verse ? `${message.verse.text} (${message.verse.ref} KJV)` : "", message.body ?? ""].filter(Boolean).join("\n");
+  const version = useStore((s) => s.prefs.version);
+  const h = message.highlight;
+  const text = [message.verse ? `${message.verse.text} (${message.verse.ref} KJV)` : "", h ? `${h.text} (${h.ref} KJV)` : "", message.body ?? ""].filter(Boolean).join("\n");
 
   const act = async (fn: () => Promise<unknown>, after: () => void) => {
     setBusy(true);
@@ -425,6 +540,13 @@ function MessageOptions({
           <Icon name="copy" className="size-5 text-gold" /> Copy
         </button>
       </li>
+      {h && (
+        <li className="border-t border-divider">
+          <Link href={readerHref(version, h, h.verse_start, h.verse_end)} className="flex min-h-14 w-full items-center gap-3 px-4 text-left text-headline">
+            <Icon name="book-open" className="size-5 text-gold" /> Open {h.ref}
+          </Link>
+        </li>
+      )}
       {canDelete && (
         <li className="border-t border-divider">
           <button type="button" disabled={busy} onClick={() => act(() => deleteMessage(message.id), () => (onDeleted(message.id), onDone()))} className="flex min-h-14 w-full items-center gap-3 px-4 text-left text-headline text-danger">

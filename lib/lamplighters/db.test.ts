@@ -359,6 +359,48 @@ describe("notifications", () => {
     await expect(t.as(owner, "select * from public.claim_notification_emails($1, $2, null)", [owner, c])).rejects.toThrow(/permission denied/);
   });
 
+  it("sends a failed message email again with the sender's next message", async () => {
+    const owner = await t.user(email("ana"));
+    const c = await circle(owner);
+    const other = await circle(owner);
+    const bob = await join(owner, c, "bob");
+    await emailOn(bob, "message_email");
+    const unsend = (ids: string[]) => t.admin("update public.notifications set emailed_at = null where id = any($1::uuid[])", [ids]); // what notify.ts does when sending fails
+
+    // The first email fails to send.
+    const first = await say(owner, c, "Psalm 1 tonight?");
+    const failed = await t.admin<{ id: string }>("select id from public.notifications where message_id = $1", [first]);
+    expect(await claim(owner, c, first)).toHaveLength(1);
+    await unsend(failed.map((r) => r.id));
+
+    // A message in another Circle doesn't pick it up, and neither does Bob's own message.
+    const elsewhere = await say(owner, other, "Hi other Circle");
+    expect((await claim(owner, other, elsewhere)).map((r) => r.body)).toEqual([]);
+    const bobs = await say(bob, c, "Yes!");
+    expect(await claim(bob, c, bobs)).toHaveLength(0); // the owner turned message emails off
+
+    // Ana's next message sends both, oldest first, and neither again.
+    const second = await say(owner, c, "Starting at 8");
+    expect((await claim(owner, c, second)).map((r) => r.body)).toEqual(["Psalm 1 tonight?", "Starting at 8"]);
+    expect(await claim(owner, c, second)).toHaveLength(0);
+
+    // A failed email for a message that was then deleted is skipped.
+    const oops = await say(owner, c, "wrong chat");
+    const oopsRows = await t.admin<{ id: string }>("select id from public.notifications where message_id = $1", [oops]);
+    expect(await claim(owner, c, oops)).toHaveLength(1);
+    await unsend(oopsRows.map((r) => r.id));
+    await t.as(owner, "select public.delete_message($1)", [oops]);
+    // And one that failed more than an hour ago is left alone.
+    const stale = await say(owner, c, "Yesterday's plan");
+    const staleRows = await t.admin<{ id: string }>("select id from public.notifications where message_id = $1", [stale]);
+    expect(await claim(owner, c, stale)).toHaveLength(1);
+    await unsend(staleRows.map((r) => r.id));
+    await t.admin("update public.notifications set created_at = now() - interval '2 hours' where id = any($1::uuid[])", [staleRows.map((r) => r.id)]);
+
+    const third = await say(owner, c, "See you there");
+    expect((await claim(owner, c, third)).map((r) => r.body)).toEqual(["See you there"]);
+  });
+
   it("hides deleted messages and people blocked later", async () => {
     const owner = await t.user(email("ana"));
     const c = await circle(owner);

@@ -3,6 +3,7 @@
 // copy wins; deletions remove items everywhere; settings, position and the reading
 // round take the newer side.
 
+import { withoutOverlaps } from "@/lib/highlights/ranges";
 import type { AppState, ChapterRead, Goal, Highlight, Note, Position, Round } from "@/lib/store";
 
 export interface Remote {
@@ -18,6 +19,21 @@ export interface Remote {
 
 export const readKey = (r: Pick<ChapterRead, "book" | "chapter" | "readOn">) => `${r.book}.${r.chapter}.${r.readOn}`;
 export const highlightKey = (h: Pick<Highlight, "book" | "chapter" | "verseStart">) => `${h.book}.${h.chapter}.${h.verseStart}`;
+
+type Range = Pick<Highlight, "book" | "chapter" | "verseStart" | "verseEnd">;
+
+/**
+ * A summary describes an exact verse range, not a highlight's id: changing a highlight's
+ * color makes a new id, and two devices can make different ids for the same verses. So a
+ * summary carries over to any highlight of the same range, and never to another range.
+ */
+export const sameRange = (a: Range, b: Range) => a.book === b.book && a.chapter === b.chapter && a.verseStart === b.verseStart && a.verseEnd === b.verseEnd;
+
+/** `winner`, with the other copy's summary if it has none and both cover the same verses. */
+function withSummary(winner: Highlight, other: Highlight | undefined): Highlight {
+  if (winner.summary || !other?.summary || !sameRange(winner, other)) return winner;
+  return { ...winner, summary: other.summary };
+}
 
 function newer(a?: string, b?: string) {
   return (a ?? "") >= (b ?? "");
@@ -46,18 +62,15 @@ export function mergeState(local: AppState, remote: Remote): AppState {
     if (remote.deleted.highlights.has(h.id)) continue;
     const k = highlightKey(h);
     const have = highlights.get(k);
-    if (!have || newer(h.createdAt, have.createdAt)) {
-      // A summary written on either side stays with the same highlight.
-      highlights.set(k, have && have.id === h.id && !h.summary && have.summary ? { ...h, summary: have.summary } : h);
-    } else if (have.id === h.id && !have.summary && h.summary) {
-      highlights.set(k, { ...have, summary: h.summary });
-    }
+    // The newer copy wins; a summary written on either side stays with the same verses.
+    highlights.set(k, !have || newer(h.createdAt, have.createdAt) ? withSummary(h, have) : withSummary(have, h));
   }
 
   const position = !remote.position ? local.position : !local.position ? remote.position : newer(local.position.updatedAt, remote.position.updatedAt) ? local.position : remote.position;
 
   const s = remote.settings;
-  const settings = s && !newer(local.settingsAt, s.settingsAt) ? { prefs: s.prefs, onboarded: s.onboarded || local.onboarded, plan: s.plan, settingsAt: s.settingsAt } : {};
+  // The account's settings win when newer; settings it doesn't store (speakerColors) stay as they are here.
+  const settings = s && !newer(local.settingsAt, s.settingsAt) ? { prefs: { ...local.prefs, ...s.prefs }, onboarded: s.onboarded || local.onboarded, plan: s.plan, settingsAt: s.settingsAt } : {};
 
   return {
     ...local,
@@ -66,7 +79,8 @@ export function mergeState(local: AppState, remote: Remote): AppState {
     reads: [...reads.values()].sort((a, b) => a.completedAt.localeCompare(b.completedAt)),
     goals: [...goals.values()].sort((a, b) => a.effectiveFrom.localeCompare(b.effectiveFrom)),
     notes: [...notes.values()],
-    highlights: [...highlights.values()],
+    // Ranges from two devices can overlap (16 to 18 here, 17 there): the newer one wins.
+    highlights: withoutOverlaps([...highlights.values()]),
     position,
   };
 }
@@ -76,6 +90,21 @@ function laterRound(a: Round | null, b: Round | null): Round | null {
   if (!a) return b;
   if (!b) return a;
   return a.startedAt >= b.startedAt ? a : b;
+}
+
+/**
+ * The summary to upload with a highlight row. Never clears one the account has:
+ * - this device has a summary: send it
+ * - the account has one for the same verses: send that one (keeps it, whatever the id)
+ * - the account's row at this verse covers different verses: null (that summary was for them)
+ * - nothing known: undefined, meaning "leave the column out", so the database keeps its value
+ */
+export function summaryToPush(h: Highlight, known: Remote): string | null | undefined {
+  if (h.summary) return h.summary;
+  const k = known.highlights.find((x) => highlightKey(x) === highlightKey(h));
+  if (!k) return undefined;
+  if (!sameRange(k, h)) return null;
+  return k.summary || undefined;
 }
 
 /** What this device has that the account doesn't (or has older), to upload. */

@@ -8,11 +8,13 @@ import { CreateCircleSheet } from "@/components/lamplighters/CreateCircleSheet";
 import { NotificationsSheet } from "@/components/lamplighters/NotificationsSheet";
 import { NudgeInbox } from "@/components/lamplighters/NudgeInbox";
 import { ProfileSheet } from "@/components/lamplighters/ProfileSheet";
+import { JoinGameSheet } from "@/components/quiz/JoinGameSheet";
 import { EmptyState, ErrorState, LoadingRows } from "@/components/lamplighters/States";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { PageTitle } from "@/components/ui/NavBar";
-import { myCircles, myNotifications, myNudges, useLampProfile, useLampVersion, useLoad } from "@/lib/lamplighters/client";
+import { useNotifications } from "@/lib/lamplighters/badge";
+import { cameFromCircles, myCircles, myNudges, useLampProfile, useLampVersion, useLoad } from "@/lib/lamplighters/client";
 import { accountsEnabled } from "@/lib/supabase/client";
 import { useHydrated } from "@/lib/store";
 
@@ -22,12 +24,29 @@ export default function CirclesPage() {
   const me = useLampProfile();
   const signedIn = !!me.userId;
   const v = useLampVersion();
-  const circles = useLoad(signedIn ? myCircles : null, [me.userId, v]);
-  const nudges = useLoad(signedIn ? myNudges : null, [me.userId, v]);
-  const notifications = useLoad(signedIn ? myNotifications : null, [me.userId, v]);
+  // The same list the Circles tab dot counts (lib/lamplighters/badge), so the bell, its
+  // sheet and the dot always agree. When the count changes, nudges and Circles reload too.
+  const notifications = useNotifications();
+  const circles = useLoad(signedIn ? myCircles : null, [me.userId, v, notifications.unread]);
+  // 30 nudges, or up to 100 when a notification opens an older one (item below).
+  const [nudgeLimit, setNudgeLimit] = useState(30);
+  const nudges = useLoad(signedIn ? () => myNudges(nudgeLimit) : null, [me.userId, v, notifications.unread, nudgeLimit]);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [shownNudge, setShownNudge] = useState<string | null>(null);
+  const shownLoaded = !!shownNudge && !!nudges.data?.some((n) => n.id === shownNudge);
+
+  // A nudge opened from Notifications: once it's in the inbox, scroll to it and mark it for a moment.
+  useEffect(() => {
+    if (!shownNudge || !shownLoaded) return;
+    const id = shownNudge;
+    requestAnimationFrame(() => {
+      document.getElementById(`nudge-${id}`)?.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    });
+    const t = window.setTimeout(() => setShownNudge((s) => (s === id ? null : s)), 2400);
+    return () => window.clearTimeout(t);
+  }, [shownNudge, shownLoaded]);
   const [createOpen, setCreateOpen] = useState(false);
+  const [joinOpen, setJoinOpen] = useState(false);
   const [signInOpen, setSignInOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
@@ -73,23 +92,19 @@ export default function CirclesPage() {
   }
 
   const list = circles.data ?? [];
-  const newCount = (notifications.data ?? []).filter((n) => !n.read_at).length;
+  const newCount = notifications.unread;
 
-  // A nudge opened from Notifications: scroll to it in the inbox and mark it for a moment.
+  // Older than the 30 loaded: ask for more first (the effect above scrolls once it arrives).
   function showNudge(id: string) {
     setShownNudge(id);
-    requestAnimationFrame(() => {
-      const el = document.getElementById(`nudge-${id}`);
-      el?.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    });
-    window.setTimeout(() => setShownNudge((s) => (s === id ? null : s)), 2400);
+    if (!nudges.data?.some((n) => n.id === id)) setNudgeLimit(100);
   }
   return (
     <div className="arrive flex flex-col gap-8">
       <div className="flex items-end justify-between gap-3">
         {header}
         <div className="mb-1 flex items-center gap-2">
-          {!notifications.error && (
+          {notifications.items && (
             <button
               type="button"
               onClick={() => setNotificationsOpen(true)}
@@ -99,7 +114,7 @@ export default function CirclesPage() {
             >
               <Icon name="bell" className="size-6" />
               {newCount > 0 && (
-                <span aria-hidden="true" className="absolute right-0.5 top-0.5 grid min-w-5 place-items-center rounded-full bg-danger px-1 text-[0.6875rem] font-semibold leading-5 text-bg ring-2 ring-bg">
+                <span aria-hidden="true" className="absolute right-0.5 top-0.5 grid min-w-5 place-items-center rounded-full bg-danger px-1 text-[0.75rem] font-semibold leading-5 text-bg ring-2 ring-bg">
                   {newCount > 99 ? "99+" : newCount}
                 </span>
               )}
@@ -133,7 +148,7 @@ export default function CirclesPage() {
           <ul className="flex flex-col gap-2.5">
             {list.map((c) => (
               <li key={c.id}>
-                <Link href={`/circles/${c.id}`} className="flex min-h-[76px] items-center gap-3.5 rounded-lg bg-surface-raised px-4 py-3 shadow-soft ring-1 ring-divider/60 active:bg-gold-wash">
+                <Link href={`/chat/${c.id}`} onClick={cameFromCircles} className="flex min-h-[76px] items-center gap-3.5 rounded-lg bg-surface-raised px-4 py-3 shadow-soft ring-1 ring-divider/60 active:bg-gold-wash">
                   <span aria-hidden="true" className="flex shrink-0 -space-x-3">
                     {c.avatars.slice(0, 3).map((a, i) => (
                       <Avatar key={i} id={a || null} size={36} className="rounded-full ring-2 ring-surface-raised" />
@@ -158,14 +173,20 @@ export default function CirclesPage() {
           </ul>
         )}
         {list.length > 0 && (
-          <Button icon="plus" className="mt-1 self-start" onClick={() => setCreateOpen(true)}>
-            New Circle
-          </Button>
+          <div className="mt-1 flex flex-wrap gap-2.5">
+            <Button icon="plus" onClick={() => setCreateOpen(true)}>
+              New Circle
+            </Button>
+            <Button icon="users" onClick={() => setJoinOpen(true)}>
+              Join a game
+            </Button>
+          </div>
         )}
       </section>
 
-      <NotificationsSheet open={notificationsOpen} onOpenChange={setNotificationsOpen} items={notifications.data ?? []} onShowNudge={showNudge} />
+      <NotificationsSheet open={notificationsOpen} onOpenChange={setNotificationsOpen} items={notifications.items ?? []} onShowNudge={showNudge} />
       <CreateCircleSheet open={createOpen} onOpenChange={setCreateOpen} />
+      <JoinGameSheet open={joinOpen} onOpenChange={setJoinOpen} />
       {me.data && (
         <ProfileSheet key={String(profileOpen)} open={profileOpen} onOpenChange={setProfileOpen} userId={me.userId!} profile={me.data} welcome={needsProfile} />
       )}

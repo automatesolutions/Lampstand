@@ -11,7 +11,7 @@ import { supabase } from "@/lib/supabase/client";
 import { getState, goalOn, onChange, readsPerDay, today, update, type AppState, type HighlightColor } from "@/lib/store";
 import { computeStreak } from "@/lib/streak";
 import type { VersionId } from "@/lib/bible/types";
-import { changesToPush, mergeState, type Remote } from "./merge";
+import { changesToPush, mergeState, summaryToPush, type Remote } from "./merge";
 
 export interface SyncStatus {
   ready: boolean; // the session check has finished
@@ -167,13 +167,24 @@ async function push(db: SupabaseClient) {
   await upsert(db, "chapter_reads", c.reads.map((r) => ({ user_id, book: r.book, chapter: r.chapter, version: r.version, read_on: r.readOn, completed_at: r.completedAt })), "user_id,book,chapter,read_on", true);
   await upsert(db, "daily_goals", c.goals.map((g) => ({ user_id, chapters_per_day: g.chaptersPerDay, effective_from: g.effectiveFrom })), "user_id,effective_from");
   await upsert(db, "notes", c.notes.map((n) => ({ id: n.id, user_id, book: n.book, chapter: n.chapter, verse_start: n.verseStart, verse_end: n.verseEnd, body: n.body, created_at: n.createdAt, updated_at: n.updatedAt })), "id");
-  const highlightRows = c.highlights.map((h) => ({ id: h.id, user_id, book: h.book, chapter: h.chapter, verse_start: h.verseStart, verse_end: h.verseEnd, color: h.color, created_at: h.createdAt, ...(summaryColumn ? { summary: h.summary ?? null } : {}) }));
-  try {
-    await upsert(db, "highlights", highlightRows, "user_id,book,chapter,verse_start");
-  } catch (e) {
-    if (!summaryColumn || !missingColumn(e)) throw e;
-    summaryColumn = false;
-    await upsert(db, "highlights", highlightRows.map(({ summary: _s, ...r }) => r), "user_id,book,chapter,verse_start"); // eslint-disable-line @typescript-eslint/no-unused-vars
+  // Two batches: rows that set the summary, and rows that leave the column out so the
+  // account keeps the summary it has (a row with summary: null would erase it).
+  const row = (h: (typeof c.highlights)[number]) => ({ id: h.id, user_id, book: h.book, chapter: h.chapter, verse_start: h.verseStart, verse_end: h.verseEnd, color: h.color, created_at: h.createdAt });
+  const withSummary = c.highlights.flatMap((h) => {
+    const summary = summaryToPush(h, known!);
+    return summary === undefined ? [] : [{ ...row(h), summary }];
+  });
+  const withoutSummary = c.highlights.filter((h) => summaryToPush(h, known!) === undefined).map(row);
+  if (withoutSummary.length) await upsert(db, "highlights", withoutSummary, "user_id,book,chapter,verse_start");
+  if (withSummary.length) {
+    try {
+      if (!summaryColumn) throw Object.assign(new Error("summary column missing"), { code: "42703" });
+      await upsert(db, "highlights", withSummary, "user_id,book,chapter,verse_start");
+    } catch (e) {
+      if (!missingColumn(e)) throw e;
+      summaryColumn = false;
+      await upsert(db, "highlights", withSummary.map(({ summary: _s, ...r }) => r), "user_id,book,chapter,verse_start"); // eslint-disable-line @typescript-eslint/no-unused-vars
+    }
   }
   if (c.position) {
     const p = c.position;

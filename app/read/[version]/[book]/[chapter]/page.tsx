@@ -6,6 +6,7 @@ import { getProvider } from "@/lib/bible";
 import { BOOKS, bookBySlug } from "@/lib/bible/books";
 import { versionFromSlug } from "@/lib/bible/provider";
 import { formatRef, nextChapter, prevChapter } from "@/lib/bible/refs";
+import { chapterSpeakers } from "@/lib/bible/speakers-load";
 import { chapterNote } from "@/lib/chapter-notes";
 import { contextCard } from "@/lib/context-cards";
 import { plateSrc } from "@/lib/plates";
@@ -63,7 +64,8 @@ async function ChapterContent({ params }: { params: PageProps<"/read/[version]/[
   if (!r) notFound();
   const provider = getProvider(r.version.id);
   const ref = { book: r.book.code, chapter: r.chapter };
-  const [chapter, note] = await Promise.all([provider?.chapter(ref), chapterNote(ref)]);
+  // Speaker colors match our KJV text only.
+  const [chapter, note, speakers] = await Promise.all([provider?.chapter(ref), chapterNote(ref), r.version.id === "KJV" ? chapterSpeakers(ref) : null]);
   if (!chapter) notFound();
 
   return (
@@ -73,6 +75,7 @@ async function ChapterContent({ params }: { params: PageProps<"/read/[version]/[
       bookName={r.book.name}
       card={contextCard(r.book.code) ?? null}
       note={note}
+      speakers={speakers}
       plate={plateSrc(r.book.code)}
       prev={prevChapter(ref)}
       next={nextChapter(ref)}

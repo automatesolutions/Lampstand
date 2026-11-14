@@ -17,6 +17,9 @@
   --gold: #a8791f;
   --gold-text: #77560f;
   --gold-wash: #efdfb8;
+  /* Speaker colors (KJV): AA on the page, the selection and every highlight. DESIGN.md §2. */
+  --speaker-jesus: #245c33;
+  --speaker-other: #284f88;
   --gold-strong: #7a5810;
   --on-gold: #fffaf0;
   --leaf-1: #d9ad4b;
@@ -62,6 +65,8 @@
     --gold: #dcaf55;
     --gold-text: #e8c579;
     --gold-wash: #3d311c;
+    --speaker-jesus: #86ef98;
+    --speaker-other: #9cc0f0;
     --gold-strong: #dcaf55;
     --on-gold: #1b150e;
     --leaf-1: #f0cd7a;
@@ -98,6 +103,8 @@
   --gold: #dcaf55;
   --gold-text: #e8c579;
   --gold-wash: #3d311c;
+  --speaker-jesus: #86ef98;
+  --speaker-other: #9cc0f0;
   --gold-strong: #dcaf55;
   --on-gold: #1b150e;
   --leaf-1: #f0cd7a;

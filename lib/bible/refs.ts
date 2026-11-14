@@ -1,5 +1,6 @@
 import { BOOKS, bookByCode, bookIndex } from "./books";
 import type { ChapterRef, VersionId } from "./types";
+import { listNames } from "@/lib/list";
 import { versionSlug } from "./provider";
 
 export function chapterKey({ book, chapter }: ChapterRef): string {
@@ -13,9 +14,11 @@ export function formatRef(ref: ChapterRef & { verse?: number; verseEnd?: number 
   return `${name} ${ref.chapter}:${ref.verse}`;
 }
 
-export function readerHref(version: VersionId, ref: ChapterRef, verse?: number): string {
+/** The reader at a chapter; with a verse (or verses) it opens with them selected (#v16, #v16-18). */
+export function readerHref(version: VersionId, ref: ChapterRef, verse?: number, verseEnd?: number): string {
   const slug = bookByCode(ref.book)?.slug ?? ref.book.toLowerCase();
-  return `/read/${versionSlug(version)}/${slug}/${ref.chapter}${verse ? `#v${verse}` : ""}`;
+  const hash = verse ? `#v${verse}${verseEnd && verseEnd > verse ? `-${verseEnd}` : ""}` : "";
+  return `/read/${versionSlug(version)}/${slug}/${ref.chapter}${hash}`;
 }
 
 export function nextChapter(ref: ChapterRef): ChapterRef | null {
@@ -42,4 +45,12 @@ export function chapterRange(from: ChapterRef, to: ChapterRef): ChapterRef[] {
     cur = nextChapter(cur);
   }
   return out;
+}
+
+/**
+ * Chapters as a sentence list with the Oxford comma (DESIGN.md §9):
+ * "John 3", "John 3 and John 2", "John 3, John 2, and John 1".
+ */
+export function listChapters(refs: ChapterRef[]): string {
+  return listNames(refs.map((r) => formatRef(r)));
 }

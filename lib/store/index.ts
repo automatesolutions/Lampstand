@@ -6,6 +6,7 @@
 import { useMemo, useSyncExternalStore } from "react";
 import { BOOKS } from "@/lib/bible/books";
 import type { ChapterRef, VersionId } from "@/lib/bible/types";
+import { applyColor, ensureHighlight } from "@/lib/highlights/ranges";
 import { toISODate, type ISODate } from "@/lib/streak";
 
 export type Theme = "system" | "light" | "dark";
@@ -65,8 +66,22 @@ export interface Position extends ChapterRef {
 export interface AppState {
   schema: 1;
   onboarded: boolean;
-  /** `mascot`: the Lamplighters mascot's messages and celebrations. */
-  prefs: { theme: Theme; textSize: number; leading: number; scriptureFont: ScriptureFont; version: VersionId; mascot: boolean };
+  /**
+   * `mascot`: the Lamplighters mascot's messages and celebrations.
+   * `speakerColors`: words of Jesus and other speakers in color (KJV). This device only.
+   */
+  prefs: {
+    theme: Theme;
+    textSize: number;
+    leading: number;
+    scriptureFont: ScriptureFont;
+    version: VersionId;
+    mascot: boolean;
+    speakerColors?: boolean;
+    /** Listen: the last voice chosen and the reading speed. This device only. */
+    listenVoice?: "device" | "natural";
+    listenSpeed?: number;
+  };
   goals: Goal[];
   reads: ChapterRead[];
   position: Position | null;
@@ -88,7 +103,7 @@ const KEY = "lampstand:v1";
 export const DEFAULT_STATE: AppState = {
   schema: 1,
   onboarded: false,
-  prefs: { theme: "system", textSize: 19, leading: 1.78, scriptureFont: "serif", version: "KJV", mascot: true },
+  prefs: { theme: "system", textSize: 19, leading: 1.78, scriptureFont: "serif", version: "KJV", mascot: true, speakerColors: true },
   goals: [],
   reads: [],
   position: null,
@@ -296,26 +311,35 @@ export function deleteNote(id: string) {
 }
 
 /**
- * One color per verse; the same color again removes it (and its summary). A new color
- * keeps the summary already written. New highlights get theirs from lib/highlights.
+ * Colors the verses `start` to `end` (one verse when they're equal) as one highlight. If
+ * every one of them already has that color, the color comes off them instead. Highlights
+ * never overlap; the rules are in lib/highlights/ranges. New highlights get their summary
+ * from lib/highlights/summaries.
  */
-export function toggleHighlight(ref: ChapterRef, verse: number, color: HighlightColor) {
+export function highlightVerses(ref: ChapterRef, start: number, end: number, color: HighlightColor) {
+  const span = { start: Math.min(start, end), end: Math.max(start, end) };
+  update((s) => ({ ...s, highlights: applyColor(s.highlights, ref, span, color, new Date().toISOString(), () => crypto.randomUUID()) }));
+}
+
+/**
+ * Makes exactly these verses one highlight and returns it (for Share). Never removes a
+ * color: see ensureHighlight in lib/highlights/ranges.
+ */
+export function highlightForSharing(ref: ChapterRef, start: number, end: number): { highlight: Highlight; created: boolean } {
+  const span = { start: Math.min(start, end), end: Math.max(start, end) };
+  let result: { highlight: Highlight; created: boolean } | null = null;
   update((s) => {
-    const at = (h: Highlight) => h.book === ref.book && h.chapter === ref.chapter && h.verseStart === verse;
-    const existing = s.highlights.find(at);
-    const rest = s.highlights.filter((h) => !at(h));
-    if (existing?.color === color) return { ...s, highlights: rest };
-    const h: Highlight = {
-      id: crypto.randomUUID(),
-      ...ref,
-      verseStart: verse,
-      verseEnd: existing?.verseEnd ?? verse,
-      color,
-      createdAt: new Date().toISOString(),
-      summary: existing?.summary ?? null,
-    };
-    return { ...s, highlights: [...rest, h] };
+    const before = s.highlights;
+    const r = ensureHighlight(before, ref, span, "gold", new Date().toISOString(), () => crypto.randomUUID());
+    result = { highlight: r.highlight, created: r.list !== before };
+    return r.list === before ? s : { ...s, highlights: r.list };
   });
+  return result!;
+}
+
+/** One verse: the same color again removes it. */
+export function toggleHighlight(ref: ChapterRef, verse: number, color: HighlightColor) {
+  highlightVerses(ref, verse, verse, color);
 }
 
 /** Saves a highlight's summary, if the highlight is still there. */

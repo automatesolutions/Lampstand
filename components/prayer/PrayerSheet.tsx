@@ -7,16 +7,11 @@ import { Feedback } from "@/components/Feedback";
 import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Sheet } from "@/components/ui/Sheet";
-import { formatRef } from "@/lib/bible/refs";
+import { listChapters } from "@/lib/bible/refs";
 import type { ChapterRef } from "@/lib/bible/types";
 import { onOpenPrayer, recentChapters } from "@/lib/prayer";
 import { useStore } from "@/lib/store";
 import { useTextStream } from "@/lib/use-text-stream";
-
-function listRefs(refs: ChapterRef[]) {
-  const names = refs.map((r) => formatRef(r));
-  return names.length <= 1 ? names.join("") : `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
-}
 
 /**
  * Pray (mounted once in the root layout): writes a short prayer from the
@@ -69,7 +64,7 @@ export function PrayerSheet() {
 
   async function copy() {
     try {
-      await navigator.clipboard.writeText(`${text.trim()}\n\n(After reading ${listRefs(refs)})`);
+      await navigator.clipboard.writeText(`${text.trim()}\n\n(After reading ${listChapters(refs)})`);
       setCopied(true);
     } catch {
       setCopyError("Copy isn't available in this browser.");
@@ -106,7 +101,7 @@ export function PrayerSheet() {
         </div>
       ) : (
         <div className="flex flex-col gap-4">
-          <p className="text-subhead text-text-secondary">Praying over {listRefs(refs)}</p>
+          <p className="text-subhead text-text-secondary">Praying over {listChapters(refs)}</p>
           <div aria-busy={busy} className="min-h-[9em] font-scripture text-[1.1875rem] leading-[1.75] whitespace-pre-line">
             {text}
             {busy && (
@@ -157,7 +152,7 @@ export function PrayerSheet() {
               <p className="text-footnote text-text-secondary">
                 Written by AI from what these chapters say. Let it start your own words to God, not replace them.
               </p>
-              <Feedback key={text.length} target={{ kind: "prayer", refs: listRefs(refs), content: text }} />
+              <Feedback key={text.length} target={{ kind: "prayer", refs: listChapters(refs), content: text }} />
             </>
           )}
         </div>

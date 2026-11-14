@@ -111,7 +111,7 @@ if (args[0] === "--sample") {
 } else if (args[0] === "--batch") {
   const todo = missing(force);
   const batch = await client.messages.batches.create({
-    requests: todo.map((r) => ({ custom_id: `${r.book}.${r.chapter}`, params: explainParams(input(r.book, r.chapter)) })),
+    requests: todo.map((r) => ({ custom_id: `${r.book}-${r.chapter}`, params: explainParams(input(r.book, r.chapter)) })),
   });
   writeFileSync(join(root, "content/explanations/.last-batch"), batch.id + "\n");
   console.log(`Sent ${todo.length} chapters as batch ${batch.id}. Most batches finish within an hour.`);
@@ -127,7 +127,7 @@ if (args[0] === "--sample") {
   let total = 0;
   const failed: string[] = [];
   for await (const result of await client.messages.batches.results(id)) {
-    const [book, chapter] = result.custom_id.split(".");
+    const [book, chapter] = result.custom_id.split("-");
     if (result.result.type !== "succeeded") {
       failed.push(`${result.custom_id} (${result.result.type})`);
       continue;

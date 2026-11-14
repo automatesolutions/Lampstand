@@ -75,6 +75,19 @@ export function ReaderSettings({ preview = false, version, onVersionChange }: Pr
         />
       </div>
       <div className="flex flex-col gap-2">
+        <span className="text-caption text-text-secondary">Speaker colors (KJV)</span>
+        <Segmented<string>
+          label="Speaker colors"
+          value={prefs.speakerColors === false ? "off" : "on"}
+          onChange={(v) => setPrefs({ speakerColors: v === "on" })}
+          options={[
+            { value: "on", label: "On" },
+            { value: "off", label: "Off" },
+          ]}
+        />
+        <span className="text-footnote text-text-secondary">Words of Jesus in green italics, words of God in blue.</span>
+      </div>
+      <div className="flex flex-col gap-2">
         <span className="text-caption text-text-secondary">Appearance</span>
         <Segmented<Theme>
           label="Appearance"

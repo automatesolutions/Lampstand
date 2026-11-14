@@ -1,0 +1,42 @@
+{
+  "source": "eBible.org King James Version (eng-kjv2006), public domain; words of Jesus from its wj markup",
+  "colored": 2022,
+  "skipped": [
+    {
+      "book": "MAT",
+      "chapter": 5,
+      "verse": 40,
+      "reason": "letters differ from our text"
+    },
+    {
+      "book": "MAT",
+      "chapter": 26,
+      "verse": 39,
+      "reason": "letters differ from our text"
+    },
+    {
+      "book": "LUK",
+      "chapter": 6,
+      "verse": 29,
+      "reason": "letters differ from our text"
+    },
+    {
+      "book": "JHN",
+      "chapter": 15,
+      "verse": 22,
+      "reason": "letters differ from our text"
+    },
+    {
+      "book": "REV",
+      "chapter": 2,
+      "verse": 6,
+      "reason": "letters differ from our text"
+    },
+    {
+      "book": "REV",
+      "chapter": 2,
+      "verse": 15,
+      "reason": "letters differ from our text"
+    }
+  ]
+}

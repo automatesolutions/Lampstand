@@ -39,8 +39,9 @@ export function NudgeInbox({ nudges, userId, onChange, shown = null }: { nudges:
         )}
       </div>
       <ul className="overflow-hidden rounded-lg bg-surface-raised shadow-soft ring-1 ring-divider/60">
-        {nudges.slice(0, shown && !nudges.slice(0, 6).some((n) => n.id === shown) ? 30 : 6).map((n) => (
-          <li key={n.id} id={`nudge-${n.id}`} className={`relative flex scroll-mt-24 gap-3 px-4 py-3.5 after:absolute after:inset-x-4 after:bottom-0 after:h-px after:bg-divider last:after:hidden ${n.read_at ? "" : "bg-gold-wash/40"} ${shown === n.id ? "outline-2 -outline-offset-2 outline-gold" : ""}`}>
+        {/* Six at first; every loaded one when a notification opens an older nudge, so it can scroll into view. */}
+        {nudges.slice(0, shown && !nudges.slice(0, 6).some((n) => n.id === shown) ? nudges.length : 6).map((n) => (
+          <li key={n.id} id={`nudge-${n.id}`} className={`relative flex scroll-mt-24 gap-3 px-4 py-3.5 after:absolute after:inset-x-4 after:bottom-0 after:h-px after:bg-divider last:after:hidden ${n.read_at ? "" : "bg-gold-wash"} ${shown === n.id ? "outline-2 -outline-offset-2 outline-gold" : ""}`}>
             <Avatar id={n.sender_avatar} size={40} />
             <div className="min-w-0 flex-1">
               <p className="text-subhead text-text-secondary">

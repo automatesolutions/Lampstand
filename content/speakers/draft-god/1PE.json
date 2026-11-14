@@ -1,0 +1,9 @@
+{
+ "model": "claude-opus-5-5",
+ "chapters": {
+  "5": {}
+ },
+ "rejected": {
+  "5": []
+ }
+}

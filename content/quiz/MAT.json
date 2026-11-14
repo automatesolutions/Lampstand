@@ -1,0 +1,3202 @@
+{
+ "questions": [
+  {
+   "id": "0c3cf367-ce12-47db-8f0c-8880c5b0759d",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "hard",
+   "question": "Of which woman did Salmon beget Booz?",
+   "choices": [
+    "Rachab",
+    "Ruth",
+    "Thamar",
+    "Sarah"
+   ],
+   "answer": 0,
+   "evidence": "Salmon begat Booz of Rachab",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cd43ef5e-1397-4e51-82ef-145e15e93db9",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "medium",
+   "question": "In the genealogy, who begat Joseph the husband of Mary?",
+   "choices": [
+    "Matthan",
+    "Jacob",
+    "Eleazar",
+    "Azor"
+   ],
+   "answer": 1,
+   "evidence": "And Jacob begat Joseph the husband of Mary",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "53bd9382-3a5b-4a3c-9049-9fd0764de3d5",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "How many generations are counted from Abraham to David?",
+   "choices": [
+    "Twelve",
+    "Seven",
+    "Fourteen",
+    "Forty"
+   ],
+   "answer": 2,
+   "evidence": "from Abraham to David are fourteen generations",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3a623a6c-9aa9-4a57-bbf6-7ddcc08067ae",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "How did the angel of the LORD appear to Joseph?",
+   "choices": [
+    "In a dream",
+    "In the temple",
+    "In a burning bush",
+    "On a mountain"
+   ],
+   "answer": 0,
+   "evidence": "the angel of the LORD appeared unto him in a dream",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "19682e6e-936d-45b4-b8ea-2e42fd34d22d",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "easy",
+   "question": "What name was Joseph told to give Mary's son?",
+   "choices": [
+    "John",
+    "Samuel",
+    "JESUS",
+    "Isaac"
+   ],
+   "answer": 2,
+   "evidence": "thou shalt call his name JESUS",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4d093764-43c5-4dbd-a0dc-cafc126b8afa",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "medium",
+   "question": "What does the name Emmanuel mean, as interpreted in this chapter?",
+   "choices": [
+    "Prince of peace",
+    "God is salvation",
+    "Son of David",
+    "God with us"
+   ],
+   "answer": 3,
+   "evidence": "Emmanuel, which being interpreted is, God with us.",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "01c48237-65ea-4313-9754-aca94ad20151",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "In which town was Jesus born?",
+   "choices": [
+    "Bethlehem",
+    "Nazareth",
+    "Jerusalem",
+    "Capernaum"
+   ],
+   "answer": 0,
+   "evidence": "Now when Jesus was born in Bethlehem of Judaea",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bbf9a4ef-fda3-4462-b096-40f6c9bd1a42",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "Along with gold and frankincense, what gift did the wise men present?",
+   "choices": [
+    "Spikenard",
+    "Aloes",
+    "Myrrh",
+    "Cassia"
+   ],
+   "answer": 2,
+   "evidence": "gold, and frankincense, and myrrh",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "73eea7ce-8908-408f-b7c9-eb517e0b888a",
+   "verse_start": 13,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "Into which land did Joseph flee with the young child and his mother?",
+   "choices": [
+    "Babylon",
+    "Egypt",
+    "Moab",
+    "Assyria"
+   ],
+   "answer": 1,
+   "evidence": "he took the young child and his mother by night, and departed into Egypt",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1acd36bd-ef88-46f0-926c-086981aa757d",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "From what age and under were the children of Bethlehem slain by Herod's order?",
+   "choices": [
+    "Two years old",
+    "Three years old",
+    "One year old",
+    "Five years old"
+   ],
+   "answer": 0,
+   "evidence": "from two years old and under",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "572e94ea-5295-4ae5-a430-68e6d88891a7",
+   "verse_start": 17,
+   "verse_end": 18,
+   "difficulty": "hard",
+   "question": "According to the prophecy quoted, where was a voice of lamentation heard?",
+   "choices": [
+    "Bethel",
+    "Rama",
+    "Shiloh",
+    "Hebron"
+   ],
+   "answer": 1,
+   "evidence": "In Rama was there a voice heard, lamentation, and weeping, and great mourning",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "51ee287d-7389-48d3-8f09-3deabd5bb68d",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "Who reigned in Judaea in place of his father Herod, making Joseph afraid to go there?",
+   "choices": [
+    "Agrippa",
+    "Philip",
+    "Antipas",
+    "Archelaus"
+   ],
+   "answer": 3,
+   "evidence": "Archelaus did reign in Judaea in the room of his father Herod",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a35d09fa-7945-41e0-a81e-8c01d2ea7e70",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "By which prophet was John spoken of, according to this chapter?",
+   "choices": [
+    "Jeremias",
+    "Elias",
+    "Esaias",
+    "Malachi"
+   ],
+   "answer": 2,
+   "evidence": "this is he that was spoken of by the prophet Esaias",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "68be36ab-4165-4c42-be50-82e488f95965",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "easy",
+   "question": "What was John's food in the wilderness?",
+   "choices": [
+    "Manna and quail",
+    "Locusts and wild honey",
+    "Bread and fish",
+    "Figs and olives"
+   ],
+   "answer": 1,
+   "evidence": "his meat was locusts and wild honey.",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "43875735-183a-4ee4-aead-a69d11c1c433",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "What was John's raiment made of?",
+   "choices": [
+    "Fine linen",
+    "Goat's hair",
+    "Sheepskin",
+    "Camel’s hair"
+   ],
+   "answer": 3,
+   "evidence": "the same John had his raiment of camel’s hair, and a leathern girdle about his loins",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6611f8e6-1233-4956-956f-21e1c1a770f8",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "Which people coming to his baptism did John call a \"generation of vipers\"?",
+   "choices": [
+    "Pharisees and Sadducees",
+    "Scribes and elders",
+    "Priests and Levites",
+    "Publicans and sinners"
+   ],
+   "answer": 0,
+   "evidence": "when he saw many of the Pharisees and Sadducees come to his baptism, he said unto them, O generation of vipers",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "45eff2da-6c6f-4265-8479-7724e6ba7b57",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "hard",
+   "question": "John said God is able to raise up children unto Abraham from what?",
+   "choices": [
+    "These trees",
+    "These stones",
+    "These waters",
+    "The dust"
+   ],
+   "answer": 1,
+   "evidence": "God is able of these stones to raise up children unto Abraham.",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6c6cba97-714b-4eb5-abae-30a943a0ddf8",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "After Jesus was baptized, the Spirit of God descended like what?",
+   "choices": [
+    "An eagle",
+    "A cloud",
+    "A dove",
+    "A flame"
+   ],
+   "answer": 2,
+   "evidence": "he saw the Spirit of God descending like a dove, and lighting upon him",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7d847795-5e81-461b-bb48-18c1f349c5c3",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "How many days did Jesus fast in the wilderness?",
+   "choices": [
+    "Forty",
+    "Seven",
+    "Three",
+    "Twelve"
+   ],
+   "answer": 0,
+   "evidence": "fasted forty days and forty nights",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "11721606-4e04-42d6-be41-d2faa6abb4ee",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "hard",
+   "question": "Where in the holy city did the devil set Jesus?",
+   "choices": [
+    "On a pinnacle of the temple",
+    "On the city wall",
+    "On the palace roof",
+    "At the temple gate"
+   ],
+   "answer": 0,
+   "evidence": "setteth him on a pinnacle of the temple",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "847df5c8-2526-4103-9a8c-b552f9152ade",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "After leaving Nazareth, in which town did Jesus come and dwell?",
+   "choices": [
+    "Capernaum",
+    "Bethsaida",
+    "Cana",
+    "Bethany"
+   ],
+   "answer": 0,
+   "evidence": "he came and dwelt in Capernaum",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "18d9ccfa-d0f3-453b-8441-81c4c1bf59fa",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "Which prophet is named as having spoken the words fulfilled when Jesus dwelt in Capernaum?",
+   "choices": [
+    "Esaias",
+    "Jeremias",
+    "Elias",
+    "Daniel"
+   ],
+   "answer": 0,
+   "evidence": "spoken by Esaias the prophet",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0360a566-cda0-4679-b74d-0112f31efb65",
+   "verse_start": 18,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "What did Jesus say he would make Simon Peter and Andrew?",
+   "choices": [
+    "Fishers of men",
+    "Shepherds of sheep",
+    "Builders of houses",
+    "Keepers of vineyards"
+   ],
+   "answer": 0,
+   "evidence": "I will make you fishers of men.",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "31d5da97-1bfc-4d32-8308-7296c3b07c74",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "medium",
+   "question": "What were James and John doing in the ship with their father when Jesus called them?",
+   "choices": [
+    "Mending their nets",
+    "Casting a net",
+    "Counting their fish",
+    "Rowing to shore"
+   ],
+   "answer": 0,
+   "evidence": "mending their nets",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f28e8274-b3dd-457d-8225-e2872dbddb07",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Where did he go when he saw the multitudes, before teaching his disciples?",
+   "choices": [
+    "Into a mountain",
+    "Into a ship",
+    "Into the temple",
+    "Into the wilderness"
+   ],
+   "answer": 0,
+   "evidence": "And seeing the multitudes, he went up into a mountain",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d2b27819-429c-4363-87eb-b9108d49ad93",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "What is promised to the meek?",
+   "choices": [
+    "They shall see God",
+    "They shall inherit the earth",
+    "They shall be comforted",
+    "They shall be filled"
+   ],
+   "answer": 1,
+   "evidence": "Blessed are the meek: for they shall inherit the earth.",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "737ec153-8373-4336-a6f5-dde61cb53e50",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "Complete the saying: \"Ye are the ___ of the earth.\"",
+   "choices": [
+    "Bread",
+    "Leaven",
+    "Salt",
+    "Oil"
+   ],
+   "answer": 2,
+   "evidence": "Ye are the salt of the earth",
+   "chapter": 5,
+   "status": "draft",
+   "problems": [
+    "the question isn't a 10 to 300 character question"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d3a46cb6-c1c2-4aaa-b14b-bb0c15ce8aeb",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "Whoever says \"Raca\" to his brother is in danger of what?",
+   "choices": [
+    "Hell fire",
+    "The council",
+    "The judgment",
+    "The prison"
+   ],
+   "answer": 1,
+   "evidence": "whosoever shall say to his brother, Raca, shall be in danger of the council",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "306bbe67-725f-4c16-ac39-0bf765dfde92",
+   "verse_start": 34,
+   "verse_end": 35,
+   "difficulty": "hard",
+   "question": "In the teaching about swearing, what is the earth called?",
+   "choices": [
+    "His footstool",
+    "His throne",
+    "His sanctuary",
+    "His vineyard"
+   ],
+   "answer": 0,
+   "evidence": "Nor by the earth; for it is his footstool",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b2e39610-91ba-40f5-85e6-cb7b2833bc8b",
+   "verse_start": 41,
+   "verse_end": 41,
+   "difficulty": "medium",
+   "question": "If someone compels you to go a mile, how far should you go with him?",
+   "choices": [
+    "Three",
+    "Seven",
+    "Ten",
+    "Twain"
+   ],
+   "answer": 3,
+   "evidence": "And whosoever shall compel thee to go a mile, go with him twain.",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1819fddf-dfba-409e-9318-d6b15f405180",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "Where are hearers told to enter when they pray, shutting the door?",
+   "choices": [
+    "Thy closet",
+    "The temple",
+    "A mountain",
+    "The wilderness"
+   ],
+   "answer": 0,
+   "evidence": "enter into thy closet, and when thou hast shut thy door, pray to thy Father which is in secret",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "efdf89f6-073c-4930-bf03-69dee4195924",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "What corrupts treasures laid up upon earth?",
+   "choices": [
+    "Locust and canker",
+    "Worm and fire",
+    "Mildew and blight",
+    "Moth and rust"
+   ],
+   "answer": 3,
+   "evidence": "Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5ece20ec-fac3-48e4-a732-ecd17dd97566",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "By taking thought, how much can no one add unto his stature?",
+   "choices": [
+    "One span",
+    "One cubit",
+    "One handbreadth",
+    "One reed"
+   ],
+   "answer": 1,
+   "evidence": "Which of you by taking thought can add one cubit unto his stature?",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2ae921ba-9663-4c20-9954-ab65348f57b4",
+   "verse_start": 28,
+   "verse_end": 29,
+   "difficulty": "easy",
+   "question": "Which king, in all his glory, was not arrayed like the flowers of the field?",
+   "choices": [
+    "David",
+    "Solomon",
+    "Saul",
+    "Hezekiah"
+   ],
+   "answer": 1,
+   "evidence": "even Solomon in all his glory was not arrayed like one of these.",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4bad113c-d3a6-45ff-8a57-3306eea221ed",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "easy",
+   "question": "Which flowers of the field are hearers told to consider, how they grow?",
+   "choices": [
+    "The roses",
+    "The myrtles",
+    "The lilies",
+    "The hyssop"
+   ],
+   "answer": 2,
+   "evidence": "Consider the lilies of the field, how they grow",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b36e2a4e-1bc3-48bc-a4e2-9be16977fd3d",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "hard",
+   "question": "Where is the grass of the field cast tomorrow?",
+   "choices": [
+    "Into the oven",
+    "Into the sea",
+    "Into the furnace",
+    "Into the pit"
+   ],
+   "answer": 0,
+   "evidence": "which to day is, and to morrow is cast into the oven",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "06b847f1-f289-456b-89b9-0bb800ddaae6",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "To whom should that which is holy not be given?",
+   "choices": [
+    "The gentiles",
+    "The ravens",
+    "The lions",
+    "The dogs"
+   ],
+   "answer": 3,
+   "evidence": "Give not that which is holy unto the dogs",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "812d1915-0c36-47a7-b792-80011d8be5de",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "If a son asks for bread, what does Jesus ask whether a father would give him instead?",
+   "choices": [
+    "A stone",
+    "A scorpion",
+    "A thorn",
+    "A coal"
+   ],
+   "answer": 0,
+   "evidence": "whom if his son ask bread, will he give him a stone?",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c003c918-997e-4809-8887-538b101c7039",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "easy",
+   "question": "In what clothing do the false prophets come?",
+   "choices": [
+    "Sackcloth",
+    "Purple robes",
+    "Sheep’s clothing",
+    "Camel's hair"
+   ],
+   "answer": 2,
+   "evidence": "which come to you in sheep’s clothing",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0b20d7c4-b714-441f-9f76-4c655c3ed6e1",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "From what does Jesus ask whether men gather figs?",
+   "choices": [
+    "Briers",
+    "Brambles",
+    "Thistles",
+    "Nettles"
+   ],
+   "answer": 2,
+   "evidence": "or figs of thistles?",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "322f9136-39f2-43e0-bb46-17509beec104",
+   "verse_start": 24,
+   "verse_end": 25,
+   "difficulty": "easy",
+   "question": "Upon what did the wise man build his house?",
+   "choices": [
+    "The sand",
+    "A rock",
+    "A hill",
+    "A field"
+   ],
+   "answer": 1,
+   "evidence": "which built his house upon a rock",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7adfb07b-1499-441a-ac04-bf68ddf802e1",
+   "verse_start": 28,
+   "verse_end": 29,
+   "difficulty": "hard",
+   "question": "Jesus taught as one having authority, and not as whom?",
+   "choices": [
+    "The Pharisees",
+    "The scribes",
+    "The priests",
+    "The elders"
+   ],
+   "answer": 1,
+   "evidence": "not as the scribes",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8464328b-9483-405a-8ddc-21dc7c881216",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "Which city had Jesus entered when the centurion came to him?",
+   "choices": [
+    "Capernaum",
+    "Bethsaida",
+    "Nazareth",
+    "Cana"
+   ],
+   "answer": 0,
+   "evidence": "when Jesus was entered into Capernaum, there came unto him a centurion",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3515ad01-e422-4c0f-b229-d20dc4208dd5",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "What sickness did the centurion's servant have?",
+   "choices": [
+    "A fever",
+    "Leprosy",
+    "Blindness",
+    "The palsy"
+   ],
+   "answer": 3,
+   "evidence": "my servant lieth at home sick of the palsy",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c60f97eb-6a25-4523-9b9f-94f79a42af5b",
+   "verse_start": 14,
+   "verse_end": 15,
+   "difficulty": "easy",
+   "question": "In whose house did Jesus find a woman's mother sick of a fever?",
+   "choices": [
+    "Andrew",
+    "Peter",
+    "James",
+    "Matthew"
+   ],
+   "answer": 1,
+   "evidence": "when Jesus was come into Peter’s house, he saw his wife’s mother laid, and sick of a fever.",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f66aa333-2839-4478-92d7-2d904624bbc4",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "Which prophet's words were said to be fulfilled by Jesus' healings that evening?",
+   "choices": [
+    "Jeremy",
+    "Elias",
+    "Esaias",
+    "Daniel"
+   ],
+   "answer": 2,
+   "evidence": "spoken by Esaias the prophet",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "aae09292-7f6d-497d-b05d-afc57889aab4",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "How many men possessed with devils met Jesus coming out of the tombs?",
+   "choices": [
+    "One",
+    "Two",
+    "Three",
+    "Seven"
+   ],
+   "answer": 1,
+   "evidence": "there met him two possessed with devils, coming out of the tombs",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f2fb42c3-ee23-4ea2-a54a-36f363b95e3a",
+   "verse_start": 31,
+   "verse_end": 32,
+   "difficulty": "easy",
+   "question": "Where did the devils ask to be sent if they were cast out?",
+   "choices": [
+    "Into the tombs",
+    "Into a flock of sheep",
+    "Into the herd of swine",
+    "Into the wilderness"
+   ],
+   "answer": 2,
+   "evidence": "suffer us to go away into the herd of swine.",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b30a294c-f3ae-4499-b8db-0e3adf2d5d65",
+   "verse_start": 6,
+   "verse_end": 7,
+   "difficulty": "easy",
+   "question": "What did Jesus tell the man sick of the palsy to take up?",
+   "choices": [
+    "His coat",
+    "His staff",
+    "His bed",
+    "His purse"
+   ],
+   "answer": 2,
+   "evidence": "Arise, take up thy bed, and go unto thine house.",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fed6bc54-7984-408d-b242-205e4d6aea73",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "easy",
+   "question": "Whom did Jesus see sitting at the receipt of custom and call to follow him?",
+   "choices": [
+    "Zacchaeus",
+    "Matthew",
+    "Nicodemus",
+    "Bartimaeus"
+   ],
+   "answer": 1,
+   "evidence": "he saw a man, named Matthew, sitting at the receipt of custom",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1549279e-7bbc-4980-a8fd-2696ab572dd2",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "Who asked Jesus why his disciples did not fast?",
+   "choices": [
+    "The disciples of John",
+    "The Sadducees",
+    "The Herodians",
+    "The chief priests"
+   ],
+   "answer": 0,
+   "evidence": "Then came to him the disciples of John, saying, Why do we and the Pharisees fast oft, but thy disciples fast not?",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bd3ec281-e6ad-4eb3-9dad-70c1480dc821",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "hard",
+   "question": "For how many years had the woman been diseased with an issue of blood?",
+   "choices": [
+    "Seven",
+    "Twelve",
+    "Eighteen",
+    "Forty"
+   ],
+   "answer": 1,
+   "evidence": "diseased with an issue of blood twelve years",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b5e83226-4ecc-4605-a0b8-1ba7d811f5c9",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "Besides the people, whom did Jesus see making a noise in the ruler's house?",
+   "choices": [
+    "The priests",
+    "The scribes",
+    "The minstrels",
+    "The publicans"
+   ],
+   "answer": 2,
+   "evidence": "saw the minstrels and the people making a noise",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fd961ab7-1ac7-471d-88aa-e97b2a8f9287",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "medium",
+   "question": "How many blind men followed Jesus, crying for mercy?",
+   "choices": [
+    "One",
+    "Three",
+    "Four",
+    "Two"
+   ],
+   "answer": 3,
+   "evidence": "two blind men followed him",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "81a653e9-35ee-4dd8-b38c-bd745deeb3ae",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "How many disciples did Jesus call to him and give power against unclean spirits?",
+   "choices": [
+    "Twelve",
+    "Seventy",
+    "Seven",
+    "Five"
+   ],
+   "answer": 0,
+   "evidence": "he had called unto him his twelve disciples",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "866c3ef0-30cc-471e-8afb-8bff6d394b29",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Which apostle is named first in the list of the twelve?",
+   "choices": [
+    "Andrew",
+    "Simon, called Peter",
+    "John",
+    "Judas Iscariot"
+   ],
+   "answer": 1,
+   "evidence": "The first, Simon, who is called Peter",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7847477f-7cdb-46d3-a790-3ea460b06960",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "What was the surname of Lebbaeus?",
+   "choices": [
+    "Bartholomew",
+    "Thaddaeus",
+    "Didymus",
+    "Barsabas"
+   ],
+   "answer": 1,
+   "evidence": "Lebbaeus, whose surname was Thaddaeus",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "62119fd1-ed46-472c-a7d7-36f1d3512e5e",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "What were the twelve told to shake off when leaving a house or city that would not receive them?",
+   "choices": [
+    "Their coats",
+    "Their sandals",
+    "The ashes",
+    "The dust of their feet"
+   ],
+   "answer": 3,
+   "evidence": "shake off the dust of your feet",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c7dd4377-54fe-4186-a5df-d12c863c48cb",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "medium",
+   "question": "Jesus said he was sending them forth as sheep in the midst of what?",
+   "choices": [
+    "Lions",
+    "Goats",
+    "Wolves",
+    "Bears"
+   ],
+   "answer": 2,
+   "evidence": "I send you forth as sheep in the midst of wolves",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "037990df-5579-48c2-a93a-1ad4139a5fd2",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "hard",
+   "question": "For what price are two sparrows sold?",
+   "choices": [
+    "A farthing",
+    "A penny",
+    "Two mites",
+    "A shekel"
+   ],
+   "answer": 0,
+   "evidence": "Are not two sparrows sold for a farthing?",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7f3aab17-052e-4e72-8cce-96fb66a6b1a7",
+   "verse_start": 2,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "Where was John when he heard of the works of Christ?",
+   "choices": [
+    "In the prison",
+    "In the wilderness",
+    "In the temple",
+    "In Capernaum"
+   ],
+   "answer": 0,
+   "evidence": "Now when John had heard in the prison the works of Christ",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5ae90097-8dbf-4fef-8105-0ad54531e0ed",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "hard",
+   "question": "How many of his disciples did John send to Jesus?",
+   "choices": [
+    "Two",
+    "Three",
+    "Twelve",
+    "Seven"
+   ],
+   "answer": 0,
+   "evidence": "he sent two of his disciples",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4f53a6a7-40d5-4ba4-acc5-b49054b0c485",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "Jesus asks the multitudes whether they went into the wilderness to see what, shaken with the wind?",
+   "choices": [
+    "A reed",
+    "A tree",
+    "A tent",
+    "A lamp"
+   ],
+   "answer": 0,
+   "evidence": "A reed shaken with the wind?",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "59058339-8263-4b0c-b2c8-d3a91383f433",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "Jesus says that John, if they will receive it, is which figure that was for to come?",
+   "choices": [
+    "Elias",
+    "Moses",
+    "Elisha",
+    "Jeremiah"
+   ],
+   "answer": 0,
+   "evidence": "this is Elias, which was for to come.",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "09d26270-c96d-4569-9f71-f8eadada4dfe",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "hard",
+   "question": "Besides Chorazin, which city does Jesus pronounce woe upon in the same verse?",
+   "choices": [
+    "Bethsaida",
+    "Nazareth",
+    "Jericho",
+    "Bethany"
+   ],
+   "answer": 0,
+   "evidence": "Woe unto thee, Chorazin! woe unto thee, Bethsaida!",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4327a4f5-d2d3-4b68-9a06-00d00261dc35",
+   "verse_start": 28,
+   "verse_end": 30,
+   "difficulty": "easy",
+   "question": "What does Jesus promise to give to all who labour and are heavy laden?",
+   "choices": [
+    "Rest",
+    "Bread",
+    "Riches",
+    "A crown"
+   ],
+   "answer": 0,
+   "evidence": "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "57791fc8-78c5-48ae-9fed-653d96881b30",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What did the hungry disciples begin to pluck and eat on the sabbath?",
+   "choices": [
+    "Ears of corn",
+    "Figs",
+    "Grapes",
+    "Olives"
+   ],
+   "answer": 0,
+   "evidence": "began to pluck the ears of corn",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8d223b18-dc27-4109-b63c-1a7d0954c98a",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "What was wrong with the man in the synagogue?",
+   "choices": [
+    "He had a palsy",
+    "He had leprosy",
+    "He had his hand withered",
+    "He was born blind"
+   ],
+   "answer": 2,
+   "evidence": "there was a man which had his hand withered",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0ce6226a-d7e4-48d7-a412-fbe0f5f674bf",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "medium",
+   "question": "By whom did the Pharisees claim Jesus cast out devils?",
+   "choices": [
+    "Baal",
+    "Dagon",
+    "Moloch",
+    "Beelzebub"
+   ],
+   "answer": 3,
+   "evidence": "but by Beelzebub the prince of the devils",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ca0c3f0b-cc67-4d8d-9ba3-d5734011648c",
+   "verse_start": 39,
+   "verse_end": 39,
+   "difficulty": "easy",
+   "question": "When asked for a sign, the sign of which prophet did Jesus say would be given?",
+   "choices": [
+    "Elias",
+    "Jonas",
+    "Elisha",
+    "Jeremy"
+   ],
+   "answer": 1,
+   "evidence": "but the sign of the prophet Jonas",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2cee1aac-d71e-4846-88a5-51681b56bcc0",
+   "verse_start": 44,
+   "verse_end": 44,
+   "difficulty": "hard",
+   "question": "The returning unclean spirit finds his house empty, swept, and what?",
+   "choices": [
+    "Locked",
+    "Garnished",
+    "Burned",
+    "Defiled"
+   ],
+   "answer": 1,
+   "evidence": "he findeth it empty, swept, and garnished",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5a3dfa19-dfc3-4909-a818-e8d262851790",
+   "verse_start": 45,
+   "verse_end": 45,
+   "difficulty": "hard",
+   "question": "How many other spirits more wicked than himself does the unclean spirit take with him?",
+   "choices": [
+    "Seven",
+    "Three",
+    "Five",
+    "Ten"
+   ],
+   "answer": 0,
+   "evidence": "taketh with himself seven other spirits more wicked than himself",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2806561b-4b6b-432f-8e7c-d918b9378323",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Because great multitudes gathered, where did Jesus go and sit while the people stood on the shore?",
+   "choices": [
+    "Into a ship",
+    "Up a mountain",
+    "Into a synagogue",
+    "Beside a well"
+   ],
+   "answer": 0,
+   "evidence": "so that he went into a ship, and sat",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5c274056-f302-4816-a74f-a698ffa1f988",
+   "verse_start": 24,
+   "verse_end": 25,
+   "difficulty": "easy",
+   "question": "In the parable of the man who sowed good seed, what did his enemy sow among the wheat?",
+   "choices": [
+    "Thorns",
+    "Tares",
+    "Barley",
+    "Mustard seed"
+   ],
+   "answer": 1,
+   "evidence": "his enemy came and sowed tares among the wheat",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8a4e4ac8-0aa0-42fd-aef4-3a9c5298aa1a",
+   "verse_start": 33,
+   "verse_end": 33,
+   "difficulty": "medium",
+   "question": "In the parable of the leaven, who took the leaven and hid it?",
+   "choices": [
+    "A merchant man",
+    "A householder",
+    "A woman",
+    "A servant"
+   ],
+   "answer": 2,
+   "evidence": "like unto leaven, which a woman took",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "56612980-2323-4d88-b118-653c36f9df0d",
+   "verse_start": 33,
+   "verse_end": 33,
+   "difficulty": "hard",
+   "question": "How many measures of meal was the leaven hid in?",
+   "choices": [
+    "Three",
+    "Two",
+    "Five",
+    "Seven"
+   ],
+   "answer": 0,
+   "evidence": "hid in three measures of meal",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "58ad7156-383f-4cf9-bdb2-427fb9b689d1",
+   "verse_start": 39,
+   "verse_end": 39,
+   "difficulty": "hard",
+   "question": "In explaining the parable of the tares, what does Jesus say the harvest is?",
+   "choices": [
+    "The children of the kingdom",
+    "The end of the world",
+    "The angels",
+    "The field"
+   ],
+   "answer": 1,
+   "evidence": "the harvest is the end of the world",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3d5105ef-99d9-4a54-a5f7-43739aeb1fc8",
+   "verse_start": 45,
+   "verse_end": 46,
+   "difficulty": "medium",
+   "question": "What was the merchant man seeking in the parable?",
+   "choices": [
+    "Fine gold",
+    "Hidden treasure",
+    "Precious stones",
+    "Goodly pearls"
+   ],
+   "answer": 3,
+   "evidence": "a merchant man, seeking goodly pearls",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8fe85653-01d5-4c50-ba12-2d00714264a0",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "Herodias, for whose sake John was imprisoned, was the wife of which brother of Herod?",
+   "choices": [
+    "Philip",
+    "Archelaus",
+    "Agrippa",
+    "Aristobulus"
+   ],
+   "answer": 0,
+   "evidence": "for Herodias’ sake, his brother Philip’s wife.",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9bc79a36-c86c-498b-809d-218959c40f5a",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "easy",
+   "question": "What did the daughter of Herodias ask to be given her in a charger?",
+   "choices": [
+    "John Baptist’s head",
+    "A royal crown",
+    "Half the kingdom",
+    "Peter’s head"
+   ],
+   "answer": 0,
+   "evidence": "Give me here John Baptist’s head in a charger.",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "65eb796f-5e1a-4fa8-bad6-0c09d07a0f02",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "How many baskets full of fragments were taken up after the multitude had eaten?",
+   "choices": [
+    "Seven baskets",
+    "Twelve baskets",
+    "Five baskets",
+    "Three baskets"
+   ],
+   "answer": 1,
+   "evidence": "they took up of the fragments that remained twelve baskets full.",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "536035df-7c57-4384-9868-5c8a99bd04c5",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "In which watch of the night did Jesus go unto the disciples, walking on the sea?",
+   "choices": [
+    "The first watch",
+    "The second watch",
+    "The third watch",
+    "The fourth watch"
+   ],
+   "answer": 3,
+   "evidence": "And in the fourth watch of the night Jesus went unto them, walking on the sea.",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b97024e3-fd2e-4883-b1f5-d1408f319858",
+   "verse_start": 28,
+   "verse_end": 29,
+   "difficulty": "easy",
+   "question": "Which disciple came down out of the ship and walked on the water to go to Jesus?",
+   "choices": [
+    "Andrew",
+    "John",
+    "Peter",
+    "James"
+   ],
+   "answer": 2,
+   "evidence": "And when Peter was come down out of the ship, he walked on the water, to go to Jesus.",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0987517a-8e7d-40de-8b1a-cc079127f4b5",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "medium",
+   "question": "Into what land did they come when they had gone over the sea?",
+   "choices": [
+    "Capernaum",
+    "Bethsaida",
+    "Decapolis",
+    "Gennesaret"
+   ],
+   "answer": 3,
+   "evidence": "they came into the land of Gennesaret.",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "65dda01c-5593-4a1e-8626-2de169725514",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "What did the scribes and Pharisees say the disciples failed to do when they ate bread?",
+   "choices": [
+    "Wash their hands",
+    "Give thanks",
+    "Fast first",
+    "Pay tithes"
+   ],
+   "answer": 0,
+   "evidence": "for they wash not their hands when they eat bread.",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6950968d-c49f-4212-809a-e9d391352f7d",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "medium",
+   "question": "Which disciple asked Jesus to declare the parable?",
+   "choices": [
+    "Peter",
+    "John",
+    "Andrew",
+    "Thomas"
+   ],
+   "answer": 0,
+   "evidence": "Then answered Peter and said unto him, Declare unto us this parable.",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ba94004b-57fe-4901-bf91-b2dc28f5045f",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "easy",
+   "question": "Where was the woman who cried out for her daughter from?",
+   "choices": [
+    "Canaan",
+    "Samaria",
+    "Moab",
+    "Egypt"
+   ],
+   "answer": 0,
+   "evidence": "a woman of Canaan came out of the same coasts",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b5154f5d-4146-4ea6-8b3b-78f362cc27ea",
+   "verse_start": 32,
+   "verse_end": 32,
+   "difficulty": "hard",
+   "question": "How many days had the multitude continued with Jesus with nothing to eat?",
+   "choices": [
+    "Three days",
+    "Two days",
+    "Seven days",
+    "Forty days"
+   ],
+   "answer": 0,
+   "evidence": "they continue with me now three days, and have nothing to eat",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c239276e-57eb-4381-b314-23f865e959f7",
+   "verse_start": 38,
+   "verse_end": 38,
+   "difficulty": "easy",
+   "question": "How many men ate when Jesus fed the multitude with seven loaves?",
+   "choices": [
+    "Four thousand",
+    "Five thousand",
+    "Three thousand",
+    "Two thousand"
+   ],
+   "answer": 0,
+   "evidence": "they that did eat were four thousand men, beside women and children.",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "25b992cf-0e49-49ba-a0c9-a97de575d283",
+   "verse_start": 39,
+   "verse_end": 39,
+   "difficulty": "hard",
+   "question": "Into which coasts did Jesus come by ship at the end of the chapter?",
+   "choices": [
+    "Magdala",
+    "Tyre and Sidon",
+    "Capernaum",
+    "Bethsaida"
+   ],
+   "answer": 0,
+   "evidence": "took ship, and came into the coasts of Magdala.",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1607b4a1-7e02-436a-9b15-3ee109f6f43b",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "Jesus said no sign would be given except the sign of which prophet?",
+   "choices": [
+    "Jonas",
+    "Elias",
+    "Esaias",
+    "Jeremias"
+   ],
+   "answer": 0,
+   "evidence": "but the sign of the prophet Jonas.",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9683e450-d015-461c-bb73-76d4e8dc0b50",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "What had the disciples forgotten to take when they came to the other side?",
+   "choices": [
+    "Fish",
+    "Water",
+    "Money",
+    "Bread"
+   ],
+   "answer": 3,
+   "evidence": "they had forgotten to take bread.",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1ce65bd6-b0da-4405-b4de-e574c6dba8b4",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "How many loaves did Jesus mention in connection with the four thousand?",
+   "choices": [
+    "Five",
+    "Twelve",
+    "Seven",
+    "Three"
+   ],
+   "answer": 2,
+   "evidence": "Neither the seven loaves of the four thousand",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "21867113-cadb-4457-ac1e-9fae49e08306",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "Where was Jesus when he asked his disciples who men said he was?",
+   "choices": [
+    "Capernaum",
+    "Caesarea Philippi",
+    "Bethsaida",
+    "Nazareth"
+   ],
+   "answer": 1,
+   "evidence": "When Jesus came into the coasts of Caesarea Philippi",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "827b39f8-722a-47cc-8f29-2986013e7d0c",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "Which disciple answered, \"Thou art the Christ, the Son of the living God\"?",
+   "choices": [
+    "John",
+    "Andrew",
+    "Simon Peter",
+    "Thomas"
+   ],
+   "answer": 2,
+   "evidence": "And Simon Peter answered and said, Thou art the Christ",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7fc9e540-8815-468c-8222-8ab8efd12d14",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "By what full name did Jesus address Simon when he called him blessed?",
+   "choices": [
+    "Simon Barnabas",
+    "Simon Barjona",
+    "Simon Bartimaeus",
+    "Simon Zelotes"
+   ],
+   "answer": 1,
+   "evidence": "Blessed art thou, Simon Barjona",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bba2c957-8f5b-4f4c-af0d-29d8f39e31a6",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "After how many days did Jesus take Peter, James and John up the high mountain?",
+   "choices": [
+    "Three",
+    "Forty",
+    "Eight",
+    "Six"
+   ],
+   "answer": 3,
+   "evidence": "And after six days Jesus taketh Peter, James, and John his brother",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2b25424d-536a-4897-a80b-989c5dee72d6",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "Who appeared on the mountain talking with Jesus?",
+   "choices": [
+    "Moses and Elias",
+    "Abraham and Isaac",
+    "David and Solomon",
+    "Enoch and Noah"
+   ],
+   "answer": 0,
+   "evidence": "there appeared unto them Moses and Elias talking with him.",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "373b7b5e-02ba-423d-a529-63a6efbaf448",
+   "verse_start": 12,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "Whom did the disciples understand Jesus meant when He said Elias had come already?",
+   "choices": [
+    "Elisha",
+    "Jeremiah",
+    "Zacharias",
+    "John the Baptist"
+   ],
+   "answer": 3,
+   "evidence": "Then the disciples understood that he spake unto them of John the Baptist.",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c4cc62fb-3c89-4e34-9552-a0df82240693",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "medium",
+   "question": "Where did the father say his son often fell?",
+   "choices": [
+    "From a roof",
+    "Into fire and water",
+    "Into a pit",
+    "Among the tombs"
+   ],
+   "answer": 1,
+   "evidence": "ofttimes he falleth into the fire, and oft into the water.",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8d44b59b-6ba8-4790-8a21-ba221b92383d",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "In which town did those who received tribute money come to Peter?",
+   "choices": [
+    "Capernaum",
+    "Bethsaida",
+    "Nazareth",
+    "Cana"
+   ],
+   "answer": 0,
+   "evidence": "And when they were come to Capernaum, they that received tribute money came to Peter",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "882234e9-e68c-486d-907e-4060e9e1c2e4",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "easy",
+   "question": "Jesus told Peter to open the mouth of what to find a piece of money?",
+   "choices": [
+    "A lamb",
+    "A jar",
+    "The fish",
+    "A basket"
+   ],
+   "answer": 2,
+   "evidence": "take up the fish that first cometh up; and when thou hast opened his mouth, thou shalt find a piece of money",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b8f40994-4b61-4861-9574-7063b6a72fc9",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Whom did Jesus set in the midst of the disciples when they asked who is greatest?",
+   "choices": [
+    "A little child",
+    "A fisherman",
+    "A blind man",
+    "A centurion"
+   ],
+   "answer": 0,
+   "evidence": "And Jesus called a little child unto him, and set him in the midst of them,",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "87343b6b-5a91-4cdc-9016-40282c8a5da2",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "What would be better hanged about the neck of one who offends a little one?",
+   "choices": [
+    "A chain",
+    "A yoke",
+    "A stone tablet",
+    "A millstone"
+   ],
+   "answer": 3,
+   "evidence": "it were better for him that a millstone were hanged about his neck",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b08837b9-8c83-4545-90be-dc2ead6f78a4",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "In Jesus' example, how many sheep did the man have before one went astray?",
+   "choices": [
+    "Fifty",
+    "Seventy",
+    "An hundred",
+    "Ten"
+   ],
+   "answer": 2,
+   "evidence": "if a man have an hundred sheep, and one of them be gone astray",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4234299d-9735-423a-a134-16a2b29a19ca",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "easy",
+   "question": "Which disciple asked Jesus how often he should forgive his brother?",
+   "choices": [
+    "John",
+    "Peter",
+    "Thomas",
+    "Andrew"
+   ],
+   "answer": 1,
+   "evidence": "Then came Peter to him, and said, Lord, how oft shall my brother sin against me, and I forgive him?",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7406187e-680a-4d81-810f-fd5d7008856f",
+   "verse_start": 21,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "Until how many times did Jesus tell Peter to forgive?",
+   "choices": [
+    "Until seven times",
+    "Until seventy times seven",
+    "Until twelve times",
+    "Until forty times"
+   ],
+   "answer": 1,
+   "evidence": "I say not unto thee, Until seven times: but, Until seventy times seven.",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7c0f4d28-6a2b-451c-a70f-96b24c4953c5",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "How much did the servant brought before the king owe him?",
+   "choices": [
+    "Ten thousand talents",
+    "An hundred pence",
+    "Five talents",
+    "Thirty pieces of silver"
+   ],
+   "answer": 0,
+   "evidence": "one was brought unto him, which owed him ten thousand talents.",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8f3860a4-bef6-4231-a308-e232b5a93c40",
+   "verse_start": 13,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "Who rebuked the people who brought little children to Jesus?",
+   "choices": [
+    "The Pharisees",
+    "The disciples",
+    "The scribes",
+    "The chief priests"
+   ],
+   "answer": 1,
+   "evidence": "and the disciples rebuked them.",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b732901e-7185-4a7a-8f5a-9221c8834211",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "Why did the young man go away sorrowful?",
+   "choices": [
+    "He had a sick father",
+    "He had many debts",
+    "He had great possessions",
+    "He feared the Pharisees"
+   ],
+   "answer": 2,
+   "evidence": "he went away sorrowful: for he had great possessions.",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a9e4bec2-a64f-4018-acb6-6310ec0ea775",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "According to Jesus, what animal could go through the eye of a needle more easily than a rich man could enter the kingdom of God?",
+   "choices": [
+    "A camel",
+    "A horse",
+    "An ox",
+    "A donkey"
+   ],
+   "answer": 0,
+   "evidence": "It is easier for a camel to go through the eye of a needle",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "990dc373-04e3-4e4d-9a7f-a8015bf491ef",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "medium",
+   "question": "Which disciple asked Jesus what they would have for forsaking all and following him?",
+   "choices": [
+    "John",
+    "Andrew",
+    "Thomas",
+    "Peter"
+   ],
+   "answer": 3,
+   "evidence": "Then answered Peter and said unto him",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2aebc8e7-6fe8-4661-a1fa-2dc3d8358fda",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "How many thrones did Jesus say his followers would sit upon?",
+   "choices": [
+    "Twelve",
+    "Seven",
+    "Ten",
+    "Twenty-four"
+   ],
+   "answer": 0,
+   "evidence": "ye also shall sit upon twelve thrones",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ccd773f8-e28e-4101-9771-6d35fc280b80",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "hard",
+   "question": "How much did Jesus say those who forsake houses, family or lands for his name's sake shall receive?",
+   "choices": [
+    "Sevenfold",
+    "An hundredfold",
+    "Fourfold",
+    "Double"
+   ],
+   "answer": 1,
+   "evidence": "shall receive an hundredfold",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3707b20e-912e-40f5-9b47-2b44fb72a2cc",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "What wage did the householder agree to pay the first labourers?",
+   "choices": [
+    "A penny a day",
+    "A talent a day",
+    "A shekel a day",
+    "Two pence a day"
+   ],
+   "answer": 0,
+   "evidence": "when he had agreed with the labourers for a penny a day",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7600c6b9-0389-41b2-a000-0bcb24909d43",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "At what hour did the householder go out and find the last group standing idle?",
+   "choices": [
+    "The ninth hour",
+    "The tenth hour",
+    "The eleventh hour",
+    "The twelfth hour"
+   ],
+   "answer": 2,
+   "evidence": "And about the eleventh hour he went out, and found others standing idle",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0a1255ae-796d-4a37-adbf-2c98a9edfb3d",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "Whom did the lord of the vineyard tell to call the labourers and give them their hire?",
+   "choices": [
+    "His son",
+    "His steward",
+    "His porter",
+    "His wife"
+   ],
+   "answer": 1,
+   "evidence": "the lord of the vineyard saith unto his steward, Call the labourers",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3bd16bff-c5af-4cc8-b8ff-f683cd8f404d",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "medium",
+   "question": "How did the ten disciples feel toward the two brethren after hearing the request?",
+   "choices": [
+    "Moved with fear",
+    "Moved with joy",
+    "Moved with indignation",
+    "Moved with pity"
+   ],
+   "answer": 2,
+   "evidence": "they were moved with indignation against the two brethren.",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "07956e24-22a5-41ae-b06b-4121f512fd74",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "According to Jesus, the Son of man came to give his life a ransom for whom?",
+   "choices": [
+    "For all",
+    "For many",
+    "For Israel",
+    "For the twelve"
+   ],
+   "answer": 1,
+   "evidence": "to give his life a ransom for many.",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6e6364e3-e4f0-47da-a7e9-013a0edc5b21",
+   "verse_start": 29,
+   "verse_end": 30,
+   "difficulty": "easy",
+   "question": "As they departed from Jericho, how many blind men sat by the way side?",
+   "choices": [
+    "One",
+    "Two",
+    "Three",
+    "Ten"
+   ],
+   "answer": 1,
+   "evidence": "two blind men sitting by the way side",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "14db2b9b-85ad-48ad-81ac-ed01846097ec",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "What did Jesus tell two disciples they would find tied in the village?",
+   "choices": [
+    "A camel",
+    "A horse",
+    "An ass and a colt",
+    "Two oxen"
+   ],
+   "answer": 2,
+   "evidence": "ye shall find an ass tied, and a colt with her",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3940c632-7ea9-4f66-adea-80ee34e58b5a",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "Whose tables did Jesus overthrow in the temple?",
+   "choices": [
+    "The moneychangers",
+    "The publicans",
+    "The scribes",
+    "The Pharisees"
+   ],
+   "answer": 0,
+   "evidence": "overthrew the tables of the moneychangers",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "42c45e09-753f-4328-a1c5-b26fb28f5180",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "Where did Jesus go to lodge after leaving the city?",
+   "choices": [
+    "Bethphage",
+    "Jericho",
+    "Capernaum",
+    "Bethany"
+   ],
+   "answer": 3,
+   "evidence": "went out of the city into Bethany; and he lodged there.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bd6b1e43-47f1-49eb-8a63-b582c61a779d",
+   "verse_start": 18,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "On which tree did Jesus find nothing but leaves?",
+   "choices": [
+    "An olive tree",
+    "A fig tree",
+    "A sycamore tree",
+    "A cedar tree"
+   ],
+   "answer": 1,
+   "evidence": "when he saw a fig tree in the way, he came to it, and found nothing thereon, but leaves only",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "92046c39-b0c5-4add-817e-106bd8cfb582",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "hard",
+   "question": "In the parable of the two sons, what did the second son answer his father?",
+   "choices": [
+    "I will not",
+    "Here am I",
+    "Send my brother",
+    "I go, sir"
+   ],
+   "answer": 3,
+   "evidence": "And he answered and said, I go, sir: and went not.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bd872c26-507d-486a-a276-95ee0a93428a",
+   "verse_start": 35,
+   "verse_end": 35,
+   "difficulty": "hard",
+   "question": "The husbandmen beat one servant and killed another. What did they do to another?",
+   "choices": [
+    "Bound another",
+    "Sold another",
+    "Stoned another",
+    "Imprisoned another"
+   ],
+   "answer": 2,
+   "evidence": "beat one, and killed another, and stoned another.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4a461456-cd82-4001-916e-cf4b9ee4fa17",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "In Jesus' parable, what did the king make for his son?",
+   "choices": [
+    "A marriage",
+    "A palace",
+    "A vineyard",
+    "A sacrifice"
+   ],
+   "answer": 0,
+   "evidence": "a certain king, which made a marriage for his son",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d7186859-2064-4c6d-959e-caa1cd527664",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "hard",
+   "question": "In the parable, one invited guest went to his farm. Where did another go?",
+   "choices": [
+    "To his vineyard",
+    "To his merchandise",
+    "To his oxen",
+    "To his father"
+   ],
+   "answer": 1,
+   "evidence": "one to his farm, another to his merchandise",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "acf4b91f-791f-43a8-b3d9-6758bbe7bfa9",
+   "verse_start": 11,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "What was the man at the wedding feast not wearing?",
+   "choices": [
+    "A ring",
+    "A wedding garment",
+    "Sandals",
+    "A linen ephod"
+   ],
+   "answer": 1,
+   "evidence": "he saw there a man which had not on a wedding garment",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "055aef9f-d745-49e5-8eee-0620531fa61d",
+   "verse_start": 15,
+   "verse_end": 16,
+   "difficulty": "medium",
+   "question": "Who did the Pharisees send along with their disciples to question Jesus?",
+   "choices": [
+    "The Sadducees",
+    "The scribes",
+    "The Samaritans",
+    "The Herodians"
+   ],
+   "answer": 3,
+   "evidence": "they sent out unto him their disciples with the Herodians",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a769316f-f1da-4fc8-a8d8-1392fea95334",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "When Jesus asked to see the tribute money, what was brought to him?",
+   "choices": [
+    "A talent",
+    "A shekel",
+    "A penny",
+    "A farthing"
+   ],
+   "answer": 2,
+   "evidence": "Shew me the tribute money. And they brought unto him a penny.",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c84b78bc-9e7a-457f-9df9-e908a44402d2",
+   "verse_start": 24,
+   "verse_end": 26,
+   "difficulty": "hard",
+   "question": "In the Sadducees' story, how many brethren married the same woman?",
+   "choices": [
+    "Seven",
+    "Three",
+    "Five",
+    "Twelve"
+   ],
+   "answer": 0,
+   "evidence": "there were with us seven brethren",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "33b63fd1-40b1-4eb1-98f2-0d73302d2798",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "According to Jesus, in whose seat do the scribes and the Pharisees sit?",
+   "choices": [
+    "Aaron's seat",
+    "Moses’ seat",
+    "David's seat",
+    "Solomon's seat"
+   ],
+   "answer": 1,
+   "evidence": "The scribes and the Pharisees sit in Moses’ seat",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "50f5a6ff-a15e-4907-a3b7-6dab2b3cec58",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "The scribes and Pharisees pay tithe of mint, anise, and which other herb?",
+   "choices": [
+    "Rue",
+    "Hyssop",
+    "Dill",
+    "Cummin"
+   ],
+   "answer": 3,
+   "evidence": "ye pay tithe of mint and anise and cummin",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9f5a1320-3337-4b4f-a749-7d545daa8541",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "medium",
+   "question": "The blind guides strain at a gnat, but what do they swallow?",
+   "choices": [
+    "An ox",
+    "A camel",
+    "A horse",
+    "A lamb"
+   ],
+   "answer": 1,
+   "evidence": "strain at a gnat, and swallow a camel",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0205489f-f5b3-42d1-9e4d-78dde3b25d77",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "medium",
+   "question": "The whited sepulchres appear beautiful outward, but within they are full of what?",
+   "choices": [
+    "Dust and ashes",
+    "Ravening wolves",
+    "Dead men’s bones",
+    "Dry bones"
+   ],
+   "answer": 2,
+   "evidence": "are within full of dead men’s bones, and of all uncleanness",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "224b9dd2-a7c3-4156-8892-9ce5dd8a46b0",
+   "verse_start": 35,
+   "verse_end": 35,
+   "difficulty": "hard",
+   "question": "Zacharias, slain between the temple and the altar, is called the son of whom?",
+   "choices": [
+    "Barachias",
+    "Jehoiada",
+    "Iddo",
+    "Zebedee"
+   ],
+   "answer": 0,
+   "evidence": "the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7d6674e3-5c40-4e85-a9cf-a3ca4956c65b",
+   "verse_start": 37,
+   "verse_end": 37,
+   "difficulty": "easy",
+   "question": "Jesus says he would have gathered Jerusalem's children as which creature gathers her young under her wings?",
+   "choices": [
+    "An eagle",
+    "A dove",
+    "A hen",
+    "A sparrow"
+   ],
+   "answer": 2,
+   "evidence": "even as a hen gathereth her chickens under her wings",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1e08594b-647a-4cdd-84e0-e7e6cfeb38ab",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "Where was Jesus sitting when the disciples came to him privately?",
+   "choices": [
+    "Mount Sinai",
+    "Mount Carmel",
+    "Mount of Olives",
+    "Mount Zion"
+   ],
+   "answer": 2,
+   "evidence": "as he sat upon the mount of Olives",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1b837ecc-3ec3-493e-91bb-b42d91139609",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "medium",
+   "question": "Which prophet spoke of the abomination of desolation?",
+   "choices": [
+    "Isaiah",
+    "Jeremiah",
+    "Ezekiel",
+    "Daniel"
+   ],
+   "answer": 3,
+   "evidence": "spoken of by Daniel the prophet",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2944753c-4fed-4e78-a569-5ec2273de958",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "hard",
+   "question": "Jesus said to pray that their flight would not be in which season?",
+   "choices": [
+    "Summer",
+    "Harvest",
+    "Winter",
+    "Spring"
+   ],
+   "answer": 2,
+   "evidence": "pray ye that your flight be not in the winter",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bc276cd5-7774-49bc-9520-8acb5a685720",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "Wherever the carcase is, what will be gathered together there?",
+   "choices": [
+    "The ravens",
+    "The eagles",
+    "The vultures",
+    "The doves"
+   ],
+   "answer": 1,
+   "evidence": "there will the eagles be gathered together",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a7c72908-1971-4b63-a8bf-f6e812a40fed",
+   "verse_start": 32,
+   "verse_end": 32,
+   "difficulty": "easy",
+   "question": "Jesus told the disciples to learn a parable of which tree?",
+   "choices": [
+    "The olive tree",
+    "The fig tree",
+    "The cedar tree",
+    "The sycamore tree"
+   ],
+   "answer": 1,
+   "evidence": "Now learn a parable of the fig tree",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e8c92161-a07e-4067-918b-78e80c9ac23d",
+   "verse_start": 37,
+   "verse_end": 37,
+   "difficulty": "medium",
+   "question": "The coming of the Son of man is compared to the days of whom?",
+   "choices": [
+    "Noe",
+    "Lot",
+    "Abraham",
+    "Moses"
+   ],
+   "answer": 0,
+   "evidence": "But as the days of Noe were, so shall also the coming of the Son of man be.",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9da7a970-b35d-41bd-8bf8-9aeaa55ac57b",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "How many virgins took their lamps and went forth to meet the bridegroom?",
+   "choices": [
+    "Ten",
+    "Seven",
+    "Twelve",
+    "Five"
+   ],
+   "answer": 0,
+   "evidence": "ten virgins, which took their lamps, and went forth to meet the bridegroom.",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "04b6897e-f67e-4a9d-a484-90ff082672ef",
+   "verse_start": 3,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "What did the foolish virgins fail to take with them?",
+   "choices": [
+    "Oil",
+    "Lamps",
+    "Bread",
+    "Garments"
+   ],
+   "answer": 0,
+   "evidence": "They that were foolish took their lamps, and took no oil with them:",
+   "chapter": 25,
+   "status": "draft",
+   "problems": [
+    "choice 2 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5cf87cdd-0fa3-445a-b7ce-78c23ce6f055",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "At what time was the cry made that the bridegroom was coming?",
+   "choices": [
+    "At midnight",
+    "At dawn",
+    "At the ninth hour",
+    "At evening"
+   ],
+   "answer": 0,
+   "evidence": "And at midnight there was a cry made, Behold, the bridegroom cometh",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6f741778-d502-4b21-a9a4-f92185c1f399",
+   "verse_start": 24,
+   "verse_end": 25,
+   "difficulty": "easy",
+   "question": "What did the servant who received one talent do with it?",
+   "choices": [
+    "Hid it in the earth",
+    "Traded with it",
+    "Gave it to the poor",
+    "Bought a field"
+   ],
+   "answer": 0,
+   "evidence": "hid thy talent in the earth",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "00439c73-67ae-40ae-9146-d8f42c999271",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "The talent taken from the slothful servant is given to the one who has how many talents?",
+   "choices": [
+    "Ten",
+    "Five",
+    "Four",
+    "Seven"
+   ],
+   "answer": 0,
+   "evidence": "Take therefore the talent from him, and give it unto him which hath ten talents.",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2186c94c-09d8-482c-87af-5cbd3cdd31c8",
+   "verse_start": 32,
+   "verse_end": 33,
+   "difficulty": "medium",
+   "question": "Where does he set the sheep after separating them from the goats?",
+   "choices": [
+    "On his right hand",
+    "On his left hand",
+    "Behind the throne",
+    "Outside the gate"
+   ],
+   "answer": 0,
+   "evidence": "he shall set the sheep on his right hand, but the goats on the left.",
+   "chapter": 25,
+   "status": "draft",
+   "problems": [
+    "choice 2 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f85be4b1-7ffb-4ac7-953f-a15af514fbbf",
+   "verse_start": 3,
+   "verse_end": 4,
+   "difficulty": "easy",
+   "question": "What was the name of the high priest at whose palace the leaders gathered?",
+   "choices": [
+    "Annas",
+    "Eli",
+    "Caiaphas",
+    "Zacharias"
+   ],
+   "answer": 2,
+   "evidence": "the high priest, who was called Caiaphas",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3c753a7f-e575-4281-bac2-0044033cef5b",
+   "verse_start": 6,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "In whose house in Bethany was Jesus when the woman poured ointment on his head?",
+   "choices": [
+    "Lazarus",
+    "Simon the leper",
+    "Zacchaeus",
+    "Simon the tanner"
+   ],
+   "answer": 1,
+   "evidence": "in the house of Simon the leper",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "949f3251-9d0a-40af-9202-58d7cbb56287",
+   "verse_start": 14,
+   "verse_end": 15,
+   "difficulty": "easy",
+   "question": "What did the chief priests agree to pay Judas Iscariot?",
+   "choices": [
+    "Thirty pieces of silver",
+    "Twenty pieces of silver",
+    "Fifty shekels of gold",
+    "Forty pieces of silver"
+   ],
+   "answer": 0,
+   "evidence": "And they covenanted with him for thirty pieces of silver.",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "32b3b56a-2ba3-4481-8380-ee134166ff2b",
+   "verse_start": 36,
+   "verse_end": 37,
+   "difficulty": "medium",
+   "question": "Whom did Jesus take with him farther into Gethsemane?",
+   "choices": [
+    "Andrew and Philip",
+    "Thomas and Matthew",
+    "Judas and Bartholomew",
+    "Peter and the two sons of Zebedee"
+   ],
+   "answer": 3,
+   "evidence": "And he took with him Peter and the two sons of Zebedee",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f1df0f06-6ac2-4a68-b57b-5507b982808d",
+   "verse_start": 52,
+   "verse_end": 53,
+   "difficulty": "hard",
+   "question": "How many legions of angels did Jesus say his Father could send him?",
+   "choices": [
+    "More than twelve legions",
+    "Seven legions",
+    "Ten legions",
+    "Forty legions"
+   ],
+   "answer": 0,
+   "evidence": "he shall presently give me more than twelve legions of angels?",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b0dc160a-aa78-41ad-8a5d-c9c8213d5d59",
+   "verse_start": 60,
+   "verse_end": 61,
+   "difficulty": "hard",
+   "question": "According to the two false witnesses, in how long did Jesus say he could build the temple?",
+   "choices": [
+    "Seven days",
+    "Forty days",
+    "Three days",
+    "Six days"
+   ],
+   "answer": 2,
+   "evidence": "I am able to destroy the temple of God, and to build it in three days.",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3a1bdb29-9897-4e9a-82a0-ed9c746f1aa1",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "Who sent word to Pilate about suffering in a dream?",
+   "choices": [
+    "His wife",
+    "The centurion",
+    "Herod",
+    "Caiaphas"
+   ],
+   "answer": 0,
+   "evidence": "his wife sent unto him, saying, Have thou nothing to do with that just man: for I have suffered many things this day in a dream because of him.",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "99479171-cde2-4927-b147-f8ff833d8273",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "medium",
+   "question": "What did Pilate wash with water before the multitude?",
+   "choices": [
+    "His hands",
+    "His feet",
+    "His face",
+    "His robe"
+   ],
+   "answer": 0,
+   "evidence": "he took water, and washed his hands before the multitude",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "34f34994-d0b7-45f1-8f20-3b9fb86b5517",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "easy",
+   "question": "Which prisoner did Pilate release to the people?",
+   "choices": [
+    "Barabbas",
+    "Judas",
+    "Simon",
+    "Joseph"
+   ],
+   "answer": 0,
+   "evidence": "Then released he Barabbas unto them",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "98159ca4-b27b-4215-984c-213af35e128d",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "What kind of robe did the soldiers put on Jesus?",
+   "choices": [
+    "A scarlet robe",
+    "A purple robe",
+    "A white robe",
+    "A linen robe"
+   ],
+   "answer": 0,
+   "evidence": "And they stripped him, and put on him a scarlet robe.",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1b61a686-ea86-41fd-a773-47da0e8d2b28",
+   "verse_start": 32,
+   "verse_end": 32,
+   "difficulty": "easy",
+   "question": "Who was compelled to bear the cross of Jesus?",
+   "choices": [
+    "Simon of Cyrene",
+    "Joseph of Arimathaea",
+    "Barabbas",
+    "The centurion"
+   ],
+   "answer": 0,
+   "evidence": "they found a man of Cyrene, Simon by name: him they compelled to bear his cross.",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1071c998-0e93-45e2-9492-5a93356cf6d6",
+   "verse_start": 45,
+   "verse_end": 45,
+   "difficulty": "hard",
+   "question": "From which hour was there darkness over all the land?",
+   "choices": [
+    "The sixth hour",
+    "The third hour",
+    "The first hour",
+    "The eleventh hour"
+   ],
+   "answer": 0,
+   "evidence": "Now from the sixth hour there was darkness over all the land unto the ninth hour.",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "592f36c6-e575-4525-8985-ef40b2f4ce95",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Who came with the other Mary to see the sepulchre?",
+   "choices": [
+    "Martha",
+    "Mary Magdalene",
+    "Salome",
+    "Joanna"
+   ],
+   "answer": 1,
+   "evidence": "came Mary Magdalene and the other Mary to see the sepulchre.",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3aae5a35-45f1-4def-863e-969b87c28c6c",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "After rolling back the stone from the door, what did the angel do?",
+   "choices": [
+    "Sat upon it",
+    "Broke it apart",
+    "Stood beside it",
+    "Sealed it again"
+   ],
+   "answer": 0,
+   "evidence": "came and rolled back the stone from the door, and sat upon it.",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fef9dcb2-6807-497f-9299-98e11ccba1be",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "What was the angel's countenance like?",
+   "choices": [
+    "Lightning",
+    "The sun",
+    "Fire",
+    "Polished brass"
+   ],
+   "answer": 0,
+   "evidence": "His countenance was like lightning",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9612899e-76d9-4436-902d-581e2731c521",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "easy",
+   "question": "Where did the angel say the disciples would see the risen Jesus?",
+   "choices": [
+    "Bethany",
+    "Samaria",
+    "Galilee",
+    "Emmaus"
+   ],
+   "answer": 2,
+   "evidence": "he goeth before you into Galilee; there shall ye see him",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0958be3c-47f8-4db5-8b07-4515df0599fb",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "What did the chief priests and elders give the soldiers?",
+   "choices": [
+    "Thirty pieces of silver",
+    "Fine garments",
+    "A field",
+    "Large money"
+   ],
+   "answer": 3,
+   "evidence": "they gave large money unto the soldiers,",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5bb42ca4-b729-4f4b-ab22-63f6c5c96029",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "How many disciples went away into Galilee, to the mountain Jesus had appointed?",
+   "choices": [
+    "Twelve",
+    "Seven",
+    "Eleven",
+    "Seventy"
+   ],
+   "answer": 2,
+   "evidence": "Then the eleven disciples went away into Galilee",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  }
+ ]
+}

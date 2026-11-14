@@ -1,0 +1,3204 @@
+{
+ "questions": [
+  {
+   "id": "dce54e87-6e35-4787-ad58-2430144357a4",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "To whom is the writer of this book speaking at the opening of the chapter?",
+   "choices": [
+    "Theophilus",
+    "Timothy",
+    "Titus",
+    "Philemon"
+   ],
+   "answer": 0,
+   "evidence": "O Theophilus",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0dab5770-3000-4ad6-9c02-03de8e3f4142",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "For how many days was Jesus seen of the apostles after his passion?",
+   "choices": [
+    "Forty",
+    "Seven",
+    "Twelve",
+    "Fifty"
+   ],
+   "answer": 0,
+   "evidence": "being seen of them forty days",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bb4b4b7c-2331-4ae7-a5e8-933e1ef95572",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "What received Jesus out of their sight when he was taken up?",
+   "choices": [
+    "A chariot of fire",
+    "A whirlwind",
+    "Two angels",
+    "A cloud"
+   ],
+   "answer": 3,
+   "evidence": "a cloud received him out of their sight",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d3af3a03-462d-409d-abbe-5bd99f61f8b7",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "From which mount did the disciples return to Jerusalem?",
+   "choices": [
+    "Mount Sinai",
+    "Mount Carmel",
+    "Olivet",
+    "Mount Zion"
+   ],
+   "answer": 2,
+   "evidence": "from the mount called Olivet",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b7a77586-e6f0-43b5-a374-b776ef7b1637",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "About how many names were together when Peter stood up among the disciples?",
+   "choices": [
+    "About seventy",
+    "About an hundred and twenty",
+    "About five hundred",
+    "About three thousand"
+   ],
+   "answer": 1,
+   "evidence": "the number of names together were about an hundred and twenty",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6e93c2df-2af1-4ea5-bf32-83a0a74dbe7f",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "easy",
+   "question": "Upon whom did the lot fall?",
+   "choices": [
+    "Joseph Barsabas",
+    "Matthias",
+    "Barnabas",
+    "Silas"
+   ],
+   "answer": 1,
+   "evidence": "the lot fell upon Matthias",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0458b481-6839-4016-8724-f71cb168dfc1",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "On what feast day were they all with one accord in one place?",
+   "choices": [
+    "Passover",
+    "Pentecost",
+    "Tabernacles",
+    "Purim"
+   ],
+   "answer": 1,
+   "evidence": "And when the day of Pentecost was fully come, they were all with one accord in one place.",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e5cd7a23-6b34-4402-9488-5888560de6ef",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "What did the mockers say the men were full of?",
+   "choices": [
+    "Strong drink",
+    "Old wine",
+    "Vinegar",
+    "New wine"
+   ],
+   "answer": 3,
+   "evidence": "Others mocking said, These men are full of new wine.",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7e2c2b08-13bd-4ec4-bb7d-3a763747e90d",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "Who stood up with the eleven and lifted up his voice to the crowd?",
+   "choices": [
+    "John",
+    "James",
+    "Peter",
+    "Paul"
+   ],
+   "answer": 2,
+   "evidence": "But Peter, standing up with the eleven, lifted up his voice",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3cbe06ff-c56b-4d91-95c5-ecec17efd303",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "What hour of the day did Peter say it was?",
+   "choices": [
+    "The sixth hour",
+    "The third hour",
+    "The ninth hour",
+    "The eleventh hour"
+   ],
+   "answer": 1,
+   "evidence": "seeing it is but the third hour of the day.",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0c8dab61-e7cf-42df-b6ec-34266978789c",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "medium",
+   "question": "Which prophet did Peter say had spoken of what was happening?",
+   "choices": [
+    "Joel",
+    "Isaiah",
+    "Amos",
+    "Jeremiah"
+   ],
+   "answer": 0,
+   "evidence": "But this is that which was spoken by the prophet Joel;",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9beadbea-6318-4ab2-835f-45bb5092cab9",
+   "verse_start": 41,
+   "verse_end": 41,
+   "difficulty": "hard",
+   "question": "About how many souls were added that same day?",
+   "choices": [
+    "Five thousand",
+    "Two thousand",
+    "Three thousand",
+    "Four thousand"
+   ],
+   "answer": 2,
+   "evidence": "the same day there were added unto them about three thousand souls.",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "dd560815-7e70-4734-b35d-b56cf1cbd4df",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Who went up to the temple together with Peter?",
+   "choices": [
+    "John",
+    "James",
+    "Paul",
+    "Barnabas"
+   ],
+   "answer": 0,
+   "evidence": "Now Peter and John went up together into the temple",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "322331e7-d348-4584-aa04-f36f7e51a624",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "At what hour, the hour of prayer, did Peter and John go up to the temple?",
+   "choices": [
+    "The ninth hour",
+    "The third hour",
+    "The sixth hour",
+    "The twelfth hour"
+   ],
+   "answer": 0,
+   "evidence": "at the hour of prayer, being the ninth hour",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9c13eee5-19c7-4639-9e2d-365f7c338bc9",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "What was the temple gate called where the lame man was laid daily?",
+   "choices": [
+    "Sheep",
+    "Beautiful",
+    "Golden",
+    "East"
+   ],
+   "answer": 1,
+   "evidence": "the gate of the temple which is called Beautiful",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a2efd029-7adc-47d6-afff-79881859c914",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "By what did Peter take the lame man to lift him up?",
+   "choices": [
+    "His left hand",
+    "Both his arms",
+    "His shoulders",
+    "The right hand"
+   ],
+   "answer": 3,
+   "evidence": "he took him by the right hand, and lifted him up",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2843dc47-127a-460f-aabb-7c917f0b4606",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "In which porch did all the people run together unto Peter and John?",
+   "choices": [
+    "David's porch",
+    "Herod's porch",
+    "Solomon’s porch",
+    "Hezekiah's porch"
+   ],
+   "answer": 2,
+   "evidence": "the porch that is called Solomon’s",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "044c099a-63e0-4e02-9f36-aabe5f63c2a9",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "Peter said all the prophets from which prophet onward foretold of these days?",
+   "choices": [
+    "Elijah",
+    "Samuel",
+    "Isaiah",
+    "Nathan"
+   ],
+   "answer": 1,
+   "evidence": "all the prophets from Samuel and those that follow after",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "29f292a2-72fd-47eb-8c37-c1d1eacc4751",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "hard",
+   "question": "About how many men believed after hearing the word?",
+   "choices": [
+    "Five thousand",
+    "Three thousand",
+    "Four thousand",
+    "Seven thousand"
+   ],
+   "answer": 0,
+   "evidence": "the number of the men was about five thousand",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "19cb895b-7d24-45b7-a1d9-14626c484b4f",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "Who is called the high priest among those gathered at Jerusalem?",
+   "choices": [
+    "Annas",
+    "Ananias",
+    "Eli",
+    "Abiathar"
+   ],
+   "answer": 0,
+   "evidence": "Annas the high priest",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "627d7bf5-de0a-469b-b146-47194727bdc9",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "How old was the man on whom the miracle of healing was shown?",
+   "choices": [
+    "Above forty years",
+    "Above thirty years",
+    "Above twelve years",
+    "Above fifty years"
+   ],
+   "answer": 0,
+   "evidence": "the man was above forty years old",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cf84cdb5-f230-4c94-beae-26b62b1ec622",
+   "verse_start": 31,
+   "verse_end": 31,
+   "difficulty": "easy",
+   "question": "What happened to the place where the believers were assembled after they prayed?",
+   "choices": [
+    "It was shaken",
+    "It filled with smoke",
+    "It caught fire",
+    "It grew dark"
+   ],
+   "answer": 0,
+   "evidence": "the place was shaken where they were assembled together",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "95891113-709a-46a7-96c4-8c0fa97fbf6b",
+   "verse_start": 36,
+   "verse_end": 37,
+   "difficulty": "easy",
+   "question": "What surname did the apostles give to Joses, who sold his land?",
+   "choices": [
+    "Barnabas",
+    "Silas",
+    "Stephen",
+    "Mark"
+   ],
+   "answer": 0,
+   "evidence": "And Joses, who by the apostles was surnamed Barnabas",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5797f9d2-6fb1-40fc-b975-fa5afd4ee09f",
+   "verse_start": 36,
+   "verse_end": 36,
+   "difficulty": "medium",
+   "question": "Joses the Levite was from which country?",
+   "choices": [
+    "Cyprus",
+    "Crete",
+    "Cilicia",
+    "Galatia"
+   ],
+   "answer": 0,
+   "evidence": "of the country of Cyprus",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9278f871-f80d-4c70-8064-10514b0d6486",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "What was the name of Ananias's wife, who knew about the kept-back money?",
+   "choices": [
+    "Priscilla",
+    "Sapphira",
+    "Dorcas",
+    "Lydia"
+   ],
+   "answer": 1,
+   "evidence": "Ananias, with Sapphira his wife",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "87811197-0220-4317-bded-854f0eeff64b",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "hard",
+   "question": "About how long after Ananias died did his wife come in?",
+   "choices": [
+    "One hour",
+    "Three hours",
+    "Seven hours",
+    "Three days"
+   ],
+   "answer": 1,
+   "evidence": "it was about the space of three hours after",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cc442457-6665-4ee8-a6de-e2d49bbbae0e",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "Where were the apostles and believers all gathered with one accord?",
+   "choices": [
+    "The Beautiful gate",
+    "The upper room",
+    "Herod’s palace",
+    "Solomon’s porch"
+   ],
+   "answer": 3,
+   "evidence": "they were all with one accord in Solomon’s porch.",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4b163668-f6b8-41ff-83f3-1f48199e5854",
+   "verse_start": 19,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "Who opened the prison doors and brought the apostles out?",
+   "choices": [
+    "Gamaliel",
+    "The captain",
+    "The angel of the Lord",
+    "Barnabas"
+   ],
+   "answer": 2,
+   "evidence": "the angel of the Lord by night opened the prison doors",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "00161c01-d0ce-4401-b693-9a7102e7ef40",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "medium",
+   "question": "Gamaliel, the council member who spoke about the apostles, belonged to which group?",
+   "choices": [
+    "Pharisee",
+    "Sadducee",
+    "Essene",
+    "Herodian"
+   ],
+   "answer": 0,
+   "evidence": "a Pharisee, named Gamaliel, a doctor of the law",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "40d28505-2b8b-4e11-85ac-91c79963d9c4",
+   "verse_start": 36,
+   "verse_end": 36,
+   "difficulty": "hard",
+   "question": "According to Gamaliel, about how many men joined themselves to Theudas?",
+   "choices": [
+    "Seventy",
+    "Three thousand",
+    "Four hundred",
+    "Five thousand"
+   ],
+   "answer": 2,
+   "evidence": "a number of men, about four hundred, joined themselves",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "aad7e99b-237a-4b1b-9125-fb80342a6e8e",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Which group murmured because their widows were neglected in the daily ministration?",
+   "choices": [
+    "The Grecians",
+    "The Hebrews",
+    "The Samaritans",
+    "The Romans"
+   ],
+   "answer": 0,
+   "evidence": "there arose a murmuring of the Grecians against the Hebrews, because their widows were neglected in the daily ministration.",
+   "chapter": 6,
+   "status": "draft",
+   "problems": [
+    "choice 2 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4fcbb7f3-f9f6-4944-866a-e47d7393a12a",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "Nicolas, one of the seven chosen, was a proselyte of which city?",
+   "choices": [
+    "Tarsus",
+    "Damascus",
+    "Antioch",
+    "Cyrene"
+   ],
+   "answer": 2,
+   "evidence": "Nicolas a proselyte of Antioch",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2f5c1027-5653-4e85-9058-1da0de957099",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "After praying, what did the apostles do to the seven men set before them?",
+   "choices": [
+    "Anointed them with oil",
+    "Washed their feet",
+    "Gave them staffs",
+    "Laid their hands on them"
+   ],
+   "answer": 3,
+   "evidence": "when they had prayed, they laid their hands on them.",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b7cea6b0-11f8-4e74-b2c6-5b7d28f26506",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "hard",
+   "question": "According to the chapter, a great company of which people became obedient to the faith?",
+   "choices": [
+    "Levites",
+    "Priests",
+    "Scribes",
+    "Soldiers"
+   ],
+   "answer": 1,
+   "evidence": "a great company of the priests were obedient to the faith.",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d11b12cc-403a-480e-be78-c3b388e943a1",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "hard",
+   "question": "What was the synagogue called whose members disputed with Stephen?",
+   "choices": [
+    "The synagogue of the Libertines",
+    "The synagogue of the Pharisees",
+    "The synagogue of the Nazarenes",
+    "The synagogue of the Herodians"
+   ],
+   "answer": 0,
+   "evidence": "the synagogue of the Libertines",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "29c5f4fc-c4f5-4368-af7d-64cefe460a92",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "easy",
+   "question": "What did those in the council see Stephen's face look like?",
+   "choices": [
+    "The face of a lion",
+    "The face of an angel",
+    "The face of Moses",
+    "The face of a child"
+   ],
+   "answer": 1,
+   "evidence": "saw his face as it had been the face of an angel.",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3a931151-446e-420b-8716-9aef641ff5de",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "How many souls of Jacob's kindred did Joseph call to him?",
+   "choices": [
+    "Threescore and fifteen",
+    "Threescore and ten",
+    "Fourscore and five",
+    "Twelve"
+   ],
+   "answer": 0,
+   "evidence": "called his father Jacob to him, and all his kindred, threescore and fifteen souls.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "835decdb-4b80-4e7e-9322-064c63d43bf6",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "hard",
+   "question": "How long was Moses nourished up in his father's house?",
+   "choices": [
+    "Forty days",
+    "Three months",
+    "Seven days",
+    "Two years"
+   ],
+   "answer": 1,
+   "evidence": "nourished up in his father’s house three months",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "590edf09-fd1d-4b21-9cfe-33f4dad981ad",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "medium",
+   "question": "In what land was Moses a stranger after he fled?",
+   "choices": [
+    "Charran",
+    "Sychem",
+    "Madian",
+    "Goshen"
+   ],
+   "answer": 2,
+   "evidence": "Then fled Moses at this saying, and was a stranger in the land of Madian",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d52e1666-4919-404c-88ba-15a2c294a7b2",
+   "verse_start": 40,
+   "verse_end": 40,
+   "difficulty": "easy",
+   "question": "To whom did the fathers say, \"Make us gods to go before us\"?",
+   "choices": [
+    "Joshua",
+    "Aaron",
+    "Hur",
+    "Miriam"
+   ],
+   "answer": 1,
+   "evidence": "Saying unto Aaron, Make us gods to go before us",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d70682cf-00b2-4bd8-a113-f15c35606036",
+   "verse_start": 46,
+   "verse_end": 47,
+   "difficulty": "medium",
+   "question": "Who built a house for the God of Jacob?",
+   "choices": [
+    "David",
+    "Hezekiah",
+    "Zerubbabel",
+    "Solomon"
+   ],
+   "answer": 3,
+   "evidence": "But Solomon built him an house.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "eb4697bf-48c2-48a2-bcab-156b39b5e9fd",
+   "verse_start": 58,
+   "verse_end": 58,
+   "difficulty": "easy",
+   "question": "At whose feet did the witnesses lay down their clothes?",
+   "choices": [
+    "Saul",
+    "Barnabas",
+    "Philip",
+    "Silas"
+   ],
+   "answer": 0,
+   "evidence": "the witnesses laid down their clothes at a young man’s feet, whose name was Saul.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b636573b-ff69-4f44-ba81-835476d5521c",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "easy",
+   "question": "To which city did Philip go down and preach Christ?",
+   "choices": [
+    "Damascus",
+    "Samaria",
+    "Antioch",
+    "Joppa"
+   ],
+   "answer": 1,
+   "evidence": "Then Philip went down to the city of Samaria, and preached Christ unto them.",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "06649da1-84ef-479b-8f53-0c7dc85bcead",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "Whom did the apostles at Jerusalem send to Samaria?",
+   "choices": [
+    "James and John",
+    "Paul and Barnabas",
+    "Andrew and Thomas",
+    "Peter and John"
+   ],
+   "answer": 3,
+   "evidence": "they sent unto them Peter and John",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8c4b51ae-2dc7-4a14-8510-f8f4cbf5a262",
+   "verse_start": 18,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "What did Simon offer the apostles so he could have the power to give the Holy Ghost?",
+   "choices": [
+    "Gold",
+    "Land",
+    "Money",
+    "Sheep"
+   ],
+   "answer": 2,
+   "evidence": "he offered them money",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6ddf7ece-bed6-449c-9d34-79278b35a339",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "Under which queen did the Ethiopian eunuch hold great authority?",
+   "choices": [
+    "Jezebel",
+    "Candace",
+    "Esther",
+    "Vashti"
+   ],
+   "answer": 1,
+   "evidence": "under Candace queen of the Ethiopians",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "03a32b8c-4e01-4535-ba7d-5e65a663a781",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "medium",
+   "question": "Which prophet was the eunuch reading in his chariot?",
+   "choices": [
+    "Esaias",
+    "Jeremy",
+    "Ezekiel",
+    "Daniel"
+   ],
+   "answer": 0,
+   "evidence": "Was returning, and sitting in his chariot read Esaias the prophet.",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0412964a-1726-487c-8fc4-59a0af8fe87f",
+   "verse_start": 40,
+   "verse_end": 40,
+   "difficulty": "hard",
+   "question": "Where was Philip found after the Spirit caught him away?",
+   "choices": [
+    "Lydda",
+    "Joppa",
+    "Azotus",
+    "Bethany"
+   ],
+   "answer": 2,
+   "evidence": "But Philip was found at Azotus",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9bebc690-796a-4f17-b7c3-c7aaf5af76ea",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "Which city was Saul near when a light from heaven shone around him?",
+   "choices": [
+    "Damascus",
+    "Jerusalem",
+    "Antioch",
+    "Caesarea"
+   ],
+   "answer": 0,
+   "evidence": "he came near Damascus: and suddenly there shined round about him a light from heaven",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5b15c2f7-cd31-45b7-bfa1-cc93a287a837",
+   "verse_start": 10,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "Which disciple did the Lord send in a vision to go to Saul?",
+   "choices": [
+    "Barnabas",
+    "Ananias",
+    "Silas",
+    "Stephen"
+   ],
+   "answer": 1,
+   "evidence": "there was a certain disciple at Damascus, named Ananias",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d1829c3a-18b1-4c28-aef7-a84c5fdc198e",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "What was the name of the street where Saul was staying in Damascus?",
+   "choices": [
+    "Broad",
+    "Royal",
+    "Straight",
+    "Beautiful"
+   ],
+   "answer": 2,
+   "evidence": "go into the street which is called Straight",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b9618d23-02cf-49ad-a1fc-e90743a93479",
+   "verse_start": 23,
+   "verse_end": 25,
+   "difficulty": "medium",
+   "question": "How did the disciples get Saul out of Damascus when the Jews plotted to kill him?",
+   "choices": [
+    "Through a gate",
+    "By ship",
+    "On a camel",
+    "In a basket"
+   ],
+   "answer": 3,
+   "evidence": "let him down by the wall in a basket",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0a94a2ec-685a-483f-bccb-c38751f6f21d",
+   "verse_start": 33,
+   "verse_end": 33,
+   "difficulty": "hard",
+   "question": "How many years had Aeneas kept his bed at Lydda?",
+   "choices": [
+    "Twelve",
+    "Eight",
+    "Thirty-eight",
+    "Eighteen"
+   ],
+   "answer": 1,
+   "evidence": "which had kept his bed eight years, and was sick of the palsy",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a2af7038-1a29-4dd9-8eda-1e2b58b934d6",
+   "verse_start": 43,
+   "verse_end": 43,
+   "difficulty": "hard",
+   "question": "What was the trade of Simon, with whom Peter stayed in Joppa?",
+   "choices": [
+    "A fisherman",
+    "A tentmaker",
+    "A tanner",
+    "A carpenter"
+   ],
+   "answer": 2,
+   "evidence": "he tarried many days in Joppa with one Simon a tanner",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1c8fb3de-486e-446e-885c-45d4cef06f75",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "In what city did Cornelius live?",
+   "choices": [
+    "Caesarea",
+    "Joppa",
+    "Antioch",
+    "Damascus"
+   ],
+   "answer": 0,
+   "evidence": "There was a certain man in Caesarea called Cornelius",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "415fb33d-d568-4ff6-8cf9-cb72ba67e6a9",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "medium",
+   "question": "Cornelius was a centurion of which band?",
+   "choices": [
+    "Augustus' band",
+    "The Roman band",
+    "The Italian band",
+    "The Syrian band"
+   ],
+   "answer": 2,
+   "evidence": "a centurion of the band called the Italian band",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "12edbf48-7798-4841-a4f1-e83654b99bf3",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "easy",
+   "question": "What was the trade of the Simon with whom Peter lodged?",
+   "choices": [
+    "A fisherman",
+    "A tanner",
+    "A tentmaker",
+    "A carpenter"
+   ],
+   "answer": 1,
+   "evidence": "He lodgeth with one Simon a tanner, whose house is by the sea side",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3481333c-8bee-49df-ac5b-bc07d3498372",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "Where did Peter go up to pray before his trance?",
+   "choices": [
+    "The temple",
+    "A mountain",
+    "An upper room",
+    "The housetop"
+   ],
+   "answer": 3,
+   "evidence": "Peter went up upon the housetop to pray about the sixth hour",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f751ebcc-dafa-489a-a405-b2b4852e2c90",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "hard",
+   "question": "About what hour did Peter go up to pray?",
+   "choices": [
+    "The sixth hour",
+    "The ninth hour",
+    "The third hour",
+    "The eleventh hour"
+   ],
+   "answer": 0,
+   "evidence": "Peter went up upon the housetop to pray about the sixth hour",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4379cf48-4ad1-4669-b95a-74ee64d26c0e",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "How many times was the sheet vision done before the vessel was received up?",
+   "choices": [
+    "Twice",
+    "Thrice",
+    "Seven times",
+    "Four times"
+   ],
+   "answer": 1,
+   "evidence": "This was done thrice: and the vessel was received up again into heaven.",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e8702ef5-7163-4bd9-852b-99ff3ec68150",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "In which city was Peter praying when he saw the vision?",
+   "choices": [
+    "Lydda",
+    "Caesarea",
+    "Damascus",
+    "Joppa"
+   ],
+   "answer": 3,
+   "evidence": "I was in the city of Joppa praying",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f48b1c73-0049-46b0-8e66-de6002222cf8",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "hard",
+   "question": "How many brethren accompanied Peter into the man's house?",
+   "choices": [
+    "Three",
+    "Six",
+    "Seven",
+    "Twelve"
+   ],
+   "answer": 1,
+   "evidence": "Moreover these six brethren accompanied me",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "983d6a11-e5f0-499d-8e08-b91e3b9a3e9e",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "easy",
+   "question": "Whom did Barnabas go to Tarsus to seek?",
+   "choices": [
+    "Silas",
+    "Mark",
+    "Saul",
+    "Timothy"
+   ],
+   "answer": 2,
+   "evidence": "Then departed Barnabas to Tarsus, for to seek Saul:",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6c97ded0-b1c0-4bb1-a988-1fe98fe64e0f",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "easy",
+   "question": "In which city were the disciples first called Christians?",
+   "choices": [
+    "Jerusalem",
+    "Antioch",
+    "Tarsus",
+    "Damascus"
+   ],
+   "answer": 1,
+   "evidence": "And the disciples were called Christians first in Antioch.",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3daf47f3-e79e-4919-afd3-7a745af0c9e4",
+   "verse_start": 27,
+   "verse_end": 28,
+   "difficulty": "medium",
+   "question": "Which prophet from Jerusalem signified by the Spirit that a great dearth would come?",
+   "choices": [
+    "Agabus",
+    "Stephen",
+    "Philip",
+    "Silas"
+   ],
+   "answer": 0,
+   "evidence": "And there stood up one of them named Agabus",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1629e111-8903-480c-af8b-852874087090",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "In the days of which ruler did the foretold dearth come to pass?",
+   "choices": [
+    "Augustus Caesar",
+    "Tiberius Caesar",
+    "Nero",
+    "Claudius Caesar"
+   ],
+   "answer": 3,
+   "evidence": "which came to pass in the days of Claudius Caesar.",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c0b6d9d1-536d-4c4b-85c0-6588eb94dd81",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Whom did Herod the king kill with the sword?",
+   "choices": [
+    "Stephen",
+    "James the brother of John",
+    "Andrew",
+    "Philip"
+   ],
+   "answer": 1,
+   "evidence": "And he killed James the brother of John with the sword.",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e4c14bb2-f6a9-47ee-a87e-d7e6361c7b93",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "hard",
+   "question": "How many quaternions of soldiers was Peter delivered to?",
+   "choices": [
+    "Two",
+    "Three",
+    "Four",
+    "Six"
+   ],
+   "answer": 2,
+   "evidence": "delivered him to four quaternions of soldiers to keep him",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0664d24d-849e-4136-b5f6-857e3226e053",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "After his escape, to whose house did Peter go, where many were gathered praying?",
+   "choices": [
+    "Simon the tanner",
+    "Cornelius",
+    "Lydia",
+    "Mary the mother of John"
+   ],
+   "answer": 3,
+   "evidence": "he came to the house of Mary the mother of John, whose surname was Mark",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b9950e1f-699d-479a-9b88-32fd7b0853bb",
+   "verse_start": 13,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "What was the name of the damsel who came to the gate when Peter knocked?",
+   "choices": [
+    "Dorcas",
+    "Lydia",
+    "Rhoda",
+    "Priscilla"
+   ],
+   "answer": 2,
+   "evidence": "a damsel came to hearken, named Rhoda.",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d5abfd74-9641-4ea6-894c-f84dc4ca9fc2",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "medium",
+   "question": "When the damsel kept insisting that Peter was at the gate, what did the people in the house finally say?",
+   "choices": [
+    "It is his angel",
+    "It is a spirit",
+    "It is Elias",
+    "It is a dream"
+   ],
+   "answer": 0,
+   "evidence": "Then said they, It is his angel.",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "60b14f05-be00-4273-b9d5-9f2f05e05dfa",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "hard",
+   "question": "What was the name of the king's chamberlain whom the people of Tyre and Sidon made their friend?",
+   "choices": [
+    "Erastus",
+    "Blastus",
+    "Tertullus",
+    "Gallio"
+   ],
+   "answer": 1,
+   "evidence": "having made Blastus the king’s chamberlain their friend",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "56cd5f62-e8a2-41c2-97ff-ab8177ca310e",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Which two men did the Holy Ghost say to separate for the work He had called them to?",
+   "choices": [
+    "Peter and John",
+    "Barnabas and Saul",
+    "Silas and Timothy",
+    "Philip and Stephen"
+   ],
+   "answer": 1,
+   "evidence": "Separate me Barnabas and Saul for the work whereunto I have called them.",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1c820aee-508c-4af4-9b9f-d5bf21974eff",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "What was the name of the deputy of the country who desired to hear the word of God?",
+   "choices": [
+    "Felix",
+    "Gallio",
+    "Festus",
+    "Sergius Paulus"
+   ],
+   "answer": 3,
+   "evidence": "the deputy of the country, Sergius Paulus, a prudent man",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "05ae9ffe-3c14-41a0-93e2-0205965fd00c",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "easy",
+   "question": "What did Saul say would happen to the sorcerer who withstood them?",
+   "choices": [
+    "He would be a leper",
+    "He would be mute",
+    "He would be blind",
+    "He would die"
+   ],
+   "answer": 2,
+   "evidence": "thou shalt be blind, not seeing the sun for a season",
+   "chapter": 13,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a8f2466f-e915-4975-a302-cc0bd53ca055",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "After the company came to Perga, where did John return to?",
+   "choices": [
+    "Jerusalem",
+    "Antioch",
+    "Tarsus",
+    "Joppa"
+   ],
+   "answer": 0,
+   "evidence": "John departing from them returned to Jerusalem.",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3180c6f0-41bc-4181-bd73-a8121becbd39",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "hard",
+   "question": "For about how many years did Paul say God gave Israel judges, until Samuel?",
+   "choices": [
+    "Four hundred",
+    "Four hundred and thirty",
+    "Four hundred and fifty",
+    "Four hundred and eighty"
+   ],
+   "answer": 2,
+   "evidence": "he gave unto them judges about the space of four hundred and fifty years, until Samuel the prophet.",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cc122141-2e85-40f4-9515-db8934c9a859",
+   "verse_start": 33,
+   "verse_end": 33,
+   "difficulty": "hard",
+   "question": "In which psalm did Paul say it is written, \"Thou art my Son, this day have I begotten thee\"?",
+   "choices": [
+    "The first psalm",
+    "The second psalm",
+    "The twenty-second psalm",
+    "The hundred and tenth psalm"
+   ],
+   "answer": 1,
+   "evidence": "as it is also written in the second psalm, Thou art my Son, this day have I begotten thee.",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "184a236e-8e2f-4d45-bbd3-5823a43bce47",
+   "verse_start": 11,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "What did the people of Lystra call Barnabas?",
+   "choices": [
+    "Jupiter",
+    "Mercurius",
+    "Apollo",
+    "Diana"
+   ],
+   "answer": 0,
+   "evidence": "And they called Barnabas, Jupiter; and Paul, Mercurius",
+   "chapter": 14,
+   "status": "draft",
+   "problems": [
+    "choice 2 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2bd7e034-4583-4313-932e-2013ba2933e8",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "Why did the people call Paul Mercurius?",
+   "choices": [
+    "He was the eldest",
+    "He healed the cripple",
+    "He was the chief speaker",
+    "He was a Roman"
+   ],
+   "answer": 2,
+   "evidence": "because he was the chief speaker",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3e9ca75e-8ba4-4d0b-8d3b-223fc69b5f23",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "hard",
+   "question": "What did the priest of Jupiter bring unto the gates?",
+   "choices": [
+    "Oxen and garlands",
+    "Sheep and incense",
+    "Goats and wine",
+    "Doves and oil"
+   ],
+   "answer": 0,
+   "evidence": "brought oxen and garlands unto the gates",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6c207f9c-2f5b-414a-8bd0-24ac1411e35a",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "What was done to Paul after Jews from Antioch and Iconium persuaded the people?",
+   "choices": [
+    "He was beheaded",
+    "He was stoned",
+    "He was imprisoned",
+    "He was shipwrecked"
+   ],
+   "answer": 1,
+   "evidence": "having stoned Paul, drew him out of the city",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7e81c67c-103a-4e86-a1d9-eda9cd3f7c69",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "To which city did Paul depart with Barnabas the next day?",
+   "choices": [
+    "Perga",
+    "Troas",
+    "Iconium",
+    "Derbe"
+   ],
+   "answer": 3,
+   "evidence": "the next day he departed with Barnabas to Derbe.",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "74d748fa-0e27-47d9-bddf-904bbbced1f1",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "After preaching the word in Perga, where did they go down?",
+   "choices": [
+    "Seleucia",
+    "Attalia",
+    "Cyprus",
+    "Tarsus"
+   ],
+   "answer": 1,
+   "evidence": "they went down into Attalia",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3f41f669-9a49-4a93-b4f3-cff8275b7fe8",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "To which city were Paul and Barnabas sent to meet the apostles and elders about the question of circumcision?",
+   "choices": [
+    "Jerusalem",
+    "Damascus",
+    "Caesarea",
+    "Ephesus"
+   ],
+   "answer": 0,
+   "evidence": "should go up to Jerusalem unto the apostles and elders about this question",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "dc04b7b0-a9b2-4b6c-9258-e9cf4eb13fd0",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "Through which regions did Paul and Barnabas pass on their way to Jerusalem, declaring the conversion of the Gentiles?",
+   "choices": [
+    "Phenice and Samaria",
+    "Galatia and Phrygia",
+    "Syria and Cilicia",
+    "Pamphylia and Pisidia"
+   ],
+   "answer": 0,
+   "evidence": "they passed through Phenice and Samaria",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c650b633-cfaf-4b86-92dc-86e494ba2657",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "What was the surname of the Judas who was sent to Antioch with Silas?",
+   "choices": [
+    "Iscariot",
+    "Justus",
+    "Niger",
+    "Barsabas"
+   ],
+   "answer": 3,
+   "evidence": "namely, Judas surnamed Barsabas, and Silas",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "eebe28cd-a4b5-44e6-bf0c-5ac132260f7f",
+   "verse_start": 38,
+   "verse_end": 38,
+   "difficulty": "hard",
+   "question": "From what place had John Mark earlier departed from Paul and Barnabas?",
+   "choices": [
+    "Lystra",
+    "Derbe",
+    "Pamphylia",
+    "Iconium"
+   ],
+   "answer": 2,
+   "evidence": "who departed from them from Pamphylia",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e1c5f525-f8a6-4971-9953-3a2c86ca0211",
+   "verse_start": 39,
+   "verse_end": 39,
+   "difficulty": "medium",
+   "question": "Where did Barnabas sail with Mark after the sharp contention with Paul?",
+   "choices": [
+    "Crete",
+    "Cyprus",
+    "Malta",
+    "Rhodes"
+   ],
+   "answer": 1,
+   "evidence": "and so Barnabas took Mark, and sailed unto Cyprus;",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ab1ec875-6463-49d8-b84c-a9f26d92c846",
+   "verse_start": 40,
+   "verse_end": 40,
+   "difficulty": "easy",
+   "question": "Whom did Paul choose as his companion after he parted from Barnabas?",
+   "choices": [
+    "Timothy",
+    "Mark",
+    "Silas",
+    "Luke"
+   ],
+   "answer": 2,
+   "evidence": "And Paul chose Silas, and departed",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "67d912ca-63f0-4193-90bb-9b7e47bdcf62",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "Who appeared to Paul in a vision in the night?",
+   "choices": [
+    "A man of Asia",
+    "A man of Bithynia",
+    "A man of Macedonia",
+    "A man of Galatia"
+   ],
+   "answer": 2,
+   "evidence": "There stood a man of Macedonia, and prayed him",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a7bb798d-9bf4-4da9-b219-e0f3c8c7c455",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "hard",
+   "question": "Sailing from Troas, where did Paul's company come first with a straight course?",
+   "choices": [
+    "Samothracia",
+    "Neapolis",
+    "Philippi",
+    "Cyprus"
+   ],
+   "answer": 0,
+   "evidence": "we came with a straight course to Samothracia",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f2dd3d0d-3e1b-494e-9fc2-b6345ccb0a16",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "What was Lydia's trade?",
+   "choices": [
+    "A seller of purple",
+    "A tentmaker",
+    "A tanner",
+    "A fisher"
+   ],
+   "answer": 0,
+   "evidence": "a certain woman named Lydia, a seller of purple",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ecbc48af-80ac-4322-be8b-2fafb9ab175e",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "Which city was Lydia from?",
+   "choices": [
+    "Sardis",
+    "Pergamos",
+    "Ephesus",
+    "Thyatira"
+   ],
+   "answer": 3,
+   "evidence": "of the city of Thyatira",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "96876ccc-3841-4fe1-872b-d61912bcaf02",
+   "verse_start": 25,
+   "verse_end": 26,
+   "difficulty": "easy",
+   "question": "What happened while Paul and Silas prayed and sang in prison at midnight?",
+   "choices": [
+    "A great storm",
+    "A great earthquake",
+    "A great fire",
+    "A great flood"
+   ],
+   "answer": 1,
+   "evidence": "And suddenly there was a great earthquake",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "54fd8bcb-9512-4db9-be03-6aeba294fb5b",
+   "verse_start": 35,
+   "verse_end": 35,
+   "difficulty": "hard",
+   "question": "When it was day, whom did the magistrates send to say, \"Let those men go\"?",
+   "choices": [
+    "The centurions",
+    "The serjeants",
+    "The elders",
+    "The chief captain"
+   ],
+   "answer": 1,
+   "evidence": "the magistrates sent the serjeants, saying, Let those men go.",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "51de61bf-0b2d-46d9-8328-4247b3362587",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "Which two places did they pass through before coming to Thessalonica?",
+   "choices": [
+    "Lystra and Derbe",
+    "Troas and Neapolis",
+    "Amphipolis and Apollonia",
+    "Iconium and Antioch"
+   ],
+   "answer": 2,
+   "evidence": "when they had passed through Amphipolis and Apollonia, they came to Thessalonica",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1fcd2f61-8a00-4b4a-b95c-0258b3790462",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "hard",
+   "question": "For how many sabbath days did Paul reason with the Jews in Thessalonica?",
+   "choices": [
+    "Two",
+    "Three",
+    "Seven",
+    "Forty"
+   ],
+   "answer": 1,
+   "evidence": "three sabbath days reasoned with them out of the scriptures",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "09a844cc-c21f-49bb-bf03-523790ce8bc9",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "easy",
+   "question": "In Thessalonica, whose house did the unbelieving Jews and their company assault?",
+   "choices": [
+    "Lydia's",
+    "Aquila's",
+    "Jason's",
+    "Justus's"
+   ],
+   "answer": 2,
+   "evidence": "assaulted the house of Jason",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "289a88c2-5b45-45c6-9866-c726c911279b",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "To which city did the brethren send Paul and Silas away by night from Thessalonica?",
+   "choices": [
+    "Corinth",
+    "Berea",
+    "Philippi",
+    "Derbe"
+   ],
+   "answer": 1,
+   "evidence": "the brethren immediately sent away Paul and Silas by night unto Berea",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "62bf616d-2212-469e-aef2-4bcf1d688b7c",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "easy",
+   "question": "What inscription did Paul find on an altar in Athens?",
+   "choices": [
+    "To the unknown God",
+    "To the God of Israel",
+    "To Jupiter the Great",
+    "To the Most High God"
+   ],
+   "answer": 0,
+   "evidence": "I found an altar with this inscription, TO THE UNKNOWN GOD.",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "09a91806-fc55-4d68-9ba0-44b496f776a4",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "medium",
+   "question": "Which woman is named among those in Athens who believed?",
+   "choices": [
+    "Lydia",
+    "Priscilla",
+    "Dorcas",
+    "Damaris"
+   ],
+   "answer": 3,
+   "evidence": "a woman named Damaris",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c74b52e5-94ee-428e-977a-3b4a5aba0ccb",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "After leaving Athens, to which city did Paul come?",
+   "choices": [
+    "Corinth",
+    "Philippi",
+    "Thessalonica",
+    "Berea"
+   ],
+   "answer": 0,
+   "evidence": "After these things Paul departed from Athens, and came to Corinth;",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3b1d2d3b-7872-4fb1-bfd0-4b60a7a5a0ba",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "Who had commanded all Jews to depart from Rome?",
+   "choices": [
+    "Nero",
+    "Augustus",
+    "Claudius",
+    "Tiberius"
+   ],
+   "answer": 2,
+   "evidence": "because that Claudius had commanded all Jews to depart from Rome",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "aebea40b-f82f-4616-8be3-d5f8a8f9910d",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "What was the occupation of Aquila and Priscilla, which Paul shared?",
+   "choices": [
+    "Fishermen",
+    "Tentmakers",
+    "Tanners",
+    "Carpenters"
+   ],
+   "answer": 1,
+   "evidence": "for by their occupation they were tentmakers.",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "83697e53-7b18-40a1-b973-bc9fb393c2eb",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "hard",
+   "question": "How long did Paul continue in Corinth teaching the word of God?",
+   "choices": [
+    "Three months",
+    "Two years",
+    "Three years",
+    "A year and six months"
+   ],
+   "answer": 3,
+   "evidence": "he continued there a year and six months",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c4ed5f26-7f16-4d61-9746-ba734fb6d6f0",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "Who was the deputy of Achaia when the Jews brought Paul to the judgment seat?",
+   "choices": [
+    "Felix",
+    "Gallio",
+    "Festus",
+    "Sergius Paulus"
+   ],
+   "answer": 1,
+   "evidence": "when Gallio was the deputy of Achaia",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "52ef3476-c7ee-4925-ad41-8228f9e37c9e",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "hard",
+   "question": "Where did Paul have his head shorn because of a vow?",
+   "choices": [
+    "Cenchrea",
+    "Troas",
+    "Miletus",
+    "Joppa"
+   ],
+   "answer": 0,
+   "evidence": "having shorn his head in Cenchrea: for he had a vow.",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ff937493-43c0-41e0-a917-33ecaa6f0efb",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "After passing through the upper coasts, which city did Paul come to?",
+   "choices": [
+    "Philippi",
+    "Ephesus",
+    "Athens",
+    "Antioch"
+   ],
+   "answer": 1,
+   "evidence": "Paul having passed through the upper coasts came to Ephesus",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "95083409-5f02-4462-a320-8129468f34fd",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "After leaving the synagogue, in whose school did Paul dispute daily?",
+   "choices": [
+    "Tyrannus",
+    "Gamaliel",
+    "Crispus",
+    "Jason"
+   ],
+   "answer": 0,
+   "evidence": "disputing daily in the school of one Tyrannus.",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3185eb6b-1f06-43b0-a767-d654b36dd02a",
+   "verse_start": 13,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "The seven sons who tried to cast out evil spirits in Jesus' name were sons of whom?",
+   "choices": [
+    "Annas",
+    "Caiaphas",
+    "Ananias",
+    "Sceva"
+   ],
+   "answer": 3,
+   "evidence": "there were seven sons of one Sceva, a Jew, and chief of the priests",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3b044d70-8d90-431c-a4cd-965e3895a7f7",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "hard",
+   "question": "What was the counted price of the books of curious arts that were burned?",
+   "choices": [
+    "Thirty pieces of silver",
+    "Ten thousand pieces of silver",
+    "Fifty thousand pieces of silver",
+    "Twenty thousand pieces of silver"
+   ],
+   "answer": 2,
+   "evidence": "they counted the price of them, and found it fifty thousand pieces of silver.",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "251bc132-b553-4c7f-9d22-6a24e207260a",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "What was Demetrius's trade?",
+   "choices": [
+    "A tentmaker",
+    "A tanner",
+    "A silversmith",
+    "A fisherman"
+   ],
+   "answer": 2,
+   "evidence": "a certain man named Demetrius, a silversmith",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3133943d-ffa7-439c-a76e-01443d991908",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "hard",
+   "question": "For about how long did the crowd cry out, \"Great is Diana of the Ephesians\" after learning Alexander was a Jew?",
+   "choices": [
+    "Three months",
+    "Two hours",
+    "Two years",
+    "Seven days"
+   ],
+   "answer": 1,
+   "evidence": "all with one voice about the space of two hours cried out, Great is Diana of the Ephesians.",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "08e130ab-745f-42f6-938f-7cc9bc62f0e2",
+   "verse_start": 2,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "How long did Paul stay in Greece?",
+   "choices": [
+    "Six months",
+    "One year",
+    "Two years",
+    "Three months"
+   ],
+   "answer": 3,
+   "evidence": "And there abode three months.",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5ef5b90b-ac4e-4e8b-8697-eeca6e5edc67",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "hard",
+   "question": "Sopater, who accompanied Paul into Asia, was from which city?",
+   "choices": [
+    "Derbe",
+    "Berea",
+    "Lystra",
+    "Iconium"
+   ],
+   "answer": 1,
+   "evidence": "Sopater of Berea",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5f143d9e-7cff-415d-b339-ec89c80e9c3e",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "How many days did the voyage from Philippi to Troas take?",
+   "choices": [
+    "Five",
+    "Seven",
+    "Three",
+    "Ten"
+   ],
+   "answer": 0,
+   "evidence": "came unto them to Troas in five days",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d66d6886-14fc-40ce-adc8-c720c928b243",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "easy",
+   "question": "What was the name of the young man who fell from the window while Paul was preaching?",
+   "choices": [
+    "Eutychus",
+    "Aeneas",
+    "Demetrius",
+    "Onesimus"
+   ],
+   "answer": 0,
+   "evidence": "a certain young man named Eutychus",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "29a416a9-61bd-4bab-9c6b-10c04f5e6af8",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "medium",
+   "question": "Paul hurried because he hoped to be at Jerusalem for which day?",
+   "choices": [
+    "Passover",
+    "The feast of tabernacles",
+    "The day of Pentecost",
+    "Purim"
+   ],
+   "answer": 2,
+   "evidence": "to be at Jerusalem the day of Pentecost",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ba39d76a-d564-4034-82b5-abc7d49f752b",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "easy",
+   "question": "From which place did Paul send for the elders of the church of Ephesus?",
+   "choices": [
+    "Troas",
+    "Miletus",
+    "Corinth",
+    "Antioch"
+   ],
+   "answer": 1,
+   "evidence": "And from Miletus he sent to Ephesus, and called the elders of the church.",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "13917f90-d762-425f-8b19-fe9cc2c63233",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "At which city did the ship land to unlade her burden?",
+   "choices": [
+    "Sidon",
+    "Joppa",
+    "Tyre",
+    "Patara"
+   ],
+   "answer": 2,
+   "evidence": "landed at Tyre: for there the ship was to unlade her burden.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a1ec4a98-bc34-4f6b-acd4-0930c56f15a0",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "easy",
+   "question": "In whose house did Paul's company stay at Caesarea?",
+   "choices": [
+    "Cornelius the centurion",
+    "Philip the evangelist",
+    "Simon the tanner",
+    "James the elder"
+   ],
+   "answer": 1,
+   "evidence": "we entered into the house of Philip the evangelist",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c1a79b46-6602-4dfc-b5e1-b36a34ea53ad",
+   "verse_start": 10,
+   "verse_end": 11,
+   "difficulty": "easy",
+   "question": "Which prophet took Paul's girdle and bound his own hands and feet?",
+   "choices": [
+    "Agabus",
+    "Silas",
+    "Barnabas",
+    "Mnason"
+   ],
+   "answer": 0,
+   "evidence": "there came down from Judaea a certain prophet, named Agabus.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bb35474f-6772-4753-b87c-17eac807b50b",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "medium",
+   "question": "Whom did the Jews suppose Paul had brought into the temple?",
+   "choices": [
+    "Timothy",
+    "Tychicus",
+    "Aristarchus",
+    "Trophimus an Ephesian"
+   ],
+   "answer": 3,
+   "evidence": "Trophimus an Ephesian, whom they supposed that Paul had brought into the temple.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3d34a778-c917-4d8a-a64f-751b0de3126b",
+   "verse_start": 33,
+   "verse_end": 33,
+   "difficulty": "hard",
+   "question": "With how many chains did the chief captain command Paul to be bound?",
+   "choices": [
+    "Two",
+    "Three",
+    "Four",
+    "Seven"
+   ],
+   "answer": 0,
+   "evidence": "commanded him to be bound with two chains",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2d60430b-2b64-4625-bbee-c6e3d41ede04",
+   "verse_start": 38,
+   "verse_end": 38,
+   "difficulty": "hard",
+   "question": "According to the chief captain, how many men had the Egyptian led out into the wilderness?",
+   "choices": [
+    "Five thousand",
+    "Four thousand",
+    "Three thousand",
+    "Six hundred"
+   ],
+   "answer": 1,
+   "evidence": "leddest out into the wilderness four thousand men that were murderers",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6c7598bf-0ab2-49e1-aaf4-3a04abf8211b",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "In which city does Paul say he was born?",
+   "choices": [
+    "Tarsus",
+    "Jerusalem",
+    "Damascus",
+    "Antioch"
+   ],
+   "answer": 0,
+   "evidence": "born in Tarsus, a city in Cilicia",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9c78f413-63e3-4273-ab30-3f123672eb87",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "At whose feet does Paul say he was brought up?",
+   "choices": [
+    "Caiaphas",
+    "Annas",
+    "Gamaliel",
+    "Nicodemus"
+   ],
+   "answer": 2,
+   "evidence": "brought up in this city at the feet of Gamaliel",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6b8079a7-4290-40b6-9650-dbf4b73650af",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "About what time of day did the great light shine around Paul near Damascus?",
+   "choices": [
+    "Noon",
+    "Midnight",
+    "The third hour",
+    "Evening"
+   ],
+   "answer": 0,
+   "evidence": "come nigh unto Damascus about noon",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "97826ebb-102d-4eee-ae89-ee74094cc0ba",
+   "verse_start": 12,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "Who came to Saul in Damascus and said, \"Brother Saul, receive thy sight\"?",
+   "choices": [
+    "Barnabas",
+    "Ananias",
+    "Silas",
+    "Peter"
+   ],
+   "answer": 1,
+   "evidence": "And one Ananias, a devout man according to the law",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "82f65201-9515-42cd-80f2-85db1e96dbb1",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "Which martyr's death does Paul say he consented to?",
+   "choices": [
+    "James",
+    "Philip",
+    "Barnabas",
+    "Stephen"
+   ],
+   "answer": 3,
+   "evidence": "when the blood of thy martyr Stephen was shed",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f5668ee3-1b18-469b-8221-d2ada9ca0c94",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "According to the chief captain, how did he obtain his freedom?",
+   "choices": [
+    "By free birth",
+    "With a great sum",
+    "By military service",
+    "By the emperor's gift"
+   ],
+   "answer": 1,
+   "evidence": "With a great sum obtained I this freedom.",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "10e48e34-e9fd-4ccd-8fd1-d0469da2d0e6",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Which high priest commanded that Paul be struck on the mouth?",
+   "choices": [
+    "Ananias",
+    "Caiaphas",
+    "Annas",
+    "Gamaliel"
+   ],
+   "answer": 0,
+   "evidence": "the high priest Ananias commanded them that stood by him to smite him on the mouth",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8779ad5b-e974-4033-a48e-17393c40e052",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "In the night, the Lord told Paul he must also bear witness in which city?",
+   "choices": [
+    "Antioch",
+    "Athens",
+    "Ephesus",
+    "Rome"
+   ],
+   "answer": 3,
+   "evidence": "so must thou bear witness also at Rome.",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d106a95a-2a4b-4b1f-b9d4-e8212db2fa0b",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "hard",
+   "question": "How many men made the conspiracy to kill Paul?",
+   "choices": [
+    "About twelve",
+    "More than forty",
+    "Seventy",
+    "More than twenty"
+   ],
+   "answer": 1,
+   "evidence": "And they were more than forty which had made this conspiracy.",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e21c5bf1-67cf-42d1-9335-90d317592e84",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "medium",
+   "question": "Who heard about the men lying in wait and told Paul?",
+   "choices": [
+    "Silas",
+    "Paul’s sister’s son",
+    "Barnabas",
+    "A centurion"
+   ],
+   "answer": 1,
+   "evidence": "And when Paul’s sister’s son heard of their lying in wait, he went and entered into the castle, and told Paul.",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "96ac787b-ba2f-4b97-93e5-a2d2f0ce7ad1",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "How many horsemen were made ready to go to Caesarea?",
+   "choices": [
+    "Threescore and ten",
+    "Two hundred",
+    "Forty",
+    "One hundred"
+   ],
+   "answer": 0,
+   "evidence": "horsemen threescore and ten",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "eba6e2b2-606b-4119-9e5a-b7dc1a2fa28b",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "To which governor did the chief captain send Paul?",
+   "choices": [
+    "Pilate",
+    "Festus",
+    "Felix",
+    "Agrippa"
+   ],
+   "answer": 2,
+   "evidence": "bring him safe unto Felix the governor",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2cf32989-67bb-403f-ad34-a5cca31de1c3",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "What was the name of the orator who came with Ananias and accused Paul?",
+   "choices": [
+    "Tertullus",
+    "Gamaliel",
+    "Demetrius",
+    "Apollos"
+   ],
+   "answer": 0,
+   "evidence": "a certain orator named Tertullus",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f9dd366d-284e-4493-a67a-198cf291ef7e",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "hard",
+   "question": "How many days did Paul say it had been since he went up to Jerusalem to worship?",
+   "choices": [
+    "Twelve",
+    "Seven",
+    "Five",
+    "Forty"
+   ],
+   "answer": 0,
+   "evidence": "there are yet but twelve days since I went up to Jerusalem",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "56e69ff4-c62e-4d6e-9f20-ab883e8f9101",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "medium",
+   "question": "Whom did Felix command to keep Paul while still giving him liberty?",
+   "choices": [
+    "Lysias",
+    "Ananias",
+    "A centurion",
+    "A jailer"
+   ],
+   "answer": 2,
+   "evidence": "he commanded a centurion to keep Paul",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c2e2aa37-601c-4a3a-9d1b-506bb93280c0",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "What was the name of Felix's wife, who came with him when he sent for Paul?",
+   "choices": [
+    "Bernice",
+    "Drusilla",
+    "Priscilla",
+    "Sapphira"
+   ],
+   "answer": 1,
+   "evidence": "Felix came with his wife Drusilla",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c5252daf-55bb-4f2a-8a72-c70cdb0f4206",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "Besides righteousness and judgment to come, what else did Paul reason of when Felix trembled?",
+   "choices": [
+    "Charity",
+    "Temperance",
+    "Repentance",
+    "Patience"
+   ],
+   "answer": 1,
+   "evidence": "righteousness, temperance, and judgment to come, Felix trembled",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2fc547f8-6ee5-4ff6-9236-24682ddc4674",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "medium",
+   "question": "Who came into Felix's room after two years?",
+   "choices": [
+    "Herod Agrippa",
+    "Sergius Paulus",
+    "Pontius Pilate",
+    "Porcius Festus"
+   ],
+   "answer": 3,
+   "evidence": "Porcius Festus came into Felix’ room",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "96a64623-6e0c-4b26-bd34-39345acb5e59",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "After how many days did Festus go up from Caesarea to Jerusalem?",
+   "choices": [
+    "Three",
+    "Seven",
+    "Ten",
+    "Forty"
+   ],
+   "answer": 0,
+   "evidence": "after three days he ascended from Caesarea to Jerusalem.",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7249a580-e9ee-4c74-80f0-cd4824fe2d40",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "Where did Festus say Paul should be kept?",
+   "choices": [
+    "Jerusalem",
+    "Antioch",
+    "Caesarea",
+    "Damascus"
+   ],
+   "answer": 2,
+   "evidence": "Paul should be kept at Caesarea",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "22a46018-43a0-4e64-8b0f-873bea6f0cc8",
+   "verse_start": 11,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "To whom did Paul appeal?",
+   "choices": [
+    "Caesar",
+    "King Agrippa",
+    "Felix",
+    "The high priest"
+   ],
+   "answer": 0,
+   "evidence": "I appeal unto Caesar.",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c1252519-5aef-49b3-8ea4-89ab427304bd",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "Who came with king Agrippa to Caesarea to salute Festus?",
+   "choices": [
+    "Drusilla",
+    "Bernice",
+    "Candace",
+    "Herodias"
+   ],
+   "answer": 1,
+   "evidence": "king Agrippa and Bernice came unto Caesarea to salute Festus.",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f477001a-f38c-482d-9571-36192ecc8b5b",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "According to Festus, who had left Paul in bonds?",
+   "choices": [
+    "Lysias",
+    "Gallio",
+    "Pilate",
+    "Felix"
+   ],
+   "answer": 3,
+   "evidence": "There is a certain man left in bonds by Felix:",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a01dd611-344c-45a5-9594-f49719d8c157",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "How did Agrippa and Bernice come into the place of hearing?",
+   "choices": [
+    "In sackcloth",
+    "With great pomp",
+    "With trumpets",
+    "In haste"
+   ],
+   "answer": 1,
+   "evidence": "when Agrippa was come, and Bernice, with great pomp",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9fcb46e6-03f2-41e8-a17d-b5f4896a1fa9",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "According to Paul, he lived after the most straitest sect of his religion as what?",
+   "choices": [
+    "A Sadducee",
+    "A Levite",
+    "A Pharisee",
+    "A Nazarite"
+   ],
+   "answer": 2,
+   "evidence": "that after the most straitest sect of our religion I lived a Pharisee.",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6989c0e6-a8e4-46a7-a782-5cc0a0bfaf99",
+   "verse_start": 12,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "To which city was Paul going when he saw the light from heaven?",
+   "choices": [
+    "Antioch",
+    "Damascus",
+    "Tarsus",
+    "Joppa"
+   ],
+   "answer": 1,
+   "evidence": "Whereupon as I went to Damascus with authority and commission from the chief priests,",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "046386cd-a5e8-499f-83d5-acb5fa254287",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "hard",
+   "question": "At what time of day did Paul say he saw the light from heaven?",
+   "choices": [
+    "At midday",
+    "At midnight",
+    "At dawn",
+    "At the ninth hour"
+   ],
+   "answer": 0,
+   "evidence": "At midday, O king, I saw in the way a light from heaven",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c1a10e36-e4ff-4513-a8df-3a429611ed92",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "In what language did the voice speak to Paul on the way?",
+   "choices": [
+    "The Greek tongue",
+    "The Hebrew tongue",
+    "The Latin tongue",
+    "The Chaldee tongue"
+   ],
+   "answer": 1,
+   "evidence": "saying in the Hebrew tongue, Saul, Saul, why persecutest thou me?",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c0203c82-4ccc-4a15-a997-c1a6e03136ab",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "Who said with a loud voice that Paul was beside himself?",
+   "choices": [
+    "Festus",
+    "Felix",
+    "Lysias",
+    "Gallio"
+   ],
+   "answer": 0,
+   "evidence": "Festus said with a loud voice, Paul, thou art beside thyself; much learning doth make thee mad.",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "089cad5a-4025-4cca-811f-e260703989a9",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "medium",
+   "question": "What did Agrippa say Paul almost persuaded him to be?",
+   "choices": [
+    "A disciple",
+    "A proselyte",
+    "A Nazarene",
+    "A Christian"
+   ],
+   "answer": 3,
+   "evidence": "Almost thou persuadest me to be a Christian.",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "52c4343d-0296-41f7-bf45-8401a6857a07",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What was the name of the centurion to whom Paul and the other prisoners were delivered?",
+   "choices": [
+    "Cornelius",
+    "Julius",
+    "Claudius",
+    "Lysias"
+   ],
+   "answer": 1,
+   "evidence": "unto one named Julius, a centurion of Augustus’ band",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "35828470-7b7b-425d-ad0f-bfa219c13f8c",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "In which city did the centurion find a ship of Alexandria sailing into Italy?",
+   "choices": [
+    "Myra",
+    "Sidon",
+    "Joppa",
+    "Tarsus"
+   ],
+   "answer": 0,
+   "evidence": "we came to Myra, a city of Lycia.",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "295f8123-4fc1-48d3-8724-9e1412882bbc",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "What was the tempestuous wind that arose against the ship called?",
+   "choices": [
+    "Clauda",
+    "Salmone",
+    "Lasea",
+    "Euroclydon"
+   ],
+   "answer": 3,
+   "evidence": "a tempestuous wind, called Euroclydon",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2fa6b8c9-f98d-40cb-a9fc-24a9b0880f64",
+   "verse_start": 23,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "According to the angel, before whom must Paul be brought?",
+   "choices": [
+    "Herod",
+    "Felix",
+    "Caesar",
+    "Festus"
+   ],
+   "answer": 2,
+   "evidence": "thou must be brought before Caesar",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "12bdf977-b635-4afe-8cc7-cb851713b88a",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "hard",
+   "question": "How many anchors did they cast out of the stern, fearing the rocks?",
+   "choices": [
+    "Two",
+    "Four",
+    "Three",
+    "Seven"
+   ],
+   "answer": 1,
+   "evidence": "they cast four anchors out of the stern",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b2bc6f39-d5fe-44a4-bcda-482df0accb47",
+   "verse_start": 37,
+   "verse_end": 37,
+   "difficulty": "hard",
+   "question": "How many souls were in the ship in all?",
+   "choices": [
+    "266",
+    "186",
+    "276",
+    "300"
+   ],
+   "answer": 2,
+   "evidence": "we were in all in the ship two hundred threescore and sixteen souls",
+   "chapter": 27,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f081ab6b-b0cf-4353-a1e3-4a3f99ed5944",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What was the island called where Paul and his companions escaped?",
+   "choices": [
+    "Cyprus",
+    "Melita",
+    "Crete",
+    "Patmos"
+   ],
+   "answer": 1,
+   "evidence": "the island was called Melita",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e407383f-4ebb-4c24-b3a3-838273785393",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "What came out of the heat and fastened on Paul's hand?",
+   "choices": [
+    "A scorpion",
+    "A serpent of brass",
+    "A viper",
+    "A wolf"
+   ],
+   "answer": 2,
+   "evidence": "there came a viper out of the heat, and fastened on his hand",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1a61edcf-73b8-4527-a01d-5b4c529594a8",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "What was the name of the chief man of the island?",
+   "choices": [
+    "Julius",
+    "Festus",
+    "Agrippa",
+    "Publius"
+   ],
+   "answer": 3,
+   "evidence": "the chief man of the island, whose name was Publius",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "912f5749-4d15-4fb3-8905-d6e486f86971",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "hard",
+   "question": "What was the sign of the ship of Alexandria in which they departed?",
+   "choices": [
+    "Jupiter and Mercurius",
+    "Castor and Pollux",
+    "Diana",
+    "Romulus and Remus"
+   ],
+   "answer": 1,
+   "evidence": "whose sign was Castor and Pollux",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b9b598eb-eb01-4578-bd6c-ed57d47eb036",
+   "verse_start": 13,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "At which place did they find brethren and were desired to tarry seven days?",
+   "choices": [
+    "Syracuse",
+    "Rhegium",
+    "Puteoli",
+    "Appii forum"
+   ],
+   "answer": 2,
+   "evidence": "came the next day to Puteoli: Where we found brethren, and were desired to tarry with them seven days",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e8fc4d7e-5af3-46a7-8bc6-e2f84fb8dc53",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "medium",
+   "question": "How long did Paul dwell in his own hired house?",
+   "choices": [
+    "Two whole years",
+    "Three months",
+    "Seven days",
+    "Forty days"
+   ],
+   "answer": 0,
+   "evidence": "Paul dwelt two whole years in his own hired house",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  }
+ ]
+}

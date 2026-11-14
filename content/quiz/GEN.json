@@ -1,0 +1,5734 @@
+{
+ "questions": [
+  {
+   "id": "d2a26da0-6069-4263-8d01-4507045baa21",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "What was the first thing God said to let there be?",
+   "choices": [
+    "Light",
+    "A firmament",
+    "Dry land",
+    "Stars"
+   ],
+   "answer": 0,
+   "evidence": "And God said, Let there be light: and there was light.",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f1c25dd9-7fc9-41c4-a20d-8a98c5e6a11b",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "easy",
+   "question": "What did God call the light?",
+   "choices": [
+    "Night",
+    "Day",
+    "Heaven",
+    "Morning"
+   ],
+   "answer": 1,
+   "evidence": "And God called the light Day, and the darkness he called Night.",
+   "chapter": 1,
+   "status": "draft",
+   "problems": [
+    "choice 1 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "92a47841-4a11-4915-99ef-3cdc1e7b2907",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "What name did God give the firmament?",
+   "choices": [
+    "Earth",
+    "Seas",
+    "Heaven",
+    "Day"
+   ],
+   "answer": 2,
+   "evidence": "And God called the firmament Heaven.",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4c71815e-eb77-4d7a-adda-6b7ba441883a",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "What did God call the gathering together of the waters?",
+   "choices": [
+    "Rivers",
+    "The Deep",
+    "Fountains",
+    "Seas"
+   ],
+   "answer": 3,
+   "evidence": "the gathering together of the waters called he Seas",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "769c19c6-71e4-4750-a77e-11cfab20cd5e",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "hard",
+   "question": "Which great creatures does the chapter name God creating from the waters?",
+   "choices": [
+    "Great whales",
+    "Leviathans",
+    "Behemoths",
+    "Great dragons"
+   ],
+   "answer": 0,
+   "evidence": "And God created great whales",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ad6e4af2-1e60-4181-ac03-2b7bd67f58e6",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "hard",
+   "question": "What did God give to every beast of the earth for meat?",
+   "choices": [
+    "Every fruit tree",
+    "Every green herb",
+    "Manna",
+    "Barley"
+   ],
+   "answer": 1,
+   "evidence": "I have given every green herb for meat",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0fcadca9-87c5-449a-8b54-e781e2d63e22",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "Before there was rain, what watered the whole face of the ground?",
+   "choices": [
+    "A river from Eden",
+    "Dew from heaven",
+    "A spring of water",
+    "A mist from the earth"
+   ],
+   "answer": 3,
+   "evidence": "there went up a mist from the earth, and watered the whole face of the ground.",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "919c77aa-9dcc-4b65-af45-94e41e7e57a5",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "easy",
+   "question": "From what did the LORD God form man?",
+   "choices": [
+    "The dust of the ground",
+    "Water of the river",
+    "Stones of the field",
+    "Bones of a beast"
+   ],
+   "answer": 0,
+   "evidence": "the LORD God formed man of the dust of the ground",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "17b102ff-cef8-4941-9718-aa04775b1023",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "In which direction did the LORD God plant a garden in Eden?",
+   "choices": [
+    "Westward",
+    "Northward",
+    "Eastward",
+    "Southward"
+   ],
+   "answer": 2,
+   "evidence": "the LORD God planted a garden eastward in Eden",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6241e16d-59ab-4b77-9b87-8a689ef6f067",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "hard",
+   "question": "What was the name of the first of the four river heads out of Eden?",
+   "choices": [
+    "Pison",
+    "Gihon",
+    "Hiddekel",
+    "Jordan"
+   ],
+   "answer": 0,
+   "evidence": "The name of the first is Pison",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0715e0e1-ce42-41fe-bd5b-4a9a167dac56",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "hard",
+   "question": "Which land does the river Gihon compass?",
+   "choices": [
+    "Havilah",
+    "Ethiopia",
+    "Assyria",
+    "Egypt"
+   ],
+   "answer": 1,
+   "evidence": "the same is it that compasseth the whole land of Ethiopia.",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a5b32a84-345e-4518-99c1-3fbbcf7cd1bf",
+   "verse_start": 21,
+   "verse_end": 22,
+   "difficulty": "easy",
+   "question": "What did the LORD God take from Adam while he slept, to make the woman?",
+   "choices": [
+    "A lock of hair",
+    "One of his ribs",
+    "Some of his blood",
+    "A bone from his hand"
+   ],
+   "answer": 1,
+   "evidence": "he took one of his ribs",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ef76bf22-c188-47b6-b2af-cc40b2ad3c57",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "Besides eating its fruit, what else did the woman say God had forbidden concerning the tree in the midst of the garden?",
+   "choices": [
+    "Looking at it",
+    "Touch it",
+    "Climbing it",
+    "Planting it"
+   ],
+   "answer": 1,
+   "evidence": "Ye shall not eat of it, neither shall ye touch it, lest ye die.",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9472cf8b-75f0-455b-9b4c-dd6febd5ad13",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "easy",
+   "question": "What did Adam and his wife sew together to make themselves aprons?",
+   "choices": [
+    "Fig leaves",
+    "Olive leaves",
+    "Palm branches",
+    "Vine leaves"
+   ],
+   "answer": 0,
+   "evidence": "they sewed fig leaves together, and made themselves aprons.",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d7089f97-bd74-435d-9ba9-36c5b80d8415",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "At what time did Adam and his wife hear the voice of the LORD God walking in the garden?",
+   "choices": [
+    "At midnight",
+    "At sunrise",
+    "In the cool of the day",
+    "In the heat of the day"
+   ],
+   "answer": 2,
+   "evidence": "And they heard the voice of the LORD God walking in the garden in the cool of the day",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "778eeb68-298f-4edc-8b41-a278fd2ecdcf",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "What name did Adam give to his wife?",
+   "choices": [
+    "Sarah",
+    "Eve",
+    "Leah",
+    "Rachel"
+   ],
+   "answer": 1,
+   "evidence": "And Adam called his wife’s name Eve",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "753b9d7b-4a4e-416b-a3ef-8358486b362f",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "medium",
+   "question": "What did the LORD God make to clothe Adam and his wife?",
+   "choices": [
+    "Linen garments",
+    "Sackcloth",
+    "Coats of many colours",
+    "Coats of skins"
+   ],
+   "answer": 3,
+   "evidence": "did the LORD God make coats of skins, and clothed them.",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "101c8540-369f-4eb7-8f78-950184f23806",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "On which side of the garden of Eden were the Cherubims placed?",
+   "choices": [
+    "The east",
+    "The west",
+    "The north",
+    "The south"
+   ],
+   "answer": 0,
+   "evidence": "he placed at the east of the garden of Eden Cherubims",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "faa2e965-91ad-4411-b68b-27287277de12",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "What was Abel's work?",
+   "choices": [
+    "Keeper of sheep",
+    "Tiller of the ground",
+    "Hunter",
+    "Fisherman"
+   ],
+   "answer": 0,
+   "evidence": "And Abel was a keeper of sheep",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9a1ae437-1dca-4e89-9f83-1a1aa01f2122",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "Where did Cain dwell after he went out from the presence of the LORD?",
+   "choices": [
+    "Land of Goshen",
+    "Land of Nod",
+    "Land of Canaan",
+    "Land of Uz"
+   ],
+   "answer": 1,
+   "evidence": "dwelt in the land of Nod, on the east of Eden",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ce59c3b7-22da-42fb-b110-3ad2abc669ce",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "What name did Cain give the city he built?",
+   "choices": [
+    "Irad",
+    "Babel",
+    "Enoch",
+    "Nineveh"
+   ],
+   "answer": 2,
+   "evidence": "called the name of the city, after the name of his son, Enoch",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c918396c-dad6-470b-a37f-69643553362e",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "hard",
+   "question": "In Cain's line, who begat Methusael?",
+   "choices": [
+    "Irad",
+    "Mehujael",
+    "Enos",
+    "Seth"
+   ],
+   "answer": 1,
+   "evidence": "Mehujael begat Methusael",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "896bae3a-314a-49eb-8795-db210063754d",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "medium",
+   "question": "Who was the father of all such as handle the harp and organ?",
+   "choices": [
+    "Jabal",
+    "Tubalcain",
+    "Lamech",
+    "Jubal"
+   ],
+   "answer": 3,
+   "evidence": "Jubal: he was the father of all such as handle the harp and organ",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a24b4232-89a2-411e-a018-527a3cf84128",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "How many fold did Lamech say he would be avenged?",
+   "choices": [
+    "Seventy and sevenfold",
+    "Sevenfold",
+    "Fortyfold",
+    "Twelvefold"
+   ],
+   "answer": 0,
+   "evidence": "truly Lamech seventy and sevenfold.",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "adba4506-2b3e-4b31-a4cc-95af77f41d8e",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "What name did Adam give the son he begat at one hundred and thirty years old?",
+   "choices": [
+    "Seth",
+    "Cain",
+    "Abel",
+    "Enos"
+   ],
+   "answer": 0,
+   "evidence": "And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth:",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "be8665d6-caa1-45af-97c9-5a6dd33696bf",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "Which man in this chapter walked with God and then \"was not\" because God took him?",
+   "choices": [
+    "Enoch",
+    "Methuselah",
+    "Jared",
+    "Lamech"
+   ],
+   "answer": 0,
+   "evidence": "And Enoch walked with God: and he was not; for God took him.",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "89da28ad-14c5-429b-805c-258eaa8cc1cc",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "How many years were all the days of Methuselah?",
+   "choices": [
+    "969 years",
+    "930 years",
+    "962 years",
+    "777 years"
+   ],
+   "answer": 0,
+   "evidence": "And all the days of Methuselah were nine hundred sixty and nine years: and he died.",
+   "chapter": 5,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "89fb8971-da78-4aa5-a506-ab848dbceb4d",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "hard",
+   "question": "When naming Noah, what did his father say this son would do concerning their work and toil?",
+   "choices": [
+    "Comfort us",
+    "Deliver us",
+    "Bless us",
+    "Feed us"
+   ],
+   "answer": 0,
+   "evidence": "This same shall comfort us concerning our work and toil of our hands, because of the ground which the LORD hath cursed.",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9d9aeae7-2d1c-4ece-856c-9e413df9545f",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "medium",
+   "question": "According to this chapter, who was Noah's father?",
+   "choices": [
+    "Lamech",
+    "Methuselah",
+    "Enoch",
+    "Jared"
+   ],
+   "answer": 0,
+   "evidence": "And Lamech lived after he begat Noah five hundred ninety and five years",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a27f3062-bc7a-4311-af22-4210fc18de5b",
+   "verse_start": 32,
+   "verse_end": 32,
+   "difficulty": "easy",
+   "question": "What were the names of the three sons Noah begat?",
+   "choices": [
+    "Shem, Ham, and Japheth",
+    "Cain, Abel, and Seth",
+    "Abram, Nahor, and Haran",
+    "Esau, Jacob, and Joseph"
+   ],
+   "answer": 0,
+   "evidence": "Noah begat Shem, Ham, and Japheth.",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0e46a5c4-12ca-4226-a310-16ccc8d7b3c7",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "According to the LORD, how many years shall man's days be?",
+   "choices": [
+    "Seventy years",
+    "An hundred and twenty years",
+    "Forty years",
+    "Nine hundred years"
+   ],
+   "answer": 1,
+   "evidence": "yet his days shall be an hundred and twenty years.",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5ba5a17c-2c5a-4026-99b3-033f28a07061",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "easy",
+   "question": "Who found grace in the eyes of the LORD?",
+   "choices": [
+    "Noah",
+    "Enoch",
+    "Abraham",
+    "Methuselah"
+   ],
+   "answer": 0,
+   "evidence": "But Noah found grace in the eyes of the LORD.",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "66307a85-ca16-4dda-b90b-2e295b2a5263",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "Which of these was one of Noah's sons?",
+   "choices": [
+    "Seth",
+    "Enoch",
+    "Japheth",
+    "Lamech"
+   ],
+   "answer": 2,
+   "evidence": "And Noah begat three sons, Shem, Ham, and Japheth.",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bb6c251e-18db-42e7-94aa-c8b4aa1f6185",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "Besides being corrupt, what was the earth filled with?",
+   "choices": [
+    "Famine",
+    "Idols",
+    "Darkness",
+    "Violence"
+   ],
+   "answer": 3,
+   "evidence": "the earth was filled with violence.",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "71660434-b146-4cfd-97a2-a8d9e7fc3609",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "What kind of wood was the ark to be made of?",
+   "choices": [
+    "Cedar wood",
+    "Gopher wood",
+    "Shittim wood",
+    "Olive wood"
+   ],
+   "answer": 1,
+   "evidence": "Make thee an ark of gopher wood",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "912e21d6-c931-41bb-a9bc-0f752c65d92e",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "How long was the ark to be?",
+   "choices": [
+    "Three hundred cubits",
+    "Fifty cubits",
+    "Thirty cubits",
+    "One hundred cubits"
+   ],
+   "answer": 0,
+   "evidence": "The length of the ark shall be three hundred cubits",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0a55b0f9-48c4-429c-853f-641bb8aa2cc8",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "In what number was Noah told to take every clean beast?",
+   "choices": [
+    "By twos",
+    "By sevens",
+    "By tens",
+    "By twelves"
+   ],
+   "answer": 1,
+   "evidence": "Of every clean beast thou shalt take to thee by sevens",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "151735a4-d61a-4e90-9efc-95dd17152208",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "How old was Noah when the flood of waters was upon the earth?",
+   "choices": [
+    "Five hundred years",
+    "Nine hundred years",
+    "Six hundred years",
+    "Three hundred years"
+   ],
+   "answer": 2,
+   "evidence": "And Noah was six hundred years old when the flood of waters was upon the earth.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "62c89826-32e5-451b-a6ce-cdec886bc7a6",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "hard",
+   "question": "In Noah's six hundredth year, on what month and day were the fountains of the great deep broken up?",
+   "choices": [
+    "First month, first day",
+    "Seventh month, seventeenth day",
+    "Second month, seventeenth day",
+    "Second month, twenty-seventh day"
+   ],
+   "answer": 2,
+   "evidence": "in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b3a3a8be-a01d-45a7-9374-9d5e5ca4ddd2",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "How long was the rain upon the earth?",
+   "choices": [
+    "Seven days and seven nights",
+    "Forty days and forty nights",
+    "Three days and three nights",
+    "Twelve days and twelve nights"
+   ],
+   "answer": 1,
+   "evidence": "And the rain was upon the earth forty days and forty nights.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b970a714-73ea-449c-9698-7512b21acbed",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "Who shut Noah in the ark?",
+   "choices": [
+    "Shem",
+    "Japheth",
+    "The LORD",
+    "Noah's wife"
+   ],
+   "answer": 2,
+   "evidence": "and the LORD shut him in.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cf05281c-e355-42ac-822e-76d7684f99ee",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "For how many days did the waters prevail upon the earth?",
+   "choices": [
+    "An hundred and fifty days",
+    "Forty days",
+    "Three hundred days",
+    "Seventy days"
+   ],
+   "answer": 0,
+   "evidence": "And the waters prevailed upon the earth an hundred and fifty days.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "89df1f7a-bd9f-4c62-b37e-995d526e4763",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "easy",
+   "question": "Upon which mountains did the ark rest?",
+   "choices": [
+    "Mountains of Sinai",
+    "Mountains of Ararat",
+    "Mountains of Carmel",
+    "Mountains of Horeb"
+   ],
+   "answer": 1,
+   "evidence": "And the ark rested in the seventh month, on the seventeenth day of the month, upon the mountains of Ararat.",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a2237552-a3c8-4256-8d48-165d2e655c4a",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "hard",
+   "question": "In which month were the tops of the mountains seen?",
+   "choices": [
+    "The seventh month",
+    "The tenth month",
+    "The second month",
+    "The first month"
+   ],
+   "answer": 1,
+   "evidence": "in the tenth month, on the first day of the month, were the tops of the mountains seen.",
+   "chapter": 8,
+   "status": "draft",
+   "problems": [
+    "choice 4 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c6b712b4-9541-4aa4-93e1-a8cf69b04587",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "Which bird went forth to and fro until the waters were dried up?",
+   "choices": [
+    "A dove",
+    "A sparrow",
+    "An eagle",
+    "A raven"
+   ],
+   "answer": 3,
+   "evidence": "And he sent forth a raven, which went forth to and fro, until the waters were dried up from off the earth.",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ce3595a5-709f-4f5a-8368-93de6c9a29a7",
+   "verse_start": 10,
+   "verse_end": 12,
+   "difficulty": "hard",
+   "question": "How many more days did Noah stay before sending forth the dove again?",
+   "choices": [
+    "Forty",
+    "Three",
+    "Seven",
+    "Ten"
+   ],
+   "answer": 2,
+   "evidence": "And he stayed yet other seven days",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "eb148e26-708c-44f7-b979-79bc463244a4",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "easy",
+   "question": "What did the dove bring back in her mouth?",
+   "choices": [
+    "A fig leaf",
+    "A palm branch",
+    "An olive leaf",
+    "A vine twig"
+   ],
+   "answer": 2,
+   "evidence": "in her mouth was an olive leaf pluckt off",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6d522478-d14f-46cc-b991-8aa9c84f9cc9",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "What did Noah build unto the LORD after leaving the ark?",
+   "choices": [
+    "An altar",
+    "A tower",
+    "A city",
+    "A tent"
+   ],
+   "answer": 0,
+   "evidence": "And Noah builded an altar unto the LORD",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c81fcfd4-8c32-43aa-9bfc-79483d248e04",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "What did God set in the cloud as a token of the covenant?",
+   "choices": [
+    "His bow",
+    "A star",
+    "A dove",
+    "A pillar of fire"
+   ],
+   "answer": 0,
+   "evidence": "I do set my bow in the cloud",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8c140cd8-144b-4bf5-86cc-4e3fda354188",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "What did Noah plant after he began to be an husbandman?",
+   "choices": [
+    "An olive grove",
+    "A vineyard",
+    "A garden",
+    "A field of barley"
+   ],
+   "answer": 1,
+   "evidence": "And Noah began to be an husbandman, and he planted a vineyard:",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fa28b4c5-cfc8-4d33-b298-906722a6a664",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "Which son saw the nakedness of his father and told his two brethren?",
+   "choices": [
+    "Shem",
+    "Japheth",
+    "Ham",
+    "Canaan"
+   ],
+   "answer": 2,
+   "evidence": "And Ham, the father of Canaan, saw the nakedness of his father, and told his two brethren without.",
+   "chapter": 9,
+   "status": "draft",
+   "problems": [
+    "choice 4 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fd008f07-9cd0-4f95-9005-3298eff6637f",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "medium",
+   "question": "What did Shem and Japheth lay upon their shoulders to cover their father?",
+   "choices": [
+    "A mantle",
+    "A tent cloth",
+    "A sackcloth",
+    "A garment"
+   ],
+   "answer": 3,
+   "evidence": "And Shem and Japheth took a garment, and laid it upon both their shoulders",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4af62b8d-118b-4c22-8403-ed231a28bd37",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "Whom did Noah curse, saying he would be a servant of servants unto his brethren?",
+   "choices": [
+    "Canaan",
+    "Ham",
+    "Cush",
+    "Mizraim"
+   ],
+   "answer": 0,
+   "evidence": "Cursed be Canaan; a servant of servants shall he be unto his brethren.",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9d5564d1-e391-412f-9c1c-945b864a1240",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "hard",
+   "question": "How many years were all the days of Noah?",
+   "choices": [
+    "Three hundred and fifty",
+    "Nine hundred and sixty-nine",
+    "Nine hundred and fifty",
+    "Six hundred"
+   ],
+   "answer": 2,
+   "evidence": "And all the days of Noah were nine hundred and fifty years: and he died.",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a5b87a0d-f05b-479a-a44d-98dd554b98d4",
+   "verse_start": 8,
+   "verse_end": 9,
+   "difficulty": "easy",
+   "question": "Who is described as a mighty hunter before the LORD?",
+   "choices": [
+    "Nimrod",
+    "Asshur",
+    "Esau",
+    "Ishmael"
+   ],
+   "answer": 0,
+   "evidence": "Even as Nimrod the mighty hunter before the LORD.",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "dd480a28-f729-4564-ae6f-5cbeca97bbb6",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "easy",
+   "question": "Which city is named first as the beginning of Nimrod's kingdom?",
+   "choices": [
+    "Jericho",
+    "Babel",
+    "Nineveh",
+    "Ur"
+   ],
+   "answer": 1,
+   "evidence": "the beginning of his kingdom was Babel",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "72944b0c-a17b-4f0c-a5eb-c7331c4853f3",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "Who went forth out of the land of Shinar and built Nineveh?",
+   "choices": [
+    "Cush",
+    "Elam",
+    "Asshur",
+    "Nimrod"
+   ],
+   "answer": 2,
+   "evidence": "Out of that land went forth Asshur, and builded Nineveh",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7a7fd585-d1c1-4e0e-b63d-c3df5803cffa",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "Out of which people did the Philistim come?",
+   "choices": [
+    "Casluhim",
+    "Caphtorim",
+    "Ludim",
+    "Anamim"
+   ],
+   "answer": 0,
+   "evidence": "Casluhim, (out of whom came Philistim,)",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4de7cce6-d725-45b0-bf4f-47ed08e0eca3",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "Who is named as Canaan's first born?",
+   "choices": [
+    "Heth",
+    "Sidon",
+    "Jebus",
+    "Hamath"
+   ],
+   "answer": 1,
+   "evidence": "Canaan begat Sidon his first born",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1a79eee0-2613-451f-b1e2-fe7a7d81c07b",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "medium",
+   "question": "In whose days was the earth divided?",
+   "choices": [
+    "Joktan",
+    "Eber",
+    "Salah",
+    "Peleg"
+   ],
+   "answer": 3,
+   "evidence": "the name of one was Peleg; for in his days was the earth divided",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "04c735f3-a272-473c-9295-00c52a7ce455",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "In what land did the journeying people find a plain and dwell?",
+   "choices": [
+    "Shinar",
+    "Canaan",
+    "Egypt",
+    "Moab"
+   ],
+   "answer": 0,
+   "evidence": "they found a plain in the land of Shinar",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b5c3b094-03bb-4653-a533-409ff6412d6e",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "What did the builders use for morter?",
+   "choices": [
+    "Clay",
+    "Slime",
+    "Pitch",
+    "Lime"
+   ],
+   "answer": 1,
+   "evidence": "slime had they for morter",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d34d7f96-ae22-4631-a5b8-bd75ea8a19b3",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "easy",
+   "question": "What was the city called where the LORD confounded the language of all the earth?",
+   "choices": [
+    "Nineveh",
+    "Ur",
+    "Babel",
+    "Haran"
+   ],
+   "answer": 2,
+   "evidence": "Therefore is the name of it called Babel",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c3c86149-156c-4b70-a133-f2a452fa06f1",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "How old was Shem when he begat Arphaxad?",
+   "choices": [
+    "500 years",
+    "100 years",
+    "35 years",
+    "70 years"
+   ],
+   "answer": 1,
+   "evidence": "Shem was an hundred years old, and begat Arphaxad two years after the flood",
+   "chapter": 11,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b6e00185-07ca-4c9f-9c07-ff26b1c66b51",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "medium",
+   "question": "What was the name of Abram's wife?",
+   "choices": [
+    "Milcah",
+    "Rebekah",
+    "Iscah",
+    "Sarai"
+   ],
+   "answer": 3,
+   "evidence": "the name of Abram’s wife was Sarai",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "932f5ca5-6590-46bb-ab3a-1e7bd84dbf9d",
+   "verse_start": 32,
+   "verse_end": 32,
+   "difficulty": "hard",
+   "question": "How many years were the days of Terah?",
+   "choices": [
+    "175 years",
+    "119 years",
+    "205 years",
+    "209 years"
+   ],
+   "answer": 2,
+   "evidence": "the days of Terah were two hundred and five years",
+   "chapter": 11,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f6c0f6aa-29f4-41c1-9f66-d44217ffdb5d",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "hard",
+   "question": "How old was Abram when he departed out of Haran?",
+   "choices": [
+    "Seventy-five",
+    "Ninety-nine",
+    "Eighty-six",
+    "One hundred"
+   ],
+   "answer": 0,
+   "evidence": "Abram was seventy and five years old when he departed out of Haran",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3e1d8d61-3f3e-4539-8bf8-bd3ea91dd9b9",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "How is Lot related to Abram in this chapter?",
+   "choices": [
+    "His brother's son",
+    "His own son",
+    "His father's brother",
+    "His wife's brother"
+   ],
+   "answer": 0,
+   "evidence": "Lot his brother’s son",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e9b18465-75b2-45e7-bdc0-8bfcc1beb52e",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "Abram passed through the land to the place of Sichem, unto the plain of what?",
+   "choices": [
+    "Moreh",
+    "Mamre",
+    "Jordan",
+    "Sharon"
+   ],
+   "answer": 0,
+   "evidence": "unto the place of Sichem, unto the plain of Moreh",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5f9950b1-8efc-49ad-ae17-5a85b374de50",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "Abram pitched his tent on a mountain east of which place?",
+   "choices": [
+    "Bethel",
+    "Hebron",
+    "Beersheba",
+    "Shiloh"
+   ],
+   "answer": 0,
+   "evidence": "a mountain on the east of Bethel",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2c85d58c-f8d2-4c61-92c3-aa13d00361ed",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "easy",
+   "question": "Where did Abram go when there was a famine in the land?",
+   "choices": [
+    "Egypt",
+    "Moab",
+    "Assyria",
+    "Edom"
+   ],
+   "answer": 0,
+   "evidence": "Abram went down into Egypt to sojourn there",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a2bcfcf7-de47-4b57-9848-1a994a0c653d",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "What did Abram ask Sarai to say she was?",
+   "choices": [
+    "His sister",
+    "His servant",
+    "His cousin",
+    "His daughter"
+   ],
+   "answer": 0,
+   "evidence": "Say, I pray thee, thou art my sister",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "49109fad-9a02-4549-87a3-5475bc4aa0f8",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Out of which land did Abram go up at the start of this chapter?",
+   "choices": [
+    "Egypt",
+    "Assyria",
+    "Babylon",
+    "Moab"
+   ],
+   "answer": 0,
+   "evidence": "And Abram went up out of Egypt",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b9e56a3e-bdb2-4a59-a4ef-e5614dd35e34",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "Abram's earlier tent had been between Bethel and which place?",
+   "choices": [
+    "Zoar",
+    "Gerar",
+    "Hai",
+    "Jericho"
+   ],
+   "answer": 2,
+   "evidence": "between Bethel and Hai",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "07f280e1-eb4c-4d69-b756-74e5e96ca662",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "Between whom was there strife over Abram's and Lot's cattle?",
+   "choices": [
+    "Their wives",
+    "Their sons",
+    "Their shepherd kings",
+    "Their herdmen"
+   ],
+   "answer": 3,
+   "evidence": "there was a strife between the herdmen of Abram’s cattle and the herdmen of Lot’s cattle",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9757ba00-81c9-4888-b618-22d514c6f893",
+   "verse_start": 10,
+   "verse_end": 11,
+   "difficulty": "easy",
+   "question": "Which area did Lot choose for himself?",
+   "choices": [
+    "The land of Goshen",
+    "The plain of Mamre",
+    "The plain of Jordan",
+    "The land of Canaan"
+   ],
+   "answer": 2,
+   "evidence": "Then Lot chose him all the plain of Jordan",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6c8a4035-a64c-4f11-895a-c9210da280d8",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "Toward which city did Lot pitch his tent?",
+   "choices": [
+    "Bethel",
+    "Sodom",
+    "Zoar",
+    "Hebron"
+   ],
+   "answer": 1,
+   "evidence": "pitched his tent toward Sodom",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ede3bcb7-d3d3-4258-90b5-de97fc0003d9",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "The LORD said He would make Abram's seed as what?",
+   "choices": [
+    "The dust of the earth",
+    "The stars of heaven",
+    "The sand of the sea",
+    "The leaves of the trees"
+   ],
+   "answer": 0,
+   "evidence": "I will make thy seed as the dust of the earth",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "700febac-e719-4a0f-9ecc-016e2864adb5",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "What was the vale of Siddim full of?",
+   "choices": [
+    "Slimepits",
+    "Wells",
+    "Cedars",
+    "Chariots"
+   ],
+   "answer": 0,
+   "evidence": "the vale of Siddim was full of slimepits",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "83cc9318-8e0f-4091-94c7-6bd5095dad18",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "Which relative of Abram was taken captive from Sodom?",
+   "choices": [
+    "Lot",
+    "Nahor",
+    "Ishmael",
+    "Terah"
+   ],
+   "answer": 0,
+   "evidence": "And they took Lot, Abram’s brother’s son, who dwelt in Sodom",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "592b1a7c-136a-4acc-bb81-eef2636210b6",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "After arming his servants, Abram first pursued the captors unto which place?",
+   "choices": [
+    "Dan",
+    "Beersheba",
+    "Bethel",
+    "Hebron"
+   ],
+   "answer": 0,
+   "evidence": "pursued them unto Dan",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4e09f801-d73a-444d-97e5-2263eaf7705d",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "How many trained servants, born in his own house, did Abram arm?",
+   "choices": [
+    "Three hundred and eighteen",
+    "Three hundred",
+    "Four hundred",
+    "Two hundred and eighteen"
+   ],
+   "answer": 0,
+   "evidence": "three hundred and eighteen",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c95a3fde-97ff-409e-b476-90f3125c63b7",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "easy",
+   "question": "What did Melchizedek king of Salem bring forth?",
+   "choices": [
+    "Bread and wine",
+    "Milk and honey",
+    "Figs and raisins",
+    "Oil and flour"
+   ],
+   "answer": 0,
+   "evidence": "Melchizedek king of Salem brought forth bread and wine",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ce7df231-69e9-4063-87d5-01d8206b2006",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "Abram said he would not take anything from a thread even to what?",
+   "choices": [
+    "A shoelatchet",
+    "A sandal",
+    "A girdle",
+    "A coat"
+   ],
+   "answer": 0,
+   "evidence": "I will not take from a thread even to a shoelatchet",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "dc30b312-e5a8-4dcf-a00e-382f4aba77f0",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Who does Abram name as the steward of his house?",
+   "choices": [
+    "Lot",
+    "Eliezer of Damascus",
+    "Ishmael",
+    "Laban"
+   ],
+   "answer": 1,
+   "evidence": "the steward of my house is this Eliezer of Damascus",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2b905e68-33f0-497b-8deb-20d58c65355c",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "easy",
+   "question": "What did the LORD tell Abram to look toward heaven and number?",
+   "choices": [
+    "The stars",
+    "The sand",
+    "The clouds",
+    "The birds"
+   ],
+   "answer": 0,
+   "evidence": "Look now toward heaven, and tell the stars, if thou be able to number them",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5e7093d3-72c1-42f9-9b06-904b6ae1afd2",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "Where does the LORD say he brought Abram out of?",
+   "choices": [
+    "Haran",
+    "Egypt",
+    "Ur of the Chaldees",
+    "Damascus"
+   ],
+   "answer": 2,
+   "evidence": "I am the LORD that brought thee out of Ur of the Chaldees",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9d8d9410-4a7e-4c9f-a70b-2196b98ef975",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "What did Abram do when the fowls came down upon the carcases?",
+   "choices": [
+    "Fed them",
+    "Burned them",
+    "Counted them",
+    "Drove them away"
+   ],
+   "answer": 3,
+   "evidence": "And when the fowls came down upon the carcases, Abram drove them away.",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "dc88142a-ade7-462f-aad1-8b91c44661eb",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "hard",
+   "question": "For how many years does the LORD say Abram's seed would be afflicted?",
+   "choices": [
+    "Four hundred",
+    "Forty",
+    "Seventy",
+    "Four hundred thirty"
+   ],
+   "answer": 0,
+   "evidence": "they shall afflict them four hundred years",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0660ee0a-6c33-46cd-a51f-3da654423d98",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "Besides a burning lamp, what passed between the pieces after dark?",
+   "choices": [
+    "A pillar of cloud",
+    "A smoking furnace",
+    "A burning bush",
+    "A flaming sword"
+   ],
+   "answer": 1,
+   "evidence": "behold a smoking furnace, and a burning lamp that passed between those pieces",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8e62da1a-a665-41e5-a17c-60d226f3e972",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What was the name of Sarai's handmaid?",
+   "choices": [
+    "Hagar",
+    "Bilhah",
+    "Zilpah",
+    "Deborah"
+   ],
+   "answer": 0,
+   "evidence": "whose name was Hagar",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "97356778-113f-48bc-8a45-639081a2d4f9",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "medium",
+   "question": "What nationality was Sarai's handmaid?",
+   "choices": [
+    "Moabite",
+    "Canaanite",
+    "Egyptian",
+    "Hittite"
+   ],
+   "answer": 2,
+   "evidence": "she had an handmaid, an Egyptian",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4a4ee27c-ddec-4219-8f0b-a5e9bd8a5816",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "The fountain where Hagar was found lay on the way to which place?",
+   "choices": [
+    "Beersheba",
+    "Bethel",
+    "Hebron",
+    "Shur"
+   ],
+   "answer": 3,
+   "evidence": "by the fountain in the way to Shur.",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "69d1f39e-7504-4351-8d7b-8253bf986f14",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "easy",
+   "question": "What name was Hagar told to give her son?",
+   "choices": [
+    "Isaac",
+    "Ishmael",
+    "Esau",
+    "Reuben"
+   ],
+   "answer": 1,
+   "evidence": "shalt call his name Ishmael",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "40d0e9a8-83dd-4ab4-bc00-c3bb506e751d",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "What was the well between Kadesh and Bered called?",
+   "choices": [
+    "Beersheba",
+    "Rehoboth",
+    "Beerlahairoi",
+    "Esek"
+   ],
+   "answer": 2,
+   "evidence": "Wherefore the well was called Beerlahairoi",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "496cf34c-6805-452f-b9d8-45dc1cb7f7d7",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "How old was Abram when Hagar bore Ishmael?",
+   "choices": [
+    "75",
+    "86",
+    "99",
+    "100"
+   ],
+   "answer": 1,
+   "evidence": "Abram was fourscore and six years old",
+   "chapter": 16,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "24294369-0bc4-448a-a700-3f43e3d0a4b8",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "easy",
+   "question": "What new name did God give Abram?",
+   "choices": [
+    "Israel",
+    "Abraham",
+    "Abimelech",
+    "Melchizedek"
+   ],
+   "answer": 1,
+   "evidence": "but thy name shall be Abraham",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3e0cfe97-d0cd-4c7c-be52-433e9a801d23",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "hard",
+   "question": "At what age was a male child to be circumcised?",
+   "choices": [
+    "Seven days",
+    "Eight days",
+    "Thirty days",
+    "Forty days"
+   ],
+   "answer": 1,
+   "evidence": "he that is eight days old shall be circumcised",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d749bd2b-8d08-4c80-adb0-7dc2951b571a",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "medium",
+   "question": "What new name was Sarai given?",
+   "choices": [
+    "Rebekah",
+    "Rachel",
+    "Hagar",
+    "Sarah"
+   ],
+   "answer": 3,
+   "evidence": "but Sarah shall her name be.",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f0d71fa7-eba8-4ddc-b767-c746e06551f3",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "What did Abraham do after falling on his face when told Sarah would have a son?",
+   "choices": [
+    "Laughed",
+    "Wept",
+    "Built an altar",
+    "Offered a lamb"
+   ],
+   "answer": 0,
+   "evidence": "Then Abraham fell upon his face, and laughed",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "aa7215d9-5167-4909-ad63-b72622839666",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "What did God say the son Sarah would bear should be called?",
+   "choices": [
+    "Jacob",
+    "Esau",
+    "Isaac",
+    "Ishmael"
+   ],
+   "answer": 2,
+   "evidence": "thou shalt call his name Isaac",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4bdc8af0-1607-407d-bafe-f3e215ec924c",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "hard",
+   "question": "How many princes did God say Ishmael would beget?",
+   "choices": [
+    "Seven",
+    "Ten",
+    "Twelve",
+    "Seventy"
+   ],
+   "answer": 2,
+   "evidence": "twelve princes shall he beget",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0d50599d-34cc-45d1-bae6-0999e23cc74d",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "medium",
+   "question": "Where did the LORD appear to Abraham in this chapter?",
+   "choices": [
+    "Bethel",
+    "Plains of Mamre",
+    "Beersheba",
+    "Mount Moriah"
+   ],
+   "answer": 1,
+   "evidence": "the LORD appeared unto him in the plains of Mamre",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1d27ff70-bc15-42f6-8414-7ebc3ea79299",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "How many men stood by Abraham when he looked up?",
+   "choices": [
+    "Two",
+    "Three",
+    "Seven",
+    "Twelve"
+   ],
+   "answer": 1,
+   "evidence": "three men stood by him",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8ad80168-b6cf-48ff-80f3-9bdd4149846d",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "Besides the calf, what did Abraham set before his visitors?",
+   "choices": [
+    "Wine and honey",
+    "Figs and dates",
+    "Lentil pottage",
+    "Butter and milk"
+   ],
+   "answer": 3,
+   "evidence": "he took butter, and milk, and the calf which he had dressed, and set it before them",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c887c23e-e5ba-443a-b51a-cf608bc98bb6",
+   "verse_start": 10,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "Who laughed on hearing the promise of a son?",
+   "choices": [
+    "Rebekah",
+    "Hagar",
+    "Sarah",
+    "Rachel"
+   ],
+   "answer": 2,
+   "evidence": "Therefore Sarah laughed within herself",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "04f9a351-ce30-4a66-a809-06fb8a2cf6c8",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "What did Abraham call himself while speaking to the LORD?",
+   "choices": [
+    "Dust and ashes",
+    "A worm",
+    "A dead dog",
+    "A stranger"
+   ],
+   "answer": 0,
+   "evidence": "which am but dust and ashes",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fb968620-d860-40bb-89a3-7ad04baa7015",
+   "verse_start": 32,
+   "verse_end": 32,
+   "difficulty": "hard",
+   "question": "What was the last number of righteous people Abraham asked about?",
+   "choices": [
+    "Twenty",
+    "Five",
+    "Ten",
+    "Forty"
+   ],
+   "answer": 2,
+   "evidence": "Peradventure ten shall be found there.",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ea42a451-0934-4141-8e6d-bcc85e14afeb",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "What did Lot bake for the two visitors?",
+   "choices": [
+    "Barley cakes",
+    "Honey cakes",
+    "Manna",
+    "Unleavened bread"
+   ],
+   "answer": 3,
+   "evidence": "did bake unleavened bread",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "68c8c7fe-e299-4f9e-9687-05d45b15cefe",
+   "verse_start": 20,
+   "verse_end": 23,
+   "difficulty": "medium",
+   "question": "What was the name of the little city Lot fled to?",
+   "choices": [
+    "Admah",
+    "Bethel",
+    "Zoar",
+    "Hebron"
+   ],
+   "answer": 2,
+   "evidence": "Therefore the name of the city was called Zoar.",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4b7e60d5-29c7-428c-88fd-cedfa5888041",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "What did the LORD rain upon Sodom and Gomorrah?",
+   "choices": [
+    "Hail and fire",
+    "Brimstone and fire",
+    "Great hailstones",
+    "A flood of waters"
+   ],
+   "answer": 1,
+   "evidence": "brimstone and fire",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "41cca7a5-1f52-459c-873d-004325cc9de0",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "easy",
+   "question": "What did Lot's wife become when she looked back?",
+   "choices": [
+    "A pillar of salt",
+    "A pillar of stone",
+    "A heap of ashes",
+    "A pillar of cloud"
+   ],
+   "answer": 0,
+   "evidence": "she became a pillar of salt",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5b7f1053-4a0b-4fe8-958b-e3c278e7ac3d",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "When Abraham looked toward Sodom, the smoke went up like the smoke of what?",
+   "choices": [
+    "A furnace",
+    "An oven",
+    "A censer",
+    "A burning altar"
+   ],
+   "answer": 0,
+   "evidence": "the smoke of the country went up as the smoke of a furnace",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "25b03e16-33b1-4d13-9c1d-df9d120f9e0d",
+   "verse_start": 38,
+   "verse_end": 38,
+   "difficulty": "hard",
+   "question": "What name did the younger daughter give her son?",
+   "choices": [
+    "Moab",
+    "Benammi",
+    "Benoni",
+    "Benjamin"
+   ],
+   "answer": 1,
+   "evidence": "called his name Benammi",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "226901c1-a85a-491b-ba3f-36ef68144f33",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "Between which two places did Abraham dwell at the start of the chapter?",
+   "choices": [
+    "Bethel and Ai",
+    "Dan and Beersheba",
+    "Kadesh and Shur",
+    "Hebron and Mamre"
+   ],
+   "answer": 2,
+   "evidence": "dwelled between Kadesh and Shur",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6af9b914-ccab-4aa1-bb74-6c940f78d340",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Which king of Gerar took Sarah?",
+   "choices": [
+    "Abimelech",
+    "Melchizedek",
+    "Chedorlaomer",
+    "Pharaoh"
+   ],
+   "answer": 0,
+   "evidence": "Abimelech king of Gerar sent, and took Sarah.",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6e75d636-f1a2-48ce-9cd0-40b77cc4daad",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "How did God come to the king who took Sarah?",
+   "choices": [
+    "In a burning bush",
+    "In a dream by night",
+    "In a pillar of cloud",
+    "Through an angel at noon"
+   ],
+   "answer": 1,
+   "evidence": "But God came to Abimelech in a dream by night",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "af97137d-541a-444a-ba5d-a4f95bfe0a57",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "What did God tell Abimelech that Abraham was?",
+   "choices": [
+    "A priest",
+    "A judge",
+    "A prophet",
+    "A king"
+   ],
+   "answer": 2,
+   "evidence": "for he is a prophet, and he shall pray for thee",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "36bfdf8c-85f6-474e-be98-654db58c6733",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "According to Abraham, whose daughter was Sarah?",
+   "choices": [
+    "His mother's, not his father's",
+    "His uncle Nahor's",
+    "His brother Haran's",
+    "His father's, not his mother's"
+   ],
+   "answer": 3,
+   "evidence": "she is the daughter of my father, but not the daughter of my mother",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0c54b10f-4fbc-4558-8f30-60165bb922bb",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "How many pieces of silver did Abimelech say he had given Sarah's \"brother\"?",
+   "choices": [
+    "Thirty",
+    "A thousand",
+    "Four hundred",
+    "Twenty"
+   ],
+   "answer": 1,
+   "evidence": "I have given thy brother a thousand pieces of silver",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b17af8e0-f8ff-4664-83f5-8d495ae89cdb",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "What name did Abraham give to the son Sarah bore him?",
+   "choices": [
+    "Ishmael",
+    "Isaac",
+    "Jacob",
+    "Esau"
+   ],
+   "answer": 1,
+   "evidence": "And Abraham called the name of his son that was born unto him, whom Sarah bare to him, Isaac.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bb021ddc-88d4-4171-972b-0bc20e02aa2b",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "How old was Abraham when Isaac was born?",
+   "choices": [
+    "Seventy-five years",
+    "Ninety-nine years",
+    "Eighty-six years",
+    "An hundred years"
+   ],
+   "answer": 3,
+   "evidence": "And Abraham was an hundred years old, when his son Isaac was born unto him.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b9d65902-85c6-424a-9ca2-c8831d7832d2",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "easy",
+   "question": "According to this chapter, what was Hagar's nationality?",
+   "choices": [
+    "Egyptian",
+    "Canaanite",
+    "Philistine",
+    "Moabite"
+   ],
+   "answer": 0,
+   "evidence": "Sarah saw the son of Hagar the Egyptian",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bc0b0070-7180-434d-bc81-32e98980c660",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "What did Hagar's son become as he grew up in the wilderness?",
+   "choices": [
+    "A hunter",
+    "A shepherd",
+    "An archer",
+    "A tiller of the ground"
+   ],
+   "answer": 2,
+   "evidence": "and he grew, and dwelt in the wilderness, and became an archer.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "aa008a92-44a4-43f8-a307-307adbd5cbce",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "Who was the chief captain of Abimelech's host?",
+   "choices": [
+    "Ahuzzath",
+    "Abner",
+    "Phichol",
+    "Joab"
+   ],
+   "answer": 2,
+   "evidence": "Abimelech and Phichol the chief captain of his host spake unto Abraham",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7b0f29af-903b-4401-827e-91d209177b32",
+   "verse_start": 28,
+   "verse_end": 30,
+   "difficulty": "hard",
+   "question": "How many ewe lambs did Abraham set apart as a witness that he had dug the well?",
+   "choices": [
+    "Three",
+    "Seven",
+    "Ten",
+    "Twelve"
+   ],
+   "answer": 1,
+   "evidence": "And Abraham set seven ewe lambs of the flock by themselves.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ae1f259f-7562-4dc4-901d-d6fa66d77eb6",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Into which land did God tell Abraham to take Isaac?",
+   "choices": [
+    "Canaan",
+    "Moriah",
+    "Goshen",
+    "Haran"
+   ],
+   "answer": 1,
+   "evidence": "get thee into the land of Moriah",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0a076819-fbb7-4ce9-a438-9eb58820314b",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "On which day of the journey did Abraham see the place afar off?",
+   "choices": [
+    "The second day",
+    "The seventh day",
+    "The fortieth day",
+    "The third day"
+   ],
+   "answer": 3,
+   "evidence": "Then on the third day Abraham lifted up his eyes, and saw the place afar off.",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3ad7637b-ed8e-4912-9e94-5106f0895c6f",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "What animal did Abraham offer up in place of his son?",
+   "choices": [
+    "A lamb",
+    "A goat",
+    "A ram",
+    "A bullock"
+   ],
+   "answer": 2,
+   "evidence": "a ram caught in a thicket by his horns: and Abraham went and took the ram, and offered him up for a burnt offering in the stead of his son",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e8cbb7e7-0b44-46cf-b944-8ede81bc166a",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "What name did Abraham give to the place of the offering?",
+   "choices": [
+    "Jehovahnissi",
+    "Jehovahjireh",
+    "Elbethel",
+    "Peniel"
+   ],
+   "answer": 1,
+   "evidence": "Abraham called the name of that place Jehovahjireh",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6377e4ba-8ebb-4c83-bd82-57f0b7386e13",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "Where did Abraham dwell after returning to his young men?",
+   "choices": [
+    "Beersheba",
+    "Hebron",
+    "Bethel",
+    "Gerar"
+   ],
+   "answer": 0,
+   "evidence": "Abraham dwelt at Beersheba",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a4794753-7a69-49a6-837b-75646a169a13",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "How many children did Milcah bear to Nahor?",
+   "choices": [
+    "Twelve",
+    "Four",
+    "Eight",
+    "Six"
+   ],
+   "answer": 2,
+   "evidence": "these eight Milcah did bear to Nahor",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "94a4d036-4f72-4dc2-8571-0f479277d187",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Whose death is recorded at the start of this chapter?",
+   "choices": [
+    "Sarah",
+    "Rebekah",
+    "Rachel",
+    "Leah"
+   ],
+   "answer": 0,
+   "evidence": "And Sarah died in Kirjatharba",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e1f315e7-bb78-4b23-97c8-958cb75bc03c",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "How old was Sarah when she died?",
+   "choices": [
+    "120 years",
+    "127 years",
+    "175 years",
+    "137 years"
+   ],
+   "answer": 1,
+   "evidence": "Sarah was an hundred and seven and twenty years old",
+   "chapter": 23,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6b0d7809-8ffe-4514-835a-5d6130daca36",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "Kirjatharba, where Sarah died, is identified as which place?",
+   "choices": [
+    "Bethel",
+    "Shechem",
+    "Beersheba",
+    "Hebron"
+   ],
+   "answer": 3,
+   "evidence": "Kirjatharba; the same is Hebron in the land of Canaan",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fc7928f1-335f-4226-bf4a-b0073e5e3192",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "What was the name of the cave Abraham asked for?",
+   "choices": [
+    "Adullam",
+    "Makkedah",
+    "Machpelah",
+    "Engedi"
+   ],
+   "answer": 2,
+   "evidence": "the cave of Machpelah",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8723a39c-9b57-43aa-9ec7-0042f3a99f4c",
+   "verse_start": 15,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "What price did Ephron name for the land?",
+   "choices": [
+    "Four hundred shekels of silver",
+    "Thirty pieces of silver",
+    "Twenty pieces of silver",
+    "Fifty shekels of silver"
+   ],
+   "answer": 0,
+   "evidence": "the land is worth four hundred shekels of silver",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8e4ffa5d-0d21-43c2-9ac8-f5b5113ea9e3",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "To whom did Abraham weigh out the silver for the burial field?",
+   "choices": [
+    "Abimelech",
+    "Ephron",
+    "Melchizedek",
+    "Lot"
+   ],
+   "answer": 1,
+   "evidence": "Abraham weighed to Ephron the silver",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e05b5ea0-b889-4176-bfab-9813831f7c67",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "To which city in Mesopotamia did Abraham's servant travel?",
+   "choices": [
+    "Hebron",
+    "The city of Nahor",
+    "Beersheba",
+    "Bethel"
+   ],
+   "answer": 1,
+   "evidence": "went to Mesopotamia, unto the city of Nahor",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "850fd2dc-6ce7-4fcd-a2c0-e97605d9742c",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "How many of his master's camels did the servant take on the journey?",
+   "choices": [
+    "Ten",
+    "Seven",
+    "Twelve",
+    "Twenty"
+   ],
+   "answer": 0,
+   "evidence": "the servant took ten camels of the camels of his master",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "85361415-dfbf-4139-b008-47a84413b36c",
+   "verse_start": 15,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "Who came out to the well with her pitcher upon her shoulder before the servant had done speaking?",
+   "choices": [
+    "Rachel",
+    "Rebekah",
+    "Leah",
+    "Zilpah"
+   ],
+   "answer": 1,
+   "evidence": "behold, Rebekah came out, who was born to Bethuel",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "375edc17-ea1c-411d-98e9-f549dd15dc42",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "What was the weight of the golden earring the man gave after the camels had done drinking?",
+   "choices": [
+    "Ten shekels",
+    "Two shekels",
+    "Half a shekel",
+    "Five shekels"
+   ],
+   "answer": 2,
+   "evidence": "a golden earring of half a shekel weight",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0f7b05da-7b10-41d1-8fd8-fc9dd29ef43f",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "easy",
+   "question": "What was the name of Rebekah's brother who ran out to the man at the well?",
+   "choices": [
+    "Esau",
+    "Lot",
+    "Laban",
+    "Jacob"
+   ],
+   "answer": 2,
+   "evidence": "Rebekah had a brother, and his name was Laban",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4c01cb26-8173-4db4-8004-35c2acf4d0fb",
+   "verse_start": 67,
+   "verse_end": 67,
+   "difficulty": "medium",
+   "question": "Where did Isaac bring Rebekah at the end of the chapter?",
+   "choices": [
+    "Abraham's tent",
+    "Laban's house",
+    "A cave in Machpelah",
+    "His mother Sarah’s tent"
+   ],
+   "answer": 3,
+   "evidence": "Isaac brought her into his mother Sarah’s tent",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "94f4e074-8b2b-42ed-b6db-c73684056957",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "hard",
+   "question": "How many years did Abraham live?",
+   "choices": [
+    "137",
+    "175",
+    "180",
+    "160"
+   ],
+   "answer": 1,
+   "evidence": "an hundred threescore and fifteen years",
+   "chapter": 25,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e949ae4e-77d1-4a3d-82f2-9886a7cbeded",
+   "verse_start": 9,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "Where did his sons bury Abraham?",
+   "choices": [
+    "Cave of Adullam",
+    "Field of Bethel",
+    "Cave of Machpelah",
+    "Well of Beersheba"
+   ],
+   "answer": 2,
+   "evidence": "And his sons Isaac and Ishmael buried him in the cave of Machpelah",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "663753f2-95fd-4826-8418-5e8b06e9893f",
+   "verse_start": 24,
+   "verse_end": 25,
+   "difficulty": "easy",
+   "question": "Which twin came out first, red and hairy?",
+   "choices": [
+    "Jacob",
+    "Esau",
+    "Ishmael",
+    "Laban"
+   ],
+   "answer": 1,
+   "evidence": "the first came out red, all over like an hairy garment; and they called his name Esau.",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c12f27e2-4b23-40fb-be5b-75bca6e61ac6",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "medium",
+   "question": "At birth, what did Jacob's hand take hold of?",
+   "choices": [
+    "Esau’s heel",
+    "Esau’s hand",
+    "Rebekah’s garment",
+    "Esau’s hair"
+   ],
+   "answer": 0,
+   "evidence": "his hand took hold on Esau’s heel",
+   "chapter": 25,
+   "status": "draft",
+   "problems": [
+    "choice 2 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "05a2b457-df3e-4bbd-8cd4-825e9587ffc1",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "hard",
+   "question": "How old was Isaac when Rebekah bore the twins?",
+   "choices": [
+    "40",
+    "100",
+    "75",
+    "60"
+   ],
+   "answer": 3,
+   "evidence": "Isaac was threescore years old when she bare them",
+   "chapter": 25,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4a38783d-ce99-41e5-bb14-b5b54f669a47",
+   "verse_start": 29,
+   "verse_end": 34,
+   "difficulty": "easy",
+   "question": "What did Esau sell to Jacob?",
+   "choices": [
+    "His birthright",
+    "His bow",
+    "His flocks",
+    "His well"
+   ],
+   "answer": 0,
+   "evidence": "he sold his birthright unto Jacob",
+   "chapter": 25,
+   "status": "draft",
+   "problems": [
+    "cites more than five verses"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5ca47d0a-d0d6-4ac2-9523-55bf2fd8db6b",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Into which land did the LORD tell Isaac not to go down?",
+   "choices": [
+    "Egypt",
+    "Assyria",
+    "Babylon",
+    "Moab"
+   ],
+   "answer": 0,
+   "evidence": "Go not down into Egypt",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "89e062ce-f330-451e-ad65-b34a889269de",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "easy",
+   "question": "When the men of the place asked Isaac about his wife, what did he say she was?",
+   "choices": [
+    "His servant",
+    "His cousin",
+    "His sister",
+    "His daughter"
+   ],
+   "answer": 2,
+   "evidence": "he said, She is my sister",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "198b27da-3c5f-45b2-b40c-73c8642675fa",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "How did Abimelech see that Isaac was sporting with Rebekah?",
+   "choices": [
+    "He was told in a dream",
+    "He looked out at a window",
+    "A servant told him",
+    "He saw them at a well"
+   ],
+   "answer": 1,
+   "evidence": "looked out at a window",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3ab71134-36e8-4a3a-9fbe-8f9f1e82f712",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "When Isaac sowed in the land, what did he receive in the same year?",
+   "choices": [
+    "Sixtyfold",
+    "Thirtyfold",
+    "Sevenfold",
+    "An hundredfold"
+   ],
+   "answer": 3,
+   "evidence": "received in the same year an hundredfold",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b7f0bf10-5d8c-42ac-96bf-5ba9e0d66257",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "What did Isaac name the well that the herdmen did not strive over?",
+   "choices": [
+    "Esek",
+    "Rehoboth",
+    "Sitnah",
+    "Shebah"
+   ],
+   "answer": 1,
+   "evidence": "for that they strove not: and he called the name of it Rehoboth",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "22bffa12-2714-408e-9d58-fec425bd68f4",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "hard",
+   "question": "How old was Esau when he took Judith and Bashemath to wife?",
+   "choices": [
+    "Thirty years",
+    "Twenty years",
+    "Forty years",
+    "Sixty years"
+   ],
+   "answer": 2,
+   "evidence": "Esau was forty years old",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2bdfa15c-cb2d-454c-90e0-412c850938c9",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Which son did the old Isaac call to him at the start of the chapter?",
+   "choices": [
+    "Esau",
+    "Jacob",
+    "Ishmael",
+    "Laban"
+   ],
+   "answer": 0,
+   "evidence": "he called Esau his eldest son",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2ebf9b6c-fef6-4e5e-88ca-ad857bbc100f",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "hard",
+   "question": "How many kids of the goats did Rebekah tell Jacob to fetch from the flock?",
+   "choices": [
+    "One",
+    "Two",
+    "Three",
+    "Seven"
+   ],
+   "answer": 1,
+   "evidence": "fetch me from thence two good kids of the goats",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0b09cd5e-9ed5-4a5e-8759-b3d3a3da66d2",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "medium",
+   "question": "What did Rebekah put upon Jacob's hands and neck?",
+   "choices": [
+    "Camel's hair",
+    "Skins of the kids of the goats",
+    "Lamb's wool",
+    "Badgers' skins"
+   ],
+   "answer": 1,
+   "evidence": "she put the skins of the kids of the goats upon his hands",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d8c889fc-25d3-4a53-9796-cf252828c098",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "When Isaac felt his son, whose voice did he say he heard?",
+   "choices": [
+    "Esau's voice",
+    "Rebekah's voice",
+    "Laban's voice",
+    "Jacob's voice"
+   ],
+   "answer": 3,
+   "evidence": "The voice is Jacob’s voice, but the hands are the hands of Esau.",
+   "chapter": 27,
+   "status": "draft",
+   "problems": [
+    "choice 1 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "686065bf-9eb9-42f1-91d6-068e4469c1a0",
+   "verse_start": 43,
+   "verse_end": 43,
+   "difficulty": "easy",
+   "question": "To whom did Rebekah tell Jacob to flee?",
+   "choices": [
+    "Abraham",
+    "Lot",
+    "Laban",
+    "Bethuel"
+   ],
+   "answer": 2,
+   "evidence": "flee thou to Laban my brother to Haran",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c988ce31-86e8-4a68-a9b1-47c6cfecd06e",
+   "verse_start": 46,
+   "verse_end": 46,
+   "difficulty": "hard",
+   "question": "Rebekah told Isaac she was weary of her life because of the daughters of whom?",
+   "choices": [
+    "Moab",
+    "Midian",
+    "Heth",
+    "Ammon"
+   ],
+   "answer": 2,
+   "evidence": "I am weary of my life because of the daughters of Heth",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4a30916b-7728-4e80-8672-c0935170b683",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "Whose daughter did Esau take as a wife in this chapter?",
+   "choices": [
+    "Ishmael's",
+    "Laban's",
+    "Heth's",
+    "Bethuel's"
+   ],
+   "answer": 0,
+   "evidence": "Mahalath the daughter of Ishmael Abraham’s son",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "df913bfc-16e7-4bc5-ad0f-8eec983996e7",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "What did Jacob put for his pillows that night?",
+   "choices": [
+    "Stones of that place",
+    "His garments",
+    "Sheepskins",
+    "Bundles of straw"
+   ],
+   "answer": 0,
+   "evidence": "he took of the stones of that place, and put them for his pillows",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "191e60bc-9e3f-4f1f-b17c-1a6414e89ced",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "What did Jacob see set up on the earth in his dream?",
+   "choices": [
+    "A ladder",
+    "A tower",
+    "An altar",
+    "A tent"
+   ],
+   "answer": 0,
+   "evidence": "behold a ladder set up on the earth, and the top of it reached to heaven",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f1653fd3-5eb2-44e3-a0a0-612a7efe808e",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "What name did Jacob give to the place where he dreamed?",
+   "choices": [
+    "Bethel",
+    "Hebron",
+    "Shechem",
+    "Peniel"
+   ],
+   "answer": 0,
+   "evidence": "And he called the name of that place Bethel",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2c35b51f-04b5-4709-9afa-91c3a8ad1044",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "hard",
+   "question": "What was the city's name at the first, before Jacob renamed it?",
+   "choices": [
+    "Luz",
+    "Salem",
+    "Zoar",
+    "Mamre"
+   ],
+   "answer": 0,
+   "evidence": "but the name of that city was called Luz at the first",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ef8976c2-d1ad-4427-ac20-9ae019a2b62a",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "What portion did Jacob vow to give of all that God would give him?",
+   "choices": [
+    "The tenth",
+    "The fifth",
+    "The firstborn",
+    "Half"
+   ],
+   "answer": 0,
+   "evidence": "of all that thou shalt give me I will surely give the tenth unto thee",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b3eedd72-488a-4891-ba0f-411c0ced0df9",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "Where did the shepherds at the well say they were from?",
+   "choices": [
+    "Bethel",
+    "Hebron",
+    "Haran",
+    "Shechem"
+   ],
+   "answer": 2,
+   "evidence": "Of Haran are we.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8af223bd-505d-4101-ad10-65099f346736",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "easy",
+   "question": "Who came to the well with her father's sheep while Jacob was talking with the shepherds?",
+   "choices": [
+    "Rachel",
+    "Leah",
+    "Rebekah",
+    "Zipporah"
+   ],
+   "answer": 0,
+   "evidence": "Rachel came with her father’s sheep: for she kept them.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5f42c197-e486-45d3-a448-8d8f8daf2190",
+   "verse_start": 14,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "How long did Jacob abide with Laban before Laban asked what his wages should be?",
+   "choices": [
+    "The space of a month",
+    "Seven days",
+    "Forty days",
+    "A full year"
+   ],
+   "answer": 0,
+   "evidence": "he abode with him the space of a month.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3a77ff81-09df-449d-ac0c-4ecdda037b1d",
+   "verse_start": 23,
+   "verse_end": 25,
+   "difficulty": "easy",
+   "question": "Which daughter did Laban bring to Jacob in the evening after the feast?",
+   "choices": [
+    "Rachel",
+    "Leah",
+    "Dinah",
+    "Milcah"
+   ],
+   "answer": 1,
+   "evidence": "he took Leah his daughter, and brought her to him",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "837ccddd-720c-4f0a-8f42-5af3bf5f0dfb",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "medium",
+   "question": "Which handmaid did Laban give to Rachel to be her maid?",
+   "choices": [
+    "Zilpah",
+    "Hagar",
+    "Deborah",
+    "Bilhah"
+   ],
+   "answer": 3,
+   "evidence": "Laban gave to Rachel his daughter Bilhah his handmaid to be her maid.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f024d805-f37d-4762-b751-c409dc0a2ea6",
+   "verse_start": 32,
+   "verse_end": 34,
+   "difficulty": "hard",
+   "question": "What was the name of the third son Leah bore?",
+   "choices": [
+    "Reuben",
+    "Levi",
+    "Simeon",
+    "Judah"
+   ],
+   "answer": 1,
+   "evidence": "therefore was his name called Levi.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e52e25b0-35a5-4a88-9eea-60b1caa303b8",
+   "verse_start": 3,
+   "verse_end": 4,
+   "difficulty": "easy",
+   "question": "Which maid did Rachel give to Jacob so that she might have children by her?",
+   "choices": [
+    "Zilpah",
+    "Bilhah",
+    "Hagar",
+    "Deborah"
+   ],
+   "answer": 1,
+   "evidence": "Behold my maid Bilhah, go in unto her",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "931937b6-2646-444f-b29c-22bad23896e2",
+   "verse_start": 10,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "What name did Leah give the son of Zilpah when she said, \"A troop cometh\"?",
+   "choices": [
+    "Asher",
+    "Dan",
+    "Levi",
+    "Gad"
+   ],
+   "answer": 3,
+   "evidence": "A troop cometh: and she called his name Gad.",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2e801f01-995f-47b4-940e-a84135e056f3",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "What did Reuben find in the field during the wheat harvest?",
+   "choices": [
+    "Figs",
+    "Honey",
+    "Mandrakes",
+    "Grapes"
+   ],
+   "answer": 2,
+   "evidence": "found mandrakes in the field",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "024088fa-b4fb-4801-af56-d5c1b47b7b1c",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "medium",
+   "question": "What was the name of the daughter Leah bore?",
+   "choices": [
+    "Dinah",
+    "Tamar",
+    "Miriam",
+    "Rebekah"
+   ],
+   "answer": 0,
+   "evidence": "afterwards she bare a daughter, and called her name Dinah.",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "df632238-13a7-4315-994a-2c89b0cb9163",
+   "verse_start": 36,
+   "verse_end": 36,
+   "difficulty": "hard",
+   "question": "How many days' journey did Laban set between himself and Jacob?",
+   "choices": [
+    "Seven",
+    "Three",
+    "Two",
+    "Forty"
+   ],
+   "answer": 1,
+   "evidence": "he set three days’ journey betwixt himself and Jacob",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c34618d5-81f7-4019-b90d-bf0cf1d70951",
+   "verse_start": 37,
+   "verse_end": 37,
+   "difficulty": "hard",
+   "question": "Besides hazel and chestnut, Jacob took rods of which green tree?",
+   "choices": [
+    "Almond",
+    "Cedar",
+    "Poplar",
+    "Willow"
+   ],
+   "answer": 2,
+   "evidence": "Jacob took him rods of green poplar",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a900799e-e837-4ef0-a5a6-889cbecd25e9",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "hard",
+   "question": "According to Jacob, how many times had Laban changed his wages?",
+   "choices": [
+    "Seven",
+    "Four",
+    "Ten",
+    "Twenty"
+   ],
+   "answer": 2,
+   "evidence": "changed my wages ten times",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5c7defe8-dd82-45c2-8f4b-184fbc124f67",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "Who had stolen the images that belonged to her father?",
+   "choices": [
+    "Rachel",
+    "Leah",
+    "Rebekah",
+    "Dinah"
+   ],
+   "answer": 0,
+   "evidence": "Rachel had stolen the images that were her father’s",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "feb7183d-83f2-4738-bdf4-f024dcd9eda9",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "What had Laban gone to do when Rachel took the images?",
+   "choices": [
+    "Dig a well",
+    "Shear his sheep",
+    "Visit Nahor",
+    "Sell his cattle"
+   ],
+   "answer": 1,
+   "evidence": "Laban went to shear his sheep",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0ebdbdaf-4cd4-41f6-9d21-e3e18beab589",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "easy",
+   "question": "Where did Laban and his brethren overtake Jacob?",
+   "choices": [
+    "Bethel",
+    "Mount Moriah",
+    "Mount Gilead",
+    "Haran"
+   ],
+   "answer": 2,
+   "evidence": "they overtook him in the mount Gilead.",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "00182508-e7c6-4292-9870-bae5a99dacf3",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "How many days' journey did Laban pursue after Jacob?",
+   "choices": [
+    "Seven",
+    "Three",
+    "Ten",
+    "Forty"
+   ],
+   "answer": 0,
+   "evidence": "pursued after him seven days’ journey",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f243b972-9f09-4615-8449-b3d08ffa29e7",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "medium",
+   "question": "Where did Rachel put the images before sitting upon them?",
+   "choices": [
+    "Under the tent floor",
+    "In a sack of grain",
+    "Among the sheep",
+    "In the camel’s furniture"
+   ],
+   "answer": 3,
+   "evidence": "put them in the camel’s furniture, and sat upon them",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f634f634-4d8a-4f53-b04c-0c729d06d303",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "What did Jacob name the place where the angels of God met him?",
+   "choices": [
+    "Mahanaim",
+    "Peniel",
+    "Bethel",
+    "Gilgal"
+   ],
+   "answer": 0,
+   "evidence": "he called the name of that place Mahanaim.",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5634903a-b455-4ede-b52f-cccc8072a38e",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "easy",
+   "question": "According to the messengers, how many men were coming with Esau to meet Jacob?",
+   "choices": [
+    "Four hundred",
+    "Three hundred",
+    "Two hundred",
+    "One thousand"
+   ],
+   "answer": 0,
+   "evidence": "and four hundred men with him.",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1f27cd75-c462-4235-b73a-b4a3f7394468",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "How many she goats did Jacob include in his present for Esau?",
+   "choices": [
+    "Two hundred",
+    "Thirty",
+    "Forty",
+    "One hundred"
+   ],
+   "answer": 0,
+   "evidence": "Two hundred she goats, and twenty he goats",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "02118231-8a51-4fd5-8b23-6cac1a062f49",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "Which ford did Jacob cross with his wives and sons that night?",
+   "choices": [
+    "Jabbok",
+    "Arnon",
+    "Kishon",
+    "Kidron"
+   ],
+   "answer": 0,
+   "evidence": "passed over the ford Jabbok.",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2399378b-d435-4c53-8968-0eb69c83d94f",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "How many sons did Jacob take with him over the ford?",
+   "choices": [
+    "Eleven",
+    "Twelve",
+    "Ten",
+    "Seven"
+   ],
+   "answer": 0,
+   "evidence": "his eleven sons",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ed6fe6d1-63f4-47d6-83db-a99111db28b4",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "easy",
+   "question": "What new name was Jacob given after the wrestling?",
+   "choices": [
+    "Israel",
+    "Edom",
+    "Judah",
+    "Abraham"
+   ],
+   "answer": 0,
+   "evidence": "Thy name shall be called no more Jacob, but Israel",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3c1a4067-bb33-4fb2-8337-f99c2cfd1874",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "How many men came with Esau as he approached Jacob?",
+   "choices": [
+    "Four hundred",
+    "Three hundred",
+    "Two hundred",
+    "Six hundred"
+   ],
+   "answer": 0,
+   "evidence": "Esau came, and with him four hundred men",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d4cbe21a-bbb6-453c-9398-6280b8c48ca3",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "Whom did Jacob place hindermost when Esau approached?",
+   "choices": [
+    "Leah and Reuben",
+    "Bilhah and Dan",
+    "Rachel and Joseph",
+    "Zilpah and Gad"
+   ],
+   "answer": 2,
+   "evidence": "and Rachel and Joseph hindermost.",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d1410d19-1544-4ddb-a129-1e770a696a33",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "How many times did Jacob bow himself to the ground as he came near his brother?",
+   "choices": [
+    "Seven",
+    "Three",
+    "Twelve",
+    "Ten"
+   ],
+   "answer": 0,
+   "evidence": "bowed himself to the ground seven times",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "05c1006c-9de1-4601-b3e9-11fe550aac36",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "Where was Esau going when he returned on his way that day?",
+   "choices": [
+    "Bethel",
+    "Seir",
+    "Hebron",
+    "Beersheba"
+   ],
+   "answer": 1,
+   "evidence": "So Esau returned that day on his way unto Seir.",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0bebe734-019a-4c72-916e-e4a41d2a230e",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "Where did Jacob build a house and make booths for his cattle?",
+   "choices": [
+    "Shalem",
+    "Bethel",
+    "Mahanaim",
+    "Succoth"
+   ],
+   "answer": 3,
+   "evidence": "And Jacob journeyed to Succoth, and built him an house, and made booths for his cattle",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cb2ed6c6-1981-4481-a3ac-9b30186917df",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "hard",
+   "question": "What price did Jacob pay for the parcel of a field where he spread his tent?",
+   "choices": [
+    "Four hundred shekels",
+    "An hundred pieces of money",
+    "Thirty pieces of silver",
+    "Twenty pieces of silver"
+   ],
+   "answer": 1,
+   "evidence": "for an hundred pieces of money",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bd998655-b56c-4b50-8961-71a99e4d17e1",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Who was Dinah's mother?",
+   "choices": [
+    "Rachel",
+    "Leah",
+    "Bilhah",
+    "Zilpah"
+   ],
+   "answer": 1,
+   "evidence": "Dinah the daughter of Leah",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "575dcc27-2a10-438b-ae1f-06ecf34d9e30",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "What people did Hamor, the father of Shechem, belong to?",
+   "choices": [
+    "The Hittites",
+    "The Amorites",
+    "The Jebusites",
+    "The Hivites"
+   ],
+   "answer": 3,
+   "evidence": "Hamor the Hivite",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "df2b4c2e-58c2-4098-b20b-f749154c6771",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "Where were Jacob's sons when Jacob heard what had happened to Dinah?",
+   "choices": [
+    "With his cattle in the field",
+    "At the well",
+    "At the city gate",
+    "In Egypt"
+   ],
+   "answer": 0,
+   "evidence": "his sons were with his cattle in the field",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1c57b5d2-335e-41c1-aa5d-5e7f9f6228b6",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "easy",
+   "question": "Which two sons of Jacob took their swords and slew all the males of the city?",
+   "choices": [
+    "Reuben and Judah",
+    "Dan and Naphtali",
+    "Simeon and Levi",
+    "Joseph and Benjamin"
+   ],
+   "answer": 2,
+   "evidence": "two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9b7d927e-4537-4cd1-84ec-e865497be8e7",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "On which day after the circumcision did the attack on the city come, when the men were sore?",
+   "choices": [
+    "The second day",
+    "The third day",
+    "The seventh day",
+    "The eighth day"
+   ],
+   "answer": 1,
+   "evidence": "on the third day, when they were sore",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7ce311d9-0652-45db-abb1-b9da1a9bda35",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "hard",
+   "question": "Among which inhabitants of the land did Jacob say his sons had made him to stink?",
+   "choices": [
+    "Amorites and Jebusites",
+    "Philistines and Hittites",
+    "Canaanites and Perizzites",
+    "Moabites and Ammonites"
+   ],
+   "answer": 2,
+   "evidence": "among the Canaanites and the Perizzites",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5561c9e1-57cb-4cd6-8391-6395b2291ac2",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Where did God tell Jacob to go up and dwell?",
+   "choices": [
+    "Bethel",
+    "Shechem",
+    "Hebron",
+    "Beersheba"
+   ],
+   "answer": 0,
+   "evidence": "Arise, go up to Bethel, and dwell there",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4d7f96e4-6eab-4676-86d1-e7a0c7002fe9",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "Where did Jacob hide the strange gods and earrings?",
+   "choices": [
+    "Beneath the altar at Bethel",
+    "In a well at Beersheba",
+    "Under the oak by Shechem",
+    "In a cave at Machpelah"
+   ],
+   "answer": 2,
+   "evidence": "Jacob hid them under the oak which was by Shechem",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1fc89682-8b6b-45da-890a-728867ccd00a",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "hard",
+   "question": "What was the oak called under which Deborah was buried?",
+   "choices": [
+    "Elbethel",
+    "Allonbachuth",
+    "Mahanaim",
+    "Peniel"
+   ],
+   "answer": 1,
+   "evidence": "the name of it was called Allonbachuth",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d458a5dc-fdbf-44e0-a7ee-266ec49c402c",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "easy",
+   "question": "What new name did God give Jacob?",
+   "choices": [
+    "Abraham",
+    "Israel",
+    "Judah",
+    "Joseph"
+   ],
+   "answer": 1,
+   "evidence": "but Israel shall be thy name",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fa385691-919a-4be4-9383-a043af2572b7",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "medium",
+   "question": "What name did Rachel give her son as she was dying?",
+   "choices": [
+    "Benjamin",
+    "Ichabod",
+    "Ben-ammi",
+    "Benoni"
+   ],
+   "answer": 3,
+   "evidence": "she called his name Benoni",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2dbb88f0-2e06-4101-93df-e7b495a62634",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "How long were the days of Isaac?",
+   "choices": [
+    "An hundred and fourscore years",
+    "An hundred and seventy-five years",
+    "An hundred and forty-seven years",
+    "An hundred and twenty years"
+   ],
+   "answer": 0,
+   "evidence": "the days of Isaac were an hundred and fourscore years",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8c4cf2a8-5646-413e-9e05-428c37c040dc",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "According to the chapter's opening verse, Esau is also known by what name?",
+   "choices": [
+    "Edom",
+    "Israel",
+    "Moab",
+    "Ammon"
+   ],
+   "answer": 0,
+   "evidence": "Now these are the generations of Esau, who is Edom.",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7f82f9af-ef03-46cb-a06d-7fd4c7b6275e",
+   "verse_start": 6,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "The land could not bear Esau and Jacob together because of what?",
+   "choices": [
+    "A famine",
+    "Their quarrels",
+    "Their cattle",
+    "Their servants"
+   ],
+   "answer": 2,
+   "evidence": "the land wherein they were strangers could not bear them because of their cattle.",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2c9af33a-fea4-429c-a0ce-666987cb0149",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "easy",
+   "question": "Where did Esau go to dwell?",
+   "choices": [
+    "Mount Carmel",
+    "Mount Seir",
+    "Mount Gilead",
+    "Mount Hor"
+   ],
+   "answer": 1,
+   "evidence": "Thus dwelt Esau in mount Seir: Esau is Edom.",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d40afd3a-0767-47f0-9cc7-ef837292bac2",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "medium",
+   "question": "What did Anah find in the wilderness while feeding his father's asses?",
+   "choices": [
+    "A well",
+    "The mules",
+    "A lost ram",
+    "Hidden gold"
+   ],
+   "answer": 1,
+   "evidence": "this was that Anah that found the mules in the wilderness, as he fed the asses of Zibeon his father.",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "35aedf0c-b449-4c48-9888-ff4b52e87db7",
+   "verse_start": 32,
+   "verse_end": 33,
+   "difficulty": "hard",
+   "question": "Who was the first king named as reigning in Edom?",
+   "choices": [
+    "Jobab",
+    "Husham",
+    "Hadad",
+    "Bela"
+   ],
+   "answer": 3,
+   "evidence": "And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah.",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4b49a678-763d-47a4-845e-f064b56304ac",
+   "verse_start": 39,
+   "verse_end": 39,
+   "difficulty": "hard",
+   "question": "What was the name of King Hadar's wife?",
+   "choices": [
+    "Timna",
+    "Mehetabel",
+    "Adah",
+    "Bashemath"
+   ],
+   "answer": 1,
+   "evidence": "his wife’s name was Mehetabel",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9df85da4-14ea-4644-9bbc-151aaadfcc42",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "hard",
+   "question": "How old was Joseph when he was feeding the flock with his brethren?",
+   "choices": [
+    "Twelve",
+    "Twenty",
+    "Seventeen",
+    "Thirty"
+   ],
+   "answer": 2,
+   "evidence": "Joseph, being seventeen years old, was feeding the flock with his brethren",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "db3677b5-6f7b-469a-b036-4f7b3b77b336",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "What did Israel make for Joseph?",
+   "choices": [
+    "A coat of many colours",
+    "A golden ring",
+    "A silver cup",
+    "A shepherd's staff"
+   ],
+   "answer": 0,
+   "evidence": "and he made him a coat of many colours.",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "30677012-b01c-41b7-b626-55f9f926288f",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "Where did Joseph finally find his brothers?",
+   "choices": [
+    "Shechem",
+    "Dothan",
+    "Hebron",
+    "Bethel"
+   ],
+   "answer": 1,
+   "evidence": "And Joseph went after his brethren, and found them in Dothan.",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "74a326f1-ed5b-4f7a-b9c6-14b316fa00e7",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "easy",
+   "question": "Which brother said, \"Let us not kill him\"?",
+   "choices": [
+    "Judah",
+    "Simeon",
+    "Reuben",
+    "Levi"
+   ],
+   "answer": 2,
+   "evidence": "And Reuben heard it, and he delivered him out of their hands; and said, Let us not kill him.",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e7ce2a1b-ab12-4d51-8146-15e667605693",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "For how many pieces of silver was Joseph sold to the Ishmeelites?",
+   "choices": [
+    "Ten",
+    "Twenty",
+    "Thirty",
+    "Fifty"
+   ],
+   "answer": 1,
+   "evidence": "sold Joseph to the Ishmeelites for twenty pieces of silver",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f4d28e7b-f088-49fe-9194-9c0b62ae895d",
+   "verse_start": 31,
+   "verse_end": 31,
+   "difficulty": "medium",
+   "question": "What animal did the brothers kill to dip Joseph's coat in its blood?",
+   "choices": [
+    "A lamb",
+    "A ram",
+    "A young bullock",
+    "A kid of the goats"
+   ],
+   "answer": 3,
+   "evidence": "and killed a kid of the goats, and dipped the coat in the blood;",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "02e36a48-ea91-4633-bbca-f6c4511ec842",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "medium",
+   "question": "What was the name of the Adullamite that Judah turned in to?",
+   "choices": [
+    "Hushai",
+    "Hiram",
+    "Hobab",
+    "Hirah"
+   ],
+   "answer": 3,
+   "evidence": "a certain Adullamite, whose name was Hirah.",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "447a49ba-28b4-42b5-a0a8-56830034d0f1",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "hard",
+   "question": "Where was Judah when his son Shelah was born?",
+   "choices": [
+    "Timnath",
+    "Chezib",
+    "Adullam",
+    "Hebron"
+   ],
+   "answer": 1,
+   "evidence": "he was at Chezib, when she bare him.",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "503fb5a8-7148-4408-bd21-484784172d74",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "easy",
+   "question": "What was the name of the wife Judah took for his firstborn son Er?",
+   "choices": [
+    "Dinah",
+    "Tamar",
+    "Leah",
+    "Rebekah"
+   ],
+   "answer": 1,
+   "evidence": "Judah took a wife for Er his firstborn, whose name was Tamar.",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d25ba85d-d7d3-432a-b7f5-cd20773a09a5",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "What did Judah promise to send to the woman by the way?",
+   "choices": [
+    "A kid from the flock",
+    "A shekel of silver",
+    "A fine cloak",
+    "A golden earring"
+   ],
+   "answer": 0,
+   "evidence": "I will send thee a kid from the flock.",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "06248525-8d16-4927-9c61-4ffc86680f0c",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "easy",
+   "question": "What was found to be in Tamar's womb at the time of her travail?",
+   "choices": [
+    "A daughter",
+    "Triplets",
+    "Twins",
+    "A single son"
+   ],
+   "answer": 2,
+   "evidence": "twins were in her womb.",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9a872e22-3596-4ed1-ba1c-d729733362b6",
+   "verse_start": 28,
+   "verse_end": 30,
+   "difficulty": "hard",
+   "question": "What was the name of the twin who had the scarlet thread upon his hand?",
+   "choices": [
+    "Pharez",
+    "Shelah",
+    "Zarah",
+    "Hezron"
+   ],
+   "answer": 2,
+   "evidence": "his brother, that had the scarlet thread upon his hand: and his name was called Zarah.",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ccd2660d-51e1-4749-9dda-f11b6455f9b2",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Who bought Joseph after he was brought down to Egypt?",
+   "choices": [
+    "Potiphar",
+    "Pharaoh",
+    "Laban",
+    "Abimelech"
+   ],
+   "answer": 0,
+   "evidence": "Potiphar, an officer of Pharaoh, captain of the guard, an Egyptian, bought him",
+   "chapter": 39,
+   "status": "draft",
+   "problems": [
+    "choice 2 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "86ab5baf-8a43-4a72-8892-39745d941aba",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "medium",
+   "question": "From whose hands was Joseph bought in Egypt?",
+   "choices": [
+    "The Philistines",
+    "The Amalekites",
+    "The Ishmeelites",
+    "The Canaanites"
+   ],
+   "answer": 2,
+   "evidence": "bought him of the hands of the Ishmeelites, which had brought him down thither.",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d77e8408-190c-4c9b-a1f6-e1a86a4851bd",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "Having left all in Joseph's hand, what was the one thing his master still knew of?",
+   "choices": [
+    "The bread he did eat",
+    "His gold and silver",
+    "His horses",
+    "His wine"
+   ],
+   "answer": 0,
+   "evidence": "he knew not ought he had, save the bread which he did eat.",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "67dd4e67-71d8-4ce0-93bf-4a6cc5a738c2",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "What did Joseph leave in his master's wife's hand when he fled?",
+   "choices": [
+    "His ring",
+    "His garment",
+    "His staff",
+    "His sandals"
+   ],
+   "answer": 1,
+   "evidence": "he left his garment in her hand, and fled, and got him out.",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5c5a7faa-3f82-43f4-b932-6f789ceeeaaa",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "When speaking to the men of her house, why did the wife say the Hebrew had been brought in?",
+   "choices": [
+    "To rob us",
+    "To mock us",
+    "To spy on us",
+    "To rule over us"
+   ],
+   "answer": 1,
+   "evidence": "See, he hath brought in an Hebrew unto us to mock us",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f080031e-d27b-4298-879a-c8edf98e554e",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "Who was bound in the prison where Joseph was put?",
+   "choices": [
+    "Captives of war",
+    "Hebrew slaves",
+    "Debtors",
+    "The king's prisoners"
+   ],
+   "answer": 3,
+   "evidence": "a place where the king’s prisoners were bound",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "956f0ffa-a331-4159-9426-4cfd8f6a987d",
+   "verse_start": 9,
+   "verse_end": 10,
+   "difficulty": "easy",
+   "question": "In the chief butler's dream, what was before him?",
+   "choices": [
+    "A vine",
+    "A fig tree",
+    "An olive tree",
+    "A well"
+   ],
+   "answer": 0,
+   "evidence": "In my dream, behold, a vine was before me;",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "67679aaf-4c5e-4cf9-a600-e55a7f08dc97",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "Joseph said he was stolen away out of which land?",
+   "choices": [
+    "The land of the Hebrews",
+    "The land of Canaan",
+    "The land of Midian",
+    "The land of Goshen"
+   ],
+   "answer": 0,
+   "evidence": "For indeed I was stolen away out of the land of the Hebrews",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0d976c0e-0f83-4de0-9071-3baa93d082f8",
+   "verse_start": 16,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "What ate from the basket on the chief baker's head in his dream?",
+   "choices": [
+    "The birds",
+    "The locusts",
+    "The dogs",
+    "The mice"
+   ],
+   "answer": 0,
+   "evidence": "and the birds did eat them out of the basket upon my head.",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f9751e34-464c-4eaf-ad2e-c5e83a2cb337",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "What colour were the baskets in the chief baker's dream?",
+   "choices": [
+    "White",
+    "Golden",
+    "Brown",
+    "Red"
+   ],
+   "answer": 0,
+   "evidence": "I had three white baskets on my head:",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "672a94ee-19c0-4b33-9766-228bbd50ba4c",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "What occasion fell on the third day, when Pharaoh made a feast?",
+   "choices": [
+    "Pharaoh's birthday",
+    "A harvest festival",
+    "A coronation",
+    "A wedding"
+   ],
+   "answer": 0,
+   "evidence": "which was Pharaoh’s birthday, that he made a feast unto all his servants",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9e6fd721-7864-411b-abce-b02fe8738edd",
+   "verse_start": 22,
+   "verse_end": 23,
+   "difficulty": "easy",
+   "question": "After being restored, what did the chief butler do regarding Joseph?",
+   "choices": [
+    "Forgat him",
+    "Freed him",
+    "Told Pharaoh of him",
+    "Visited him"
+   ],
+   "answer": 0,
+   "evidence": "Yet did not the chief butler remember Joseph, but forgat him.",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "db61fa5d-7a5a-4b2c-9dd8-e0b27ff35084",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "In Pharaoh's first dream, what came up out of the river?",
+   "choices": [
+    "Seven kine",
+    "Seven rams",
+    "Seven horses",
+    "Seven goats"
+   ],
+   "answer": 0,
+   "evidence": "there came up out of the river seven well favoured kine and fatfleshed",
+   "chapter": 41,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "65ec06d3-3f85-45ec-83ac-365e14dc1297",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "hard",
+   "question": "What portion of the land of Egypt did Joseph advise taking up in the seven plenteous years?",
+   "choices": [
+    "The tenth part",
+    "The third part",
+    "The fifth part",
+    "The half part"
+   ],
+   "answer": 2,
+   "evidence": "take up the fifth part of the land of Egypt in the seven plenteous years",
+   "chapter": 41,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "339d715f-7a59-4b02-971c-c0db9d638eba",
+   "verse_start": 42,
+   "verse_end": 42,
+   "difficulty": "medium",
+   "question": "What did Pharaoh put about Joseph's neck?",
+   "choices": [
+    "A silver cup",
+    "A gold chain",
+    "A linen girdle",
+    "A coat of many colours"
+   ],
+   "answer": 1,
+   "evidence": "put a gold chain about his neck",
+   "chapter": 41,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5252bded-3493-4f28-a472-56042eeadc0d",
+   "verse_start": 46,
+   "verse_end": 46,
+   "difficulty": "hard",
+   "question": "How old was Joseph when he stood before Pharaoh king of Egypt?",
+   "choices": [
+    "Thirty years",
+    "Twenty years",
+    "Seventeen years",
+    "Forty years"
+   ],
+   "answer": 0,
+   "evidence": "Joseph was thirty years old when he stood before Pharaoh king of Egypt.",
+   "chapter": 41,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0c3e1784-0e96-48c9-bedb-3782910eb43b",
+   "verse_start": 51,
+   "verse_end": 51,
+   "difficulty": "medium",
+   "question": "What did Joseph name his firstborn son?",
+   "choices": [
+    "Ephraim",
+    "Benjamin",
+    "Reuben",
+    "Manasseh"
+   ],
+   "answer": 3,
+   "evidence": "Joseph called the name of the firstborn Manasseh",
+   "chapter": 41,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ec9f8f4f-ebf2-42d4-b199-af880f5036c3",
+   "verse_start": 55,
+   "verse_end": 55,
+   "difficulty": "easy",
+   "question": "When the people cried for bread, to whom did Pharaoh tell the Egyptians to go?",
+   "choices": [
+    "The chief butler",
+    "Potipherah",
+    "Joseph",
+    "The magicians"
+   ],
+   "answer": 2,
+   "evidence": "Go unto Joseph; what he saith to you, do.",
+   "chapter": 41,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "88973bdf-e790-49a9-9858-4543c1df579e",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "easy",
+   "question": "Which son did Jacob not send to Egypt with his brothers?",
+   "choices": [
+    "Benjamin",
+    "Judah",
+    "Levi",
+    "Reuben"
+   ],
+   "answer": 0,
+   "evidence": "But Benjamin, Joseph’s brother, Jacob sent not with his brethren",
+   "chapter": 42,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "90e5c425-f9b8-4a7c-bc3d-07734abb4ec4",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "What did Joseph accuse his brothers of being?",
+   "choices": [
+    "Thieves",
+    "Murderers",
+    "Spies",
+    "Idolaters"
+   ],
+   "answer": 2,
+   "evidence": "Ye are spies",
+   "chapter": 42,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f2ae3657-f18b-4a0c-8aad-4f907f01388a",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "How many days did Joseph keep all the brothers in ward?",
+   "choices": [
+    "Three",
+    "Seven",
+    "Two",
+    "Forty"
+   ],
+   "answer": 0,
+   "evidence": "And he put them all together into ward three days.",
+   "chapter": 42,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6b321696-24d3-4b90-8d72-d8bb7eb3d82c",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "Which brother reminded the others that he had said, \"Do not sin against the child\"?",
+   "choices": [
+    "Judah",
+    "Simeon",
+    "Levi",
+    "Reuben"
+   ],
+   "answer": 3,
+   "evidence": "And Reuben answered them, saying, Spake I not unto you, saying, Do not sin against the child",
+   "chapter": 42,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cd04750c-004a-4a29-a0dd-8f26a651c4e8",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "Which brother did Joseph take and bind before the others' eyes?",
+   "choices": [
+    "Reuben",
+    "Simeon",
+    "Judah",
+    "Dan"
+   ],
+   "answer": 1,
+   "evidence": "took from them Simeon, and bound him before their eyes.",
+   "chapter": 42,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "538783ef-beb7-4970-b076-415d58d57aa5",
+   "verse_start": 37,
+   "verse_end": 37,
+   "difficulty": "hard",
+   "question": "How many of his own sons did Reuben tell Jacob to slay if he did not bring Benjamin back?",
+   "choices": [
+    "One",
+    "Two",
+    "Three",
+    "Four"
+   ],
+   "answer": 1,
+   "evidence": "Slay my two sons, if I bring him not to thee",
+   "chapter": 42,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0c3b8afa-fc32-4f2c-b24b-d1b3d1a16864",
+   "verse_start": 8,
+   "verse_end": 9,
+   "difficulty": "easy",
+   "question": "Which brother asked their father to send the lad with him and offered to be surety for him?",
+   "choices": [
+    "Reuben",
+    "Simeon",
+    "Judah",
+    "Levi"
+   ],
+   "answer": 2,
+   "evidence": "And Judah said unto Israel his father, Send the lad with me",
+   "chapter": 43,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9b1f072e-f889-4b0f-a201-1a13ce8ab148",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "hard",
+   "question": "Which of these was part of the present Israel told his sons to carry down to the man?",
+   "choices": [
+    "Figs",
+    "Pomegranates",
+    "Almonds",
+    "Olives"
+   ],
+   "answer": 2,
+   "evidence": "a little balm, and a little honey, spices, and myrrh, nuts, and almonds",
+   "chapter": 43,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "179dbca0-06bc-48b4-ba80-1a1ab7dcbf33",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "easy",
+   "question": "Which brother did the men take with them down to Egypt this time?",
+   "choices": [
+    "Joseph",
+    "Benjamin",
+    "Reuben",
+    "Zebulun"
+   ],
+   "answer": 1,
+   "evidence": "and they took double money in their hand, and Benjamin",
+   "chapter": 43,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8ba9e603-d099-4c33-92a1-7336c9333f01",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "medium",
+   "question": "At what time did Joseph say the men would dine with him?",
+   "choices": [
+    "In the evening",
+    "At sunrise",
+    "At midnight",
+    "At noon"
+   ],
+   "answer": 3,
+   "evidence": "for these men shall dine with me at noon.",
+   "chapter": 43,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "502c4f55-6953-489f-9df9-53c41687db7d",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "medium",
+   "question": "Which brother did the steward bring out to the men?",
+   "choices": [
+    "Simeon",
+    "Reuben",
+    "Dan",
+    "Naphtali"
+   ],
+   "answer": 0,
+   "evidence": "And he brought Simeon out unto them.",
+   "chapter": 43,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "87c9a88a-bb27-444d-9a7a-77a4be397203",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "hard",
+   "question": "How much larger was Benjamin's mess than any of his brothers'?",
+   "choices": [
+    "Three times",
+    "Five times",
+    "Seven times",
+    "Ten times"
+   ],
+   "answer": 1,
+   "evidence": "Benjamin’s mess was five times so much as any of theirs.",
+   "chapter": 43,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f9789f51-d545-45b2-a71e-516a888453ab",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "What did Joseph order to be put in the sack of the youngest brother?",
+   "choices": [
+    "A silver cup",
+    "A gold ring",
+    "A bronze bowl",
+    "A linen robe"
+   ],
+   "answer": 0,
+   "evidence": "And put my cup, the silver cup, in the sack’s mouth of the youngest",
+   "chapter": 44,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b5a7418f-24de-45df-9d30-1e00131a0253",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "easy",
+   "question": "In whose sack was the cup found?",
+   "choices": [
+    "Judah's",
+    "Reuben's",
+    "Benjamin's",
+    "Simeon's"
+   ],
+   "answer": 2,
+   "evidence": "the cup was found in Benjamin’s sack.",
+   "chapter": 44,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "065ce111-b681-4dac-8103-8bca6053e4f0",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "What did the brothers do right after the cup was found?",
+   "choices": [
+    "Fled toward Canaan",
+    "Rent their clothes",
+    "Fought the steward",
+    "Hid in a cave"
+   ],
+   "answer": 1,
+   "evidence": "Then they rent their clothes, and laded every man his ass, and returned to the city.",
+   "chapter": 44,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7a0849af-09a1-4d19-80ee-a1ab823d62bb",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "medium",
+   "question": "Which brother came near to Joseph and pleaded for the lad?",
+   "choices": [
+    "Reuben",
+    "Levi",
+    "Simeon",
+    "Judah"
+   ],
+   "answer": 3,
+   "evidence": "Then Judah came near unto him",
+   "chapter": 44,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "92675954-5d15-4f35-bcd0-1fea3a682c41",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "hard",
+   "question": "Judah told Joseph, \"thou art even as\" whom?",
+   "choices": [
+    "Pharaoh",
+    "Potiphar",
+    "Abimelech",
+    "Melchizedek"
+   ],
+   "answer": 0,
+   "evidence": "for thou art even as Pharaoh.",
+   "chapter": 44,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1a23d5b7-aef4-4795-a85e-33824f618438",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "According to Judah, how many sons did their father say his wife bare him?",
+   "choices": [
+    "Three",
+    "Twelve",
+    "Two",
+    "Seven"
+   ],
+   "answer": 2,
+   "evidence": "Ye know that my wife bare me two sons:",
+   "chapter": 44,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fc0bf24a-17cf-4226-af4d-04832f6822cd",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "Who heard Joseph when he wept aloud?",
+   "choices": [
+    "Only his brethren",
+    "The Egyptians and Pharaoh's house",
+    "The priests of On",
+    "The Ishmeelites"
+   ],
+   "answer": 1,
+   "evidence": "And he wept aloud: and the Egyptians and the house of Pharaoh heard.",
+   "chapter": 45,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "01ed3956-affe-48b1-90a5-4b9cdfaa830a",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "According to Joseph, how many years had the famine already been in the land?",
+   "choices": [
+    "Two",
+    "Five",
+    "Seven",
+    "Three"
+   ],
+   "answer": 0,
+   "evidence": "For these two years hath the famine been in the land",
+   "chapter": 45,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5b762028-9207-4d18-9f3d-2958e353f57a",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "easy",
+   "question": "In what land did Joseph say his father would dwell?",
+   "choices": [
+    "The land of Goshen",
+    "The land of Moriah",
+    "The land of Gilead",
+    "The land of Bashan"
+   ],
+   "answer": 0,
+   "evidence": "thou shalt dwell in the land of Goshen",
+   "chapter": 45,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "20b03ccf-620b-438a-a065-7e0c8b0ab949",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "Upon which brother's neck did Joseph fall and weep?",
+   "choices": [
+    "Reuben",
+    "Judah",
+    "Benjamin",
+    "Simeon"
+   ],
+   "answer": 2,
+   "evidence": "he fell upon his brother Benjamin’s neck, and wept",
+   "chapter": 45,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "91346ccd-1ce6-4749-a096-d6530488a27b",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "How many pieces of silver did Joseph give to Benjamin?",
+   "choices": [
+    "Twenty",
+    "Thirty",
+    "Three hundred",
+    "One thousand"
+   ],
+   "answer": 2,
+   "evidence": "to Benjamin he gave three hundred pieces of silver",
+   "chapter": 45,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f1e9f968-1c0d-4c29-a529-8ee635c59477",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "medium",
+   "question": "What did Joseph tell his brethren as he sent them away?",
+   "choices": [
+    "Tell no man of me",
+    "Return in three days",
+    "Bring your youngest brother",
+    "Fall not out by the way"
+   ],
+   "answer": 3,
+   "evidence": "See that ye fall not out by the way.",
+   "chapter": 45,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ad27ae21-b74f-47ba-9cdf-44e459d9586f",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Where did Israel stop to offer sacrifices on his journey?",
+   "choices": [
+    "Bethel",
+    "Beersheba",
+    "Hebron",
+    "Shechem"
+   ],
+   "answer": 1,
+   "evidence": "came to Beersheba, and offered sacrifices unto the God of his father Isaac.",
+   "chapter": 46,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a9002ac2-b5bb-4fd4-840d-87b467c5a4fd",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "hard",
+   "question": "How many souls are counted as the sons of Zilpah born unto Jacob?",
+   "choices": [
+    "Seven",
+    "Fourteen",
+    "Thirty and three",
+    "Sixteen"
+   ],
+   "answer": 3,
+   "evidence": "these she bare unto Jacob, even sixteen souls.",
+   "chapter": 46,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7c04dfb4-b079-4c52-8786-685db9920c39",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "Who bare Manasseh and Ephraim to Joseph?",
+   "choices": [
+    "Zilpah",
+    "Bilhah",
+    "Asenath",
+    "Tamar"
+   ],
+   "answer": 2,
+   "evidence": "which Asenath the daughter of Potipherah priest of On bare unto him.",
+   "chapter": 46,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "af61306a-6476-47c2-863f-74e6b66b2ee8",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "How many souls of the house of Jacob came into Egypt in all?",
+   "choices": [
+    "Threescore and six",
+    "Threescore and ten",
+    "Thirty and three",
+    "Fourteen"
+   ],
+   "answer": 1,
+   "evidence": "all the souls of the house of Jacob, which came into Egypt, were threescore and ten.",
+   "chapter": 46,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e073b616-c65b-4f8c-a23d-d2361f3545d5",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "easy",
+   "question": "Which son did Jacob send ahead to Joseph to direct the way to Goshen?",
+   "choices": [
+    "Reuben",
+    "Benjamin",
+    "Levi",
+    "Judah"
+   ],
+   "answer": 3,
+   "evidence": "he sent Judah before him unto Joseph",
+   "chapter": 46,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c66f508d-a333-4f13-915a-04820c273f2e",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "medium",
+   "question": "According to Joseph, what kind of person was an abomination unto the Egyptians?",
+   "choices": [
+    "Every shepherd",
+    "Every fisherman",
+    "Every hunter",
+    "Every carpenter"
+   ],
+   "answer": 0,
+   "evidence": "every shepherd is an abomination unto the Egyptians.",
+   "chapter": 46,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ae1b9de9-f63f-4cbc-a4d8-adadb9423bf8",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "How many of his brethren did Joseph present to Pharaoh?",
+   "choices": [
+    "Ten",
+    "Five",
+    "Seven",
+    "Twelve"
+   ],
+   "answer": 1,
+   "evidence": "And he took some of his brethren, even five men, and presented them unto Pharaoh.",
+   "chapter": 47,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "124f1fb3-a296-47ea-b9fc-e84eb4000f9f",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "What occupation did Joseph's brethren tell Pharaoh they had?",
+   "choices": [
+    "Shepherds",
+    "Fishermen",
+    "Tentmakers",
+    "Potters"
+   ],
+   "answer": 0,
+   "evidence": "Thy servants are shepherds, both we, and also our fathers.",
+   "chapter": 47,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "18dd03ba-9eb1-4082-83b7-1dc33dfed741",
+   "verse_start": 8,
+   "verse_end": 9,
+   "difficulty": "hard",
+   "question": "How old did Jacob tell Pharaoh he was?",
+   "choices": [
+    "147 years",
+    "120 years",
+    "130 years",
+    "175 years"
+   ],
+   "answer": 2,
+   "evidence": "The days of the years of my pilgrimage are an hundred and thirty years:",
+   "chapter": 47,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "14a1b3c5-e815-483f-841a-01c7bb53a507",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "Whose land did Joseph not buy for Pharaoh?",
+   "choices": [
+    "The princes",
+    "The shepherds",
+    "The Levites",
+    "The priests"
+   ],
+   "answer": 3,
+   "evidence": "Only the land of the priests bought he not;",
+   "chapter": 47,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3beed416-c1da-478a-87f6-72c8f4977bca",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "What portion of the increase were the people to give unto Pharaoh?",
+   "choices": [
+    "The fifth part",
+    "The tenth part",
+    "The third part",
+    "Half"
+   ],
+   "answer": 0,
+   "evidence": "ye shall give the fifth part unto Pharaoh",
+   "chapter": 47,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4dc81909-9af7-4d0f-a637-f50e7069f87f",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "easy",
+   "question": "In which land did Jacob ask Joseph not to bury him?",
+   "choices": [
+    "Moab",
+    "Canaan",
+    "Egypt",
+    "Edom"
+   ],
+   "answer": 2,
+   "evidence": "bury me not, I pray thee, in Egypt:",
+   "chapter": 47,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bc6e7937-5469-4cf2-bef5-7807655ad4fa",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Which two sons did Joseph take with him when he heard his father was sick?",
+   "choices": [
+    "Manasseh and Ephraim",
+    "Reuben and Simeon",
+    "Levi and Judah",
+    "Benjamin and Dan"
+   ],
+   "answer": 0,
+   "evidence": "he took with him his two sons, Manasseh and Ephraim",
+   "chapter": 48,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4059108a-ff84-4d2f-93e9-18d1732d70e4",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "Where did Jacob say God Almighty appeared to him?",
+   "choices": [
+    "Hebron",
+    "Shechem",
+    "Luz",
+    "Beersheba"
+   ],
+   "answer": 2,
+   "evidence": "God Almighty appeared unto me at Luz in the land of Canaan",
+   "chapter": 48,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5ed4bc71-7bce-496b-b127-398c48178f79",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "Jacob buried Rachel in the way of Ephrath. What other name does he give for that place?",
+   "choices": [
+    "Hebron",
+    "Jerusalem",
+    "Bethel",
+    "Bethlehem"
+   ],
+   "answer": 3,
+   "evidence": "I buried her there in the way of Ephrath; the same is Bethlehem.",
+   "chapter": 48,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "827b31d4-e90d-4097-a145-c1f32cc15bc9",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "Why could Israel not see Joseph's sons clearly?",
+   "choices": [
+    "His eyes were dim for age",
+    "He was blinded by tears",
+    "His eyes were closed in sleep",
+    "His face was covered"
+   ],
+   "answer": 0,
+   "evidence": "Now the eyes of Israel were dim for age, so that he could not see.",
+   "chapter": 48,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d4648ce5-31ee-4897-b4b9-989968696859",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "On whose head did Israel lay his right hand?",
+   "choices": [
+    "Manasseh's",
+    "Ephraim's",
+    "Joseph's",
+    "Benjamin's"
+   ],
+   "answer": 1,
+   "evidence": "Israel stretched out his right hand, and laid it upon Ephraim’s head, who was the younger",
+   "chapter": 48,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "996cd06a-b9db-42c8-aaf6-a9175a9538e1",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "Out of whose hand did Israel say he took the portion he gave to Joseph?",
+   "choices": [
+    "The Hittite",
+    "The Amorite",
+    "The Canaanite",
+    "The Philistine"
+   ],
+   "answer": 1,
+   "evidence": "which I took out of the hand of the Amorite with my sword and with my bow.",
+   "chapter": 48,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "37ced10e-7e43-45fb-865f-daff99e323e1",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "Which son did Jacob call his firstborn?",
+   "choices": [
+    "Judah",
+    "Reuben",
+    "Joseph",
+    "Simeon"
+   ],
+   "answer": 1,
+   "evidence": "Reuben, thou art my firstborn",
+   "chapter": 49,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "282e74be-bb89-4ba2-aef6-c4fb2e7cfae7",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "easy",
+   "question": "Jacob called Judah the young of which animal?",
+   "choices": [
+    "A bear",
+    "An eagle",
+    "A lion",
+    "A leopard"
+   ],
+   "answer": 2,
+   "evidence": "Judah is a lion’s whelp",
+   "chapter": 49,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "110ee731-f9e5-41a0-af73-c78a99254b5b",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "Jacob said Zebulun's border would reach to which place?",
+   "choices": [
+    "Tyre",
+    "Gaza",
+    "Joppa",
+    "Zidon"
+   ],
+   "answer": 3,
+   "evidence": "his border shall be unto Zidon",
+   "chapter": 49,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b842e82f-7d57-4dd1-b659-e64435068281",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "Issachar is a strong ass couching down between how many burdens?",
+   "choices": [
+    "Three",
+    "Four",
+    "Two",
+    "Seven"
+   ],
+   "answer": 2,
+   "evidence": "Issachar is a strong ass couching down between two burdens",
+   "chapter": 49,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1774bbc3-df76-4561-b0eb-6742c26aaea9",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "medium",
+   "question": "Jacob said Benjamin would ravin like which animal?",
+   "choices": [
+    "A wolf",
+    "A lion",
+    "A bear",
+    "A fox"
+   ],
+   "answer": 0,
+   "evidence": "Benjamin shall ravin as a wolf",
+   "chapter": 49,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "67469c71-7afd-45e4-9667-976327b7e87e",
+   "verse_start": 31,
+   "verse_end": 31,
+   "difficulty": "hard",
+   "question": "Whom did Jacob say he himself had buried in the cave?",
+   "choices": [
+    "Rachel",
+    "Leah",
+    "Bilhah",
+    "Zilpah"
+   ],
+   "answer": 1,
+   "evidence": "there I buried Leah",
+   "chapter": 49,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fe4ec369-3a1d-40bb-bead-8969d2eac933",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Whom did Joseph command to embalm his father?",
+   "choices": [
+    "The physicians",
+    "The priests",
+    "The magicians",
+    "The elders"
+   ],
+   "answer": 0,
+   "evidence": "Joseph commanded his servants the physicians to embalm his father",
+   "chapter": 50,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2001e2a8-3311-45b5-a861-6ca6a4def768",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "For how many days did the Egyptians mourn for Jacob?",
+   "choices": [
+    "Forty days",
+    "Seven days",
+    "Threescore and ten days",
+    "Thirty days"
+   ],
+   "answer": 2,
+   "evidence": "the Egyptians mourned for him threescore and ten days",
+   "chapter": 50,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c3d68cc0-644a-413b-ab25-0b76ab219c5c",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "In what land were the little ones, flocks and herds left during the burial journey?",
+   "choices": [
+    "Goshen",
+    "Rameses",
+    "Zoan",
+    "Midian"
+   ],
+   "answer": 0,
+   "evidence": "only their little ones, and their flocks, and their herds, they left in the land of Goshen",
+   "chapter": 50,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b52605d5-0354-44aa-afe6-8eaa206a295b",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "hard",
+   "question": "What was the place of mourning at the threshingfloor of Atad named?",
+   "choices": [
+    "Abelmeholah",
+    "Abelshittim",
+    "Beerlahairoi",
+    "Abelmizraim"
+   ],
+   "answer": 3,
+   "evidence": "wherefore the name of it was called Abelmizraim",
+   "chapter": 50,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c82c2054-afa2-4b01-88bb-0939978841a1",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "In which cave did Jacob's sons bury him?",
+   "choices": [
+    "Adullam",
+    "Machpelah",
+    "Makkedah",
+    "Bethel"
+   ],
+   "answer": 1,
+   "evidence": "buried him in the cave of the field of Machpelah",
+   "chapter": 50,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d81243da-6fc7-47fb-9383-531b237ef765",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "easy",
+   "question": "How old was Joseph when he died?",
+   "choices": [
+    "An hundred and ten years",
+    "An hundred and twenty years",
+    "An hundred and forty-seven years",
+    "An hundred and seventy-five years"
+   ],
+   "answer": 0,
+   "evidence": "So Joseph died, being an hundred and ten years old",
+   "chapter": 50,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  }
+ ]
+}
