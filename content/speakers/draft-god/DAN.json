@@ -1,0 +1,28 @@
+{
+ "model": "claude-opus-5-5",
+ "chapters": {
+  "4": {
+   "31": [
+    [
+     80,
+     159,
+     "god",
+     "a voice from heaven"
+    ]
+   ],
+   "32": [
+    [
+     0,
+     274,
+     "god",
+     "a voice from heaven"
+    ]
+   ]
+  },
+  "9": {}
+ },
+ "rejected": {
+  "4": [],
+  "9": []
+ }
+}
