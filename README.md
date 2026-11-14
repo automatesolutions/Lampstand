@@ -11,7 +11,7 @@ Built with Next.js 16, TypeScript, Tailwind CSS 4 and Supabase. Every screen fol
 - **Pray:** a short prayer written from the chapters you read recently.
 - **Make a song:** after you mark a chapter as read, choose Praise or Worship. Claude writes original lyrics from your last three chapters and ElevenLabs Music sings them (about 70 seconds). Needs an account; three songs a day.
 - **Notes and highlights:** highlight one verse or several at once (drag, or long-press and drag on phones). Notes lists your notes and your highlights, grouped by book. Each highlight shows the verse (KJV) and a short AI summary to help you remember it. Tap a row to open the reader at that verse.
-- **Circles (Lamplighters):** private, invite-only groups. See who has read today, send nudges, and chat. Messages and nudges show up under the bell on Circles and can also be emailed. Share a highlight (one verse or several) to your Circles from Notes or the reader, with your note and its summary if you choose; each Circle can also receive your new highlights automatically (off by default).
+- **Circles (Lamplighters):** private, invite-only groups. See who has read today, send nudges, and chat. Messages and nudges show up under the bell on Circles and can also be emailed. Play a Bible challenge together: a live quiz with a join code, timer, leaderboard and podium, or the same questions on your own time to compare scores. Share a highlight (one verse or several) to your Circles from Notes or the reader, with your note and its summary if you choose; each Circle can also receive your new highlights automatically (off by default).
 - **Guest first:** everything works on the device without an account. Signing in syncs notes, highlights (with their summaries), reading and settings.
 
 ## Run it
@@ -89,6 +89,7 @@ Run the migrations in order in the SQL Editor:
 | `0009_usage_limits.sql` | Daily limits for paid features (songs, highlight summaries), shared by every server instance. Addresses are stored only as a hash |
 | `0010_notification_email_retry.sql` | A Circle message email that failed to send goes out with the sender's next message (within an hour) |
 | `0011_highlight_shares.sql` | Sharing highlights to Circles (as chat messages that follow their highlight) and the per-Circle auto-share choice |
+| `0012_bible_challenge.sql` | The Circle Bible challenge: the question bank (server only), sets, live games, players, answers and play-on-your-own scores, with the timing and scoring in the database |
 
 The app keeps working if a newer migration hasn't run yet (no notifications, no saved summaries), but run them before you deploy.
 
@@ -134,6 +135,7 @@ For Circles, also in the Supabase dashboard:
 - `content/context-cards.json` holds the book background notes. Their status is `draft` until reviewed.
 - `content/chapters/` holds the "In this chapter" explanation and key verse for every chapter, also `draft` until reviewed. Check them with `node scripts/check-chapter-notes.mjs`.
 - `public/plates/` holds one photoreal plate per book, made with Higgsfield.
+- `content/quiz/` holds the Bible challenge questions, written once with `npx tsx scripts/generate-quiz.mts` (`--estimate` is free; `--sample`, `--batch` and `--collect` call Claude) and checked against the KJV text (`lib/quiz/check.ts`): a question is played only when its evidence is copied exactly from the verses and its answer comes from that evidence. Load them into Supabase with `npx tsx scripts/seed-quiz.mts` (free). Read `content/quiz/<BOOK>.md` to review them.
 - `content/speakers/` holds who speaks where in the KJV, as character ranges in our text. Words of Jesus: `npx tsx scripts/import-speakers.mts <folder>` with the eBible.org KJV USFM files (eng-kjv2006, public domain; free, local). Other speakers: `npx tsx scripts/tag-speakers.mts` (`--estimate` is free; `--sample`, `--batch` and `--collect` call Claude; `--approve BOOK` after reviewing `content/speakers/draft/BOOK.md`). Every range is checked against our text, and anything that doesn't match exactly is left uncolored and listed.
 - `content/xrefs/` holds each chapter's best-supported cross-references from OpenBible.info (CC BY), made by `node scripts/import-xrefs.mjs`.
 

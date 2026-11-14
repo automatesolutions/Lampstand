@@ -8,6 +8,7 @@ import { CreateCircleSheet } from "@/components/lamplighters/CreateCircleSheet";
 import { NotificationsSheet } from "@/components/lamplighters/NotificationsSheet";
 import { NudgeInbox } from "@/components/lamplighters/NudgeInbox";
 import { ProfileSheet } from "@/components/lamplighters/ProfileSheet";
+import { JoinGameSheet } from "@/components/quiz/JoinGameSheet";
 import { EmptyState, ErrorState, LoadingRows } from "@/components/lamplighters/States";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
@@ -45,6 +46,7 @@ export default function CirclesPage() {
     return () => window.clearTimeout(t);
   }, [shownNudge, shownLoaded]);
   const [createOpen, setCreateOpen] = useState(false);
+  const [joinOpen, setJoinOpen] = useState(false);
   const [signInOpen, setSignInOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
@@ -171,14 +173,20 @@ export default function CirclesPage() {
           </ul>
         )}
         {list.length > 0 && (
-          <Button icon="plus" className="mt-1 self-start" onClick={() => setCreateOpen(true)}>
-            New Circle
-          </Button>
+          <div className="mt-1 flex flex-wrap gap-2.5">
+            <Button icon="plus" onClick={() => setCreateOpen(true)}>
+              New Circle
+            </Button>
+            <Button icon="users" onClick={() => setJoinOpen(true)}>
+              Join a game
+            </Button>
+          </div>
         )}
       </section>
 
       <NotificationsSheet open={notificationsOpen} onOpenChange={setNotificationsOpen} items={notifications.items ?? []} onShowNudge={showNudge} />
       <CreateCircleSheet open={createOpen} onOpenChange={setCreateOpen} />
+      <JoinGameSheet open={joinOpen} onOpenChange={setJoinOpen} />
       {me.data && (
         <ProfileSheet key={String(profileOpen)} open={profileOpen} onOpenChange={setProfileOpen} userId={me.userId!} profile={me.data} welcome={needsProfile} />
       )}

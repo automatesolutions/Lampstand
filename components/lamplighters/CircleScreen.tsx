@@ -35,6 +35,7 @@ import { Avatar, ReadLamp } from "./Avatar";
 import { InviteSheet } from "./InviteSheet";
 import { NudgeSheet } from "./NudgeSheet";
 import { ProfileSheet } from "./ProfileSheet";
+import { ChallengeSection } from "@/components/quiz/ChallengeSection";
 import { SharedHighlights } from "./SharedHighlights";
 import { EmptyState, ErrorState, LoadingRows, timeAgo } from "./States";
 
@@ -222,6 +223,8 @@ export function CircleScreen({ id }: { id: string }) {
       </section>
 
       <SharedHighlights circleId={id} people={byId} version={v} />
+
+      <ChallengeSection circleId={id} version={v} />
 
       <section aria-labelledby="recent-heading" className="flex flex-col gap-2">
         <h2 id="recent-heading" className="px-1 text-eyebrow text-text-secondary">
