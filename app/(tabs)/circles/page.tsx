@@ -27,9 +27,23 @@ export default function CirclesPage() {
   // sheet and the dot always agree. When the count changes, nudges and Circles reload too.
   const notifications = useNotifications();
   const circles = useLoad(signedIn ? myCircles : null, [me.userId, v, notifications.unread]);
-  const nudges = useLoad(signedIn ? myNudges : null, [me.userId, v, notifications.unread]);
+  // 30 nudges, or up to 100 when a notification opens an older one (item below).
+  const [nudgeLimit, setNudgeLimit] = useState(30);
+  const nudges = useLoad(signedIn ? () => myNudges(nudgeLimit) : null, [me.userId, v, notifications.unread, nudgeLimit]);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [shownNudge, setShownNudge] = useState<string | null>(null);
+  const shownLoaded = !!shownNudge && !!nudges.data?.some((n) => n.id === shownNudge);
+
+  // A nudge opened from Notifications: once it's in the inbox, scroll to it and mark it for a moment.
+  useEffect(() => {
+    if (!shownNudge || !shownLoaded) return;
+    const id = shownNudge;
+    requestAnimationFrame(() => {
+      document.getElementById(`nudge-${id}`)?.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    });
+    const t = window.setTimeout(() => setShownNudge((s) => (s === id ? null : s)), 2400);
+    return () => window.clearTimeout(t);
+  }, [shownNudge, shownLoaded]);
   const [createOpen, setCreateOpen] = useState(false);
   const [signInOpen, setSignInOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
@@ -78,14 +92,10 @@ export default function CirclesPage() {
   const list = circles.data ?? [];
   const newCount = notifications.unread;
 
-  // A nudge opened from Notifications: scroll to it in the inbox and mark it for a moment.
+  // Older than the 30 loaded: ask for more first (the effect above scrolls once it arrives).
   function showNudge(id: string) {
     setShownNudge(id);
-    requestAnimationFrame(() => {
-      const el = document.getElementById(`nudge-${id}`);
-      el?.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    });
-    window.setTimeout(() => setShownNudge((s) => (s === id ? null : s)), 2400);
+    if (!nudges.data?.some((n) => n.id === id)) setNudgeLimit(100);
   }
   return (
     <div className="arrive flex flex-col gap-8">
@@ -102,7 +112,7 @@ export default function CirclesPage() {
             >
               <Icon name="bell" className="size-6" />
               {newCount > 0 && (
-                <span aria-hidden="true" className="absolute right-0.5 top-0.5 grid min-w-5 place-items-center rounded-full bg-danger px-1 text-[0.6875rem] font-semibold leading-5 text-bg ring-2 ring-bg">
+                <span aria-hidden="true" className="absolute right-0.5 top-0.5 grid min-w-5 place-items-center rounded-full bg-danger px-1 text-[0.75rem] font-semibold leading-5 text-bg ring-2 ring-bg">
                   {newCount > 99 ? "99+" : newCount}
                 </span>
               )}

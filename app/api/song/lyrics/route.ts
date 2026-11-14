@@ -106,6 +106,6 @@ export async function POST(req: Request) {
     // Claude never answered: this doesn't count as one of today's songs.
     if (!paid) await quota.giveBack();
     console.error("Song lyrics failed", err);
-    return Response.json({ error: "The words couldn't be written just now. Try again in a moment." }, { status: 502 });
+    return Response.json({ error: "The words couldn't be written. Try again in a moment." }, { status: 502 });
   }
 }

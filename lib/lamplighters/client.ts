@@ -278,7 +278,8 @@ export interface Nudge {
 export const sendNudge = (circleId: string, recipientId: string | null, message: string, note: string) =>
   api<{ sent: number }>("/api/lamplighters/nudge", { circleId, recipientId, message, note });
 
-export const myNudges = () => rpc<Nudge[]>("my_nudges", { p_limit: 30 });
+/** Nudges sent to me, newest first: 30 unless asked for more (the database allows 100). */
+export const myNudges = (limit = 30) => rpc<Nudge[]>("my_nudges", { p_limit: limit });
 
 export async function markNudgesRead(ids: string[]) {
   if (!ids.length) return;

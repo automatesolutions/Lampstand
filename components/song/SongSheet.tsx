@@ -6,7 +6,7 @@ import { Fleuron } from "@/components/brand/LampMark";
 import { Button } from "@/components/ui/Button";
 import { Segmented } from "@/components/ui/Segmented";
 import { Sheet } from "@/components/ui/Sheet";
-import { formatRef } from "@/lib/bible/refs";
+import { listChapters } from "@/lib/bible/refs";
 import type { ChapterRef } from "@/lib/bible/types";
 import { recentChapters } from "@/lib/prayer";
 import { lyricsText, onOpenSong, SONG_CHAPTERS, SONG_STYLES, type Lyrics, type SongStyle } from "@/lib/song";
@@ -20,11 +20,6 @@ type Phase = "idle" | "writing" | "recording" | "done" | "error";
 type SignedWords = { lyrics: Lyrics; style: SongStyle; token: string };
 const stillValid = (w: SignedWords | null) => !!w && Number(w.token.split(".")[0]) > Date.now() + 30_000;
 
-function listRefs(refs: ChapterRef[]) {
-  const names = refs.map((r) => formatRef(r));
-  return names.length <= 1 ? names.join("") : `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
-}
-
 /** Songs need an account: each request carries the signed-in person's access token. */
 async function post(url: string, body: unknown, signal: AbortSignal): Promise<Response> {
   const token = (await supabase()?.auth.getSession())?.data.session?.access_token;
@@ -33,7 +28,7 @@ async function post(url: string, body: unknown, signal: AbortSignal): Promise<Re
   const res = await fetch(url, { method: "POST", headers, body: JSON.stringify(body), signal });
   if (!res.ok) {
     const d = (await res.json().catch(() => null)) as { error?: string } | null;
-    throw new Error(d?.error ?? "That couldn't be made just now. Try again in a moment.");
+    throw new Error(d?.error ?? "That couldn't be made. Try again in a moment.");
   }
   return res;
 }
@@ -157,7 +152,7 @@ export function SongSheet() {
   async function copy() {
     if (!lyrics) return;
     try {
-      await navigator.clipboard.writeText(`${lyricsText(lyrics)}\n\n(From ${listRefs(refs)})`);
+      await navigator.clipboard.writeText(`${lyricsText(lyrics)}\n\n(From ${listChapters(refs)})`);
       setCopied(true);
     } catch {
       setError("Copy isn't available in this browser.");
@@ -188,7 +183,7 @@ export function SongSheet() {
             </Button>
           ) : signedIn ? (
             <Button variant="primary" icon="music" onClick={make} disabled={busy || refs.length === 0}>
-              {busy ? "Making…" : made ? "Make another" : "Make a song"}
+              {busy ? "Making the song" : made ? "Make another" : "Make a song"}
             </Button>
           ) : (
             <Button
@@ -206,7 +201,7 @@ export function SongSheet() {
       }
     >
       <div className="flex flex-col gap-4">
-        <p className="text-subhead text-text-secondary">From {listRefs(refs)}</p>
+        <p className="text-subhead text-text-secondary">From {listChapters(refs)}</p>
         {ready && !signedIn && <p className="text-callout">Songs need an account, so the daily limit stays fair for everyone. Three songs a day.</p>}
         <Segmented label="Kind of song" value={style} options={SONG_STYLES} onChange={setStyle} />
         <p className="text-footnote text-text-secondary">
@@ -214,7 +209,7 @@ export function SongSheet() {
         </p>
 
         <p role="status" aria-live="polite" className={busy ? "text-subhead font-medium text-gold-text" : "sr-only"}>
-          {phase === "writing" ? "Writing the words…" : phase === "recording" ? "Recording the song…" : phase === "done" ? "Your song is ready" : ""}
+          {phase === "writing" ? "Writing the words." : phase === "recording" ? "Recording the song." : phase === "done" ? "Your song is ready" : ""}
         </p>
 
         {lyrics && (

@@ -70,7 +70,7 @@ export async function POST(req: Request) {
   } catch (err) {
     await quota.giveBack(); // nothing was recorded: the token and today's count come back
     console.error("Song recording failed", err instanceof ElevenLabsError ? { status: err.statusCode, body: err.body } : err);
-    return Response.json({ error: "The song couldn't be recorded just now. The words are still here to sing or copy." }, { status: 502 });
+    return Response.json({ error: "The song couldn't be recorded. The words are still here to sing or copy." }, { status: 502 });
   }
   return new Response(audio, { headers: { "Content-Type": "audio/mpeg", "Cache-Control": "no-store" } });
 }

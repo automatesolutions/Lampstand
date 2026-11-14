@@ -60,7 +60,7 @@ export function NotificationsSheet({
               <button
                 type="button"
                 onClick={() => openItem(n)}
-                className={`flex min-h-16 w-full gap-3 px-5 py-3.5 text-left active:bg-gold-wash ${n.read_at ? "" : "bg-gold-wash/40"}`}
+                className={`flex min-h-16 w-full gap-3 px-5 py-3.5 text-left active:bg-gold-wash ${n.read_at ? "" : "bg-gold-wash"}`}
               >
                 <Avatar id={n.sender_avatar} size={40} />
                 <span className="min-w-0 flex-1">

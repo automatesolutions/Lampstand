@@ -142,7 +142,7 @@ export async function POST(req: Request) {
     return json({ summary: await job });
   } catch (err) {
     console.error("Highlight summary failed", err);
-    return json({ error: "This summary couldn't be written just now. It will try again later." }, 502);
+    return json({ error: "This summary couldn't be written. It will try again later." }, 502);
   } finally {
     writing.delete(key);
   }
