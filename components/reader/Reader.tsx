@@ -19,6 +19,7 @@ import { setScreenActions } from "@/lib/palette";
 import { openExplain } from "@/lib/explain";
 import { openPrayer } from "@/lib/prayer";
 import { openSong } from "@/lib/song";
+import { SWATCH } from "@/lib/highlights/colors";
 import { colorOf, type Span } from "@/lib/highlights/ranges";
 import {
   HIGHLIGHT_COLORS,
@@ -29,10 +30,12 @@ import {
   today,
   useHydrated,
   useStore,
+  type Highlight,
   type HighlightColor,
   type Note,
 } from "@/lib/store";
 import { useReadingSummary } from "@/lib/store/hooks";
+import { ShareHighlightSheet } from "@/components/lamplighters/ShareHighlightSheet";
 import { NoteSheet } from "./NoteSheet";
 import { ReaderSettings } from "./ReaderSettings";
 import { useRangeSelect } from "./useRangeSelect";
@@ -54,12 +57,6 @@ interface Props {
 
 type NoteTarget = { verse: number | null; verseEnd?: number; existing?: Note };
 
-const SWATCH: Record<HighlightColor, { label: string; fill: string }> = {
-  gold: { label: "Gold", fill: "var(--gold)" },
-  sky: { label: "Blue", fill: "var(--pg-law)" },
-  sage: { label: "Green", fill: "var(--pg-history)" },
-  rose: { label: "Rose", fill: "var(--pg-gospels)" },
-};
 const HL_BG: Record<HighlightColor, string> = {
   gold: "color-mix(in srgb, var(--gold) 26%, transparent)",
   sky: "color-mix(in srgb, var(--pg-law) 22%, transparent)",
@@ -99,6 +96,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   const chapterReadToday = hydrated && reads.some((r) => r.book === chapter.book && r.chapter === chapter.chapter && r.readOn === today());
 
   const [noteTarget, setNoteTarget] = useState<NoteTarget | null>(null);
+  const [sharing, setSharing] = useState<Highlight | null>(null);
   const [versionOpen, setVersionOpen] = useState(false);
   const [textOpen, setTextOpen] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -648,6 +646,16 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
                 Copy
                 <Kbd>C</Kbd>
               </button>
+              {(() => {
+                // The selection is exactly one highlight: it can be shared to a Circle.
+                const h = chapterHighlights.find((x) => x.verseStart === sel.start && x.verseEnd === sel.end);
+                return h ? (
+                  <button type="button" onClick={() => setSharing(h)} aria-haspopup="dialog" className="inline-flex min-h-11 items-center gap-1.5 rounded-[12px] px-3 font-medium text-gold-text">
+                    <Icon name="share" />
+                    Share
+                  </button>
+                ) : null;
+              })()}
             </div>
           </>
         )}
@@ -677,6 +685,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
           existing={noteTarget.existing}
         />
       )}
+      {sharing && <ShareHighlightSheet highlight={sharing} onClose={() => setSharing(null)} />}
       <Sheet open={textOpen} onOpenChange={setTextOpen} title="Text" description="Text size, line spacing, font and theme">
         <ReaderSettings preview version={chapter.version} onVersionChange={switchVersion} />
       </Sheet>

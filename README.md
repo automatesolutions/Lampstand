@@ -10,8 +10,8 @@ Built with Next.js 16, TypeScript, Tailwind CSS 4 and Supabase. Every screen fol
 - **Understand:** "In this chapter" notes, "Before you read" context cards, and "Explain in depth" for every chapter.
 - **Pray:** a short prayer written from the chapters you read recently.
 - **Make a song:** after you mark a chapter as read, choose Praise or Worship. Claude writes original lyrics from your last three chapters and ElevenLabs Music sings them (about 70 seconds). Needs an account; three songs a day.
-- **Notes and highlights:** Notes lists your notes and your highlights, grouped by book. Each highlight shows the verse (KJV) and a short AI summary to help you remember it. Tap a row to open the reader at that verse.
-- **Circles (Lamplighters):** private, invite-only groups. See who has read today, send nudges, and chat. Messages and nudges show up under the bell on Circles and can also be emailed.
+- **Notes and highlights:** highlight one verse or several at once (drag, or long-press and drag on phones). Notes lists your notes and your highlights, grouped by book. Each highlight shows the verse (KJV) and a short AI summary to help you remember it. Tap a row to open the reader at that verse.
+- **Circles (Lamplighters):** private, invite-only groups. See who has read today, send nudges, and chat. Messages and nudges show up under the bell on Circles and can also be emailed. Share a highlight (one verse or several) to your Circles from Notes or the reader, with your note and its summary if you choose; each Circle can also receive your new highlights automatically (off by default).
 - **Guest first:** everything works on the device without an account. Signing in syncs notes, highlights (with their summaries), reading and settings.
 
 ## Run it
@@ -88,6 +88,7 @@ Run the migrations in order in the SQL Editor:
 | `0008_song_usage.sql` | Lets song lyrics count toward the daily AI budget |
 | `0009_usage_limits.sql` | Daily limits for paid features (songs, highlight summaries), shared by every server instance. Addresses are stored only as a hash |
 | `0010_notification_email_retry.sql` | A Circle message email that failed to send goes out with the sender's next message (within an hour) |
+| `0011_highlight_shares.sql` | Sharing highlights to Circles (as chat messages that follow their highlight) and the per-Circle auto-share choice |
 
 The app keeps working if a newer migration hasn't run yet (no notifications, no saved summaries), but run them before you deploy.
 

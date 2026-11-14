@@ -16,10 +16,12 @@ import {
   myBlocks,
   myCircles,
   myInvites,
+  myAutoShare,
   myMutes,
   react,
   removeMember,
   renameCircle,
+  setAutoShare,
   setBlocked,
   setMute,
   useLampProfile,
@@ -33,6 +35,7 @@ import { Avatar, ReadLamp } from "./Avatar";
 import { InviteSheet } from "./InviteSheet";
 import { NudgeSheet } from "./NudgeSheet";
 import { ProfileSheet } from "./ProfileSheet";
+import { SharedHighlights } from "./SharedHighlights";
 import { EmptyState, ErrorState, LoadingRows, timeAgo } from "./States";
 
 const bookName = (code?: string) => (code && bookByCode(code)?.name) || "a book";
@@ -64,6 +67,8 @@ export function CircleScreen({ id }: { id: string }) {
   const activity = useLoad(uid ? () => circleActivity(id) : null, [id, uid, v]);
   const invites = useLoad(uid ? () => myInvites(id) : null, [id, uid, v]);
   const prefs = useLoad(uid ? () => Promise.all([myMutes(), myBlocks()]) : null, [uid, v]);
+  // Auto-share needs migration 0011; before it, the row stays hidden.
+  const autoShare = useLoad(uid ? () => myAutoShare().then((rows) => rows.some((r) => r.circle_id === id)) : null, [id, uid, v]);
   const unread = useLoad(uid ? async () => (await myCircles()).find((c) => c.id === id)?.unread_count ?? 0 : null, [id, uid, v]);
 
   const [nudging, setNudging] = useState<Person | "all" | null>(null);
@@ -216,6 +221,8 @@ export function CircleScreen({ id }: { id: string }) {
         </ul>
       </section>
 
+      <SharedHighlights circleId={id} people={byId} version={v} />
+
       <section aria-labelledby="recent-heading" className="flex flex-col gap-2">
         <h2 id="recent-heading" className="px-1 text-eyebrow text-text-secondary">
           Recently
@@ -275,6 +282,20 @@ export function CircleScreen({ id }: { id: string }) {
           selected={circleMuted}
           onClick={() => setMute(uid, { circle: id }, !circleMuted).then(prefs.reload, (e) => setStatus(friendly(e)))}
         />
+        {autoShare.data != null && (
+          <ListRow
+            title="Share my new highlights here"
+            subtitle={autoShare.data ? "On. New highlights appear in this Circle's chat." : "Off. Share one at a time from Notes or the reader."}
+            icon="share"
+            selected={autoShare.data}
+            onClick={() =>
+              setAutoShare(uid, id, !autoShare.data).then(
+                () => setStatus(autoShare.data ? "Your new highlights won't be shared here." : "Your new highlights will be shared here."),
+                (e) => setStatus(friendly(e)),
+              )
+            }
+          />
+        )}
         {owner && <ListRow title="Rename" icon="pencil" chevron onClick={() => setRenameOpen(true)} />}
         <ListRow title={<span className="text-danger">Leave {c.kind === "pair" ? "this pair" : "the Circle"}</span>} icon="log-out" onClick={() => setLeaveOpen(true)} />
       </ListGroup>
@@ -331,7 +352,7 @@ export function CircleScreen({ id }: { id: string }) {
       >
         <p className="pb-2 text-body text-text-secondary">
           You&apos;ll stop seeing its members, chat and nudges. {owner && list.length > 1 ? `${list.filter((p) => !p.is_me)[0].display_name} becomes the owner.` : ""}
-          {list.length === 1 ? "You're the only one here, so the Circle will be deleted." : " Your messages stay unless you delete them first."}
+          {list.length === 1 ? "You're the only one here, so the Circle will be deleted." : " Your messages stay unless you delete them first. Highlights you shared here are removed."}
         </p>
       </Sheet>
 

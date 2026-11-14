@@ -1,5 +1,6 @@
 import { BOOKS, bookByCode, bookIndex } from "./books";
 import type { ChapterRef, VersionId } from "./types";
+import { listNames } from "@/lib/list";
 import { versionSlug } from "./provider";
 
 export function chapterKey({ book, chapter }: ChapterRef): string {
@@ -51,7 +52,5 @@ export function chapterRange(from: ChapterRef, to: ChapterRef): ChapterRef[] {
  * "John 3", "John 3 and John 2", "John 3, John 2, and John 1".
  */
 export function listChapters(refs: ChapterRef[]): string {
-  const names = refs.map((r) => formatRef(r));
-  if (names.length <= 2) return names.join(" and ");
-  return `${names.slice(0, -1).join(", ")}, and ${names[names.length - 1]}`;
+  return listNames(refs.map((r) => formatRef(r)));
 }

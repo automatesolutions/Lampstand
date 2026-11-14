@@ -35,6 +35,8 @@ const MESSAGES: Record<string, string> = {
   "rate_limited:message_minute": "Slow down a little. Try again in a minute.",
   "rate_limited:message_day": "That's the most messages for one day. More tomorrow.",
   "rate_limited:report": "Thanks, we already have your reports for today.",
+  highlight_not_saved: "This highlight isn't saved to your account yet. Try again in a moment.",
+  bad_highlight: "Only your own highlights can be shared.",
 };
 
 export class LampError extends Error {}
@@ -384,30 +386,106 @@ export function shareProgress(kind: "chapter" | "milestone", data: Record<string
 
 // ---- Chat -------------------------------------------------------------------------
 
+/** A highlight shared to a Circle (supabase/migrations/0011). The words are KJV. */
+export interface SharedHighlight {
+  ref: string;
+  text: string;
+  color: "gold" | "sky" | "sage" | "rose";
+  book: string;
+  chapter: number;
+  verse_start: number;
+  verse_end: number;
+  /** Included only when the sharer chose to. Written by AI. */
+  summary?: string;
+}
+
 export interface Message {
   id: string;
   circle_id: string;
   sender_id: string;
   body: string | null;
   verse: { ref: string; text: string } | null;
+  highlight?: SharedHighlight | null;
   created_at: string;
   deleted_at: string | null;
 }
 
-const MESSAGE_COLUMNS = "id, circle_id, sender_id, body, verse, created_at, deleted_at";
+const BASE_COLUMNS = "id, circle_id, sender_id, body, verse, created_at, deleted_at";
+// Shared highlights need migration 0011. Until it's run, chat works without them.
+let highlightColumn = true;
+const messageColumns = () => (highlightColumn ? `${BASE_COLUMNS}, highlight` : BASE_COLUMNS);
+const missingHighlight = (e: { code?: string; message?: string } | null) => !!e && (e.code === "42703" || /highlight/.test(e.message ?? ""));
+
+/** Runs a messages query, and again without the highlight column if the server doesn't have it yet. */
+async function withColumns<T>(run: (columns: string) => PromiseLike<{ data: T | null; error: { code?: string; message: string } | null }>): Promise<T | null> {
+  let { data, error } = await run(messageColumns());
+  if (error && highlightColumn && missingHighlight(error)) {
+    highlightColumn = false;
+    ({ data, error } = await run(messageColumns()));
+  }
+  if (error) throw new LampError(error.message);
+  return data;
+}
 
 /** A page of messages, newest first, from before `before` (ISO time). */
 export async function messagesBefore(circleId: string, before: string | null, limit: number): Promise<Message[]> {
-  let q = db().from("messages").select(MESSAGE_COLUMNS).eq("circle_id", circleId).order("created_at", { ascending: false }).limit(limit);
-  if (before) q = q.lt("created_at", before);
-  const { data, error } = await q;
-  if (error) throw new LampError(error.message);
-  return data as Message[];
+  const data = await withColumns<Message[]>((columns) => {
+    let q = db().from("messages").select(columns).eq("circle_id", circleId).order("created_at", { ascending: false }).limit(limit);
+    if (before) q = q.lt("created_at", before);
+    return q.returns<Message[]>();
+  });
+  return data ?? [];
 }
 
 export async function getMessage(id: string): Promise<Message | null> {
-  const { data } = await db().from("messages").select(MESSAGE_COLUMNS).eq("id", id).maybeSingle();
-  return (data as Message | null) ?? null;
+  return withColumns<Message>((columns) => db().from("messages").select(columns).eq("id", id).maybeSingle<Message>()).catch(() => null);
+}
+
+/** Highlights shared in a Circle, newest first. */
+export async function circleShares(circleId: string, limit = 20): Promise<Message[]> {
+  if (!highlightColumn) return [];
+  const { data, error } = await db()
+    .from("messages")
+    .select(messageColumns())
+    .eq("circle_id", circleId)
+    .not("highlight", "is", null)
+    .is("deleted_at", null)
+    .order("created_at", { ascending: false })
+    .limit(limit)
+    .returns<Message[]>();
+  if (error) {
+    if (missingHighlight(error)) return [];
+    throw new LampError(error.message);
+  }
+  return data ?? [];
+}
+
+// ---- Sharing highlights -------------------------------------------------------------
+
+export interface ShareResult {
+  shared: string[];
+  already: string[];
+  failed: Record<string, string>;
+}
+
+/** Shares my highlight (already saved to my account) to these Circles. */
+export const shareHighlight = (highlightId: string, circleIds: string[], note: string, withSummary: boolean) =>
+  api<ShareResult>("/api/lamplighters/share", { highlightId, circleIds, note, withSummary });
+
+/** The Circles that get my new highlights automatically, with when each was turned on. */
+export async function myAutoShare(): Promise<{ circle_id: string; created_at: string }[]> {
+  const { data, error } = await db().from("highlight_auto_share").select("circle_id, created_at");
+  if (error) throw new LampError(error.message);
+  return data as { circle_id: string; created_at: string }[];
+}
+
+export async function setAutoShare(userId: string, circleId: string, on: boolean) {
+  const q = on
+    ? db().from("highlight_auto_share").insert({ user_id: userId, circle_id: circleId })
+    : db().from("highlight_auto_share").delete().eq("user_id", userId).eq("circle_id", circleId);
+  const { error } = await q;
+  if (error && error.code !== "23505") throw new LampError(error.message);
+  changed();
 }
 
 /**

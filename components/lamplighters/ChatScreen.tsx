@@ -6,6 +6,9 @@ import { Button, IconButton } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { Sheet } from "@/components/ui/Sheet";
 import { parseRef, versesIn } from "@/lib/bible/parse";
+import { readerHref } from "@/lib/bible/refs";
+import { SWATCH } from "@/lib/highlights/colors";
+import { useStore } from "@/lib/store";
 import {
   circlePeople,
   deleteMessage,
@@ -20,6 +23,7 @@ import {
   useLampProfile,
   useLoad,
   type Message,
+  type SharedHighlight,
 } from "@/lib/lamplighters/client";
 import { LAMPLIGHTERS } from "@/lib/lamplighters/config";
 import { supabase } from "@/lib/supabase/client";
@@ -27,6 +31,24 @@ import { Avatar } from "./Avatar";
 import { ErrorState, LoadingRows } from "./States";
 
 const timeOf = (iso: string) => new Date(iso).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+/** A shared highlight in a bubble: the color's stripe, the reference, the KJV words, and the summary if shared. */
+function HighlightCard({ h }: { h: SharedHighlight }) {
+  return (
+    <span className="flex flex-col gap-1 rounded-md border-l-[3px] bg-bg/70 px-3 py-2" style={{ borderColor: SWATCH[h.color]?.fill ?? "var(--gold)" }}>
+      <span className="text-footnote font-semibold text-gold-text">
+        Highlighted {h.ref} KJV<span className="sr-only">, {SWATCH[h.color]?.label.toLowerCase() ?? ""} highlight</span>
+      </span>
+      <span className="line-clamp-6 font-scripture text-subhead leading-relaxed">{h.text}</span>
+      {h.summary && (
+        <span className="mt-1 border-t border-divider pt-1.5 text-callout text-text-secondary">
+          {h.summary}
+          <span className="mt-0.5 block text-footnote">Summary written by AI.</span>
+        </span>
+      )}
+    </span>
+  );
+}
+
 const dayOf = (iso: string) => new Date(iso).toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
 
 /** Newest last, one copy of each message. */
@@ -265,7 +287,7 @@ export function ChatScreen({ id }: { id: string }) {
                       <button
                         type="button"
                         onClick={() => !m.deleted_at && setSelected(m)}
-                        aria-label={`${mine ? "You" : (person?.display_name ?? "Former member")}, ${timeOf(m.created_at)}: ${m.deleted_at ? "message deleted" : (m.verse ? `${m.verse.ref}. ${m.verse.text}. ` : "") + (m.body ?? "")}. Options`}
+                        aria-label={`${mine ? "You" : (person?.display_name ?? "Former member")}, ${timeOf(m.created_at)}: ${m.deleted_at ? "message deleted" : (m.verse ? `${m.verse.ref}. ${m.verse.text}. ` : "") + (m.highlight ? `Highlighted ${m.highlight.ref}. ${m.highlight.text}. ` : "") + (m.body ?? "")}. Options`}
                         className={`flex max-w-[78%] flex-col gap-1 rounded-lg px-3.5 py-2.5 text-left ${mine ? "rounded-br-[6px] bg-gold-wash" : "rounded-bl-[6px] bg-surface-raised shadow-soft ring-1 ring-divider/60"}`}
                       >
                         {!mine && !grouped && <span className="text-footnote font-semibold text-gold-text">{person?.display_name ?? "Former member"}</span>}
@@ -279,6 +301,7 @@ export function ChatScreen({ id }: { id: string }) {
                                 <span className="text-footnote font-semibold text-gold-text">{m.verse.ref} KJV</span>
                               </span>
                             )}
+                            {m.highlight && <HighlightCard h={m.highlight} />}
                             {m.body && <span className="whitespace-pre-wrap break-words text-body">{m.body}</span>}
                           </>
                         )}
@@ -374,7 +397,9 @@ function MessageOptions({
   const [reporting, setReporting] = useState(false);
   const [reason, setReason] = useState("");
   const [busy, setBusy] = useState(false);
-  const text = [message.verse ? `${message.verse.text} (${message.verse.ref} KJV)` : "", message.body ?? ""].filter(Boolean).join("\n");
+  const version = useStore((s) => s.prefs.version);
+  const h = message.highlight;
+  const text = [message.verse ? `${message.verse.text} (${message.verse.ref} KJV)` : "", h ? `${h.text} (${h.ref} KJV)` : "", message.body ?? ""].filter(Boolean).join("\n");
 
   const act = async (fn: () => Promise<unknown>, after: () => void) => {
     setBusy(true);
@@ -425,6 +450,13 @@ function MessageOptions({
           <Icon name="copy" className="size-5 text-gold" /> Copy
         </button>
       </li>
+      {h && (
+        <li className="border-t border-divider">
+          <Link href={readerHref(version, h, h.verse_start, h.verse_end)} className="flex min-h-14 w-full items-center gap-3 px-4 text-left text-headline">
+            <Icon name="book-open" className="size-5 text-gold" /> Open {h.ref}
+          </Link>
+        </li>
+      )}
       {canDelete && (
         <li className="border-t border-divider">
           <button type="button" disabled={busy} onClick={() => act(() => deleteMessage(message.id), () => (onDeleted(message.id), onDone()))} className="flex min-h-14 w-full items-center gap-3 px-4 text-left text-headline text-danger">

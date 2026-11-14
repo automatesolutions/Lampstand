@@ -8,15 +8,10 @@ import { BOOKS, bookIndex } from "@/lib/bible/books";
 import { formatRef, readerHref } from "@/lib/bible/refs";
 import { MAX_BATCH_VERSES, MAX_RANGE_VERSES, rangeKey, shownRange, type VerseRange } from "@/lib/bible/verse-batch";
 import { MAX_SUMMARY_VERSES } from "@/lib/highlights/ranges";
-import { useHydrated, useStore, type HighlightColor } from "@/lib/store";
+import { ShareHighlightSheet } from "@/components/lamplighters/ShareHighlightSheet";
+import { SWATCH } from "@/lib/highlights/colors";
+import { useHydrated, useStore, type Highlight } from "@/lib/store";
 
-// Same pigments and names as the reader's highlight swatches (DESIGN.md §2).
-const SWATCH: Record<HighlightColor, { label: string; fill: string }> = {
-  gold: { label: "Gold", fill: "var(--gold)" },
-  sky: { label: "Blue", fill: "var(--pg-law)" },
-  sage: { label: "Green", fill: "var(--pg-history)" },
-  rose: { label: "Rose", fill: "var(--pg-gospels)" },
-};
 
 // Highlighted verse text, KJV (public domain), all fetched together from /api/verse/batch
 // and kept for this visit. 100 ranges a request (the route's cap is 1,000 verses, 10 a
@@ -85,6 +80,7 @@ export default function NotesPage() {
   const highlights = useStore((s) => s.highlights);
   const version = useStore((s) => s.prefs.version);
   const [query, setQuery] = useState("");
+  const [sharing, setSharing] = useState<Highlight | null>(null);
   const searchId = useId();
 
   const groups = useMemo(() => {
@@ -187,10 +183,10 @@ export default function NotesPage() {
                 {items.map((h) => {
                   const ref = formatRef({ book: h.book, chapter: h.chapter, verse: h.verseStart, verseEnd: h.verseEnd });
                   return (
-                    <li key={h.id} className="relative after:absolute after:inset-x-4 after:bottom-0 after:h-px after:bg-divider last:after:hidden">
+                    <li key={h.id} className="relative flex after:absolute after:inset-x-4 after:bottom-0 after:h-px after:bg-divider last:after:hidden">
                       <Link
                         href={readerHref(version, h, h.verseStart, h.verseEnd)}
-                        className="flex min-h-14 gap-3 px-[18px] py-4 active:bg-gold-wash [@media(hover:hover)]:hover:bg-gold-wash/60"
+                        className="flex min-h-14 min-w-0 flex-1 gap-3 py-4 pl-[18px] pr-1 active:bg-gold-wash [@media(hover:hover)]:hover:bg-gold-wash/60"
                       >
                         <span aria-hidden="true" className="mt-1 size-3.5 shrink-0 rounded-full ring-1 ring-divider" style={{ background: SWATCH[h.color].fill }} />
                         <span className="flex min-w-0 flex-1 flex-col gap-1.5">
@@ -214,6 +210,16 @@ export default function NotesPage() {
                           )}
                         </span>
                       </Link>
+                      {/* Next to the row, not inside the link: one control, one action. */}
+                      <button
+                        type="button"
+                        onClick={() => setSharing(h)}
+                        aria-haspopup="dialog"
+                        aria-label={`Share ${ref} to a Circle`}
+                        className="mr-1.5 mt-2.5 grid size-11 shrink-0 place-items-center rounded-full text-gold-text"
+                      >
+                        <Icon name="share" className="size-5" />
+                      </button>
                     </li>
                   );
                 })}
@@ -222,6 +228,7 @@ export default function NotesPage() {
           ))}
         </>
       )}
+      {sharing && <ShareHighlightSheet highlight={sharing} onClose={() => setSharing(null)} />}
     </div>
   );
 }
