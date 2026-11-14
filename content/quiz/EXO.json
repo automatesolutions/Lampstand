@@ -1,0 +1,4579 @@
+{
+ "questions": [
+  {
+   "id": "0b4c5bd7-94f3-4800-b869-e27a9f8bafe7",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "hard",
+   "question": "How many souls came out of the loins of Jacob?",
+   "choices": [
+    "Seventy",
+    "Seventy-five",
+    "Sixty-six",
+    "Twelve"
+   ],
+   "answer": 0,
+   "evidence": "all the souls that came out of the loins of Jacob were seventy souls",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4b4c446b-1a08-4e9f-8ea8-c505fbe92cd2",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "Which treasure cities did the Israelites build for Pharaoh?",
+   "choices": [
+    "Zoan and Noph",
+    "Succoth and Etham",
+    "Goshen and On",
+    "Pithom and Raamses"
+   ],
+   "answer": 3,
+   "evidence": "they built for Pharaoh treasure cities, Pithom and Raamses",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "638ac7ae-b508-4b26-837d-bc949b6f599e",
+   "verse_start": 15,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "To whom did the king of Egypt give orders about the Hebrew baby boys?",
+   "choices": [
+    "The Hebrew midwives",
+    "The taskmasters",
+    "The elders of Israel",
+    "The priests of On"
+   ],
+   "answer": 0,
+   "evidence": "the king of Egypt spake to the Hebrew midwives",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8be86ab9-3845-49f5-934d-f00142205dc0",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "medium",
+   "question": "What were the names of the two Hebrew midwives?",
+   "choices": [
+    "Bilhah and Zilpah",
+    "Leah and Rachel",
+    "Shiphrah and Puah",
+    "Miriam and Jochebed"
+   ],
+   "answer": 2,
+   "evidence": "the name of the one was Shiphrah, and the name of the other Puah",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5f05b795-db07-475f-997c-224702dfb28f",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "hard",
+   "question": "Because the midwives feared God, what did he make them?",
+   "choices": [
+    "Vineyards",
+    "Houses",
+    "Garments",
+    "Wells"
+   ],
+   "answer": 1,
+   "evidence": "because the midwives feared God, that he made them houses",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "80efc573-0f60-47c8-ba30-3d2d0d157e7b",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "easy",
+   "question": "What did Pharaoh command his people to do with every Hebrew son that was born?",
+   "choices": [
+    "Sell him into slavery",
+    "Cast him into the river",
+    "Leave him in the desert",
+    "Send him to Goshen"
+   ],
+   "answer": 1,
+   "evidence": "Every son that is born ye shall cast into the river",
+   "chapter": 1,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1f69f107-2ec8-4853-8355-15f7738cc1ed",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "hard",
+   "question": "How long did the mother hide her goodly child before making the ark?",
+   "choices": [
+    "Three months",
+    "Six months",
+    "Forty days",
+    "Two years"
+   ],
+   "answer": 0,
+   "evidence": "she hid him three months.",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "12cb5368-c88a-4aa6-bec1-8d6442dcc252",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "easy",
+   "question": "Who came down to the river and found the child in the ark?",
+   "choices": [
+    "The daughter of Pharaoh",
+    "Miriam the prophetess",
+    "The wife of Potiphar",
+    "A priest of Midian"
+   ],
+   "answer": 0,
+   "evidence": "And the daughter of Pharaoh came down to wash herself at the river",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "74f813df-27f9-4dbe-8581-e63376abf58f",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "easy",
+   "question": "To which land did Moses flee from Pharaoh?",
+   "choices": [
+    "Edom",
+    "Moab",
+    "Midian",
+    "Canaan"
+   ],
+   "answer": 2,
+   "evidence": "dwelt in the land of Midian",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bb6f9157-6d6f-43bd-84a7-d545dec971f7",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "How many daughters did the priest of Midian have?",
+   "choices": [
+    "Three",
+    "Five",
+    "Twelve",
+    "Seven"
+   ],
+   "answer": 3,
+   "evidence": "the priest of Midian had seven daughters",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "df3a693e-1a33-4801-9591-5c6e0d47c90e",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "medium",
+   "question": "Which daughter was given to Moses as his wife?",
+   "choices": [
+    "Rachel",
+    "Zipporah",
+    "Leah",
+    "Rebekah"
+   ],
+   "answer": 1,
+   "evidence": "he gave Moses Zipporah his daughter.",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "48dbbd51-0c63-4c0f-8d9e-bf64685d4a19",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "What name did Moses give to his son?",
+   "choices": [
+    "Eliezer",
+    "Manasseh",
+    "Kohath",
+    "Gershom"
+   ],
+   "answer": 3,
+   "evidence": "he called his name Gershom",
+   "chapter": 2,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f1f3866e-3508-44b6-a73f-1831ef470980",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Whose flock was Moses keeping when he came to the mountain of God?",
+   "choices": [
+    "Laban's",
+    "Jethro's",
+    "Isaac's",
+    "Aaron's"
+   ],
+   "answer": 1,
+   "evidence": "Now Moses kept the flock of Jethro his father in law, the priest of Midian",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e5c55c3b-6f18-4c65-9bbb-334ff29ec259",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "medium",
+   "question": "What is the mountain of God called in this chapter?",
+   "choices": [
+    "Carmel",
+    "Moriah",
+    "Nebo",
+    "Horeb"
+   ],
+   "answer": 3,
+   "evidence": "came to the mountain of God, even to Horeb.",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f758e532-a28f-4dd9-b7ad-930d070406fa",
+   "verse_start": 2,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "What did Moses see burning with fire yet not consumed?",
+   "choices": [
+    "An altar",
+    "A tree",
+    "A bush",
+    "A tent"
+   ],
+   "answer": 2,
+   "evidence": "the bush burned with fire, and the bush was not consumed",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "904d0c48-255e-4df6-8380-61607d4dd5d8",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "medium",
+   "question": "What was Moses told to put off because he stood on holy ground?",
+   "choices": [
+    "His shoes",
+    "His cloak",
+    "His staff",
+    "His girdle"
+   ],
+   "answer": 0,
+   "evidence": "put off thy shoes from off thy feet, for the place whereon thou standest is holy ground.",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7042e868-a847-426d-90c4-0e486aab9c4d",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "hard",
+   "question": "In verse 14, Moses is told to say to the children of Israel that who has sent him?",
+   "choices": [
+    "The Most High",
+    "The Almighty",
+    "I AM",
+    "The Holy One"
+   ],
+   "answer": 2,
+   "evidence": "I AM hath sent me unto you.",
+   "chapter": 3,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9b01dcbd-9fed-46dd-99f6-4c8066956bb2",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "hard",
+   "question": "How long a journey into the wilderness were they to ask the king of Egypt for, in order to sacrifice?",
+   "choices": [
+    "Seven days",
+    "Three days",
+    "Forty days",
+    "Two days"
+   ],
+   "answer": 1,
+   "evidence": "three days’ journey into the wilderness",
+   "chapter": 3,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a2d65088-7347-4072-b334-c6da2b434c11",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "When the LORD asked what was in his hand, what did Moses answer?",
+   "choices": [
+    "A sling",
+    "A rod",
+    "A spear",
+    "A trumpet"
+   ],
+   "answer": 1,
+   "evidence": "And he said, A rod.",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "415966ee-75ba-4744-8d03-18037bb43367",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "hard",
+   "question": "By what part did the LORD tell Moses to take the serpent?",
+   "choices": [
+    "By the head",
+    "By the neck",
+    "By the tail",
+    "By the middle"
+   ],
+   "answer": 2,
+   "evidence": "Put forth thine hand, and take it by the tail.",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4ac92d47-7920-492f-90a0-dd08d5f1cf27",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "When Moses took his hand out of his bosom, his hand was leprous as what?",
+   "choices": [
+    "As wool",
+    "As milk",
+    "As salt",
+    "As snow"
+   ],
+   "answer": 3,
+   "evidence": "his hand was leprous as snow",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a62cbc43-1d7d-4a51-8a07-3ccc9cda3ea2",
+   "verse_start": 14,
+   "verse_end": 16,
+   "difficulty": "easy",
+   "question": "Whom did the LORD name as Moses' brother, who could speak well?",
+   "choices": [
+    "Joshua",
+    "Hur",
+    "Aaron",
+    "Jethro"
+   ],
+   "answer": 2,
+   "evidence": "Is not Aaron the Levite thy brother? I know that he can speak well.",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "37e48ae4-5199-41e8-8fce-81870d9527d6",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "medium",
+   "question": "Who took a sharp stone and cut off the foreskin of her son?",
+   "choices": [
+    "Zipporah",
+    "Miriam",
+    "Jochebed",
+    "Rebekah"
+   ],
+   "answer": 0,
+   "evidence": "Then Zipporah took a sharp stone, and cut off the foreskin of her son",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f3688f38-757f-42bb-be0c-98fbf3c06d02",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "Where did Aaron meet Moses and kiss him?",
+   "choices": [
+    "In the land of Goshen",
+    "In the mount of God",
+    "At the river Jordan",
+    "At Beersheba"
+   ],
+   "answer": 1,
+   "evidence": "And he went, and met him in the mount of God, and kissed him.",
+   "chapter": 4,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ff1bc835-52c3-4663-97a1-7b5cc8031444",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Who went in with Moses to speak to Pharaoh?",
+   "choices": [
+    "Aaron",
+    "Joshua",
+    "Caleb",
+    "Jethro"
+   ],
+   "answer": 0,
+   "evidence": "Moses and Aaron went in, and told Pharaoh",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a179f3ce-8880-43ad-9c81-e6da90ed026d",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "How far into the desert did Moses and Aaron ask to go to sacrifice?",
+   "choices": [
+    "Seven days' journey",
+    "Two days' journey",
+    "Three days' journey",
+    "Forty days' journey"
+   ],
+   "answer": 2,
+   "evidence": "three days’ journey into the desert",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "28b0263b-c225-4d37-a29f-1883a9bb07a8",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "easy",
+   "question": "What did Pharaoh order should no longer be given to the people for making brick?",
+   "choices": [
+    "Clay",
+    "Straw",
+    "Water",
+    "Wood"
+   ],
+   "answer": 1,
+   "evidence": "Ye shall no more give the people straw to make brick",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2430c2d0-18f6-4ec8-ac5b-c8abfc298031",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "What did the scattered people gather instead of straw?",
+   "choices": [
+    "Reeds",
+    "Hay",
+    "Chaff",
+    "Stubble"
+   ],
+   "answer": 3,
+   "evidence": "to gather stubble instead of straw",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f1561db4-2667-44f2-bf85-87f21bbc6ab8",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "What did Pharaoh twice call the Israelite officers who complained to him?",
+   "choices": [
+    "Idle",
+    "Proud",
+    "Rebellious",
+    "Wicked"
+   ],
+   "answer": 0,
+   "evidence": "Ye are idle, ye are idle",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "df4d3817-6f2a-4240-9061-cf1f5bc55319",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "hard",
+   "question": "What did the officers tell Moses and Aaron had been put in the Egyptians' hand to slay them?",
+   "choices": [
+    "A spear",
+    "A sword",
+    "A rod",
+    "A bow"
+   ],
+   "answer": 1,
+   "evidence": "to put a sword in their hand to slay us",
+   "chapter": 5,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "286805a0-cd61-4292-9d14-cfa5442fae2f",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "By what name did God say He appeared to Abraham, Isaac and Jacob?",
+   "choices": [
+    "God Almighty",
+    "Most High God",
+    "Everlasting God",
+    "Lord of Hosts"
+   ],
+   "answer": 0,
+   "evidence": "I appeared unto Abraham, unto Isaac, and unto Jacob, by the name of God Almighty",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bb708f1a-9655-4fc2-9a41-bd5c04170c1e",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "Why did the children of Israel not hearken unto Moses?",
+   "choices": [
+    "Fear of Pharaoh",
+    "Hunger and thirst",
+    "Anguish of spirit",
+    "Unbelief in God"
+   ],
+   "answer": 2,
+   "evidence": "they hearkened not unto Moses for anguish of spirit, and for cruel bondage",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6e820fe7-63c5-40ef-902f-c1f04354a209",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "What kind of lips did Moses say he had?",
+   "choices": [
+    "Unclean lips",
+    "Slow lips",
+    "Stammering lips",
+    "Uncircumcised lips"
+   ],
+   "answer": 3,
+   "evidence": "how then shall Pharaoh hear me, who am of uncircumcised lips?",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "30e7614f-cb39-431f-a83a-7acfd70fd126",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "How many years did Levi live?",
+   "choices": [
+    "133",
+    "137",
+    "130",
+    "147"
+   ],
+   "answer": 1,
+   "evidence": "the years of the life of Levi were an hundred thirty and seven years",
+   "chapter": 6,
+   "status": "draft",
+   "problems": [
+    "the correct choice doesn't come from the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e0bfcb5d-56f9-4c48-ab4f-cf55e63bb21f",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "Whom did Amram take to wife, who bore him Aaron and Moses?",
+   "choices": [
+    "Elisheba",
+    "Jochebed",
+    "Zipporah",
+    "Miriam"
+   ],
+   "answer": 1,
+   "evidence": "Amram took him Jochebed his father’s sister to wife; and she bare him Aaron and Moses",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e3ebf7fd-d50c-43be-89b8-77f45a77797b",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "Eleazar, Aaron's son, took to wife one of the daughters of whom?",
+   "choices": [
+    "Putiel",
+    "Amminadab",
+    "Izhar",
+    "Uzziel"
+   ],
+   "answer": 0,
+   "evidence": "Eleazar Aaron’s son took him one of the daughters of Putiel to wife",
+   "chapter": 6,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8e5f7780-1675-4e92-a590-6ed46f8c7c99",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "hard",
+   "question": "How old was Aaron when he and Moses spoke unto Pharaoh?",
+   "choices": [
+    "Fourscore and three",
+    "Fourscore",
+    "Threescore and ten",
+    "Fourscore and seven"
+   ],
+   "answer": 0,
+   "evidence": "and Aaron fourscore and three years old",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b435b663-c0db-42dd-853d-ad4cabd99bc5",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "easy",
+   "question": "What did Aaron's rod become when he cast it down before Pharaoh?",
+   "choices": [
+    "A serpent",
+    "A dove",
+    "A lamb",
+    "A tree"
+   ],
+   "answer": 0,
+   "evidence": "and it became a serpent",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cb49b5e7-cd84-49d0-ab8e-96cb8b995529",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "What happened to the rods of Pharaoh's magicians?",
+   "choices": [
+    "They burned up",
+    "They broke apart",
+    "Aaron’s rod swallowed them up",
+    "They turned to dust"
+   ],
+   "answer": 2,
+   "evidence": "but Aaron’s rod swallowed up their rods.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b4b8f58b-326e-4e4a-af15-a6feb5ebd555",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "medium",
+   "question": "Where was Moses told to stand to meet Pharaoh in the morning?",
+   "choices": [
+    "At the city gate",
+    "In the palace court",
+    "At the temple door",
+    "By the river’s brink"
+   ],
+   "answer": 3,
+   "evidence": "thou shalt stand by the river’s brink",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fc32e937-bcc9-49d0-99bf-1229cec4b173",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "What were the waters in the river turned into?",
+   "choices": [
+    "Wine",
+    "Blood",
+    "Dust",
+    "Ice"
+   ],
+   "answer": 1,
+   "evidence": "all the waters that were in the river were turned to blood",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bc6a2e2c-a64a-431a-97e8-6706495c930b",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "How many days were fulfilled after the LORD had smitten the river?",
+   "choices": [
+    "Three",
+    "Seven",
+    "Forty",
+    "Ten"
+   ],
+   "answer": 1,
+   "evidence": "And seven days were fulfilled, after that the LORD had smitten the river.",
+   "chapter": 7,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "e79216c2-bd1a-4f36-97bb-70e83d3bd7e7",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "easy",
+   "question": "What came up and covered the land of Egypt when Aaron stretched out his hand over the waters?",
+   "choices": [
+    "Locusts",
+    "Frogs",
+    "Serpents",
+    "Quails"
+   ],
+   "answer": 1,
+   "evidence": "the frogs came up, and covered the land of Egypt",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b26d2570-5437-4799-8911-4d72af140855",
+   "verse_start": 9,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "When Moses asked when he should intreat for the frogs to be destroyed, what did Pharaoh answer?",
+   "choices": [
+    "This night",
+    "To morrow",
+    "In three days",
+    "At noon"
+   ],
+   "answer": 1,
+   "evidence": "And he said, To morrow.",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c6091b25-487a-4c0b-a19d-13d9e6208c83",
+   "verse_start": 16,
+   "verse_end": 17,
+   "difficulty": "easy",
+   "question": "What did the dust of the land become when Aaron smote it with his rod?",
+   "choices": [
+    "Boils",
+    "Hail",
+    "Lice",
+    "Locusts"
+   ],
+   "answer": 2,
+   "evidence": "all the dust of the land became lice throughout all the land of Egypt",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "492fe356-5ee7-4897-b79f-890b1f2290fe",
+   "verse_start": 18,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "After failing to bring forth lice, what did the magicians tell Pharaoh?",
+   "choices": [
+    "This is the finger of God",
+    "This is the hand of Moses",
+    "This is the arm of the LORD",
+    "This is the rod of Aaron"
+   ],
+   "answer": 0,
+   "evidence": "Then the magicians said unto Pharaoh, This is the finger of God",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "967eb754-0476-40e3-ba8a-4c98b7a1e737",
+   "verse_start": 22,
+   "verse_end": 23,
+   "difficulty": "medium",
+   "question": "Which land did the LORD say would have no swarms of flies?",
+   "choices": [
+    "Midian",
+    "Canaan",
+    "Sinai",
+    "Goshen"
+   ],
+   "answer": 3,
+   "evidence": "the land of Goshen, in which my people dwell, that no swarms of flies shall be there",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5cd78d6b-5564-4b08-8127-abf54a6ff50e",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "How far into the wilderness did Moses say the people would go to sacrifice?",
+   "choices": [
+    "Seven days' journey",
+    "Forty days' journey",
+    "Three days' journey",
+    "Two days' journey"
+   ],
+   "answer": 2,
+   "evidence": "We will go three days’ journey into the wilderness",
+   "chapter": 8,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "19f65954-3416-44fd-8902-f2601ef62ba9",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "What set time did the LORD appoint for the plague on the cattle?",
+   "choices": [
+    "In seven days",
+    "At midnight",
+    "To morrow",
+    "In three days"
+   ],
+   "answer": 2,
+   "evidence": "To morrow the LORD shall do this thing in the land.",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "450eca9c-8d58-4106-a650-dba2e69536e8",
+   "verse_start": 8,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "What did the LORD tell Moses and Aaron to take handfuls of, to be sprinkled toward heaven?",
+   "choices": [
+    "Dust of the earth",
+    "Water of the river",
+    "Ashes of the furnace",
+    "Blood of a lamb"
+   ],
+   "answer": 2,
+   "evidence": "Take to you handfuls of ashes of the furnace",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fa148f8b-9b5b-4cfe-95a8-72b099d30838",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "medium",
+   "question": "Who could not stand before Moses because of the boils?",
+   "choices": [
+    "The elders of Israel",
+    "Pharaoh's priests",
+    "The Egyptian captains",
+    "The magicians"
+   ],
+   "answer": 3,
+   "evidence": "the magicians could not stand before Moses because of the boils",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "12ace46c-100d-4a4b-8a81-eb7b3313e597",
+   "verse_start": 22,
+   "verse_end": 23,
+   "difficulty": "easy",
+   "question": "What did the LORD rain upon the land of Egypt when Moses stretched toward heaven?",
+   "choices": [
+    "Hail",
+    "Frogs",
+    "Locusts",
+    "Manna"
+   ],
+   "answer": 0,
+   "evidence": "the LORD rained hail upon the land of Egypt",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "32efc25f-fd7e-4d75-9224-b0a12abfd04c",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "easy",
+   "question": "In which land, where the children of Israel were, was there no hail?",
+   "choices": [
+    "Midian",
+    "Goshen",
+    "Canaan",
+    "Sinai"
+   ],
+   "answer": 1,
+   "evidence": "Only in the land of Goshen, where the children of Israel were, was there no hail.",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8809d58d-d48d-48f8-9e50-a5c2c5312874",
+   "verse_start": 31,
+   "verse_end": 32,
+   "difficulty": "hard",
+   "question": "Which crops were NOT smitten by the hail, because they were not grown up?",
+   "choices": [
+    "The wheat and the rie",
+    "The flax and the barley",
+    "The olives and the figs",
+    "The vines and the dates"
+   ],
+   "answer": 0,
+   "evidence": "But the wheat and the rie were not smitten: for they were not grown up.",
+   "chapter": 9,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a2e42623-2190-4942-b168-14c4793ced46",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "easy",
+   "question": "What did Moses warn the LORD would bring into Pharaoh's coast \"to morrow\"?",
+   "choices": [
+    "Frogs",
+    "Locusts",
+    "Lice",
+    "Flies"
+   ],
+   "answer": 1,
+   "evidence": "to morrow will I bring the locusts into thy coast",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "57bcccfb-d33e-4921-9e70-180b716e0582",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "Which wind brought the locusts in the morning?",
+   "choices": [
+    "West wind",
+    "North wind",
+    "South wind",
+    "East wind"
+   ],
+   "answer": 3,
+   "evidence": "the east wind brought the locusts",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "954c96ea-08b5-407c-901d-6084bd1490d7",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "Where did the wind cast the locusts when it took them away?",
+   "choices": [
+    "Into the Red sea",
+    "Into the river Jordan",
+    "Into the Salt sea",
+    "Into the wilderness"
+   ],
+   "answer": 0,
+   "evidence": "which took away the locusts, and cast them into the Red sea",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "db56806e-18ee-4adb-9939-8347760b17f1",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "For how many days was there thick darkness in all the land of Egypt?",
+   "choices": [
+    "Seven days",
+    "Three days",
+    "Forty days",
+    "One day"
+   ],
+   "answer": 1,
+   "evidence": "there was a thick darkness in all the land of Egypt three days",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ef04341a-9df5-4f1c-a592-504a1fc6dab6",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "easy",
+   "question": "During the darkness, who had light in their dwellings?",
+   "choices": [
+    "The Egyptians",
+    "Pharaoh's servants",
+    "The children of Israel",
+    "The Philistines"
+   ],
+   "answer": 2,
+   "evidence": "all the children of Israel had light in their dwellings",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bffb5286-7d23-4988-bfb2-03e879384ccc",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "After the darkness, what did Pharaoh say must be stayed behind?",
+   "choices": [
+    "Their little ones",
+    "Their wives",
+    "Their flocks and herds",
+    "Their gold and silver"
+   ],
+   "answer": 2,
+   "evidence": "only let your flocks and your herds be stayed",
+   "chapter": 10,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4e7675f1-e16b-479b-9388-5b7836414ecf",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "How many more plagues did the LORD say He would bring upon Pharaoh and Egypt?",
+   "choices": [
+    "One",
+    "Two",
+    "Three",
+    "Seven"
+   ],
+   "answer": 0,
+   "evidence": "Yet will I bring one plague more upon Pharaoh",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "07096195-5f4a-4cf9-94bb-e82718f49aca",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "What were the people told to borrow of their neighbours?",
+   "choices": [
+    "Jewels of silver and gold",
+    "Bread and wine",
+    "Garments of linen",
+    "Cattle and sheep"
+   ],
+   "answer": 0,
+   "evidence": "jewels of silver, and jewels of gold",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9a31f080-b125-49d1-82d8-b48c8274e6dd",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "At about what time did the LORD say He would go out into the midst of Egypt?",
+   "choices": [
+    "Midnight",
+    "Dawn",
+    "Noon",
+    "Evening"
+   ],
+   "answer": 0,
+   "evidence": "About midnight will I go out into the midst of Egypt",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "135ab99d-ae46-4421-99b6-8b64ff993fac",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "easy",
+   "question": "Who in the land of Egypt did Moses say would die?",
+   "choices": [
+    "All the firstborn",
+    "All the elders",
+    "All the priests",
+    "All the soldiers"
+   ],
+   "answer": 0,
+   "evidence": "And all the firstborn in the land of Egypt shall die",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "36b5e3c7-3155-4278-a1ed-4f14d2de40e2",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "hard",
+   "question": "The firstborn of the maidservant who is behind what would die?",
+   "choices": [
+    "The mill",
+    "The door",
+    "The oven",
+    "The plough"
+   ],
+   "answer": 0,
+   "evidence": "the firstborn of the maidservant that is behind the mill",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a2bc616b-3854-451f-9b0e-c094d53dee0b",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "hard",
+   "question": "What animal would not move his tongue against any of the children of Israel?",
+   "choices": [
+    "A dog",
+    "A lion",
+    "A serpent",
+    "An ass"
+   ],
+   "answer": 0,
+   "evidence": "shall not a dog move his tongue",
+   "chapter": 11,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "32970412-14bb-4852-80b9-e3dc454083d1",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "hard",
+   "question": "On which day of the month was every man to take a lamb for his house?",
+   "choices": [
+    "The first day",
+    "The tenth day",
+    "The fourteenth day",
+    "The seventh day"
+   ],
+   "answer": 1,
+   "evidence": "In the tenth day of this month they shall take to them every man a lamb",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a840ebd1-23a8-4915-9317-13bb65e5abfc",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "easy",
+   "question": "Where were the Israelites told to strike the lamb's blood?",
+   "choices": [
+    "Two side posts and upper door post",
+    "The altar stones",
+    "The rooftops",
+    "The tent curtains"
+   ],
+   "answer": 0,
+   "evidence": "strike it on the two side posts and on the upper door post of the houses",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7a4fc1ba-dd61-4fb6-ba46-950f0f53b929",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "What were the elders told to dip in the blood in the bason?",
+   "choices": [
+    "A cedar branch",
+    "A palm frond",
+    "A bunch of hyssop",
+    "An olive branch"
+   ],
+   "answer": 2,
+   "evidence": "ye shall take a bunch of hyssop, and dip it in the blood that is in the bason",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5be3feee-e650-47a3-a881-5844c9a95632",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "easy",
+   "question": "At what time did the LORD smite all the firstborn in the land of Egypt?",
+   "choices": [
+    "At dawn",
+    "At midnight",
+    "At noon",
+    "At the evening sacrifice"
+   ],
+   "answer": 1,
+   "evidence": "that at midnight the LORD smote all the firstborn in the land of Egypt",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a56b6ae2-20f1-4f54-b995-f47bde302bd2",
+   "verse_start": 37,
+   "verse_end": 37,
+   "difficulty": "medium",
+   "question": "The children of Israel journeyed from Rameses to which place?",
+   "choices": [
+    "Goshen",
+    "Etham",
+    "Pithom",
+    "Succoth"
+   ],
+   "answer": 3,
+   "evidence": "the children of Israel journeyed from Rameses to Succoth",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a0ca1a72-36de-4925-a1b7-a80a3015d192",
+   "verse_start": 40,
+   "verse_end": 40,
+   "difficulty": "hard",
+   "question": "How long was the sojourning of the children of Israel who dwelt in Egypt?",
+   "choices": [
+    "Four hundred and thirty years",
+    "Four hundred years",
+    "Four hundred and eighty years",
+    "Forty years"
+   ],
+   "answer": 0,
+   "evidence": "was four hundred and thirty years.",
+   "chapter": 12,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "92109a3b-1511-4dc2-8fba-467fcb6f8f1b",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "hard",
+   "question": "In which month did the people come out of Egypt?",
+   "choices": [
+    "Nisan",
+    "Zif",
+    "Adar",
+    "Abib"
+   ],
+   "answer": 3,
+   "evidence": "This day came ye out in the month Abib.",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5c20d9e8-944f-40b1-90d0-601f86a66095",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "medium",
+   "question": "With what was every firstling of an ass to be redeemed?",
+   "choices": [
+    "A shekel of silver",
+    "A lamb",
+    "A pair of turtledoves",
+    "A kid of the goats"
+   ],
+   "answer": 1,
+   "evidence": "every firstling of an ass thou shalt redeem with a lamb",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2a103bcb-23d9-436a-9990-6f5171ed1be8",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "Through the way of which land did God not lead the people, although it was near?",
+   "choices": [
+    "Land of the Philistines",
+    "Land of Moab",
+    "Land of Edom",
+    "Land of the Amalekites"
+   ],
+   "answer": 0,
+   "evidence": "God led them not through the way of the land of the Philistines",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "15c29d97-1622-4b73-beff-2d6f4a0906b7",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "Whose bones did Moses take with him out of Egypt?",
+   "choices": [
+    "Jacob",
+    "Joseph",
+    "Abraham",
+    "Isaac"
+   ],
+   "answer": 1,
+   "evidence": "And Moses took the bones of Joseph with him",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2b19e0bb-ea04-4c6d-9e06-274eeec848aa",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "hard",
+   "question": "After journeying from Succoth, where did the people encamp?",
+   "choices": [
+    "Marah",
+    "Etham",
+    "Elim",
+    "Rephidim"
+   ],
+   "answer": 1,
+   "evidence": "encamped in Etham, in the edge of the wilderness",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c0caa537-8c53-46c1-8cd5-caaf1fd50386",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "easy",
+   "question": "What did the LORD go before the people in by night?",
+   "choices": [
+    "A pillar of cloud",
+    "A burning bush",
+    "A pillar of fire",
+    "A bright star"
+   ],
+   "answer": 2,
+   "evidence": "by night in a pillar of fire, to give them light",
+   "chapter": 13,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3f145a96-29c9-41f4-a164-4f2f80a2cec2",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "hard",
+   "question": "How many chosen chariots did Pharaoh take with him?",
+   "choices": [
+    "Three hundred",
+    "Six hundred",
+    "Nine hundred",
+    "One thousand"
+   ],
+   "answer": 1,
+   "evidence": "he took six hundred chosen chariots",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "60283e70-9d16-416d-902a-588c6e8d0f68",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "easy",
+   "question": "Whose heart did the LORD harden so that he pursued the children of Israel?",
+   "choices": [
+    "Pharaoh king of Egypt",
+    "Sihon king of Heshbon",
+    "Og king of Bashan",
+    "Balak king of Moab"
+   ],
+   "answer": 0,
+   "evidence": "the LORD hardened the heart of Pharaoh king of Egypt, and he pursued after the children of Israel",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "87e61307-2a1f-4e54-af35-bbd91e9a0668",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "medium",
+   "question": "What kind of wind did the LORD use to make the sea go back all that night?",
+   "choices": [
+    "A strong west wind",
+    "A strong north wind",
+    "A strong east wind",
+    "A strong south wind"
+   ],
+   "answer": 2,
+   "evidence": "the LORD caused the sea to go back by a strong east wind all that night",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "589292b0-89f7-416d-819a-d84c79c3e177",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "easy",
+   "question": "What were the waters to the children of Israel on their right hand and on their left?",
+   "choices": [
+    "A heap",
+    "A wall",
+    "A cloud",
+    "A flood"
+   ],
+   "answer": 1,
+   "evidence": "the waters were a wall unto them on their right hand, and on their left",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3dc0f45b-86ec-4110-89f0-12d29cbabfbe",
+   "verse_start": 24,
+   "verse_end": 25,
+   "difficulty": "medium",
+   "question": "What did the LORD take off the Egyptians' chariots so that they drove them heavily?",
+   "choices": [
+    "Their horses",
+    "Their chariot wheels",
+    "Their axles",
+    "Their banners"
+   ],
+   "answer": 1,
+   "evidence": "took off their chariot wheels, that they drave them heavily",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7b625898-1b3b-4542-adc5-e543b64fb1a6",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "In which watch did the LORD look unto the host of the Egyptians through the pillar of fire and of the cloud?",
+   "choices": [
+    "The first watch",
+    "The middle watch",
+    "The evening watch",
+    "The morning watch"
+   ],
+   "answer": 3,
+   "evidence": "in the morning watch the LORD looked unto the host of the Egyptians through the pillar of fire and of the cloud",
+   "chapter": 14,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8069dc51-6ca9-4583-8e13-1998947aeef8",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "When the LORD blew with His wind, the enemies sank in the mighty waters as what?",
+   "choices": [
+    "Iron",
+    "Lead",
+    "Brass",
+    "Gold"
+   ],
+   "answer": 1,
+   "evidence": "they sank as lead in the mighty waters",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c06b2eab-dc77-4d94-9c07-5ed17f00cddb",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "Who took a timbrel in her hand and led the women out with dances?",
+   "choices": [
+    "Miriam",
+    "Deborah",
+    "Zipporah",
+    "Hannah"
+   ],
+   "answer": 0,
+   "evidence": "And Miriam the prophetess, the sister of Aaron, took a timbrel in her hand",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "07634be1-f014-46d2-8491-560933d830bd",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "Into which wilderness did Israel go after leaving the Red sea?",
+   "choices": [
+    "Sin",
+    "Paran",
+    "Zin",
+    "Shur"
+   ],
+   "answer": 3,
+   "evidence": "they went out into the wilderness of Shur",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a2551d3c-12d9-450e-b835-df38b89e5332",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "easy",
+   "question": "At what place were the waters too bitter for the people to drink?",
+   "choices": [
+    "Elim",
+    "Marah",
+    "Shur",
+    "Rephidim"
+   ],
+   "answer": 1,
+   "evidence": "they could not drink of the waters of Marah, for they were bitter",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f05f9e86-d5a3-412b-8f82-3b5c553e3231",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "medium",
+   "question": "What did the LORD show Moses to cast into the waters to make them sweet?",
+   "choices": [
+    "A rod",
+    "A stone",
+    "A tree",
+    "Salt"
+   ],
+   "answer": 2,
+   "evidence": "the LORD shewed him a tree, which when he had cast into the waters, the waters were made sweet",
+   "chapter": 15,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "aab567fa-eba1-4cbf-86b9-93d2abec1ce4",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "hard",
+   "question": "How many palm trees were at Elim?",
+   "choices": [
+    "Threescore and ten",
+    "Twelve",
+    "Forty",
+    "Threescore"
+   ],
+   "answer": 0,
+   "evidence": "twelve wells of water, and threescore and ten palm trees",
+   "chapter": 15,
+   "status": "draft",
+   "problems": [
+    "choice 2 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d5947774-0647-41ca-9283-a4f231267288",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "On what day did the congregation come to the wilderness of Sin?",
+   "choices": [
+    "Fourteenth day of first month",
+    "Fifteenth day of second month",
+    "First day of third month",
+    "Tenth day of seventh month"
+   ],
+   "answer": 1,
+   "evidence": "on the fifteenth day of the second month",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2a78f06c-9c34-4104-b885-eed900c03e53",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "What came up at even and covered the camp?",
+   "choices": [
+    "Locusts",
+    "Quails",
+    "Doves",
+    "Ravens"
+   ],
+   "answer": 1,
+   "evidence": "at even the quails came up, and covered the camp",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "61591c60-97fd-4017-bf12-896b0e31e2c2",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "What happened to the manna some people left until the morning?",
+   "choices": [
+    "It turned to stone",
+    "It bred worms and stank",
+    "It turned to blood",
+    "It became bitter"
+   ],
+   "answer": 1,
+   "evidence": "some of them left of it until the morning, and it bred worms, and stank",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5336be27-c299-480d-8a0b-9cf83c9b1c67",
+   "verse_start": 31,
+   "verse_end": 31,
+   "difficulty": "medium",
+   "question": "What was the taste of manna like?",
+   "choices": [
+    "Fresh oil",
+    "Cakes of raisins",
+    "Wafers made with honey",
+    "Pomegranate juice"
+   ],
+   "answer": 2,
+   "evidence": "the taste of it was like wafers made with honey",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "13174365-1076-4f6f-a648-0f7b42266bba",
+   "verse_start": 35,
+   "verse_end": 35,
+   "difficulty": "easy",
+   "question": "For how long did the children of Israel eat manna?",
+   "choices": [
+    "Seven years",
+    "Twelve years",
+    "Forty years",
+    "Seventy years"
+   ],
+   "answer": 2,
+   "evidence": "the children of Israel did eat manna forty years",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b95464a9-34a2-43c2-b427-8742cbd6f42e",
+   "verse_start": 36,
+   "verse_end": 36,
+   "difficulty": "hard",
+   "question": "According to the chapter, an omer is the tenth part of what measure?",
+   "choices": [
+    "A hin",
+    "A homer",
+    "A bath",
+    "An ephah"
+   ],
+   "answer": 3,
+   "evidence": "Now an omer is the tenth part of an ephah.",
+   "chapter": 16,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "59402ed2-990f-46f5-8adb-2e3d1c744abf",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "medium",
+   "question": "Where did Israel pitch camp after leaving the wilderness of Sin, finding no water to drink?",
+   "choices": [
+    "Marah",
+    "Elim",
+    "Kadesh",
+    "Rephidim"
+   ],
+   "answer": 3,
+   "evidence": "pitched in Rephidim: and there was no water for the people to drink.",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4d680114-a64a-402a-80dc-003d2bf3c77d",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "easy",
+   "question": "What did the LORD tell Moses to smite so that water would come out?",
+   "choices": [
+    "The river",
+    "The rock",
+    "The sea",
+    "The ground"
+   ],
+   "answer": 1,
+   "evidence": "thou shalt smite the rock, and there shall come water out of it",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2d1e3b6a-ab51-4fd4-adbf-988870e564ff",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "easy",
+   "question": "Who came and fought with Israel in Rephidim?",
+   "choices": [
+    "Amalek",
+    "Midian",
+    "Moab",
+    "Edom"
+   ],
+   "answer": 0,
+   "evidence": "Then came Amalek, and fought with Israel in Rephidim.",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fb392df6-9102-4937-ab1a-d79e631d6727",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "Who held up Moses' hands during the battle?",
+   "choices": [
+    "Joshua and Caleb",
+    "Eleazar and Ithamar",
+    "Aaron and Hur",
+    "Nadab and Abihu"
+   ],
+   "answer": 2,
+   "evidence": "Aaron and Hur stayed up his hands",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7e007ec3-98c6-4215-a477-82ffe38a2a69",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "hard",
+   "question": "Until when were Moses' hands steady?",
+   "choices": [
+    "The third hour",
+    "The going down of the sun",
+    "The morning watch",
+    "Midnight"
+   ],
+   "answer": 1,
+   "evidence": "his hands were steady until the going down of the sun.",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "262dc809-c112-410e-a38a-724a11c6436e",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "What name did Moses give to the altar he built?",
+   "choices": [
+    "Jehovahnissi",
+    "Jehovahjireh",
+    "Jehovahshalom",
+    "Ebenezer"
+   ],
+   "answer": 0,
+   "evidence": "Moses built an altar, and called the name of it Jehovahnissi",
+   "chapter": 17,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "74bb5da9-5f15-44cb-8b41-0b85505fb058",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Who was Moses' father in law, the priest of Midian?",
+   "choices": [
+    "Jethro",
+    "Laban",
+    "Nahor",
+    "Terah"
+   ],
+   "answer": 0,
+   "evidence": "Jethro, the priest of Midian, Moses’ father in law",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b4feaa6d-8c6c-401a-b018-b3ce47d1de43",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "What was the name of Moses' wife, whom Jethro brought to him?",
+   "choices": [
+    "Miriam",
+    "Zipporah",
+    "Rebekah",
+    "Rachel"
+   ],
+   "answer": 1,
+   "evidence": "Zipporah, Moses’ wife",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3f066cc4-e0fd-463a-af30-77fde5db7b56",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "medium",
+   "question": "Which son was named because Moses said, \"I have been an alien in a strange land\"?",
+   "choices": [
+    "Eliezer",
+    "Manasseh",
+    "Gershom",
+    "Ephraim"
+   ],
+   "answer": 2,
+   "evidence": "the name of the one was Gershom; for he said, I have been an alien in a strange land",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "dacc3e80-0a5f-46da-8619-bea64442e425",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "Who came with all the elders of Israel to eat bread with Moses' father in law before God?",
+   "choices": [
+    "Joshua",
+    "Hur",
+    "Caleb",
+    "Aaron"
+   ],
+   "answer": 3,
+   "evidence": "Aaron came, and all the elders of Israel, to eat bread",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "969a1485-21ab-4249-8a64-b7d3cd7709d5",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "hard",
+   "question": "For how long did the people stand by Moses while he sat to judge them?",
+   "choices": [
+    "From the morning unto the evening",
+    "From noon unto night",
+    "From dawn unto noon",
+    "From evening unto morning"
+   ],
+   "answer": 0,
+   "evidence": "from the morning unto the evening",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "acf68de5-0565-4ec8-a98d-c3d100f66d2e",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "What was the smallest group that Moses set rulers over?",
+   "choices": [
+    "Fives",
+    "Tens",
+    "Twenties",
+    "Twelves"
+   ],
+   "answer": 1,
+   "evidence": "rulers of fifties, and rulers of tens",
+   "chapter": 18,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "12b66f40-c7ba-4e96-a68c-3d7b6a6ff7f1",
+   "verse_start": 1,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Into which wilderness did the children of Israel come in this chapter?",
+   "choices": [
+    "Sinai",
+    "Paran",
+    "Zin",
+    "Shur"
+   ],
+   "answer": 0,
+   "evidence": "the same day came they into the wilderness of Sinai.",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b22aff20-7dc2-4e53-ad06-6cc83b12ab0c",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "In which month after leaving Egypt did Israel come into the wilderness of Sinai?",
+   "choices": [
+    "The first month",
+    "The third month",
+    "The second month",
+    "The seventh month"
+   ],
+   "answer": 1,
+   "evidence": "In the third month, when the children of Israel were gone forth out of the land of Egypt",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "465a0a39-0057-4d96-907e-8712b06a7563",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "medium",
+   "question": "From which place had Israel departed before coming to the desert of Sinai?",
+   "choices": [
+    "Elim",
+    "Marah",
+    "Rephidim",
+    "Succoth"
+   ],
+   "answer": 2,
+   "evidence": "For they were departed from Rephidim",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "48e8f513-3e68-4cef-9f9a-3d794bae4981",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "The LORD said He bare the people on what?",
+   "choices": [
+    "A pillar of cloud",
+    "Angels' hands",
+    "His shoulders",
+    "Eagles’ wings"
+   ],
+   "answer": 3,
+   "evidence": "how I bare you on eagles’ wings",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7253f54f-6ff2-4221-8b59-cb719d822a0e",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "hard",
+   "question": "The smoke of mount Sinai ascended as the smoke of what?",
+   "choices": [
+    "A furnace",
+    "An altar",
+    "A kiln",
+    "A censer"
+   ],
+   "answer": 0,
+   "evidence": "the smoke thereof ascended as the smoke of a furnace",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "96916ef6-607f-4c6e-9ab1-9af935a39146",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "easy",
+   "question": "Whom did the LORD say should come up with Moses?",
+   "choices": [
+    "Joshua",
+    "Aaron",
+    "Hur",
+    "Caleb"
+   ],
+   "answer": 1,
+   "evidence": "thou shalt come up, thou, and Aaron with thee",
+   "chapter": 19,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9916c4aa-2f2e-435d-87ed-047cdc94c8df",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "Out of which land does the LORD say He brought the people?",
+   "choices": [
+    "Egypt",
+    "Babylon",
+    "Canaan",
+    "Assyria"
+   ],
+   "answer": 0,
+   "evidence": "brought thee out of the land of Egypt",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0aaf2c3b-5bb7-48f1-9fc0-6a57fd0b8cdc",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "hard",
+   "question": "Unto which generations is the iniquity of the fathers visited upon the children?",
+   "choices": [
+    "Second and third",
+    "Fifth and sixth",
+    "Third and fourth",
+    "Seventh and eighth"
+   ],
+   "answer": 2,
+   "evidence": "unto the third and fourth generation",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8e04501a-dad4-4102-8270-b2304692f481",
+   "verse_start": 9,
+   "verse_end": 10,
+   "difficulty": "easy",
+   "question": "Which day is called the sabbath of the LORD?",
+   "choices": [
+    "The first day",
+    "The sixth day",
+    "The seventh day",
+    "The third day"
+   ],
+   "answer": 2,
+   "evidence": "the seventh day is the sabbath of the LORD thy God",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0fea5070-4b32-446f-8bfb-0836881f4629",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "Whom did the people ask to speak with them?",
+   "choices": [
+    "Aaron",
+    "Joshua",
+    "Miriam",
+    "Moses"
+   ],
+   "answer": 3,
+   "evidence": "they said unto Moses, Speak thou with us",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1f284162-0fcc-48ff-a107-234f02efb4a4",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "hard",
+   "question": "Where did Moses draw near while the people stood afar off?",
+   "choices": [
+    "The thick darkness",
+    "The burning bush",
+    "The pillar of cloud",
+    "The mercy seat"
+   ],
+   "answer": 0,
+   "evidence": "Moses drew near unto the thick darkness where God was.",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "90fa878e-fd65-4667-8b30-fb8a1d101960",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "medium",
+   "question": "Of what material does the LORD first say the altar should be made?",
+   "choices": [
+    "Gold",
+    "Earth",
+    "Brass",
+    "Shittim wood"
+   ],
+   "answer": 1,
+   "evidence": "An altar of earth thou shalt make unto me",
+   "chapter": 20,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b108f30f-1cd0-451c-a92c-d9d5b69c4bde",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "easy",
+   "question": "How many years shall a bought Hebrew servant serve before going out free?",
+   "choices": [
+    "Six years",
+    "Seven years",
+    "Three years",
+    "Ten years"
+   ],
+   "answer": 0,
+   "evidence": "six years he shall serve",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4ff2ef1f-f489-4de7-941a-2dbcf91410e7",
+   "verse_start": 5,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "With what does the master bore the ear of a servant who chooses not to go out free?",
+   "choices": [
+    "An aul",
+    "A nail",
+    "A knife",
+    "A spear"
+   ],
+   "answer": 0,
+   "evidence": "his master shall bore his ear through with an aul",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "324ea5c6-fcb4-43d6-9516-59939e2b2385",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "If a man takes another wife, besides her food and her duty of marriage, what else of the first wife's shall he not diminish?",
+   "choices": [
+    "Her raiment",
+    "Her dowry",
+    "Her inheritance",
+    "Her land"
+   ],
+   "answer": 0,
+   "evidence": "her food, her raiment, and her duty of marriage, shall he not diminish.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c9a46ed4-92bb-4877-943e-49136a1dd951",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "medium",
+   "question": "What must a master do if he smites out his manservant's tooth?",
+   "choices": [
+    "Let him go free",
+    "Pay him wages",
+    "Give him a field",
+    "Give him an ox"
+   ],
+   "answer": 0,
+   "evidence": "he shall let him go free for his tooth’s sake.",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1bb423f8-d563-43fd-b0c8-c945bc006024",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "easy",
+   "question": "What shall be done to an ox that gores a man or a woman so that they die?",
+   "choices": [
+    "It shall be stoned",
+    "It shall be sold",
+    "It shall be sacrificed",
+    "It shall be set free"
+   ],
+   "answer": 0,
+   "evidence": "then the ox shall be surely stoned",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "022db471-33b8-47b1-8c63-927f3a937d4a",
+   "verse_start": 32,
+   "verse_end": 32,
+   "difficulty": "hard",
+   "question": "If an ox pushes a manservant or a maidservant, what is given to their master?",
+   "choices": [
+    "Thirty shekels of silver",
+    "Fifty shekels of silver",
+    "Twenty shekels of silver",
+    "Ten shekels of silver"
+   ],
+   "answer": 0,
+   "evidence": "he shall give unto their master thirty shekels of silver",
+   "chapter": 21,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cf73ae3a-8560-4f30-b269-2139d817fdec",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "If a man steals an ox and kills or sells it, how many oxen must he restore?",
+   "choices": [
+    "Five",
+    "Two",
+    "Seven",
+    "Ten"
+   ],
+   "answer": 0,
+   "evidence": "he shall restore five oxen for an ox",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ad1c30df-a9f4-4a0c-abcd-ce587a417718",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "hard",
+   "question": "In the law about fire that breaks out, what does the fire catch in?",
+   "choices": [
+    "Stubble",
+    "Thorns",
+    "Briers",
+    "Reeds"
+   ],
+   "answer": 1,
+   "evidence": "If fire break out, and catch in thorns",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1ae3ae94-dae6-4123-afcd-ca75042e2f78",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "medium",
+   "question": "In what land does the chapter say the people were once strangers?",
+   "choices": [
+    "Canaan",
+    "Babylon",
+    "Egypt",
+    "Midian"
+   ],
+   "answer": 2,
+   "evidence": "for ye were strangers in the land of Egypt.",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "41f6bfb2-700b-45b2-b27f-a43b650dd67f",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "medium",
+   "question": "When must a neighbour's raiment taken to pledge be returned to him?",
+   "choices": [
+    "By the morning",
+    "On the sabbath",
+    "On the seventh day",
+    "By that the sun goeth down"
+   ],
+   "answer": 3,
+   "evidence": "thou shalt deliver it unto him by that the sun goeth down",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "8fa985ca-06d6-488c-8763-e01d26234013",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "hard",
+   "question": "On which day must the firstborn of oxen and sheep be given?",
+   "choices": [
+    "The eighth day",
+    "The seventh day",
+    "The third day",
+    "The fortieth day"
+   ],
+   "answer": 0,
+   "evidence": "on the eighth day thou shalt give it me.",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "529125ba-6695-414a-acc7-adf2fa20385b",
+   "verse_start": 31,
+   "verse_end": 31,
+   "difficulty": "easy",
+   "question": "To whom must flesh torn of beasts in the field be cast?",
+   "choices": [
+    "The priests",
+    "The dogs",
+    "The strangers",
+    "The fowls"
+   ],
+   "answer": 1,
+   "evidence": "ye shall cast it to the dogs.",
+   "chapter": 22,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3f72676e-8228-4adc-a0fb-5b2e61d4d490",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "What must a person do on meeting an enemy's ox or ass going astray?",
+   "choices": [
+    "Keep it",
+    "Sell it",
+    "Slay it",
+    "Bring it back"
+   ],
+   "answer": 3,
+   "evidence": "thou shalt surely bring it back to him again.",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b62d31ee-1631-406f-a643-2f07b3e0a1d7",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "easy",
+   "question": "How many times in the year are the people told to keep a feast unto God?",
+   "choices": [
+    "Two",
+    "Seven",
+    "Three",
+    "Twelve"
+   ],
+   "answer": 2,
+   "evidence": "Three times thou shalt keep a feast unto me in the year.",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bc4d50d6-79df-434e-95d4-9caab639e24f",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "In which month is the feast of unleavened bread to be kept, the month they came out from Egypt?",
+   "choices": [
+    "Zif",
+    "Abib",
+    "Adar",
+    "Ethanim"
+   ],
+   "answer": 1,
+   "evidence": "in the time appointed of the month Abib",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "df1d0444-fc83-416a-8acd-9b506f2fee5b",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "What does God say He will send before the people to keep them in the way?",
+   "choices": [
+    "A prophet",
+    "An Angel",
+    "A cloud",
+    "A pillar of fire"
+   ],
+   "answer": 1,
+   "evidence": "Behold, I send an Angel before thee, to keep thee in the way",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "42379de5-2dfb-4bd2-88ee-3fe29baae3b8",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "medium",
+   "question": "What creatures will God send to drive out the Hivite, the Canaanite, and the Hittite?",
+   "choices": [
+    "Hornets",
+    "Locusts",
+    "Frogs",
+    "Lions"
+   ],
+   "answer": 0,
+   "evidence": "And I will send hornets before thee, which shall drive out the Hivite",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b3f64127-fd8b-43f3-a534-4c432d2e7384",
+   "verse_start": 31,
+   "verse_end": 31,
+   "difficulty": "hard",
+   "question": "God will set the bounds of the land from the Red sea even unto which sea?",
+   "choices": [
+    "The salt sea",
+    "The sea of Tiberias",
+    "The sea of the Philistines",
+    "The sea of Chinnereth"
+   ],
+   "answer": 2,
+   "evidence": "from the Red sea even unto the sea of the Philistines",
+   "chapter": 23,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c51113d0-a685-4b9b-ba94-c9489215eead",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "medium",
+   "question": "How many pillars did Moses build with the altar under the hill?",
+   "choices": [
+    "Seven",
+    "Twelve",
+    "Ten",
+    "Seventy"
+   ],
+   "answer": 1,
+   "evidence": "builded an altar under the hill, and twelve pillars, according to the twelve tribes of Israel.",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a25f373e-6b1d-4779-9048-dcf52e27cbe6",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "Under the feet of the God of Israel was a paved work of what kind of stone?",
+   "choices": [
+    "Jasper",
+    "Sapphire",
+    "Onyx",
+    "Emerald"
+   ],
+   "answer": 1,
+   "evidence": "there was under his feet as it were a paved work of a sapphire stone",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a3011940-74e3-40eb-969b-2fcbcc5b3e2f",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "Who rose up with Moses as his minister to go up the mount?",
+   "choices": [
+    "Caleb",
+    "Eleazar",
+    "Joshua",
+    "Phinehas"
+   ],
+   "answer": 2,
+   "evidence": "And Moses rose up, and his minister Joshua",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "378230d3-21fc-476a-9f7d-c311f210f756",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "Whom did Moses say were with the elders while he was away?",
+   "choices": [
+    "Nadab and Abihu",
+    "Eleazar and Ithamar",
+    "Caleb and Joshua",
+    "Aaron and Hur"
+   ],
+   "answer": 3,
+   "evidence": "behold, Aaron and Hur are with you",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "fa958701-7d93-434f-9774-f81035443ab4",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "On which day did the LORD call unto Moses out of the midst of the cloud?",
+   "choices": [
+    "The third day",
+    "The sixth day",
+    "The seventh day",
+    "The fortieth day"
+   ],
+   "answer": 2,
+   "evidence": "the seventh day he called unto Moses out of the midst of the cloud.",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "793f771e-45f0-4154-b03c-1f2243ae619c",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "easy",
+   "question": "How long was Moses in the mount?",
+   "choices": [
+    "Forty days and forty nights",
+    "Seven days",
+    "Three days and three nights",
+    "Twelve days"
+   ],
+   "answer": 0,
+   "evidence": "Moses was in the mount forty days and forty nights.",
+   "chapter": 24,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "556507f6-c349-4c88-97c9-e2f0d1828e43",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "easy",
+   "question": "What kind of wood was the ark to be made of?",
+   "choices": [
+    "Shittim wood",
+    "Cedar wood",
+    "Olive wood",
+    "Fir wood"
+   ],
+   "answer": 0,
+   "evidence": "And they shall make an ark of shittim wood",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cc7aae84-44b1-4eec-bbf0-fc3216e8f0b8",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "hard",
+   "question": "What was to be the length of the ark?",
+   "choices": [
+    "Two cubits and a half",
+    "Two cubits",
+    "Three cubits",
+    "A cubit and a half"
+   ],
+   "answer": 0,
+   "evidence": "two cubits and a half shall be the length thereof",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "cb625a75-6bc6-4af8-be72-ac41fd35a5ee",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "easy",
+   "question": "What was to be set upon the table before the LORD always?",
+   "choices": [
+    "Manna",
+    "Shewbread",
+    "Firstfruits",
+    "Unleavened cakes"
+   ],
+   "answer": 1,
+   "evidence": "And thou shalt set upon the table shewbread before me alway.",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "be4a8f9b-eb3f-46c5-9bd3-e57f7c4d6650",
+   "verse_start": 33,
+   "verse_end": 33,
+   "difficulty": "medium",
+   "question": "The bowls on the candlestick's branches were to be made like what?",
+   "choices": [
+    "Pomegranates",
+    "Lilies",
+    "Figs",
+    "Almonds"
+   ],
+   "answer": 3,
+   "evidence": "Three bowls made like unto almonds",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5d71f4b9-ecb0-4fcf-bfa2-57b576d1bebb",
+   "verse_start": 37,
+   "verse_end": 37,
+   "difficulty": "medium",
+   "question": "How many lamps were to be made for the candlestick?",
+   "choices": [
+    "Six",
+    "Twelve",
+    "Seven",
+    "Ten"
+   ],
+   "answer": 2,
+   "evidence": "And thou shalt make the seven lamps thereof",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "88c7ee66-60fe-4f30-8bc1-49981f64dbfd",
+   "verse_start": 39,
+   "verse_end": 39,
+   "difficulty": "hard",
+   "question": "How much pure gold was the candlestick with all its vessels to be made of?",
+   "choices": [
+    "Two talents",
+    "A talent",
+    "A shekel",
+    "Seven talents"
+   ],
+   "answer": 1,
+   "evidence": "Of a talent of pure gold shall he make it, with all these vessels.",
+   "chapter": 25,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a3effec8-1e68-4662-8c9e-295b2bfd3a43",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "How many curtains of fine twined linen was the tabernacle to be made with?",
+   "choices": [
+    "Ten",
+    "Seven",
+    "Twelve",
+    "Forty"
+   ],
+   "answer": 0,
+   "evidence": "thou shalt make the tabernacle with ten curtains of fine twined linen",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b9ff9f55-babc-408b-8d16-83ae1b53659c",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "hard",
+   "question": "What was the length of one of the ten linen curtains?",
+   "choices": [
+    "Eight and twenty cubits",
+    "Thirty cubits",
+    "Ten cubits",
+    "Forty cubits"
+   ],
+   "answer": 0,
+   "evidence": "The length of one curtain shall be eight and twenty cubits",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a673bb6b-c650-4245-b6bb-3b67f6d7b040",
+   "verse_start": 7,
+   "verse_end": 7,
+   "difficulty": "medium",
+   "question": "How many curtains of goats' hair were to be made as a covering upon the tabernacle?",
+   "choices": [
+    "Ten",
+    "Twelve",
+    "Eleven",
+    "Seven"
+   ],
+   "answer": 2,
+   "evidence": "curtains of goats’ hair to be a covering upon the tabernacle: eleven curtains shalt thou make.",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0b9c2ae1-97bc-4f6b-af82-2f894716e4a8",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "easy",
+   "question": "What kind of wood were the boards for the tabernacle to be made of?",
+   "choices": [
+    "Cedar wood",
+    "Shittim wood",
+    "Olive wood",
+    "Fir wood"
+   ],
+   "answer": 1,
+   "evidence": "thou shalt make boards for the tabernacle of shittim wood standing up.",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9c83a2ba-bf8b-434d-a163-85c7a5c66d19",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "medium",
+   "question": "What was to be put upon the ark of the testimony in the most holy place?",
+   "choices": [
+    "The candlestick",
+    "The table",
+    "The altar",
+    "The mercy seat"
+   ],
+   "answer": 3,
+   "evidence": "thou shalt put the mercy seat upon the ark of the testimony",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f8878fd9-6780-4c48-9e15-a0547c05c712",
+   "verse_start": 37,
+   "verse_end": 37,
+   "difficulty": "hard",
+   "question": "Of what metal were the five sockets for the pillars of the door hanging to be cast?",
+   "choices": [
+    "Silver",
+    "Brass",
+    "Gold",
+    "Iron"
+   ],
+   "answer": 1,
+   "evidence": "thou shalt cast five sockets of brass for them.",
+   "chapter": 26,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b5674d3f-0dfd-4c73-a357-64c02c53f7fb",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What kind of wood was the altar to be made of?",
+   "choices": [
+    "Cedar wood",
+    "Shittim wood",
+    "Olive wood",
+    "Cypress wood"
+   ],
+   "answer": 1,
+   "evidence": "thou shalt make an altar of shittim wood",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "86284240-36cb-4ce2-b785-3b7438940dc5",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "hard",
+   "question": "How many cubits high was the altar to be?",
+   "choices": [
+    "Three cubits",
+    "Five cubits",
+    "Ten cubits",
+    "Two cubits"
+   ],
+   "answer": 0,
+   "evidence": "the height thereof shall be three cubits",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "04de4d0f-4ca8-4945-89d1-f6fc6cb6f166",
+   "verse_start": 10,
+   "verse_end": 10,
+   "difficulty": "medium",
+   "question": "What metal were the hooks of the court's pillars and their fillets made of?",
+   "choices": [
+    "Brass",
+    "Gold",
+    "Iron",
+    "Silver"
+   ],
+   "answer": 3,
+   "evidence": "the hooks of the pillars and their fillets shall be of silver",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "aaed97ae-47be-49c6-ae4f-c5f5075e77cd",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "How long was the hanging for the gate of the court?",
+   "choices": [
+    "Fifteen cubits",
+    "Twenty cubits",
+    "Fifty cubits",
+    "Thirty cubits"
+   ],
+   "answer": 1,
+   "evidence": "for the gate of the court shall be an hanging of twenty cubits",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0986ee05-e139-45d3-9f5b-3a5636319765",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "easy",
+   "question": "What were the children of Israel to bring for the light?",
+   "choices": [
+    "Pure oil olive",
+    "Sweet spices",
+    "Fine flour",
+    "Pure frankincense"
+   ],
+   "answer": 0,
+   "evidence": "bring thee pure oil olive beaten for the light",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c15eec44-d703-4409-8498-9cd802153bc9",
+   "verse_start": 21,
+   "verse_end": 21,
+   "difficulty": "medium",
+   "question": "Who was to order the lamp from evening to morning before the LORD?",
+   "choices": [
+    "Moses and Joshua",
+    "The Levites",
+    "Aaron and his sons",
+    "Bezaleel and Aholiab"
+   ],
+   "answer": 2,
+   "evidence": "Aaron and his sons shall order it from evening to morning before the LORD",
+   "chapter": 27,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "07b06612-6e6f-48ee-adc0-80b5f6afc4c7",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Whom is Moses told to take so that he may minister in the priest's office?",
+   "choices": [
+    "Aaron",
+    "Joshua",
+    "Caleb",
+    "Hur"
+   ],
+   "answer": 0,
+   "evidence": "And take thou unto thee Aaron thy brother, and his sons with him",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7dd09b2e-dc71-4aa7-a75e-c88e7e45e2ca",
+   "verse_start": 9,
+   "verse_end": 12,
+   "difficulty": "medium",
+   "question": "What kind of stones, engraved with the names of the children of Israel, were put on the shoulders of the ephod?",
+   "choices": [
+    "Marble stones",
+    "Jasper stones",
+    "Onyx stones",
+    "Crystal stones"
+   ],
+   "answer": 2,
+   "evidence": "And thou shalt take two onyx stones, and grave on them the names of the children of Israel:",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ae6e8c88-db72-43d8-af4c-18986cc47c19",
+   "verse_start": 16,
+   "verse_end": 16,
+   "difficulty": "hard",
+   "question": "What was to be the length and the breadth of the breastplate?",
+   "choices": [
+    "A cubit",
+    "A span",
+    "Two cubits",
+    "A handbreadth"
+   ],
+   "answer": 1,
+   "evidence": "a span shall be the length thereof, and a span shall be the breadth thereof.",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "201c928f-9ca0-4721-b998-d190d1d41ccf",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "Which stone is named first in the first row of the breastplate?",
+   "choices": [
+    "A sardius",
+    "A beryl",
+    "A ligure",
+    "An emerald"
+   ],
+   "answer": 0,
+   "evidence": "the first row shall be a sardius, a topaz, and a carbuncle",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d99fa3f1-b1e0-494c-8933-3196078b4632",
+   "verse_start": 33,
+   "verse_end": 34,
+   "difficulty": "medium",
+   "question": "What alternated with pomegranates around the hem of the robe?",
+   "choices": [
+    "Silver rings",
+    "Almond flowers",
+    "Blue tassels",
+    "Golden bells"
+   ],
+   "answer": 3,
+   "evidence": "A golden bell and a pomegranate, a golden bell and a pomegranate, upon the hem of the robe round about.",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f2ccc3a0-68ae-47da-bb4c-e29bbcea8a25",
+   "verse_start": 36,
+   "verse_end": 36,
+   "difficulty": "easy",
+   "question": "What words were to be engraved on the plate of pure gold?",
+   "choices": [
+    "THE LORD OUR RIGHTEOUSNESS",
+    "HOLINESS TO THE LORD",
+    "THE LORD IS ONE",
+    "GLORY TO GOD"
+   ],
+   "answer": 1,
+   "evidence": "thou shalt make a plate of pure gold, and grave upon it, like the engravings of a signet, HOLINESS TO THE LORD.",
+   "chapter": 28,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b6ec7bda-e623-49fc-a528-ce83d4adbb29",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Besides one young bullock, what animals were to be taken to hallow Aaron and his sons?",
+   "choices": [
+    "Two rams",
+    "Two goats",
+    "Seven lambs",
+    "Two turtledoves"
+   ],
+   "answer": 0,
+   "evidence": "Take one young bullock, and two rams without blemish",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "45cb46d9-2e7e-4531-911d-9388732f7917",
+   "verse_start": 4,
+   "verse_end": 4,
+   "difficulty": "easy",
+   "question": "At the door of the tabernacle, what were Aaron and his sons to be washed with?",
+   "choices": [
+    "Wine",
+    "Oil",
+    "Water",
+    "Blood"
+   ],
+   "answer": 2,
+   "evidence": "shalt wash them with water.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4a23e9b8-c9ec-4f4b-b18f-132984c6ba50",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "Where were the flesh, skin and dung of the sin offering bullock to be burned?",
+   "choices": [
+    "Upon the altar",
+    "In the holy place",
+    "By the river",
+    "Without the camp"
+   ],
+   "answer": 3,
+   "evidence": "But the flesh of the bullock, and his skin, and his dung, shalt thou burn with fire without the camp: it is a sin offering.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a319feca-ab3f-4833-9b1f-d83d971134bb",
+   "verse_start": 35,
+   "verse_end": 35,
+   "difficulty": "hard",
+   "question": "For how many days were Aaron and his sons to be consecrated?",
+   "choices": [
+    "Three",
+    "Forty",
+    "Seven",
+    "Twelve"
+   ],
+   "answer": 2,
+   "evidence": "seven days shalt thou consecrate them.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ee9fb4be-75fc-421b-828a-6b85c81da198",
+   "verse_start": 39,
+   "verse_end": 39,
+   "difficulty": "medium",
+   "question": "When was the second of the two daily lambs to be offered?",
+   "choices": [
+    "At noon",
+    "At even",
+    "At midnight",
+    "At the third hour"
+   ],
+   "answer": 1,
+   "evidence": "the other lamb thou shalt offer at even:",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "021061f2-e054-47f6-8c4c-6f312a38a4e9",
+   "verse_start": 40,
+   "verse_end": 40,
+   "difficulty": "hard",
+   "question": "How much wine was given with the one lamb for a drink offering?",
+   "choices": [
+    "The fourth part of an hin",
+    "A tenth deal",
+    "Half an hin",
+    "The third part of an hin"
+   ],
+   "answer": 0,
+   "evidence": "the fourth part of an hin of wine for a drink offering.",
+   "chapter": 29,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ded2a7d1-8962-47f2-bb61-9be6c3fa5e0d",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What wood was the altar for burning incense to be made of?",
+   "choices": [
+    "Cedar wood",
+    "Shittim wood",
+    "Olive wood",
+    "Cypress wood"
+   ],
+   "answer": 1,
+   "evidence": "of shittim wood shalt thou make it.",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "33317070-9ee7-40b6-9c95-5e1aa47fe87a",
+   "verse_start": 7,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "Besides when he lit the lamps at even, when was Aaron to burn sweet incense on the altar?",
+   "choices": [
+    "Every morning",
+    "At noon",
+    "On the sabbath",
+    "At the new moon"
+   ],
+   "answer": 0,
+   "evidence": "And Aaron shall burn thereon sweet incense every morning",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2591abc9-f196-4a53-b24d-a713c6c140cd",
+   "verse_start": 13,
+   "verse_end": 13,
+   "difficulty": "hard",
+   "question": "According to the chapter, how many gerahs make a shekel?",
+   "choices": [
+    "Ten",
+    "Twelve",
+    "Twenty",
+    "Fifty"
+   ],
+   "answer": 2,
+   "evidence": "(a shekel is twenty gerahs:)",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a533b96c-fde3-4c86-a321-722ec3404148",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "easy",
+   "question": "What material was the laver for washing to be made of?",
+   "choices": [
+    "Gold",
+    "Silver",
+    "Brass",
+    "Iron"
+   ],
+   "answer": 2,
+   "evidence": "Thou shalt also make a laver of brass",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4917436c-e8c7-4373-96f9-3019e6cc88b2",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "What were Aaron and his sons to wash at the laver?",
+   "choices": [
+    "Their faces",
+    "Their garments",
+    "Their heads and hands",
+    "Their hands and their feet"
+   ],
+   "answer": 3,
+   "evidence": "For Aaron and his sons shall wash their hands and their feet thereat",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "62a5d270-dd51-4f69-a851-384e393e48fa",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "How many shekels of pure myrrh were to be taken for the holy anointing oil?",
+   "choices": [
+    "Two hundred and fifty",
+    "Five hundred",
+    "One thousand",
+    "Three hundred"
+   ],
+   "answer": 1,
+   "evidence": "of pure myrrh five hundred shekels",
+   "chapter": 30,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3730c7d8-a93a-4379-a3f2-fe956c71d20b",
+   "verse_start": 1,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "Whom did the LORD say He had called by name and filled with the spirit of God for the work?",
+   "choices": [
+    "Bezaleel",
+    "Joshua",
+    "Eleazar",
+    "Caleb"
+   ],
+   "answer": 0,
+   "evidence": "I have called by name Bezaleel the son of Uri",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "10822c53-5d93-409c-b532-56ff79f487cf",
+   "verse_start": 2,
+   "verse_end": 2,
+   "difficulty": "hard",
+   "question": "Who is named as the father of Bezaleel?",
+   "choices": [
+    "Hur",
+    "Ahisamach",
+    "Nun",
+    "Uri"
+   ],
+   "answer": 3,
+   "evidence": "Bezaleel the son of Uri, the son of Hur",
+   "chapter": 31,
+   "status": "draft",
+   "problems": [
+    "choice 1 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "81ee6d9b-4494-448f-a8df-c5642ff5b370",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "Aholiab, given to work with Bezaleel, came from which tribe?",
+   "choices": [
+    "Judah",
+    "Levi",
+    "Dan",
+    "Benjamin"
+   ],
+   "answer": 2,
+   "evidence": "Aholiab, the son of Ahisamach, of the tribe of Dan",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d1911d1a-8122-4378-8b02-b98e4a817e95",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "After making heaven and earth in six days, on the seventh day the LORD rested and was what?",
+   "choices": [
+    "Glorified",
+    "Refreshed",
+    "Satisfied",
+    "Pleased"
+   ],
+   "answer": 1,
+   "evidence": "on the seventh day he rested, and was refreshed.",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "65bd92bc-48c0-42bf-ad6e-32570e049205",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "easy",
+   "question": "On which mountain did God finish communing with Moses and give him the tables of testimony?",
+   "choices": [
+    "Mount Carmel",
+    "Mount Sinai",
+    "Mount Zion",
+    "Mount Nebo"
+   ],
+   "answer": 1,
+   "evidence": "when he had made an end of communing with him upon mount Sinai",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "67966282-2291-44cc-a81d-86c60b5c7e58",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "medium",
+   "question": "According to the chapter, how were the two tables of stone written?",
+   "choices": [
+    "By Moses' hand",
+    "By an angel",
+    "With the finger of God",
+    "By Aaron the priest"
+   ],
+   "answer": 2,
+   "evidence": "tables of stone, written with the finger of God.",
+   "chapter": 31,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "747c8f44-541b-4b35-86ac-6b4a53c996b8",
+   "verse_start": 2,
+   "verse_end": 4,
+   "difficulty": "easy",
+   "question": "What did Aaron make from the gold the people brought him?",
+   "choices": [
+    "A molten calf",
+    "A golden serpent",
+    "A golden altar",
+    "A golden ark"
+   ],
+   "answer": 0,
+   "evidence": "after he had made it a molten calf",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "75de281b-7a47-40c6-8763-8f0e8f2bcf21",
+   "verse_start": 15,
+   "verse_end": 19,
+   "difficulty": "easy",
+   "question": "What did Moses break beneath the mount when he saw the calf and the dancing?",
+   "choices": [
+    "The tables",
+    "The calf's altar",
+    "His rod",
+    "The trumpets"
+   ],
+   "answer": 0,
+   "evidence": "he cast the tables out of his hands, and brake them beneath the mount",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a81f49ff-3abd-4454-b3c9-a03851a12cf4",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "medium",
+   "question": "Who told Moses, \"There is a noise of war in the camp\"?",
+   "choices": [
+    "Joshua",
+    "Aaron",
+    "Caleb",
+    "Hur"
+   ],
+   "answer": 0,
+   "evidence": "when Joshua heard the noise of the people as they shouted, he said unto Moses, There is a noise of war in the camp.",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c26e12bd-3121-4bfe-810b-365d9709b54c",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "hard",
+   "question": "After grinding the calf to powder, where did Moses strew it?",
+   "choices": [
+    "Upon the water",
+    "Upon the altar",
+    "Upon the mount",
+    "Upon the sand"
+   ],
+   "answer": 0,
+   "evidence": "ground it to powder, and strawed it upon the water",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3c62c2c7-53df-4386-8726-98979d144bcf",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "medium",
+   "question": "Who gathered to Moses when he asked, \"Who is on the LORD's side?\"",
+   "choices": [
+    "The sons of Levi",
+    "The sons of Judah",
+    "The sons of Reuben",
+    "The sons of Benjamin"
+   ],
+   "answer": 0,
+   "evidence": "And all the sons of Levi gathered themselves together unto him.",
+   "chapter": 32,
+   "status": "draft",
+   "problems": [
+    "the question isn't a 10 to 300 character question"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "1a6530ad-e084-4b7b-9593-edcc8eccbd90",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "About how many men of the people fell that day?",
+   "choices": [
+    "Three thousand",
+    "Five thousand",
+    "Twelve thousand",
+    "Six hundred"
+   ],
+   "answer": 0,
+   "evidence": "there fell of the people that day about three thousand men",
+   "chapter": 32,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "25e3aece-4a11-4090-83ed-f40b8fa82155",
+   "verse_start": 6,
+   "verse_end": 6,
+   "difficulty": "medium",
+   "question": "By which mount did the children of Israel strip themselves of their ornaments?",
+   "choices": [
+    "Mount Carmel",
+    "Mount Nebo",
+    "Mount Hor",
+    "Mount Horeb"
+   ],
+   "answer": 3,
+   "evidence": "And the children of Israel stripped themselves of their ornaments by the mount Horeb.",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "40c08901-fe96-4229-b2b6-afcfea737582",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "medium",
+   "question": "What descended and stood at the door of the tabernacle when Moses entered?",
+   "choices": [
+    "The cloudy pillar",
+    "A pillar of fire",
+    "An angel",
+    "A flame of fire"
+   ],
+   "answer": 0,
+   "evidence": "the cloudy pillar descended, and stood at the door of the tabernacle",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "31c2ad67-f0ad-454e-b8cc-2be4a118d657",
+   "verse_start": 11,
+   "verse_end": 11,
+   "difficulty": "easy",
+   "question": "Which servant of Moses did not depart out of the tabernacle?",
+   "choices": [
+    "Aaron",
+    "Joshua",
+    "Caleb",
+    "Hur"
+   ],
+   "answer": 1,
+   "evidence": "but his servant Joshua, the son of Nun, a young man, departed not out of the tabernacle.",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2f28c913-3d22-4485-a94d-af0d13cc2ca9",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "easy",
+   "question": "What did Moses ask the LORD to show him?",
+   "choices": [
+    "The promised land",
+    "His hand",
+    "His glory",
+    "A sign"
+   ],
+   "answer": 2,
+   "evidence": "I beseech thee, shew me thy glory.",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "31d1161b-8022-4178-bd89-7405bc272e22",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "hard",
+   "question": "Where did the LORD say He would put Moses while His glory passed by?",
+   "choices": [
+    "Inside the tabernacle",
+    "In a clift of the rock",
+    "Behind a bush",
+    "At his tent door"
+   ],
+   "answer": 1,
+   "evidence": "I will put thee in a clift of the rock",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "16dccfec-1abc-4fe5-a006-6e3eba420485",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "hard",
+   "question": "After the LORD took away His hand, what would Moses see?",
+   "choices": [
+    "His face",
+    "His feet",
+    "His back parts",
+    "His throne"
+   ],
+   "answer": 2,
+   "evidence": "thou shalt see my back parts",
+   "chapter": 33,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bafa44ed-2679-4184-9dec-bc0ed19d913e",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What did the LORD tell Moses to hew?",
+   "choices": [
+    "Two tables of stone",
+    "An altar of earth",
+    "Two pillars of brass",
+    "A golden lampstand"
+   ],
+   "answer": 0,
+   "evidence": "Hew thee two tables of stone like unto the first",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0c0a4af9-f768-43e8-bd93-ef2a725b550e",
+   "verse_start": 18,
+   "verse_end": 18,
+   "difficulty": "hard",
+   "question": "In which month does the chapter say Israel came out from Egypt?",
+   "choices": [
+    "Abib",
+    "Nisan",
+    "Adar",
+    "Zif"
+   ],
+   "answer": 0,
+   "evidence": "in the month Abib thou camest out from Egypt",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9da16331-cffa-424f-a986-8d015b88106d",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "With what was the firstling of an ass to be redeemed?",
+   "choices": [
+    "A goat",
+    "Two turtledoves",
+    "A shekel of silver",
+    "A lamb"
+   ],
+   "answer": 3,
+   "evidence": "the firstling of an ass thou shalt redeem with a lamb",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7a9db21e-645f-4694-aa0e-be59c26941c8",
+   "verse_start": 28,
+   "verse_end": 28,
+   "difficulty": "hard",
+   "question": "How long was Moses there with the LORD on the mount?",
+   "choices": [
+    "Seven days",
+    "Forty days and forty nights",
+    "Three days and three nights",
+    "Twelve days"
+   ],
+   "answer": 1,
+   "evidence": "he was there with the LORD forty days and forty nights",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "ffc39c02-d469-454e-afc5-99ba923585b1",
+   "verse_start": 29,
+   "verse_end": 30,
+   "difficulty": "easy",
+   "question": "What had happened to the skin of Moses' face when he came down from mount Sinai?",
+   "choices": [
+    "It turned pale",
+    "It became leprous",
+    "It shone",
+    "It was burned"
+   ],
+   "answer": 2,
+   "evidence": "the skin of his face shone",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "47dd91ed-efab-4b50-9fe4-91e800480d99",
+   "verse_start": 33,
+   "verse_end": 33,
+   "difficulty": "medium",
+   "question": "What did Moses put on his face when he had done speaking with the people?",
+   "choices": [
+    "Sackcloth",
+    "A vail",
+    "A mitre",
+    "Ashes"
+   ],
+   "answer": 1,
+   "evidence": "he put a vail on his face",
+   "chapter": 34,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d23bf0e5-1121-431d-ad01-759493b9f7f4",
+   "verse_start": 3,
+   "verse_end": 3,
+   "difficulty": "easy",
+   "question": "What were the people not to kindle in their habitations on the sabbath day?",
+   "choices": [
+    "Lamps",
+    "Incense",
+    "Fire",
+    "Ovens"
+   ],
+   "answer": 2,
+   "evidence": "Ye shall kindle no fire throughout your habitations upon the sabbath day.",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c40ae1f0-d2ff-45da-866a-7b92b3c0a46d",
+   "verse_start": 27,
+   "verse_end": 27,
+   "difficulty": "medium",
+   "question": "What did the rulers bring for the ephod and the breastplate?",
+   "choices": [
+    "Onyx stones",
+    "Shittim wood",
+    "Goats' hair",
+    "Rams' skins"
+   ],
+   "answer": 0,
+   "evidence": "the rulers brought onyx stones",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b47010b4-e7ea-469b-8987-bcea5ab0575e",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "easy",
+   "question": "Whom did Moses say the LORD had called by name for the work?",
+   "choices": [
+    "Joshua",
+    "Bezaleel",
+    "Eleazar",
+    "Caleb"
+   ],
+   "answer": 1,
+   "evidence": "the LORD hath called by name Bezaleel the son of Uri",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7e40c4c1-73b7-4291-b136-d74e803e5bb7",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "medium",
+   "question": "Which tribe was Bezaleel from?",
+   "choices": [
+    "Levi",
+    "Ephraim",
+    "Benjamin",
+    "Judah"
+   ],
+   "answer": 3,
+   "evidence": "of the tribe of Judah",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "873d5831-2a02-4241-9903-8df3fdc0fc08",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "hard",
+   "question": "Bezaleel's father Uri is called the son of whom?",
+   "choices": [
+    "Caleb",
+    "Aaron",
+    "Hur",
+    "Jesse"
+   ],
+   "answer": 2,
+   "evidence": "Bezaleel the son of Uri, the son of Hur",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "6f9afcfb-c6e6-45cd-9d43-10223e12b1c2",
+   "verse_start": 34,
+   "verse_end": 34,
+   "difficulty": "hard",
+   "question": "Aholiab, who was to teach alongside Bezaleel, is called the son of whom?",
+   "choices": [
+    "Uri",
+    "Ahisamach",
+    "Amminadab",
+    "Nun"
+   ],
+   "answer": 1,
+   "evidence": "Aholiab, the son of Ahisamach, of the tribe of Dan.",
+   "chapter": 35,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "f77bb3a3-30be-4c8b-861c-1f3fda066eb2",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Who is named as working alongside Bezaleel on the sanctuary?",
+   "choices": [
+    "Aholiab",
+    "Joshua",
+    "Hur",
+    "Eleazar"
+   ],
+   "answer": 0,
+   "evidence": "Then wrought Bezaleel and Aholiab",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "b9a69559-b195-4a92-9b70-4ee375007109",
+   "verse_start": 5,
+   "verse_end": 5,
+   "difficulty": "easy",
+   "question": "What did the workers tell Moses about what the people were bringing?",
+   "choices": [
+    "Too little for the work",
+    "Much more than enough",
+    "Only half of what was needed",
+    "Nothing of value"
+   ],
+   "answer": 1,
+   "evidence": "The people bring much more than enough for the service of the work",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5ea26dba-bb4f-45b9-bbf8-dee84fa5bc08",
+   "verse_start": 14,
+   "verse_end": 14,
+   "difficulty": "medium",
+   "question": "What were the curtains for the tent over the tabernacle made of?",
+   "choices": [
+    "Camels’ hair",
+    "Lambs’ wool",
+    "Goats’ hair",
+    "Sackcloth"
+   ],
+   "answer": 2,
+   "evidence": "And he made curtains of goats’ hair for the tent over the tabernacle",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c21cb8f7-d270-48d6-b4de-25f0f0b74535",
+   "verse_start": 15,
+   "verse_end": 15,
+   "difficulty": "hard",
+   "question": "How long was each of the goats' hair curtains?",
+   "choices": [
+    "Ten cubits",
+    "Thirty cubits",
+    "Forty cubits",
+    "Fifty cubits"
+   ],
+   "answer": 1,
+   "evidence": "The length of one curtain was thirty cubits",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "adbed6e6-cd61-42bb-bd09-59a8f8280376",
+   "verse_start": 20,
+   "verse_end": 20,
+   "difficulty": "medium",
+   "question": "What kind of wood were the boards for the tabernacle made of?",
+   "choices": [
+    "Cedar wood",
+    "Olive wood",
+    "Fir wood",
+    "Shittim wood"
+   ],
+   "answer": 3,
+   "evidence": "And he made boards for the tabernacle of shittim wood, standing up.",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "74011825-3fc1-4e18-b8b8-43000b3c76cf",
+   "verse_start": 38,
+   "verse_end": 38,
+   "difficulty": "hard",
+   "question": "What were the five sockets of the pillars for the door hanging made of?",
+   "choices": [
+    "Silver",
+    "Gold",
+    "Brass",
+    "Iron"
+   ],
+   "answer": 2,
+   "evidence": "but their five sockets were of brass.",
+   "chapter": 36,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d65cd786-c209-417b-a817-caa5c4122345",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "Who made the ark in this chapter?",
+   "choices": [
+    "Bezaleel",
+    "Aholiab",
+    "Aaron",
+    "Moses"
+   ],
+   "answer": 0,
+   "evidence": "And Bezaleel made the ark of shittim wood",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bd7b1e51-2500-44f7-88b2-0f08b9a018ab",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What kind of wood was the ark made of?",
+   "choices": [
+    "Cedar wood",
+    "Shittim wood",
+    "Olive wood",
+    "Fir wood"
+   ],
+   "answer": 1,
+   "evidence": "And Bezaleel made the ark of shittim wood",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "4ea32087-d6b1-4ff2-914c-388880cf506b",
+   "verse_start": 19,
+   "verse_end": 19,
+   "difficulty": "medium",
+   "question": "The bowls on the candlestick's branches were made after the fashion of what?",
+   "choices": [
+    "Pomegranates",
+    "Lilies",
+    "Olives",
+    "Almonds"
+   ],
+   "answer": 3,
+   "evidence": "Three bowls made after the fashion of almonds in one branch, a knop and a flower",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "25a96792-d12b-49fd-86cd-6fcb62f6b14b",
+   "verse_start": 23,
+   "verse_end": 23,
+   "difficulty": "medium",
+   "question": "How many lamps were made for the candlestick?",
+   "choices": [
+    "Six",
+    "Twelve",
+    "Seven",
+    "Four"
+   ],
+   "answer": 2,
+   "evidence": "And he made his seven lamps, and his snuffers, and his snuffdishes, of pure gold.",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9d56da2b-1d84-4e3c-88c2-07139a26eb30",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "How much pure gold was used to make the candlestick and all its vessels?",
+   "choices": [
+    "A talent",
+    "Two talents",
+    "A hundred shekels",
+    "Ten talents"
+   ],
+   "answer": 0,
+   "evidence": "Of a talent of pure gold made he it, and all the vessels thereof.",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "7eab377f-e174-4903-96e5-0b8622ee2f1f",
+   "verse_start": 25,
+   "verse_end": 25,
+   "difficulty": "hard",
+   "question": "What was the height of the incense altar?",
+   "choices": [
+    "One cubit",
+    "Two cubits",
+    "A cubit and a half",
+    "Three cubits"
+   ],
+   "answer": 1,
+   "evidence": "and two cubits was the height of it",
+   "chapter": 37,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2c1893d5-82bb-41bf-850f-8cba75a253bc",
+   "verse_start": 1,
+   "verse_end": 1,
+   "difficulty": "easy",
+   "question": "What kind of wood was the altar of burnt offering made of?",
+   "choices": [
+    "Shittim wood",
+    "Cedar wood",
+    "Olive wood",
+    "Fir wood"
+   ],
+   "answer": 0,
+   "evidence": "And he made the altar of burnt offering of shittim wood",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "d532b2a9-689a-494b-84df-eae700dc49b6",
+   "verse_start": 8,
+   "verse_end": 8,
+   "difficulty": "medium",
+   "question": "From what was the brass laver made?",
+   "choices": [
+    "Earrings of the people",
+    "Censers of the princes",
+    "Lookingglasses of the women",
+    "Bracelets of the men"
+   ],
+   "answer": 2,
+   "evidence": "And he made the laver of brass, and the foot of it of brass, of the lookingglasses of the women assembling",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0cdbc00e-12cb-4350-968c-d308e8e2b925",
+   "verse_start": 22,
+   "verse_end": 23,
+   "difficulty": "easy",
+   "question": "Who worked with Bezaleel as an engraver and embroiderer?",
+   "choices": [
+    "Joshua",
+    "Aholiab",
+    "Ithamar",
+    "Eleazar"
+   ],
+   "answer": 1,
+   "evidence": "And with him was Aholiab, son of Ahisamach, of the tribe of Dan, an engraver",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "3edae2d0-ebd8-4fe4-8b81-b583eff72766",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "Which tribe was Bezaleel from?",
+   "choices": [
+    "Dan",
+    "Levi",
+    "Ephraim",
+    "Judah"
+   ],
+   "answer": 3,
+   "evidence": "And Bezaleel the son of Uri, the son of Hur, of the tribe of Judah",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "0e322e7e-b0ef-4448-8008-9ace9774b8d1",
+   "verse_start": 24,
+   "verse_end": 24,
+   "difficulty": "hard",
+   "question": "How many talents of gold were used for the work of the holy place?",
+   "choices": [
+    "Twenty and nine",
+    "Seventy",
+    "An hundred",
+    "Thirty"
+   ],
+   "answer": 0,
+   "evidence": "was twenty and nine talents, and seven hundred and thirty shekels",
+   "chapter": 38,
+   "status": "draft",
+   "problems": [
+    "choice 3 is also supported by the evidence",
+    "choice 4 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "2feadf6c-1225-4c19-b683-6ff785446e07",
+   "verse_start": 26,
+   "verse_end": 26,
+   "difficulty": "hard",
+   "question": "What amount was given for every man who went to be numbered?",
+   "choices": [
+    "A gerah",
+    "A bekah",
+    "A talent",
+    "A mite"
+   ],
+   "answer": 1,
+   "evidence": "A bekah for every man, that is, half a shekel",
+   "chapter": 38,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "506dd940-7b0d-4c0f-b3b9-74f3d317c1a5",
+   "verse_start": 9,
+   "verse_end": 9,
+   "difficulty": "hard",
+   "question": "How long was the breastplate?",
+   "choices": [
+    "A cubit",
+    "A span",
+    "Two cubits",
+    "A handbreadth"
+   ],
+   "answer": 1,
+   "evidence": "a span was the length thereof, and a span the breadth thereof",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "a040da56-5d5f-4fe8-a94a-4c78e07a2ecb",
+   "verse_start": 12,
+   "verse_end": 12,
+   "difficulty": "hard",
+   "question": "Which stone was the last in the third row of the breastplate?",
+   "choices": [
+    "An amethyst",
+    "A jasper",
+    "A diamond",
+    "A carbuncle"
+   ],
+   "answer": 0,
+   "evidence": "And the third row, a ligure, an agate, and an amethyst.",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "23cd3d48-1026-481b-a44b-c5437e4ac891",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "What color was the robe of the ephod made entirely of?",
+   "choices": [
+    "Purple",
+    "Scarlet",
+    "White",
+    "Blue"
+   ],
+   "answer": 3,
+   "evidence": "And he made the robe of the ephod of woven work, all of blue.",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "dd6927cc-45a3-4320-b797-11359470930f",
+   "verse_start": 25,
+   "verse_end": 26,
+   "difficulty": "medium",
+   "question": "What was placed between the pomegranates on the hem of the robe?",
+   "choices": [
+    "Almonds",
+    "Lilies",
+    "Bells",
+    "Tassels"
+   ],
+   "answer": 2,
+   "evidence": "A bell and a pomegranate, a bell and a pomegranate, round about the hem of the robe",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "5d861377-2a0e-48cc-b7e9-2dd8dc5884fb",
+   "verse_start": 30,
+   "verse_end": 30,
+   "difficulty": "easy",
+   "question": "What was written on the plate of the holy crown?",
+   "choices": [
+    "HOLINESS TO THE LORD",
+    "THE LORD OUR RIGHTEOUSNESS",
+    "KING OF ISRAEL",
+    "THE LORD IS ONE"
+   ],
+   "answer": 0,
+   "evidence": "wrote upon it a writing, like to the engravings of a signet, HOLINESS TO THE LORD.",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "31c31742-d464-4ee5-87b2-3fd038c48f30",
+   "verse_start": 43,
+   "verse_end": 43,
+   "difficulty": "easy",
+   "question": "What did Moses do after he looked upon all the finished work?",
+   "choices": [
+    "Rebuked them",
+    "Blessed them",
+    "Offered a sacrifice",
+    "Broke the tables"
+   ],
+   "answer": 1,
+   "evidence": "and Moses blessed them.",
+   "chapter": 39,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "c3589650-6954-4f24-9369-169d90f92005",
+   "verse_start": 12,
+   "verse_end": 13,
+   "difficulty": "easy",
+   "question": "Whom was Moses told to bring to the door of the tabernacle and wash with water?",
+   "choices": [
+    "Joshua and Caleb",
+    "Jethro and his sons",
+    "Aaron and his sons",
+    "Hur and Bezaleel"
+   ],
+   "answer": 2,
+   "evidence": "thou shalt bring Aaron and his sons unto the door of the tabernacle of the congregation, and wash them with water",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "bd8a89f7-cdfb-4ebe-aee5-43d03daa60d9",
+   "verse_start": 17,
+   "verse_end": 17,
+   "difficulty": "hard",
+   "question": "In which year was the tabernacle reared up?",
+   "choices": [
+    "The first year",
+    "The third year",
+    "The second year",
+    "The fortieth year"
+   ],
+   "answer": 2,
+   "evidence": "in the first month in the second year",
+   "chapter": 40,
+   "status": "draft",
+   "problems": [
+    "choice 1 is also supported by the evidence"
+   ],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "24a02431-0764-46d3-8311-ed2a1da004f2",
+   "verse_start": 22,
+   "verse_end": 22,
+   "difficulty": "medium",
+   "question": "On which side of the tabernacle did Moses put the table?",
+   "choices": [
+    "Southward",
+    "Eastward",
+    "Westward",
+    "Northward"
+   ],
+   "answer": 3,
+   "evidence": "upon the side of the tabernacle northward",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "06c14f32-f7e3-452d-9c1e-5dd70afa48a9",
+   "verse_start": 29,
+   "verse_end": 29,
+   "difficulty": "hard",
+   "question": "Along with the burnt offering, what offering did Moses offer on the altar of burnt offering?",
+   "choices": [
+    "The peace offering",
+    "The meat offering",
+    "The sin offering",
+    "The drink offering"
+   ],
+   "answer": 1,
+   "evidence": "offered upon it the burnt offering and the meat offering",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "9cea3ab9-ea5b-4266-9654-5c73cbd3ff94",
+   "verse_start": 34,
+   "verse_end": 35,
+   "difficulty": "easy",
+   "question": "After a cloud covered the tent of the congregation, what filled the tabernacle?",
+   "choices": [
+    "Smoke of incense",
+    "The glory of the LORD",
+    "A rushing wind",
+    "Bright lightning"
+   ],
+   "answer": 1,
+   "evidence": "the glory of the LORD filled the tabernacle",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  },
+  {
+   "id": "64454ce9-45ef-4ba9-997a-e7b13d2960b9",
+   "verse_start": 38,
+   "verse_end": 38,
+   "difficulty": "medium",
+   "question": "What was on the tabernacle by night, in the sight of all the house of Israel?",
+   "choices": [
+    "Fire",
+    "A cloud",
+    "A star",
+    "A pillar of smoke"
+   ],
+   "answer": 0,
+   "evidence": "fire was on it by night",
+   "chapter": 40,
+   "status": "checked",
+   "problems": [],
+   "model": "claude-opus-5-5"
+  }
+ ]
+}
