@@ -38,7 +38,7 @@ Contrast ratios are against `bg` in the same theme, checked for WCAG AA.
 | `leaf-1/2/3` | `#D9AD4B` `#8D6214` `#E8C877` | `#F0CD7A` `#B8862C` `#FFE3A1` | Gold-leaf gradient only |
 | `glow` | `rgba(214,160,52,.28)` | `rgba(240,180,70,.30)` | Lamp glow |
 | `danger` | `#B23A2C` | `#F07A6C` | Destructive actions only |
-| `speaker-jesus` | `#245C33` (5.0:1 or more) | `#8FD19B` (6.1:1 or more) | Words of Jesus in the KJV text (§8 Speaker colors) |
+| `speaker-jesus` | `#245C33` (5.0:1 or more) | `#86EF98` bright light green (7.7:1 or more) | Words of Jesus in the KJV text, in italics (§8 Speaker colors). Day stays deep green: a light green on paper would fall under 4.5:1 |
 | `speaker-other` | `#284F88` (5.2:1 or more) | `#9CC0F0` (5.8:1 or more) | Words of other speakers in the KJV text |
 | `scrim` | `rgba(30,20,8,.32)` | `rgba(0,0,0,.55)` | Behind sheets |
 
