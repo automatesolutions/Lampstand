@@ -251,6 +251,7 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
         { id: "explain", title: `Explain ${title} in depth`, subtitle: "Background, key words, connections", icon: "sparkles", run: () => openExplain(ref) },
         { id: "pray-here", title: `Pray over ${title}`, subtitle: "With your recent chapters", icon: "hand-heart", run: () => openPrayer(ref) },
         { id: "note", title: `Add a note on ${title}`, subtitle: "Notes", icon: "notebook-pen", run: () => setNoteTarget({ verse: null }) },
+        { id: "listen", title: `Listen to ${title}`, subtitle: "Read aloud, verse by verse", icon: "headphones", run: () => setListening(true) },
         { id: "text", title: "Text settings", subtitle: "Size and line spacing", icon: "type", run: () => setTextOpen(true) },
         ...(next && nextHref ? [{ id: "next", title: `Next: ${formatRef(next)}`, icon: "chevron-right" as const, run: () => router.push(nextHref) }] : []),
         ...(prev && prevHref ? [{ id: "prev", title: `Previous: ${formatRef(prev)}`, icon: "chevron-left" as const, run: () => router.push(prevHref) }] : []),
@@ -278,7 +279,10 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
           focusVerse(n);
         } else select(sel == null ? 1 : clamp((step > 0 ? sel.end : sel.start) + step), true);
       } else if (e.key === "Escape" && sel) select(null);
-      else if (k === "a") {
+      else if (k === "l") {
+        e.preventDefault();
+        setListening((on) => !on); // Listen: open the player, or close it
+      } else if (k === "a") {
         e.preventDefault();
         setTextOpen(true);
       } else if (sel && "1234".includes(k)) highlightVerses(ref, sel.start, sel.end, HIGHLIGHT_COLORS[Number(k) - 1]);
@@ -323,6 +327,15 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
             >
               {chapter.version}
             </button>
+            <button
+              type="button"
+              onClick={() => setListening((on) => !on)}
+              aria-pressed={listening}
+              className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 text-[0.9375rem] font-semibold text-gold-text ${listening ? "bg-gold-wash" : ""}`}
+            >
+              <Icon name="headphones" className="size-5" />
+              Listen
+            </button>
             <button type="button" onClick={() => setTextOpen(true)} aria-label="Text settings" className="grid size-11 place-items-center rounded-full text-gold-text">
               <Icon name="type" className="size-[22px]" />
             </button>
@@ -342,9 +355,13 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
           </h1>
           <Fleuron className="mt-2 w-[180px]" />
           {!listening && (
-            <button type="button" onClick={() => setListening(true)} className="mt-2 inline-flex min-h-11 items-center gap-1.5 rounded-md px-3 font-medium text-gold-text">
-              <span aria-hidden="true" className="icon-[lucide--headphones] size-5" />
-              Listen
+            <button
+              type="button"
+              onClick={() => setListening(true)}
+              className="mt-3 inline-flex min-h-12 items-center gap-2 rounded-full bg-surface px-5 text-headline text-gold-text ring-1 ring-divider [@media(hover:hover)]:hover:bg-gold-wash"
+            >
+              <Icon name="headphones" className="size-5" />
+              Listen to {title}
             </button>
           )}
         </header>
@@ -599,7 +616,7 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
             )}
           </p>
           <p aria-hidden="true" className="hidden flex-wrap items-center justify-center gap-1.5 text-center text-footnote text-text-secondary [@media(hover:hover)_and_(pointer:fine)]:flex">
-            <ModK /> go to · <Kbd>←</Kbd> <Kbd>→</Kbd> chapter · <Kbd>↑</Kbd> <Kbd>↓</Kbd> verse · <Kbd>1</Kbd>–<Kbd>4</Kbd> highlight · <Kbd>⇧</Kbd> <Kbd>↓</Kbd> select more · <Kbd>A</Kbd> text
+            <ModK /> go to · <Kbd>←</Kbd> <Kbd>→</Kbd> chapter · <Kbd>↑</Kbd> <Kbd>↓</Kbd> verse · <Kbd>1</Kbd>–<Kbd>4</Kbd> highlight · <Kbd>⇧</Kbd> <Kbd>↓</Kbd> select more · <Kbd>L</Kbd> listen · <Kbd>A</Kbd> text
           </p>
         </section>
       </main>
@@ -607,7 +624,7 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
       {/* Thumb bar (phones): the reader's controls, just above the main tab bar, always on screen (DESIGN.md §5.1). */}
       <nav
         aria-label="Reader"
-        className={`glass fixed inset-x-0 bottom-[calc(57px+env(safe-area-inset-bottom))] z-30 grid grid-cols-[56px_1fr_56px_56px] items-center gap-0.5 border-t border-divider py-1 pl-[max(10px,env(safe-area-inset-left))] pr-[max(10px,env(safe-area-inset-right))] min-[960px]:hidden`}
+        className={`glass fixed inset-x-0 bottom-[calc(57px+env(safe-area-inset-bottom))] z-30 grid grid-cols-[56px_1fr_56px_56px_56px] items-center gap-0.5 border-t border-divider py-1 pl-[max(10px,env(safe-area-inset-left))] pr-[max(10px,env(safe-area-inset-right))] min-[960px]:hidden`}
       >
         <ThumbLink href={prevHref} label={prev ? `Previous chapter: ${formatRef(prev)}` : "No previous chapter"} icon="chevron-left" />
         <button
@@ -619,6 +636,15 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
         >
           <span className="truncate">{title}</span>
           <Icon name="chevron-down" className="size-4 text-text-secondary" />
+        </button>
+        <button
+          type="button"
+          onClick={() => setListening((on) => !on)}
+          aria-pressed={listening}
+          aria-label={listening ? "Close Listen" : `Listen to ${title}`}
+          className={`grid h-[52px] place-items-center rounded-md text-gold-text ${listening ? "bg-gold-wash" : ""}`}
+        >
+          <Icon name="headphones" className="size-6" />
         </button>
         <button type="button" onClick={() => setTextOpen(true)} aria-label="Text settings" className="grid h-[52px] place-items-center rounded-md text-gold-text">
           <Icon name="type" className="size-6" />

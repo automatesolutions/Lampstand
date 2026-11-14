@@ -16,6 +16,7 @@ const ICONS = {
   "flag": "icon-[lucide--flag]",
   "flame": "icon-[lucide--flame]",
   "hand-heart": "icon-[lucide--hand-heart]",
+  "headphones": "icon-[lucide--headphones]",
   "history": "icon-[lucide--history]",
   "house": "icon-[lucide--house]",
   "info": "icon-[lucide--info]",

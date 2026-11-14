@@ -108,7 +108,7 @@ The bottom third of the screen is the easy zone; the top corners are the hardest
 - **Tab bar** at the bottom, 56px + safe area, labels always shown.
 - **Today:** the lamp card is a compact strip so the passage sits high, and **Continue reading** is `position: sticky` just above the tab bar.
 - **Read:** the **Go to** search bar floats above the tab bar (§5.3).
-- **Reader:** the tab bar stays (Today, Read, Notes, Circles, Me), so every tab is one tap away while reading. Just above it sits the reader's **thumb bar**: Previous, chapter picker ("John 3 ▾"), Text, Next. Each 52px tall, at least 56px wide. Top-right reader icons are desktop only.
+- **Reader:** the tab bar stays (Today, Read, Notes, Circles, Me), so every tab is one tap away while reading. Just above it sits the reader's **thumb bar**: Previous, chapter picker ("John 3 ▾"), Listen (headphones; pressed while the player is open), Text, Next. Each 52px tall, at least 56px wide. Top-right reader icons are desktop only.
 - **Bars stay put.** The tab bar (on every screen, the reader included), the reader's top bar and its thumb bar stay on screen while you scroll, so the menu is always one tap away. Pages keep bottom padding (bar height + safe area + 40px) so the last row is never covered.
 - **Swipe** sideways on the text (more than 70px, mostly horizontal) for the next or previous chapter.
 - **Sheets** open from the bottom on phones, centered from 640px, with a Close button, Escape, and focus returned to the trigger.
@@ -129,14 +129,14 @@ One box finds anything and runs any action, after Raycast's command palette, siz
 - **Matching:** a book matches when its name or short form starts with the query, or the letters appear in order with the same first letter. Starts rank first, then shorter names (`jn` → John before Jonah). Chapter and verse must exist.
 - **Keys:** ↑ ↓ move, ↵ opens, Esc closes. ARIA combobox + listbox, `aria-activedescendant`.
 
-**Reader keys:** ← → chapter, ↑ ↓ verse, ⇧↑ ⇧↓ select more verses (or fewer), ⇧ Enter or ⇧ click extends to that verse, `1`–`4` highlight colors (every selected verse), `N` note, `C` copy, `A` text settings, Esc clears the selection.
+**Reader keys:** `L` listen (opens or closes the player), ← → chapter, ↑ ↓ verse, ⇧↑ ⇧↓ select more verses (or fewer), ⇧ Enter or ⇧ click extends to that verse, `1`–`4` highlight colors (every selected verse), `N` note, `C` copy, `A` text settings, Esc clears the selection.
 
 **Key caps** (`Kbd`) show shortcuts where they apply: palette footer, rail, verse bar, end of chapter. Shown only on `(hover: hover) and (pointer: fine)`, so phones stay clean. Mac shows `⌘ K`, others `Ctrl K`.
 
 ### 5.4 Desktop
 
 - From 960px a **side rail** (232px) replaces the tab bar: brand, Go to…, Today, Read, Notes, Circles, Me (the same five tabs as the phone bar, in the same order, with the same unread dot on Circles).
-- The reader keeps its top bar with version and text controls; the thumb bar is hidden.
+- The reader keeps its top bar with Listen (headphones and the word, pressed while playing), version and text controls; the thumb bar is hidden.
 
 ### 5.5 Reading comfort
 
@@ -182,7 +182,7 @@ One box finds anything and runs any action, after Raycast's command palette, siz
 
 **Verse.** Inline paragraphs. Tap or Enter selects (`gold-wash`, ring if highlighted) and shows the verse bar. Notes show a gold dot after the verse.
 
-**Listen.** A plain "Listen" button (headphones icon) under the chapter numeral opens the player, docked low above the thumb bar like the verse bar (which moves up while listening). The player: Previous verse, Play/Pause (48px, `gold-strong`, the one filled control), Next verse, the chapter and "Verse 12 · Device voice", a speed button (0.75×, 1×, 1.25×, 1.5×), Stop and close; under it a two-choice voice switch, **Device voice** (the browser's own, free, any version) and **Natural voice** (ElevenLabs, KJV only; disabled with a line saying so in other versions). The verse being read gets a 2px gold underline (`aria-current`), distinct from the selection fill, and is kept in view (instant with reduced motion). The natural voice plays a recording made once per chapter and shared by everyone; making a new one needs sign-in and stays inside daily and monthly limits. When it can't (signed out, limits reached, offline), a status line says so and the device voice reads instead. The voice and speed are remembered on this device.
+**Listen.** Always one tap away: Listen in the thumb bar (phones) and the top bar (desktop), both stay on screen while you scroll; `L` and the Go to action "Listen to John 3"; and under the chapter numeral, a rounded `surface` button "Listen to John 3" (48px, headphones, gold text; secondary, so Mark as read stays the one filled button). Any of them opens the player, docked low above the thumb bar like the verse bar (which moves up while listening). The player: Previous verse, Play/Pause (48px, `gold-strong`, the one filled control), Next verse, the chapter and "Verse 12 · Device voice", a speed button (0.75×, 1×, 1.25×, 1.5×), Stop and close; under it a two-choice voice switch, **Device voice** (the browser's own, free, any version) and **Natural voice** (ElevenLabs, KJV only; disabled with a line saying so in other versions). The verse being read gets a 2px gold underline (`aria-current`), distinct from the selection fill, and is kept in view (instant with reduced motion). The natural voice plays a recording made once per chapter and shared by everyone; making a new one needs sign-in and stays inside daily and monthly limits. When it can't (signed out, limits reached, offline), a status line says so and the device voice reads instead. The voice and speed are remembered on this device.
 
 **Speaker colors.** In the KJV, words of Jesus are `speaker-jesus` (green) and words of other speakers `speaker-other` (blue); narration keeps `text`. Color is never the only signal: whenever a chapter has colored words, a legend sits above the text ("Words of Jesus", and "Other speakers" when the chapter has them, each with a dot and in its own color) with a plain "Turn off colors" button. The Text sheet has "Speaker colors (KJV): On / Off" (on by default, kept on this device). Other versions are never colored, because the markup matches the KJV text only. Sources: words of Jesus from the eBible.org KJV's `\wj` markup (public domain), lined up letter by letter with our text; other speakers from a one-time AI pass, shown only for books that were reviewed and approved (`scripts/tag-speakers.mts`). A verse whose words don't line up exactly stays uncolored.
 
