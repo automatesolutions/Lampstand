@@ -69,7 +69,8 @@ export function mergeState(local: AppState, remote: Remote): AppState {
   const position = !remote.position ? local.position : !local.position ? remote.position : newer(local.position.updatedAt, remote.position.updatedAt) ? local.position : remote.position;
 
   const s = remote.settings;
-  const settings = s && !newer(local.settingsAt, s.settingsAt) ? { prefs: s.prefs, onboarded: s.onboarded || local.onboarded, plan: s.plan, settingsAt: s.settingsAt } : {};
+  // The account's settings win when newer; settings it doesn't store (speakerColors) stay as they are here.
+  const settings = s && !newer(local.settingsAt, s.settingsAt) ? { prefs: { ...local.prefs, ...s.prefs }, onboarded: s.onboarded || local.onboarded, plan: s.plan, settingsAt: s.settingsAt } : {};
 
   return {
     ...local,

@@ -38,6 +38,8 @@ Contrast ratios are against `bg` in the same theme, checked for WCAG AA.
 | `leaf-1/2/3` | `#D9AD4B` `#8D6214` `#E8C877` | `#F0CD7A` `#B8862C` `#FFE3A1` | Gold-leaf gradient only |
 | `glow` | `rgba(214,160,52,.28)` | `rgba(240,180,70,.30)` | Lamp glow |
 | `danger` | `#B23A2C` | `#F07A6C` | Destructive actions only |
+| `speaker-jesus` | `#245C33` (5.0:1 or more) | `#8FD19B` (6.1:1 or more) | Words of Jesus in the KJV text (§8 Speaker colors) |
+| `speaker-other` | `#284F88` (5.2:1 or more) | `#9CC0F0` (5.8:1 or more) | Words of other speakers in the KJV text |
 | `scrim` | `rgba(30,20,8,.32)` | `rgba(0,0,0,.55)` | Behind sheets |
 
 **Pigments** (one per kind of book, §8 Shelves). Day / Night:
@@ -52,6 +54,8 @@ Contrast ratios are against `bg` in the same theme, checked for WCAG AA.
 | `pg-letters` | Letters and Revelation | `#6A4D86` murex | `#B9A0DE` |
 
 Spine labels are `#FFF8EA` on Day pigments (5.4:1 or more) and `#1B150E` on Night pigments (7.3:1 or more).
+
+Speaker colors are checked against the page, the selection and all four highlight colors in both themes (the lowest ratio is shown); `lib/bible/speaker-contrast.test.ts` re-checks them whenever a token changes. They are text colors for Scripture only, separate from the pigments.
 
 **Highlights** use the stored names `gold`, `sky`, `sage`, `rose` (matches `highlights.color` in the migration), painted at 22 to 26% over the text: `gold`, `pg-law`, `pg-history`, `pg-gospels`.
 
@@ -177,6 +181,8 @@ One box finds anything and runs any action, after Raycast's command palette, siz
 **Context card ("Before you read").** Inside the In this chapter card, collapsed by default to one line (author · date · setting). Expands to five rows (Author, Date, First readers, Setting, Why it was written) and the footnote that these are background notes and traditions differ. It never covers the text as a sheet.
 
 **Verse.** Inline paragraphs. Tap or Enter selects (`gold-wash`, ring if highlighted) and shows the verse bar. Notes show a gold dot after the verse.
+
+**Speaker colors.** In the KJV, words of Jesus are `speaker-jesus` (green) and words of other speakers `speaker-other` (blue); narration keeps `text`. Color is never the only signal: whenever a chapter has colored words, a legend sits above the text ("Words of Jesus", and "Other speakers" when the chapter has them, each with a dot and in its own color) with a plain "Turn off colors" button. The Text sheet has "Speaker colors (KJV): On / Off" (on by default, kept on this device). Other versions are never colored, because the markup matches the KJV text only. Sources: words of Jesus from the eBible.org KJV's `\wj` markup (public domain), lined up letter by letter with our text; other speakers from a one-time AI pass, shown only for books that were reviewed and approved (`scripts/tag-speakers.mts`). A verse whose words don't line up exactly stays uncolored.
 
 **Selecting several verses.** Every selected verse shows the selection style while it's being chosen, so a drag is easy to follow.
 - Mouse: press and drag across verses. Range mode starts only once the pointer reaches a second verse, so selecting words inside one verse still works as usual.

@@ -6,7 +6,7 @@ Built with Next.js 16, TypeScript, Tailwind CSS 4 and Supabase. Every screen fol
 
 ## What it does
 
-- **Read:** KJV (built in), NLT and ESV, with a thumb-first reader on phones. The tab bar (Today, Read, Notes, Circles, Me) and the reader's controls stay on screen while you scroll.
+- **Read:** KJV (built in), NLT and ESV, with a thumb-first reader on phones. In the KJV, words of Jesus show in green and other speakers in blue (with a legend; turn it off in Text settings). The tab bar (Today, Read, Notes, Circles, Me) and the reader's controls stay on screen while you scroll.
 - **Understand:** "In this chapter" notes, "Before you read" context cards, and "Explain in depth" for every chapter.
 - **Pray:** a short prayer written from the chapters you read recently.
 - **Make a song:** after you mark a chapter as read, choose Praise or Worship. Claude writes original lyrics from your last three chapters and ElevenLabs Music sings them (about 70 seconds). Needs an account; three songs a day.
@@ -134,6 +134,7 @@ For Circles, also in the Supabase dashboard:
 - `content/context-cards.json` holds the book background notes. Their status is `draft` until reviewed.
 - `content/chapters/` holds the "In this chapter" explanation and key verse for every chapter, also `draft` until reviewed. Check them with `node scripts/check-chapter-notes.mjs`.
 - `public/plates/` holds one photoreal plate per book, made with Higgsfield.
+- `content/speakers/` holds who speaks where in the KJV, as character ranges in our text. Words of Jesus: `npx tsx scripts/import-speakers.mts <folder>` with the eBible.org KJV USFM files (eng-kjv2006, public domain; free, local). Other speakers: `npx tsx scripts/tag-speakers.mts` (`--estimate` is free; `--sample`, `--batch` and `--collect` call Claude; `--approve BOOK` after reviewing `content/speakers/draft/BOOK.md`). Every range is checked against our text, and anything that doesn't match exactly is left uncolored and listed.
 - `content/xrefs/` holds each chapter's best-supported cross-references from OpenBible.info (CC BY), made by `node scripts/import-xrefs.mjs`.
 
 **AI features** (all on the server; daily Claude spend cap in `lib/ai/budget.ts`, durable daily limits per person, address and app in `lib/ai/usage.ts`, short burst limits per address in `lib/ai/server.ts`)

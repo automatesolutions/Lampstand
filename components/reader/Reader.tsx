@@ -21,6 +21,7 @@ import { openPrayer } from "@/lib/prayer";
 import { openSong } from "@/lib/song";
 import { SWATCH } from "@/lib/highlights/colors";
 import { colorOf, type Span } from "@/lib/highlights/ranges";
+import { shiftSpans, speakerSegments, type SpeakerSpan } from "@/lib/bible/speakers";
 import {
   HIGHLIGHT_COLORS,
   highlightVerses,
@@ -46,6 +47,8 @@ interface Props {
   bookName: string;
   card: ContextCard | null;
   note: ChapterNote | null;
+  /** Who speaks where (KJV only): verse -> ranges in its text. Null when nothing is marked. */
+  speakers?: Record<number, SpeakerSpan[]> | null;
   /** The book's illuminated plate. */
   plate: string;
   prev: ChapterRef | null;
@@ -72,7 +75,7 @@ const CARD_ROWS: { key: keyof Omit<ContextCard, "status">; label: string }[] = [
   { key: "purpose", label: "Why it was written" },
 ];
 
-export function Reader({ chapter, bookName, card, note, plate, prev, next, versionName, copyright, versionLink }: Props) {
+export function Reader({ chapter, bookName, card, note, speakers = null, plate, prev, next, versionName, copyright, versionLink }: Props) {
   const router = useRouter();
   const hydrated = useHydrated();
   const ref = useMemo(() => ({ book: chapter.book, chapter: chapter.chapter }), [chapter.book, chapter.chapter]);
@@ -81,6 +84,10 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   const allNotes = useStore((s) => s.notes);
   const allHighlights = useStore((s) => s.highlights);
   const reads = useStore((s) => s.reads);
+  const speakerColors = useStore((s) => s.prefs.speakerColors !== false);
+  // Colors only when this chapter has speech marked, and the reader hasn't turned them off.
+  const voices = hydrated && speakerColors && speakers ? speakers : null;
+  const hasOther = !!voices && Object.values(voices).some((spans) => spans.some((sp) => sp[2] === "other"));
   const contextSeen = useStore((s) => s.contextSeen);
   const { goal, readToday } = useReadingSummary();
 
@@ -403,6 +410,24 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
           </section>
         )}
 
+        {voices && (
+          <p className="mx-auto mb-4 flex max-w-[64ch] flex-wrap items-center gap-x-4 gap-y-1 text-footnote text-text-secondary">
+            <span className="inline-flex items-center gap-1.5">
+              <span aria-hidden="true" className="size-3 rounded-full bg-[var(--speaker-jesus)]" />
+              <span className="font-semibold text-[var(--speaker-jesus)]">Words of Jesus</span>
+            </span>
+            {hasOther && (
+              <span className="inline-flex items-center gap-1.5">
+                <span aria-hidden="true" className="size-3 rounded-full bg-[var(--speaker-other)]" />
+                <span className="font-semibold text-[var(--speaker-other)]">Other speakers</span>
+              </span>
+            )}
+            <button type="button" onClick={() => setPrefs({ speakerColors: false })} className="min-h-11 font-medium text-gold-text underline underline-offset-2">
+              Turn off colors
+            </button>
+          </p>
+        )}
+
         <article
           ref={textRef}
           aria-label={`${title}, ${chapter.version}`}
@@ -455,14 +480,14 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
                         {v.text[0]}
                       </span>
                       <span className="sr-only">{v.text[0]}</span>
-                      {v.text.slice(1)}
+                      <Spoken text={v.text.slice(1)} spans={shiftSpans(voices?.[v.number], 1)} />
                     </>
                   ) : (
                     <>
                       <sup aria-hidden="true" className="relative -top-[0.35em] mr-[0.25em] align-baseline font-sans text-[0.72em] font-medium text-text-secondary">
                         {v.number}
                       </sup>
-                      {v.text}
+                      <Spoken text={v.text} spans={voices?.[v.number]} />
                     </>
                   )}
                   {noted && <span aria-hidden="true" className="ml-1 inline-block size-[7px] -translate-y-[0.2em] rounded-full bg-gold align-middle" />}{" "}
@@ -711,5 +736,23 @@ function ThumbLink({ href, label, icon }: { href: string | null; label: string; 
     <Link href={href} aria-label={label} className="grid h-[52px] place-items-center rounded-md text-gold-text">
       <Icon name={icon} className="size-6" />
     </Link>
+  );
+}
+
+/** A verse's words, with spoken parts in the speaker's color (DESIGN.md §8 Speaker colors). */
+function Spoken({ text, spans }: { text: string; spans?: SpeakerSpan[] }) {
+  if (!spans?.length) return <>{text}</>;
+  return (
+    <>
+      {speakerSegments(text, spans).map((seg, i) =>
+        seg.who ? (
+          <span key={i} className={seg.who === "jesus" ? "text-[var(--speaker-jesus)]" : "text-[var(--speaker-other)]"}>
+            {seg.text}
+          </span>
+        ) : (
+          seg.text
+        ),
+      )}
+    </>
   );
 }
