@@ -88,8 +88,10 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
   const reads = useStore((s) => s.reads);
   const speakerColors = useStore((s) => s.prefs.speakerColors !== false);
   // Colors only when this chapter has speech marked, and the reader hasn't turned them off.
+  // Old Testament chapters can have only words of God, so the legend shows what's there.
   const voices = hydrated && speakerColors && speakers ? speakers : null;
-  const hasOther = !!voices && Object.values(voices).some((spans) => spans.some((sp) => sp[2] === "other"));
+  const hasJesus = !!voices && Object.values(voices).some((spans) => spans.some((sp) => sp[2] === "jesus"));
+  const hasGod = !!voices && Object.values(voices).some((spans) => spans.some((sp) => sp[2] !== "jesus"));
   const contextSeen = useStore((s) => s.contextSeen);
   const { goal, readToday } = useReadingSummary();
 
@@ -447,14 +449,16 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
 
         {voices && (
           <p className="mx-auto mb-4 flex max-w-[64ch] flex-wrap items-center gap-x-4 gap-y-1 text-footnote text-text-secondary">
+            {hasJesus && (
             <span className="inline-flex items-center gap-1.5">
               <span aria-hidden="true" className="size-3 rounded-full bg-[var(--speaker-jesus)]" />
-              <span className="font-semibold text-[var(--speaker-jesus)]">Words of Jesus</span>
+              <span className="font-semibold italic text-[var(--speaker-jesus)]">Words of Jesus</span>
             </span>
-            {hasOther && (
+            )}
+            {hasGod && (
               <span className="inline-flex items-center gap-1.5">
                 <span aria-hidden="true" className="size-3 rounded-full bg-[var(--speaker-other)]" />
-                <span className="font-semibold text-[var(--speaker-other)]">Other speakers</span>
+                <span className="font-semibold text-[var(--speaker-other)]">Words of God</span>
               </span>
             )}
             <button type="button" onClick={() => setPrefs({ speakerColors: false })} className="min-h-11 font-medium text-gold-text underline underline-offset-2">
@@ -805,7 +809,7 @@ function Spoken({ text, spans }: { text: string; spans?: SpeakerSpan[] }) {
     <>
       {speakerSegments(text, spans).map((seg, i) =>
         seg.who ? (
-          <span key={i} className={seg.who === "jesus" ? "text-[var(--speaker-jesus)]" : "text-[var(--speaker-other)]"}>
+          <span key={i} className={seg.who === "jesus" ? "italic text-[var(--speaker-jesus)]" : "text-[var(--speaker-other)]"}>
             {seg.text}
           </span>
         ) : (

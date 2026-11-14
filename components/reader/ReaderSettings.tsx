@@ -85,7 +85,7 @@ export function ReaderSettings({ preview = false, version, onVersionChange }: Pr
             { value: "off", label: "Off" },
           ]}
         />
-        <span className="text-footnote text-text-secondary">Words of Jesus in green, other speakers in blue.</span>
+        <span className="text-footnote text-text-secondary">Words of Jesus in green italics, words of God in blue.</span>
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-caption text-text-secondary">Appearance</span>

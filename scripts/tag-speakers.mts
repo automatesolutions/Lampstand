@@ -8,6 +8,9 @@
 //   npx tsx scripts/tag-speakers.mts --collect <batch id>      save a finished batch as drafts
 //   npx tsx scripts/tag-speakers.mts --approve <BOOK|all>      after review: show that book's speakers in the app
 //
+// Add --god to any of these for the words-of-God pass: only chapters where God may speak
+// (a free text check first), drafts in content/speakers/draft-god/.
+//
 // BOOKS is a comma list of codes (MAT,MRK,LUK,JHN,ACT); without it, every book.
 // Drafts: content/speakers/draft/<BOOK>.json, with a readable list in content/speakers/draft/<BOOK>.md.
 
@@ -15,14 +18,15 @@ import Anthropic from "@anthropic-ai/sdk";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { BOOKS } from "../lib/bible/books";
-import { estimateCost, placeClaims, tagParams, TAG_MODEL, type Claim } from "../lib/bible/speaker-tags";
+import { estimateCost, GOD_SPEAKS, placeClaims, tagParams, TAG_MODEL, type Claim } from "../lib/bible/speaker-tags";
 import type { SpeakerBook, SpeakerSpan } from "../lib/bible/speakers";
 
 const root = join(import.meta.dirname, "..");
 if (existsSync(join(root, ".env.local"))) process.loadEnvFile(join(root, ".env.local"));
 const readJson = (p: string) => JSON.parse(readFileSync(join(root, p), "utf8"));
 const speakersFile = (code: string) => join(root, "content/speakers", `${code}.json`);
-const draftDir = join(root, "content/speakers/draft");
+const mode: "god" | "other" = process.argv.includes("--god") ? "god" : "other";
+const draftDir = join(root, mode === "god" ? "content/speakers/draft-god" : "content/speakers/draft");
 
 const kjv = (code: string): string[][] => readJson(`content/kjv/${code}.json`).chapters;
 const nameOf = (code: string) => BOOKS.find((b) => b.code === code)?.name ?? code;
@@ -33,10 +37,13 @@ function jesusIn(code: string, chapter: number): Record<number, SpeakerSpan[]> {
   return Object.fromEntries(Object.entries(c).map(([v, spans]) => [Number(v), spans.filter((s) => s[2] === "jesus")]));
 }
 
-const args = process.argv.slice(2);
+const args = process.argv.slice(2).filter((a) => a !== "--god");
 const books = (list?: string) =>
   list ? list.split(",").map((s) => s.trim().toUpperCase()) : BOOKS.filter((b) => existsSync(join(root, "content/kjv", `${b.code}.json`))).map((b) => b.code);
-const chaptersOf = (codes: string[]) => codes.flatMap((code) => kjv(code).map((verses, i) => ({ code, chapter: i + 1, verses })));
+const chaptersOf = (codes: string[]) =>
+  codes
+    .flatMap((code) => kjv(code).map((verses, i) => ({ code, chapter: i + 1, verses })))
+    .filter((c) => mode !== "god" || GOD_SPEAKS.test(c.verses.join(" ")));
 
 /** Saves one chapter's checked results as a draft, and rewrites that book's review list. */
 function saveDraft(code: string, chapter: number, claims: Claim[]) {
@@ -44,12 +51,12 @@ function saveDraft(code: string, chapter: number, claims: Claim[]) {
   const file = join(draftDir, `${code}.json`);
   const draft = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : { model: TAG_MODEL, chapters: {}, rejected: {} };
   const verses = kjv(code)[chapter - 1];
-  const placed = placeClaims(verses, claims, jesusIn(code, chapter));
+  const placed = placeClaims(verses, claims, jesusIn(code, chapter), mode);
   draft.chapters[chapter] = placed.spans;
   draft.rejected[chapter] = placed.rejected;
   writeFileSync(file, JSON.stringify(draft, null, 1));
   // A list to read through: each verse, who speaks, and the words that will be colored.
-  const md = [`# ${nameOf(code)}: other speakers (draft, ${TAG_MODEL})`, "", `Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx scripts/tag-speakers.mts --approve ${code}`, ""];
+  const md = [`# ${nameOf(code)}: ${mode === "god" ? "words of God" : "other speakers"} (draft, ${TAG_MODEL})`, "", `Check each line. Fix the JSON or rerun a chapter with --sample, then: npx tsx scripts/tag-speakers.mts --approve ${code}${mode === "god" ? " --god" : ""}`, ""];
   for (const [c, byVerse] of Object.entries(draft.chapters as Record<string, Record<string, SpeakerSpan[]>>).sort((a, b) => Number(a[0]) - Number(b[0]))) {
     md.push(`## ${nameOf(code)} ${c}`, "");
     for (const [v, spans] of Object.entries(byVerse)) for (const [s, e, , who] of spans) md.push(`- ${c}:${v} **${who}**: ${kjv(code)[Number(c) - 1][Number(v) - 1].slice(s, e)}`);
@@ -76,7 +83,7 @@ if (args[0] === "--estimate") {
   for (const ref of (args[1] ?? "").split(",").filter(Boolean)) {
     const [code, ch] = ref.split(".");
     const chapter = Number(ch);
-    const res = await client.messages.create(tagParams(nameOf(code), chapter, kjv(code)[chapter - 1], jesusIn(code, chapter)));
+    const res = await client.messages.create(tagParams(nameOf(code), chapter, kjv(code)[chapter - 1], jesusIn(code, chapter), mode));
     const placed = saveDraft(code, chapter, claimsFrom(res));
     const cost = (res.usage.input_tokens * 4 + res.usage.output_tokens * 20) / 1e6;
     console.log(`${ref}: ${Object.values(placed.spans).flat().length} speeches placed, ${placed.rejected.length} rejected, $${cost.toFixed(3)}. See content/speakers/draft/${code}.md`);
@@ -85,7 +92,7 @@ if (args[0] === "--estimate") {
   const client = new Anthropic();
   const todo = chaptersOf(books(args[1]));
   const batch = await client.messages.batches.create({
-    requests: todo.map((c) => ({ custom_id: `${c.code}-${c.chapter}`, params: tagParams(nameOf(c.code), c.chapter, c.verses, jesusIn(c.code, c.chapter)) })),
+    requests: todo.map((c) => ({ custom_id: `${c.code}-${c.chapter}`, params: tagParams(nameOf(c.code), c.chapter, c.verses, jesusIn(c.code, c.chapter), mode) })),
   });
   console.log(`Sent ${todo.length} chapters as batch ${batch.id}. When it's done: npx tsx scripts/tag-speakers.mts --collect ${batch.id}`);
 } else if (args[0] === "--collect") {
@@ -125,13 +132,13 @@ if (args[0] === "--estimate") {
       : { source: "Other speakers marked by Claude and reviewed for Lampstand", status: "reviewed", chapters: {} };
     for (const [c, byVerse] of Object.entries(draft.chapters)) {
       const chapter = (book.chapters[c] ??= {});
-      for (const v of Object.keys(chapter)) chapter[v] = chapter[v].filter((s) => s[2] !== "other"); // replace earlier approvals
+      for (const v of Object.keys(chapter)) chapter[v] = chapter[v].filter((s) => s[2] !== mode); // replace earlier approvals of this kind
       for (const [v, spans] of Object.entries(byVerse)) chapter[v] = [...(chapter[v] ?? []), ...spans].sort((a, b) => a[0] - b[0]);
       for (const v of Object.keys(chapter)) if (!chapter[v].length) delete chapter[v];
     }
     if (!book.source.includes("Other speakers") && !book.source.includes("other speakers")) book.source = `${book.source}; other speakers marked by Claude and reviewed`;
     writeFileSync(speakersFile(code), JSON.stringify(book));
-    console.log(`Approved ${code}: its other speakers now show in the app.`);
+    console.log(`Approved ${code}: its ${mode === "god" ? "words of God" : "other speakers"} now show in the app.`);
   }
 } else {
   console.log("Use --estimate [BOOKS], --sample BOOK.CHAPTER,..., --batch [BOOKS], --collect <batch id>, or --approve <BOOK|all>. Model: " + TAG_MODEL);

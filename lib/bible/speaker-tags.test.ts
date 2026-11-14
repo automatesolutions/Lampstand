@@ -2,7 +2,7 @@
 // answers and the request it would send.
 
 import { describe, expect, it } from "vitest";
-import { estimateCost, placeClaims, SCHEMA, tagParams, TAG_MODEL } from "./speaker-tags";
+import { estimateCost, GOD_SPEAKS, GOD_SYSTEM, placeClaims, SCHEMA, tagParams, TAG_MODEL } from "./speaker-tags";
 import type { SpeakerSpan } from "./speakers";
 
 // John 4:9-10 (KJV), as in content/kjv.
@@ -63,5 +63,22 @@ describe("the request", () => {
     expect(e.chapters).toBe(2);
     expect(e.usdLow).toBeGreaterThan(0);
     expect(e.usdHigh).toBeGreaterThan(e.usdLow);
+  });
+});
+
+describe("the words-of-God pass", () => {
+  it("only sends chapters where God may speak (a free check of the text)", () => {
+    expect(GOD_SPEAKS.test("And God said, Let there be light: and there was light.")).toBe(true);
+    expect(GOD_SPEAKS.test("Thus saith the LORD, Let my people go.")).toBe(true);
+    expect(GOD_SPEAKS.test("And lo a voice from heaven, saying, This is my beloved Son")).toBe(true);
+    expect(GOD_SPEAKS.test("These are the generations of Shem: Shem was an hundred years old.")).toBe(false);
+  });
+
+  it("asks only for God's words and marks them as God's", () => {
+    const verse = ["And God said, Let there be light: and there was light."];
+    expect(tagParams("Genesis", 1, verse, {}, "god").system).toBe(GOD_SYSTEM);
+    const { spans } = placeClaims(verse, [{ verse: 1, speaker: "God", first_words: "Let there be light:", last_words: "Let there be light:" }], {}, "god");
+    const [[s, e, who]] = spans[1];
+    expect([verse[0].slice(s, e), who]).toEqual(["Let there be light:", "god"]);
   });
 });

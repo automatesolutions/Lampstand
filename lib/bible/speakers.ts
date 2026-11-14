@@ -7,7 +7,8 @@
 // importer lines the two up letter by letter and never guesses: a verse whose letters
 // don't match exactly is left uncolored and listed in the import report.
 
-export type Speaker = "jesus" | "other";
+/** jesus: words of Jesus (green, italic); god: words of God (blue); other: anyone else (not colored yet). */
+export type Speaker = "jesus" | "god" | "other";
 
 /** [start, end) in the verse's text, who speaks there, and (for other speakers) their name. */
 export type SpeakerSpan = [number, number, Speaker, string?];
