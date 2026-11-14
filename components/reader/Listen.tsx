@@ -187,7 +187,7 @@ export function ListenPlayer({ chapter, onVerse, onClose }: { chapter: Chapter; 
         <span className="min-w-0 flex-1 px-1">
           <span className="block truncate text-headline">{title}</span>
           <span className="block truncate text-footnote text-text-secondary" aria-live="polite">
-            {preparing ? "Getting the natural voice ready" : `Verse ${verses[index]?.number ?? 1} · ${voice === "natural" ? "Natural voice" : "Device voice"}`}
+            {preparing ? "Getting the natural voice ready" : `Verse ${verses[index]?.number ?? 1}`}
           </span>
         </span>
         <button type="button" onClick={changeSpeed} aria-label={`Speed ${speed} times. Change speed`} className="min-h-11 min-w-11 rounded-full px-2 text-subhead font-semibold tabular-nums text-gold-text">
