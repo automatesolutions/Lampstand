@@ -3,6 +3,7 @@
 // copy wins; deletions remove items everywhere; settings, position and the reading
 // round take the newer side.
 
+import { withoutOverlaps } from "@/lib/highlights/ranges";
 import type { AppState, ChapterRead, Goal, Highlight, Note, Position, Round } from "@/lib/store";
 
 export interface Remote {
@@ -77,7 +78,8 @@ export function mergeState(local: AppState, remote: Remote): AppState {
     reads: [...reads.values()].sort((a, b) => a.completedAt.localeCompare(b.completedAt)),
     goals: [...goals.values()].sort((a, b) => a.effectiveFrom.localeCompare(b.effectiveFrom)),
     notes: [...notes.values()],
-    highlights: [...highlights.values()],
+    // Ranges from two devices can overlap (16 to 18 here, 17 there): the newer one wins.
+    highlights: withoutOverlaps([...highlights.values()]),
     position,
   };
 }

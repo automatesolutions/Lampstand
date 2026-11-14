@@ -19,13 +19,14 @@ import { setScreenActions } from "@/lib/palette";
 import { openExplain } from "@/lib/explain";
 import { openPrayer } from "@/lib/prayer";
 import { openSong } from "@/lib/song";
+import { colorOf, type Span } from "@/lib/highlights/ranges";
 import {
   HIGHLIGHT_COLORS,
+  highlightVerses,
   markContextSeen,
   setPosition,
   setPrefs,
   today,
-  toggleHighlight,
   useHydrated,
   useStore,
   type HighlightColor,
@@ -34,6 +35,7 @@ import {
 import { useReadingSummary } from "@/lib/store/hooks";
 import { NoteSheet } from "./NoteSheet";
 import { ReaderSettings } from "./ReaderSettings";
+import { useRangeSelect } from "./useRangeSelect";
 import { VersionSheet } from "./VersionSheet";
 
 interface Props {
@@ -50,7 +52,7 @@ interface Props {
   versionLink?: { href: string; label: string };
 }
 
-type NoteTarget = { verse: number | null; existing?: Note };
+type NoteTarget = { verse: number | null; verseEnd?: number; existing?: Note };
 
 const SWATCH: Record<HighlightColor, { label: string; fill: string }> = {
   gold: { label: "Gold", fill: "var(--gold)" },
@@ -86,15 +88,16 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   const { goal, readToday } = useReadingSummary();
 
   const notes = useMemo(() => allNotes.filter((n) => n.book === chapter.book && n.chapter === chapter.chapter), [allNotes, chapter.book, chapter.chapter]);
+  // Each verse's color; a highlight can cover several verses.
   const highlights = useMemo(() => {
     const m = new Map<number, HighlightColor>();
-    for (const h of allHighlights) if (h.book === chapter.book && h.chapter === chapter.chapter) m.set(h.verseStart, h.color);
+    for (const h of allHighlights) if (h.book === chapter.book && h.chapter === chapter.chapter) for (let v = h.verseStart; v <= h.verseEnd; v++) m.set(v, h.color);
     return m;
   }, [allHighlights, chapter.book, chapter.chapter]);
+  const chapterHighlights = useMemo(() => allHighlights.filter((h) => h.book === chapter.book && h.chapter === chapter.chapter), [allHighlights, chapter.book, chapter.chapter]);
   const notedVerses = useMemo(() => new Set(notes.map((n) => n.verseStart).filter((v): v is number => v != null)), [notes]);
   const chapterReadToday = hydrated && reads.some((r) => r.book === chapter.book && r.chapter === chapter.chapter && r.readOn === today());
 
-  const [selected, setSelected] = useState<number | null>(null);
   const [noteTarget, setNoteTarget] = useState<NoteTarget | null>(null);
   const [versionOpen, setVersionOpen] = useState(false);
   const [textOpen, setTextOpen] = useState(false);
@@ -140,6 +143,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   // Gold progress line under the top bar.
   const progressRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLElement>(null);
+  const { sel, selectOne, extendTo, movingEnd, extending, setExtending, dragging, onVerseClick, touchWasSelection } = useRangeSelect(textRef);
   useEffect(() => {
     const onScroll = () => {
       const t = textRef.current;
@@ -163,31 +167,48 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
   const prevHref = prev ? readerHref(chapter.version, prev) : null;
   const nextHref = next ? readerHref(chapter.version, next) : null;
 
-  const select = useCallback((n: number | null, focus = false) => {
-    setSelected(n);
-    if (n != null && focus) {
-      const el = document.getElementById(`v${n}`);
-      el?.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-      el?.focus({ preventScroll: true });
-    }
+  const focusVerse = useCallback((n: number) => {
+    const el = document.getElementById(`v${n}`);
+    el?.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    el?.focus({ preventScroll: true });
   }, []);
 
-  // Arriving from Go to or a note link: #v16 selects that verse.
+  const select = useCallback(
+    (n: number | null, focus = false) => {
+      selectOne(n);
+      if (n != null && focus) focusVerse(n);
+    },
+    [selectOne, focusVerse],
+  );
+
+  // Arriving from Go to, a note or a highlight: #v16 selects that verse, #v16-18 those verses.
   useEffect(() => {
-    const m = location.hash.match(/^#v(\d+)$/);
-    const n = m ? Number(m[1]) : 0;
-    if (n >= 1 && n <= chapter.verses.length) requestAnimationFrame(() => select(n, true));
-  }, [chapter.verses.length, select]);
+    const m = location.hash.match(/^#v(\d+)(?:-(\d+))?$/);
+    const a = m ? Number(m[1]) : 0;
+    const b = m?.[2] ? Number(m[2]) : a;
+    if (a < 1 || b < a || b > chapter.verses.length) return;
+    requestAnimationFrame(() => {
+      select(a, true);
+      if (b > a) extendTo(b);
+    });
+  }, [chapter.verses.length, select, extendTo]);
 
   function say(msg: string) {
     setStatus(msg);
     window.setTimeout(() => setStatus((s) => (s === msg ? "" : s)), 2400);
   }
 
-  async function copyVerse(n: number) {
+  const label = (s: Span) => formatRef({ ...ref, verse: s.start, verseEnd: s.end });
+
+  async function copyVerses(s: Span) {
+    const nums = Array.from({ length: s.end - s.start + 1 }, (_, i) => s.start + i);
+    const text = nums
+      .filter((n) => verseText(n).trim())
+      .map((n) => (s.start === s.end ? verseText(n) : `${n} ${verseText(n)}`))
+      .join(" ");
     try {
-      await navigator.clipboard.writeText(`${verseText(n)} (${formatRef({ ...ref, verse: n })} ${chapter.version})`);
-      say(`Copied ${formatRef({ ...ref, verse: n })}`);
+      await navigator.clipboard.writeText(`${text} (${label(s)} ${chapter.version})`);
+      say(`Copied ${label(s)}`);
     } catch {
       say("Copy isn't available in this browser");
     }
@@ -199,8 +220,10 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
     requestAnimationFrame(() => document.getElementById("chapter-done")?.scrollIntoView({ block: "center" }));
   }, [ref, chapter.version]);
 
-  function openNote(verse: number | null) {
-    setNoteTarget({ verse, existing: notes.find((n) => n.verseStart === verse) });
+  /** A note on the selected verses (or, with null, on the whole chapter). */
+  function openNote(s: Span | null) {
+    if (!s) return setNoteTarget({ verse: null, existing: notes.find((n) => n.verseStart == null) });
+    setNoteTarget({ verse: s.start, verseEnd: s.end, existing: notes.find((n) => n.verseStart === s.start && (n.verseEnd ?? n.verseStart) === s.end) });
   }
 
   // Screen actions for the Go to palette.
@@ -229,17 +252,23 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
       else if (e.key === "ArrowRight" && nextHref) router.push(nextHref);
       else if (e.key === "ArrowDown" || e.key === "ArrowUp") {
         e.preventDefault();
-        const n = selected == null ? 1 : Math.max(1, Math.min(chapter.verses.length, selected + (e.key === "ArrowDown" ? 1 : -1)));
-        select(n, true);
-      } else if (e.key === "Escape" && selected != null) select(null);
+        const step = e.key === "ArrowDown" ? 1 : -1;
+        const clamp = (n: number) => Math.max(1, Math.min(chapter.verses.length, n));
+        if (e.shiftKey && sel) {
+          // Shift: grow or shrink the selection from its moving end.
+          const n = clamp((movingEnd() ?? sel.end) + step);
+          extendTo(n);
+          focusVerse(n);
+        } else select(sel == null ? 1 : clamp((step > 0 ? sel.end : sel.start) + step), true);
+      } else if (e.key === "Escape" && sel) select(null);
       else if (k === "a") {
         e.preventDefault();
         setTextOpen(true);
-      } else if (selected != null && "1234".includes(k)) toggleHighlight(ref, selected, HIGHLIGHT_COLORS[Number(k) - 1]);
-      else if (selected != null && k === "n") {
+      } else if (sel && "1234".includes(k)) highlightVerses(ref, sel.start, sel.end, HIGHLIGHT_COLORS[Number(k) - 1]);
+      else if (sel && k === "n") {
         e.preventDefault();
-        openNote(selected);
-      } else if (selected != null && k === "c") copyVerse(selected);
+        openNote(sel);
+      } else if (sel && k === "c") copyVerses(sel);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -379,12 +408,12 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
         <article
           ref={textRef}
           aria-label={`${title}, ${chapter.version}`}
-          className="scripture mx-auto text-text"
+          className={`scripture mx-auto text-text [-webkit-touch-callout:none] [@media(pointer:coarse)]:select-none ${dragging ? "select-none" : ""}`}
           onTouchStart={(e) => (touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY })}
           onTouchEnd={(e) => {
             const start = touch.current;
             touch.current = null;
-            if (!start) return;
+            if (!start || touchWasSelection()) return; // a long-press selection isn't a swipe
             const dx = e.changedTouches[0].clientX - start.x;
             const dy = e.changedTouches[0].clientY - start.y;
             if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 2) {
@@ -397,7 +426,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
             {chapter.verses.map((v) => {
               // The NLT sometimes joins a verse with the one before it; that verse has no text of its own.
               if (!v.text) return null;
-              const isSelected = selected === v.number;
+              const isSelected = !!sel && v.number >= sel.start && v.number <= sel.end;
               const hl = highlights.get(v.number);
               const noted = notedVerses.has(v.number);
               return (
@@ -409,11 +438,12 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
                   tabIndex={0}
                   aria-pressed={isSelected}
                   aria-label={`Verse ${v.number}${hl ? `, ${SWATCH[hl].label.toLowerCase()} highlight` : ""}${noted ? ", has a note" : ""}`}
-                  onClick={() => select(isSelected ? null : v.number)}
+                  onClick={(e) => onVerseClick(e, v.number)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      select(isSelected ? null : v.number);
+                      if (e.shiftKey && sel) extendTo(v.number);
+                      else select(sel && sel.start === v.number && sel.end === v.number ? null : v.number);
                     }
                   }}
                   style={hl ? { background: HL_BG[hl] } : undefined}
@@ -526,7 +556,7 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
             )}
           </p>
           <p aria-hidden="true" className="hidden flex-wrap items-center justify-center gap-1.5 text-center text-footnote text-text-secondary [@media(hover:hover)_and_(pointer:fine)]:flex">
-            <ModK /> go to · <Kbd>←</Kbd> <Kbd>→</Kbd> chapter · <Kbd>↑</Kbd> <Kbd>↓</Kbd> verse · <Kbd>1</Kbd>–<Kbd>4</Kbd> highlight · <Kbd>A</Kbd> text
+            <ModK /> go to · <Kbd>←</Kbd> <Kbd>→</Kbd> chapter · <Kbd>↑</Kbd> <Kbd>↓</Kbd> verse · <Kbd>1</Kbd>–<Kbd>4</Kbd> highlight · <Kbd>⇧</Kbd> <Kbd>↓</Kbd> select more · <Kbd>A</Kbd> text
           </p>
         </section>
       </main>
@@ -553,35 +583,52 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
         <ThumbLink href={nextHref} label={next ? `Next chapter: ${formatRef(next)}` : "No next chapter"} icon="chevron-right" />
       </nav>
 
-      {/* Verse bar: docked low, above the thumb bar (DESIGN.md §8). */}
+      {/* Verse bar: docked low, above the thumb bar (DESIGN.md §8). Acts on every selected verse. */}
       <div
         role="toolbar"
-        aria-label={selected != null ? `Actions for ${formatRef({ ...ref, verse: selected })}` : "Verse actions"}
-        aria-hidden={selected == null}
-        inert={selected == null}
+        aria-label={sel ? `Actions for ${label(sel)}` : "Verse actions"}
+        aria-hidden={!sel}
+        inert={!sel}
         className={`fixed bottom-[calc(57px+61px+10px+env(safe-area-inset-bottom))] left-1/2 z-[35] flex w-[min(520px,calc(100%-32px))] -translate-x-1/2 flex-col gap-2.5 rounded-[22px] bg-surface-raised p-3 shadow-float transition-[translate,opacity] duration-300 ease-out min-[960px]:bottom-6 min-[960px]:ml-[116px] ${
-          selected == null ? "pointer-events-none translate-y-[140%] opacity-0" : ""
+          sel ? "" : "pointer-events-none translate-y-[140%] opacity-0"
         }`}
       >
-        {selected != null && (
+        {sel && (
           <>
             <div className="flex items-center justify-between gap-2 pl-2 pr-1">
-              <span className="text-headline">{formatRef({ ...ref, verse: selected })}</span>
-              <button type="button" onClick={() => select(null)} aria-label="Close" className="grid size-11 place-items-center rounded-full text-text-secondary">
-                <Icon name="x" className="size-[22px]" />
-              </button>
+              <span className="min-w-0">
+                <span className="block truncate text-headline">{label(sel)}</span>
+                <span role="status" aria-live="polite" className={extending ? "block text-footnote text-gold-text" : "sr-only"}>
+                  {extending ? "Tap the last verse" : sel.end > sel.start ? `${sel.end - sel.start + 1} verses selected` : ""}
+                </span>
+              </span>
+              <span className="flex shrink-0 items-center">
+                <button
+                  type="button"
+                  aria-pressed={extending}
+                  onClick={() => setExtending(!extending)}
+                  className={`inline-flex min-h-11 items-center gap-1.5 rounded-[12px] px-3 font-medium text-gold-text ${extending ? "bg-gold-wash" : ""}`}
+                >
+                  <Icon name="list-plus" />
+                  Select more
+                  <Kbd>⇧</Kbd>
+                </button>
+                <button type="button" onClick={() => select(null)} aria-label="Close" className="grid size-11 place-items-center rounded-full text-text-secondary">
+                  <Icon name="x" className="size-[22px]" />
+                </button>
+              </span>
             </div>
             <div className="flex flex-wrap items-center gap-1">
               {HIGHLIGHT_COLORS.map((c, i) => {
-                const on = highlights.get(selected) === c;
+                const on = colorOf(chapterHighlights, ref, sel) === c;
                 return (
                   <button
                     key={c}
                     type="button"
                     aria-pressed={on}
-                    aria-label={`${SWATCH[c].label} highlight`}
+                    aria-label={`${SWATCH[c].label} highlight${sel.end > sel.start ? `, ${sel.end - sel.start + 1} verses` : ""}`}
                     title={`${SWATCH[c].label} highlight (${i + 1})`}
-                    onClick={() => toggleHighlight(ref, selected, c)}
+                    onClick={() => highlightVerses(ref, sel.start, sel.end, c)}
                     className="grid size-11 place-items-center rounded-full"
                   >
                     <span className={`grid size-[26px] place-items-center rounded-full ${on ? "outline-2 outline-offset-2 outline-text" : ""}`} style={{ background: SWATCH[c].fill }}>
@@ -591,12 +638,12 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
                 );
               })}
               <span aria-hidden="true" className="mx-1 h-7 w-px bg-divider" />
-              <button type="button" onClick={() => openNote(selected)} className="inline-flex min-h-11 items-center gap-1.5 rounded-[12px] px-3 font-medium text-gold-text">
+              <button type="button" onClick={() => openNote(sel)} className="inline-flex min-h-11 items-center gap-1.5 rounded-[12px] px-3 font-medium text-gold-text">
                 <Icon name="notebook-pen" />
-                {notedVerses.has(selected) ? "Edit note" : "Note"}
+                {notes.some((n) => n.verseStart === sel.start && (n.verseEnd ?? n.verseStart) === sel.end) ? "Edit note" : "Note"}
                 <Kbd>N</Kbd>
               </button>
-              <button type="button" onClick={() => copyVerse(selected)} className="inline-flex min-h-11 items-center gap-1.5 rounded-[12px] px-3 font-medium text-gold-text">
+              <button type="button" onClick={() => copyVerses(sel)} className="inline-flex min-h-11 items-center gap-1.5 rounded-[12px] px-3 font-medium text-gold-text">
                 <Icon name="copy" />
                 Copy
                 <Kbd>C</Kbd>
@@ -620,8 +667,12 @@ export function Reader({ chapter, bookName, card, note, plate, prev, next, versi
             book: chapter.book,
             chapter: chapter.chapter,
             verse: noteTarget.verse,
-            label: formatRef({ ...ref, verse: noteTarget.verse ?? undefined }),
-            quote: noteTarget.verse != null ? verseText(noteTarget.verse) : undefined,
+            verseEnd: noteTarget.verseEnd,
+            label: formatRef({ ...ref, verse: noteTarget.verse ?? undefined, verseEnd: noteTarget.verseEnd }),
+            quote:
+              noteTarget.verse != null
+                ? Array.from({ length: (noteTarget.verseEnd ?? noteTarget.verse) - noteTarget.verse + 1 }, (_, i) => verseText(noteTarget.verse! + i)).join(" ")
+                : undefined,
           }}
           existing={noteTarget.existing}
         />

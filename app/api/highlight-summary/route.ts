@@ -5,6 +5,7 @@ import { envLimit, ipLimit, takeQuota } from "@/lib/ai/usage";
 import { getProvider } from "@/lib/bible";
 import { bookByCode } from "@/lib/bible/books";
 import { formatRef } from "@/lib/bible/refs";
+import { MAX_SUMMARY_VERSES } from "@/lib/highlights/ranges";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 
 // A short summary of a highlighted verse (or range), to help the reader remember it.
@@ -17,7 +18,7 @@ import { supabaseAdmin } from "@/lib/supabase/admin";
 // (HIGHLIGHT_SUMMARIES_PER_IP, default 40), so one stranger can't use up the shared
 // budget that Pray, Explain and songs depend on. Cached summaries never count.
 
-const MAX_VERSES = 10;
+const MAX_VERSES = MAX_SUMMARY_VERSES; // 20: longer highlights have no summary
 const CACHE_MAX = 1000;
 const memory = new Map<string, string>();
 const writing = new Map<string, Promise<string>>();

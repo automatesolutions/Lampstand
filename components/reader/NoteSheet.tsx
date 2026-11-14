@@ -8,7 +8,8 @@ import { deleteNote, saveNote, type Note } from "@/lib/store";
 interface Props {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  target: { book: string; chapter: number; verse: number | null; label: string; quote?: string };
+  /** verse null = a note on the whole chapter; verseEnd for a note on several verses. */
+  target: { book: string; chapter: number; verse: number | null; verseEnd?: number; label: string; quote?: string };
   existing?: Note;
 }
 
@@ -31,7 +32,7 @@ export function NoteSheet({ open, onOpenChange, target, existing }: Props) {
       book: target.book,
       chapter: target.chapter,
       verseStart: target.verse,
-      verseEnd: target.verse,
+      verseEnd: target.verse == null ? null : (target.verseEnd ?? target.verse),
       body: text,
     });
     onOpenChange(false);

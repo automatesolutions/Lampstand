@@ -7,6 +7,7 @@ import { Icon } from "@/components/ui/Icon";
 import { BOOKS, bookIndex } from "@/lib/bible/books";
 import { formatRef, readerHref } from "@/lib/bible/refs";
 import { MAX_BATCH_VERSES, MAX_RANGE_VERSES, rangeKey, shownRange, type VerseRange } from "@/lib/bible/verse-batch";
+import { MAX_SUMMARY_VERSES } from "@/lib/highlights/ranges";
 import { useHydrated, useStore, type HighlightColor } from "@/lib/store";
 
 // Same pigments and names as the reader's highlight swatches (DESIGN.md §2).
@@ -188,7 +189,7 @@ export default function NotesPage() {
                   return (
                     <li key={h.id} className="relative after:absolute after:inset-x-4 after:bottom-0 after:h-px after:bg-divider last:after:hidden">
                       <Link
-                        href={readerHref(version, h, h.verseStart)}
+                        href={readerHref(version, h, h.verseStart, h.verseEnd)}
                         className="flex min-h-14 gap-3 px-[18px] py-4 active:bg-gold-wash [@media(hover:hover)]:hover:bg-gold-wash/60"
                       >
                         <span aria-hidden="true" className="mt-1 size-3.5 shrink-0 rounded-full ring-1 ring-divider" style={{ background: SWATCH[h.color].fill }} />
@@ -198,13 +199,18 @@ export default function NotesPage() {
                             <span className="sr-only">, {SWATCH[h.color].label.toLowerCase()} highlight</span>
                           </span>
                           <HighlightedText text={textOf(h)} />
-                          {h.summary ? (
+                          {h.verseEnd - h.verseStart >= MAX_RANGE_VERSES && textOf(h) && (
+                            <span className="text-footnote text-text-secondary">The first {MAX_RANGE_VERSES} verses are shown here.</span>
+                          )}
+                          {h.verseEnd - h.verseStart >= MAX_SUMMARY_VERSES && !h.summary ? (
+                            <span className="text-subhead text-text-secondary">Summaries are written for highlights of up to {MAX_SUMMARY_VERSES} verses.</span>
+                          ) : h.summary ? (
                             <>
                               <span className="border-l-2 border-divider pl-3 text-callout">{h.summary}</span>
-                              <span className="text-footnote text-text-secondary">Summary written by AI to help you remember this verse.</span>
+                              <span className="text-footnote text-text-secondary">Summary written by AI to help you remember {h.verseEnd > h.verseStart ? "these verses" : "this verse"}.</span>
                             </>
                           ) : (
-                            <span className="text-subhead text-text-secondary">A short summary to help you remember this verse will appear here.</span>
+                            <span className="text-subhead text-text-secondary">A short summary to help you remember {h.verseEnd > h.verseStart ? "these verses" : "this verse"} will appear here.</span>
                           )}
                         </span>
                       </Link>

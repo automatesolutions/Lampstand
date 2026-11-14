@@ -7,6 +7,7 @@
 // Only the verse reference is sent (app/api/highlight-summary), never notes.
 
 import { getState, onChange, setHighlightSummary, type Highlight } from "@/lib/store";
+import { MAX_SUMMARY_VERSES } from "./ranges";
 
 const RETRY_MS = 10 * 60_000;
 const failedAt = new Map<string, number>(); // highlight id -> when it last failed
@@ -14,7 +15,8 @@ let running = false;
 let pausedUntil = 0; // the server said "limit reached" or "paused": wait before asking again
 let timer: ReturnType<typeof setTimeout> | undefined;
 
-const due = (h: Highlight) => !h.summary && Date.now() - (failedAt.get(h.id) ?? 0) > RETRY_MS;
+const due = (h: Highlight) =>
+  !h.summary && h.verseEnd - h.verseStart < MAX_SUMMARY_VERSES && Date.now() - (failedAt.get(h.id) ?? 0) > RETRY_MS; // longer ranges have no summary
 
 /** The summary, null when this one failed, or "pause" when every request would fail for now. */
 async function summarize(h: Highlight): Promise<string | null | "pause"> {

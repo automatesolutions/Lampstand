@@ -6,6 +6,7 @@
 import { useMemo, useSyncExternalStore } from "react";
 import { BOOKS } from "@/lib/bible/books";
 import type { ChapterRef, VersionId } from "@/lib/bible/types";
+import { applyColor } from "@/lib/highlights/ranges";
 import { toISODate, type ISODate } from "@/lib/streak";
 
 export type Theme = "system" | "light" | "dark";
@@ -296,26 +297,19 @@ export function deleteNote(id: string) {
 }
 
 /**
- * One color per verse; the same color again removes it (and its summary). A new color
- * keeps the summary already written. New highlights get theirs from lib/highlights.
+ * Colors the verses `start` to `end` (one verse when they're equal) as one highlight. If
+ * every one of them already has that color, the color comes off them instead. Highlights
+ * never overlap; the rules are in lib/highlights/ranges. New highlights get their summary
+ * from lib/highlights/summaries.
  */
+export function highlightVerses(ref: ChapterRef, start: number, end: number, color: HighlightColor) {
+  const span = { start: Math.min(start, end), end: Math.max(start, end) };
+  update((s) => ({ ...s, highlights: applyColor(s.highlights, ref, span, color, new Date().toISOString(), () => crypto.randomUUID()) }));
+}
+
+/** One verse: the same color again removes it. */
 export function toggleHighlight(ref: ChapterRef, verse: number, color: HighlightColor) {
-  update((s) => {
-    const at = (h: Highlight) => h.book === ref.book && h.chapter === ref.chapter && h.verseStart === verse;
-    const existing = s.highlights.find(at);
-    const rest = s.highlights.filter((h) => !at(h));
-    if (existing?.color === color) return { ...s, highlights: rest };
-    const h: Highlight = {
-      id: crypto.randomUUID(),
-      ...ref,
-      verseStart: verse,
-      verseEnd: existing?.verseEnd ?? verse,
-      color,
-      createdAt: new Date().toISOString(),
-      summary: existing?.summary ?? null,
-    };
-    return { ...s, highlights: [...rest, h] };
-  });
+  highlightVerses(ref, verse, verse, color);
 }
 
 /** Saves a highlight's summary, if the highlight is still there. */

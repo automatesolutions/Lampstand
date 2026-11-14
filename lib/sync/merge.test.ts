@@ -110,3 +110,17 @@ describe("highlight summaries across devices", () => {
     expect(summaryToPush({ ...fresh, summary: "Mine." }, known)).toBe("Mine.");
   });
 });
+
+describe("highlight ranges across devices", () => {
+  it("settles overlapping ranges from two devices: the newer one wins the shared verses", () => {
+    const remote = { ...empty(), highlights: [{ ...hl("a", "gold", "2026-11-01T00:00:00Z", 16), verseEnd: 18 }] };
+    const local: AppState = { ...DEFAULT_STATE, highlights: [{ ...hl("b", "rose", "2026-11-02T00:00:00Z", 17), verseEnd: 17 }] };
+    const shape = mergeState(local, remote).highlights.map((h) => `${h.verseStart}-${h.verseEnd} ${h.color}`).sort();
+    expect(shape).toEqual(["16-16 gold", "17-17 rose", "18-18 gold"]);
+  });
+
+  it("keeps an old single-verse highlight exactly as it was", () => {
+    const old = hl("a", "sky", "2025-01-01T00:00:00Z");
+    expect(mergeState({ ...DEFAULT_STATE, highlights: [old] }, empty()).highlights).toEqual([old]);
+  });
+});

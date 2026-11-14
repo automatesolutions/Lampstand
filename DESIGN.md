@@ -125,7 +125,7 @@ One box finds anything and runs any action, after Raycast's command palette, siz
 - **Matching:** a book matches when its name or short form starts with the query, or the letters appear in order with the same first letter. Starts rank first, then shorter names (`jn` → John before Jonah). Chapter and verse must exist.
 - **Keys:** ↑ ↓ move, ↵ opens, Esc closes. ARIA combobox + listbox, `aria-activedescendant`.
 
-**Reader keys:** ← → chapter, ↑ ↓ verse, `1`–`4` highlight colors, `N` note, `C` copy, `A` text settings, Esc clears the selection.
+**Reader keys:** ← → chapter, ↑ ↓ verse, ⇧↑ ⇧↓ select more verses (or fewer), ⇧ Enter or ⇧ click extends to that verse, `1`–`4` highlight colors (every selected verse), `N` note, `C` copy, `A` text settings, Esc clears the selection.
 
 **Key caps** (`Kbd`) show shortcuts where they apply: palette footer, rail, verse bar, end of chapter. Shown only on `(hover: hover) and (pointer: fine)`, so phones stay clean. Mac shows `⌘ K`, others `Ctrl K`.
 
@@ -178,9 +178,15 @@ One box finds anything and runs any action, after Raycast's command palette, siz
 
 **Verse.** Inline paragraphs. Tap or Enter selects (`gold-wash`, ring if highlighted) and shows the verse bar. Notes show a gold dot after the verse.
 
-**Verse bar.** Reference and Close, four highlight swatches (44px, check when on), Note, Copy.
+**Selecting several verses.** Every selected verse shows the selection style while it's being chosen, so a drag is easy to follow.
+- Mouse: press and drag across verses. Range mode starts only once the pointer reaches a second verse, so selecting words inside one verse still works as usual.
+- Phones: long-press a verse (450ms, held still; a light buzz where supported), then drag. Moving before then is a scroll or a chapter swipe, never a selection. During the drag the page doesn't scroll under the finger; it moves on its own near the top and bottom. The browser's own long-press (word selection, the Copy menu) is off on Bible text on touch screens, so the two never fight; Copy in the verse bar copies the selection instead.
+- Fallbacks: ⇧ click a last verse, or **Select more** in the verse bar, then tap the last verse ("Tap the last verse" shows under the reference).
+- A highlight covers a run of verses as one ("John 3:16–18"). Verses never carry two colors: a new color over part of a highlight trims or splits it. If every selected verse already has the color, tapping it again takes the color off just those verses.
 
-**Highlights on Notes.** Below the notes, a Highlights section grouped by book like notes. Each row: the color dot (named for screen readers), the reference ("John 3:16"), the highlighted words in Literata (KJV, marked "KJV"; left out when offline), and a two- or three-sentence summary under a thin rule of that verse with the footnote "Summary written by AI to help you remember this verse." Tapping a row opens the reader at that verse. The summary is written in the background when the highlight is made, from the verse's KJV text only (`app/api/highlight-summary`, cached per verse for every reader); until then the row says one will appear. A new color keeps the summary; removing the highlight removes it. Summaries sync with the account and are never shared with Circles.
+**Verse bar.** The selected reference ("John 3:16–18"), Select more (pressed while waiting for the last verse), Close; four highlight swatches (44px, check when every selected verse has that color), Note (on the selected verses), Copy (the selected verses, numbered when there are several).
+
+**Highlights on Notes.** Below the notes, a Highlights section grouped by book like notes. Each row: the color dot (named for screen readers), the reference ("John 3:16", or "John 3:16–18" for several verses), the highlighted words in Literata (KJV, marked "KJV"; left out when offline; the first 10 verses of a longer highlight, saying so), and a two- or three-sentence summary under a thin rule of that verse with the footnote "Summary written by AI to help you remember this verse." Tapping a row opens the reader with those verses selected. Summaries are written for highlights of up to 20 verses; a longer one says so instead. The summary is written in the background when the highlight is made, from the verse's KJV text only (`app/api/highlight-summary`, cached per verse for every reader); until then the row says one will appear. A new color keeps the summary; removing the highlight removes it. Summaries sync with the account and are never shared with Circles.
 
 **Chapter done.** Replaces the Mark as read button in place: the lamp kindles, "John 3 is read", today's count, then Add a note and the next chapter, then, under a rule, three plain actions: "Explain in depth", "Pray over what you read" and "Make a song" (stacked on phones, side by side from 480px, wrapping as needed). Make a song appears only here, after Mark as read: never on the Mark as read button, Today or Go to.
 

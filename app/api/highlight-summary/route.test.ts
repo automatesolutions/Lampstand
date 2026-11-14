@@ -46,10 +46,10 @@ describe("POST /api/highlight-summary", () => {
     expect(m.create).not.toHaveBeenCalled();
   });
 
-  it("refuses ranges longer than 10 verses", async () => {
-    expect((await ask({ book: "PSA", chapter: 119, verseStart: 1, verseEnd: 11 })).status).toBe(400);
+  it("refuses ranges longer than 20 verses", async () => {
+    expect((await ask({ book: "PSA", chapter: 119, verseStart: 1, verseEnd: 21 })).status).toBe(400);
     claudeWrites();
-    expect((await ask({ book: "PSA", chapter: 119, verseStart: 1, verseEnd: 10 })).status).toBe(200);
+    expect((await ask({ book: "PSA", chapter: 119, verseStart: 1, verseEnd: 20 })).status).toBe(200);
   });
 
   it("writes a summary once, then serves it from the cache without asking Claude or counting", async () => {
