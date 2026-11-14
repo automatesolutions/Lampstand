@@ -12,7 +12,8 @@ import { EmptyState, ErrorState, LoadingRows } from "@/components/lamplighters/S
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { PageTitle } from "@/components/ui/NavBar";
-import { myCircles, myNotifications, myNudges, useLampProfile, useLampVersion, useLoad } from "@/lib/lamplighters/client";
+import { useNotifications } from "@/lib/lamplighters/badge";
+import { myCircles, myNudges, useLampProfile, useLampVersion, useLoad } from "@/lib/lamplighters/client";
 import { accountsEnabled } from "@/lib/supabase/client";
 import { useHydrated } from "@/lib/store";
 
@@ -22,9 +23,11 @@ export default function CirclesPage() {
   const me = useLampProfile();
   const signedIn = !!me.userId;
   const v = useLampVersion();
-  const circles = useLoad(signedIn ? myCircles : null, [me.userId, v]);
-  const nudges = useLoad(signedIn ? myNudges : null, [me.userId, v]);
-  const notifications = useLoad(signedIn ? myNotifications : null, [me.userId, v]);
+  // The same list the Circles tab dot counts (lib/lamplighters/badge), so the bell, its
+  // sheet and the dot always agree. When the count changes, nudges and Circles reload too.
+  const notifications = useNotifications();
+  const circles = useLoad(signedIn ? myCircles : null, [me.userId, v, notifications.unread]);
+  const nudges = useLoad(signedIn ? myNudges : null, [me.userId, v, notifications.unread]);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [shownNudge, setShownNudge] = useState<string | null>(null);
   const [createOpen, setCreateOpen] = useState(false);
@@ -73,7 +76,7 @@ export default function CirclesPage() {
   }
 
   const list = circles.data ?? [];
-  const newCount = (notifications.data ?? []).filter((n) => !n.read_at).length;
+  const newCount = notifications.unread;
 
   // A nudge opened from Notifications: scroll to it in the inbox and mark it for a moment.
   function showNudge(id: string) {
@@ -89,7 +92,7 @@ export default function CirclesPage() {
       <div className="flex items-end justify-between gap-3">
         {header}
         <div className="mb-1 flex items-center gap-2">
-          {!notifications.error && (
+          {notifications.items && (
             <button
               type="button"
               onClick={() => setNotificationsOpen(true)}
@@ -164,7 +167,7 @@ export default function CirclesPage() {
         )}
       </section>
 
-      <NotificationsSheet open={notificationsOpen} onOpenChange={setNotificationsOpen} items={notifications.data ?? []} onShowNudge={showNudge} />
+      <NotificationsSheet open={notificationsOpen} onOpenChange={setNotificationsOpen} items={notifications.items ?? []} onShowNudge={showNudge} />
       <CreateCircleSheet open={createOpen} onOpenChange={setCreateOpen} />
       {me.data && (
         <ProfileSheet key={String(profileOpen)} open={profileOpen} onOpenChange={setProfileOpen} userId={me.userId!} profile={me.data} welcome={needsProfile} />

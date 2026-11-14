@@ -9,7 +9,7 @@ Built with Next.js 16, TypeScript, Tailwind CSS 4 and Supabase. Every screen fol
 - **Read:** KJV (built in), NLT and ESV, with a thumb-first reader on phones. The tab bar (Today, Read, Notes, Circles, Me) and the reader's controls stay on screen while you scroll.
 - **Understand:** "In this chapter" notes, "Before you read" context cards, and "Explain in depth" for every chapter.
 - **Pray:** a short prayer written from the chapters you read recently.
-- **Make a song:** after you mark a chapter as read, choose Praise or Worship. Claude writes original lyrics from your last three chapters and ElevenLabs Music sings them (about 70 seconds).
+- **Make a song:** after you mark a chapter as read, choose Praise or Worship. Claude writes original lyrics from your last three chapters and ElevenLabs Music sings them (about 70 seconds). Needs an account; three songs a day.
 - **Notes and highlights:** Notes lists your notes and your highlights, grouped by book. Each highlight shows the verse (KJV) and a short AI summary to help you remember it. Tap a row to open the reader at that verse.
 - **Circles (Lamplighters):** private, invite-only groups. See who has read today, send nudges, and chat. Messages and nudges show up under the bell on Circles and can also be emailed.
 - **Guest first:** everything works on the device without an account. Signing in syncs notes, highlights (with their summaries), reading and settings.
@@ -19,7 +19,7 @@ Built with Next.js 16, TypeScript, Tailwind CSS 4 and Supabase. Every screen fol
 ```bash
 npm install
 npm run dev      # http://localhost:3000 (builds the avatar and mascot images first)
-npm test         # pure logic, sync merging, song plans, and the Circles database rules (PGlite)
+npm test         # pure logic, sync merging, song plans, the paid API routes (mocked), and the database rules (PGlite)
 npm run build    # prerenders all 1,189 KJV chapters
 ```
 
@@ -36,6 +36,14 @@ ESV_API_KEY=...        # English Standard Version, from api.esv.org (non-commerc
 ANTHROPIC_API_KEY=...  # Pray, Explain in depth, highlight summaries and song lyrics
 ELEVENLABS_API_KEY=... # Make a song: records the lyrics with ElevenLabs Music (server only)
 DAILY_AI_BUDGET_USD=2  # optional: Claude API spend per day (UTC) before the AI features pause (default 2)
+
+# Daily limits (optional; UTC days, kept in Supabase so every server instance shares them)
+DAILY_SONG_LIMIT=3              # songs a day for the whole app (default 3); 0 turns songs off
+SONG_LIMIT_PER_USER=3           # songs a day per person (default 3)
+SONG_LIMIT_PER_IP=6             # songs a day per network address (default 6)
+HIGHLIGHT_SUMMARIES_PER_IP=40   # new highlight summaries a day per network address (default 40); cached ones are free
+TRUSTED_PROXY_HOPS=1            # proxies that add to X-Forwarded-For: 1 on Cloud Run, 2 with a Google load balancer in front
+USAGE_HASH_SECRET=...           # optional: the key used to hash network addresses (defaults to one made from SUPABASE_SECRET_KEY)
 
 # Accounts and sync
 NEXT_PUBLIC_SUPABASE_URL=...              # public, built into the app
@@ -54,13 +62,14 @@ EMAIL_FROM="Lampstand <hello@your-domain>"  # a sender on a domain verified in R
 | --- | --- |
 | `ANTHROPIC_API_KEY` | Pray says "Prayer isn't set up on this server yet." Explain in depth works only for chapters already written. Highlights save without a summary. Make a song says "Songs aren't set up on this server yet." |
 | `ELEVENLABS_API_KEY` | Make a song says "Songs aren't set up on this server yet." No lyrics are written, so nothing is paid for. |
-| `SUPABASE_SECRET_KEY` | The daily AI cap works per server instance only. Explanations and highlight summaries are kept in memory, not shared. Circle emails are off. |
+| `SUPABASE_SECRET_KEY` | The daily AI cap and the daily song and summary limits work per server instance only. Explanations and highlight summaries are kept in memory, not shared. Circle emails are off. |
 | `RESEND_API_KEY`, `EMAIL_FROM` or `APP_URL` | Invites still work: the inviter copies the link. Nudges and messages are in-app only. |
 
 ### What things cost
 
 - **Claude** (Sonnet 5.5): a prayer or song lyrics cost about $0.01 to $0.02. A highlight summary costs about $0.0015 and is written once per verse for every reader. All of it counts toward `DAILY_AI_BUDGET_USD`.
-- **ElevenLabs:** each song is about 70 seconds of music on your ElevenLabs plan. It is **not** counted in the daily AI budget. Songs are limited to 3 per hour per person, so also set a spend limit in your ElevenLabs account.
+- **ElevenLabs:** each song is about 70 seconds of music on your ElevenLabs plan. It is **not** counted in the Claude budget; instead songs need an account and have their own daily limits (`DAILY_SONG_LIMIT` for the whole app, `SONG_LIMIT_PER_USER`, `SONG_LIMIT_PER_IP`), checked before every ElevenLabs call. A recording that fails gives its place back. Also set a usage limit in your ElevenLabs account as a backstop.
+- **Highlight summaries** work for guests, so each network address has a burst limit (10 in 10 minutes) and a daily cap (`HIGHLIGHT_SUMMARIES_PER_IP`). That way one stranger can't use up the budget Pray, Explain and songs share.
 - Set a monthly spend limit in the Claude Console as a backstop too.
 
 ## Supabase setup
@@ -77,6 +86,8 @@ Run the migrations in order in the SQL Editor:
 | `0006_notifications.sql` | Circle notifications, the "Email me Circle messages" switch, and the email sent marker |
 | `0007_highlight_summaries.sql` | The `summary` column on highlights and the shared `verse_summaries` cache |
 | `0008_song_usage.sql` | Lets song lyrics count toward the daily AI budget |
+| `0009_usage_limits.sql` | Daily limits for paid features (songs, highlight summaries), shared by every server instance. Addresses are stored only as a hash |
+| `0010_notification_email_retry.sql` | A Circle message email that failed to send goes out with the sender's next message (within an hour) |
 
 The app keeps working if a newer migration hasn't run yet (no notifications, no saved summaries), but run them before you deploy.
 
@@ -96,13 +107,13 @@ For Circles, also in the Supabase dashboard:
   - a nudge to one person notifies that person
   - a nudge to the whole Circle notifies each person it reached (not people who already read today, were nudged in the last 24 hours, or muted or blocked the sender)
 - **Mute** (the bell-off button on a nudge) stops nudges and message notifications from that person or Circle. Their messages still show in the chat. Members turn it back on from Me.
-- Emails go only to people who turned on "Email me nudges" or "Email me Circle messages" on Me (both off by default), one email per person, never to the sender. Each notification is marked before it's emailed, so a retried request never sends twice.
+- Emails go only to people who turned on "Email me nudges" or "Email me Circle messages" on Me (both off by default), one email per person, never to the sender. Each notification is marked before it's emailed, so a retried request never sends twice. If sending fails, the mark is cleared and the email goes out with that person's next message in the Circle (within an hour).
 - Chat messages are sent through `/api/lamplighters/message`, so email addresses stay on the server.
 
 ## Deploying (Cloud Run)
 
 - The two `NEXT_PUBLIC_…` values are built into the app, so pass them as build arguments: `--build-arg NEXT_PUBLIC_SUPABASE_URL=… --build-arg NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=…`.
-- Set the server secrets on the Cloud Run service (Secret Manager is best): `ANTHROPIC_API_KEY`, `ELEVENLABS_API_KEY`, `SUPABASE_SECRET_KEY`, `NLT_API_KEY`, `ESV_API_KEY`, `RESEND_API_KEY`, `EMAIL_FROM`, `APP_URL`, and optionally `DAILY_AI_BUDGET_USD`.
+- Set the server secrets on the Cloud Run service (Secret Manager is best): `ANTHROPIC_API_KEY`, `ELEVENLABS_API_KEY`, `SUPABASE_SECRET_KEY`, `NLT_API_KEY`, `ESV_API_KEY`, `RESEND_API_KEY`, `EMAIL_FROM`, `APP_URL`, and optionally `DAILY_AI_BUDGET_USD` and the daily limits above.
 - Run any new Supabase migrations before the new version goes live.
 - Add the live address to Supabase **Authentication → URL Configuration** (Site URL and `https://your-domain/**` in Redirect URLs).
 
@@ -118,13 +129,13 @@ For Circles, also in the Supabase dashboard:
 - `content/kjv/` holds the KJV text (public domain), made by `scripts/import-kjv.mjs`.
 - `lib/bible/providers/nlt-api.ts` fetches the NLT a chapter at a time from Tyndale's API and caches each chapter for days. The NLT copyright notice shows under every NLT chapter and on Me.
 - `lib/bible/providers/esv-api.ts` fetches the ESV from Crossway's API. Crossway allows at most 500 verses stored, so chapters live in a small in-memory cache capped at 500 verses. Every page showing ESV text carries Crossway's notice and a link to www.esv.org.
-- Text that leaves the reader (verse cards in chat, verses on Notes, anything sent to AI) is always KJV, so licensed text is never copied.
+- Text that leaves the reader (verse cards in chat, verses on Notes, anything sent to AI) is always KJV, so licensed text is never copied. Notes gets the words of all its highlights in one request (`app/api/verse/batch`, capped at 200 ranges and 1,000 verses).
 - `content/context-cards.json` holds the book background notes. Their status is `draft` until reviewed.
 - `content/chapters/` holds the "In this chapter" explanation and key verse for every chapter, also `draft` until reviewed. Check them with `node scripts/check-chapter-notes.mjs`.
 - `public/plates/` holds one photoreal plate per book, made with Higgsfield.
 - `content/xrefs/` holds each chapter's best-supported cross-references from OpenBible.info (CC BY), made by `node scripts/import-xrefs.mjs`.
 
-**AI features** (all on the server; daily cap in `lib/ai/budget.ts`, per-address limits in `lib/ai/server.ts`)
+**AI features** (all on the server; daily Claude spend cap in `lib/ai/budget.ts`, durable daily limits per person, address and app in `lib/ai/usage.ts`, short burst limits per address in `lib/ai/server.ts`)
 - `content/explanations/` holds the pre-written "In depth" explanations, drafts until reviewed. Write them with `npx tsx scripts/generate-explanations.mts` (`--sample GEN.1,JHN.3`, `--estimate`, `--batch`, `--collect`). They are grounded in the chapter text and cross-references, and every Bible reference is checked against real verse counts (`lib/bible/check-refs.ts`).
 - `/review` (only with `npm run dev`) is where a pastor or teacher reads, edits and approves explanations; commit `content/explanations` to publish. Explanations written when a reader first asked are kept in Supabase; copy them in for review with `npx tsx scripts/pull-explanations.mts` (free).
 - `lib/explain/examples.ts` holds the model explanation and prayer that set the style. Edit them to change every future explanation and prayer.

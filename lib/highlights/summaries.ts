@@ -11,23 +11,26 @@ import { getState, onChange, setHighlightSummary, type Highlight } from "@/lib/s
 const RETRY_MS = 10 * 60_000;
 const failedAt = new Map<string, number>(); // highlight id -> when it last failed
 let running = false;
+let pausedUntil = 0; // the server said "limit reached" or "paused": wait before asking again
 let timer: ReturnType<typeof setTimeout> | undefined;
 
 const due = (h: Highlight) => !h.summary && Date.now() - (failedAt.get(h.id) ?? 0) > RETRY_MS;
 
-async function summarize(h: Highlight): Promise<string | null> {
+/** The summary, null when this one failed, or "pause" when every request would fail for now. */
+async function summarize(h: Highlight): Promise<string | null | "pause"> {
   const res = await fetch("/api/highlight-summary", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ book: h.book, chapter: h.chapter, verseStart: h.verseStart, verseEnd: h.verseEnd }),
   });
+  if (res.status === 429 || res.status === 503) return "pause";
   if (!res.ok) return null;
   const data = (await res.json().catch(() => null)) as { summary?: unknown } | null;
   return typeof data?.summary === "string" ? data.summary : null;
 }
 
 async function run() {
-  if (running || !navigator.onLine) return;
+  if (running || !navigator.onLine || Date.now() < pausedUntil) return;
   running = true;
   try {
     // Newest first, so the one just highlighted is written first.
@@ -35,6 +38,11 @@ async function run() {
       const next = [...getState().highlights].sort((a, b) => b.createdAt.localeCompare(a.createdAt)).find(due);
       if (!next || !navigator.onLine) break;
       const summary = await summarize(next).catch(() => null);
+      if (summary === "pause") {
+        pausedUntil = Date.now() + RETRY_MS;
+        soon(RETRY_MS + 1000);
+        break;
+      }
       if (summary) setHighlightSummary(next.id, summary);
       else failedAt.set(next.id, Date.now());
     }
@@ -57,6 +65,7 @@ export function startHighlightSummaries() {
   onChange(() => soon());
   window.addEventListener("online", () => {
     failedAt.clear();
+    pausedUntil = 0;
     soon(0);
   });
   document.addEventListener("visibilitychange", () => document.visibilityState === "visible" && soon());

@@ -21,6 +21,7 @@ const ICONS = {
   "info": "icon-[lucide--info]",
   "library": "icon-[lucide--library-big]",
   "link": "icon-[lucide--link]",
+  "log-in": "icon-[lucide--log-in]",
   "log-out": "icon-[lucide--log-out]",
   "mail": "icon-[lucide--mail]",
   "message-circle": "icon-[lucide--message-circle]",

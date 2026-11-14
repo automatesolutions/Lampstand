@@ -103,6 +103,13 @@ export function changed() {
   version++;
   versionListeners.forEach((l) => l());
 }
+/** Called after any such change (outside React). */
+export function onLampChange(l: () => void) {
+  versionListeners.add(l);
+  return () => {
+    versionListeners.delete(l);
+  };
+}
 export function useLampVersion() {
   return useSyncExternalStore(
     (l) => {

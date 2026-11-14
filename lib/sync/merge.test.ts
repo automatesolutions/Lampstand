@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { DEFAULT_STATE, type AppState, type Highlight, type Note } from "@/lib/store";
-import { changesToPush, mergeState, type Remote } from "./merge";
+import { changesToPush, mergeState, summaryToPush, type Remote } from "./merge";
 
 const empty = (): Remote => ({ reads: [], goals: [], notes: [], highlights: [], position: null, settings: null, deleted: { notes: new Set(), highlights: new Set() } });
 const read = (book: string, chapter: number, at: string) => ({ book, chapter, version: "KJV" as const, readOn: at.slice(0, 10), completedAt: at });
@@ -67,5 +67,46 @@ describe("highlight summaries", () => {
   it("drops the summary with a removed highlight", () => {
     const remote = { ...empty(), highlights: [{ ...hl("a", "gold", at), summary: "Gone." }], deleted: { notes: new Set<string>(), highlights: new Set(["a"]) } };
     expect(mergeState({ ...DEFAULT_STATE, highlights: [] }, remote).highlights).toHaveLength(0);
+  });
+});
+
+describe("highlight summaries across devices", () => {
+  const range = (id: string, color: Highlight["color"], createdAt: string, start: number, end: number, summary: string | null = null): Highlight => ({
+    id, book: "JHN", chapter: 3, verseStart: start, verseEnd: end, color, createdAt, summary,
+  });
+
+  it("keeps the summary when another device changed the color (a new id)", () => {
+    // Device A wrote the summary on highlight "a". Device B changed the color, which made highlight "b".
+    const remote = { ...empty(), highlights: [range("a", "gold", "2026-11-01T00:00:00Z", 16, 16, "God gave his Son.")] };
+    const local: AppState = { ...DEFAULT_STATE, highlights: [range("b", "rose", "2026-11-02T00:00:00Z", 16, 16)] };
+    const [h] = mergeState(local, remote).highlights;
+    expect(h).toMatchObject({ id: "b", color: "rose", summary: "God gave his Son." });
+    // And the other way round: the newer copy is remote, the summary local.
+    const [h2] = mergeState({ ...DEFAULT_STATE, highlights: [range("a", "gold", "2026-11-01T00:00:00Z", 16, 16, "Written here.")] }, { ...empty(), highlights: [range("b", "rose", "2026-11-02T00:00:00Z", 16, 16)] }).highlights;
+    expect(h2).toMatchObject({ id: "b", summary: "Written here." });
+  });
+
+  it("never moves a summary to different verses", () => {
+    // The account's highlight was verses 16 to 18; this device's starts at 16 but covers only 16.
+    const remote = { ...empty(), highlights: [range("a", "gold", "2026-11-01T00:00:00Z", 16, 18, "About verses 16 to 18.")] };
+    const local: AppState = { ...DEFAULT_STATE, highlights: [range("b", "gold", "2026-11-02T00:00:00Z", 16, 16)] };
+    expect(mergeState(local, remote).highlights[0].summary ?? null).toBeNull();
+  });
+
+  it("never uploads a row that would erase the account's summary", () => {
+    const known = { ...empty(), highlights: [range("a", "gold", "2026-11-01T00:00:00Z", 16, 16, "Saved on the account.")] };
+    // This device changed the color before it had the summary: a new id, no summary.
+    const local: AppState = { ...DEFAULT_STATE, highlights: [range("b", "rose", "2026-11-02T00:00:00Z", 16, 16)] };
+    const [pushed] = changesToPush(local, known).highlights;
+    expect(pushed.id).toBe("b");
+    expect(summaryToPush(pushed, known)).toBe("Saved on the account.");
+  });
+
+  it("leaves the summary out when nothing is known, and clears it only for different verses", () => {
+    const fresh = range("b", "rose", "2026-11-02T00:00:00Z", 16, 16);
+    expect(summaryToPush(fresh, empty())).toBeUndefined(); // the column is left out: the database keeps its value
+    const known = { ...empty(), highlights: [range("a", "gold", "2026-11-01T00:00:00Z", 16, 18, "About verses 16 to 18.")] };
+    expect(summaryToPush(fresh, known)).toBeNull(); // that summary was for other verses
+    expect(summaryToPush({ ...fresh, summary: "Mine." }, known)).toBe("Mine.");
   });
 });

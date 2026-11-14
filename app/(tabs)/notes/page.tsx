@@ -6,6 +6,7 @@ import { PageTitle } from "@/components/ui/NavBar";
 import { Icon } from "@/components/ui/Icon";
 import { BOOKS, bookIndex } from "@/lib/bible/books";
 import { formatRef, readerHref } from "@/lib/bible/refs";
+import { MAX_BATCH_VERSES, MAX_RANGE_VERSES, rangeKey, shownRange, type VerseRange } from "@/lib/bible/verse-batch";
 import { useHydrated, useStore, type HighlightColor } from "@/lib/store";
 
 // Same pigments and names as the reader's highlight swatches (DESIGN.md §2).
@@ -16,36 +17,53 @@ const SWATCH: Record<HighlightColor, { label: string; fill: string }> = {
   rose: { label: "Rose", fill: "var(--pg-gospels)" },
 };
 
-// Highlighted verse text, KJV (public domain) from /api/verse, kept for this visit.
-const verseCache = new Map<string, Promise<string | null>>();
-function kjvVerse(book: string, chapter: number, verse: number): Promise<string | null> {
-  const key = `${book}.${chapter}.${verse}`;
-  let p = verseCache.get(key);
-  if (!p) {
-    p = fetch(`/api/verse/${book}/${chapter}/${verse}`)
-      .then((r) => (r.ok ? (r.json() as Promise<{ text?: string }>) : null))
-      .then((d) => d?.text ?? null)
-      .catch(() => null);
-    p.then((t) => t == null && verseCache.delete(key)); // try again next time (offline)
-    verseCache.set(key, p);
+// Highlighted verse text, KJV (public domain), all fetched together from /api/verse/batch
+// and kept for this visit. 100 ranges a request (the route's cap is 1,000 verses, 10 a
+// range), so most pages need one request.
+const PER_REQUEST = MAX_BATCH_VERSES / MAX_RANGE_VERSES;
+const verseTexts = new Map<string, string | null>(); // range key -> text (null: no such verses)
+
+async function fetchTexts(ranges: VerseRange[]) {
+  for (let i = 0; i < ranges.length; i += PER_REQUEST) {
+    const res = await fetch("/api/verse/batch", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ ranges: ranges.slice(i, i + PER_REQUEST) }),
+    });
+    if (!res.ok) return; // offline or refused: try again next time
+    const { texts } = (await res.json()) as { texts: Record<string, string | null> };
+    for (const [k, v] of Object.entries(texts)) verseTexts.set(k, v);
   }
-  return p;
 }
 
-/** The words of a highlighted verse (or range), so the row shows what was highlighted. Nothing when offline. */
-function HighlightedText({ book, chapter, verseStart, verseEnd }: { book: string; chapter: number; verseStart: number; verseEnd: number }) {
-  const [text, setText] = useState<string | null>(null);
+/** The KJV words of each highlight; missing ones are fetched in one go. */
+function useHighlightTexts(highlights: VerseRange[]) {
+  const [, setVersion] = useState(0);
+  const missing = useMemo(() => {
+    const seen = new Map<string, VerseRange>();
+    for (const h of highlights) {
+      const r = shownRange(h);
+      if (!verseTexts.has(rangeKey(r))) seen.set(rangeKey(r), r);
+    }
+    return [...seen.values()];
+  }, [highlights]);
+  const missingKey = missing.map(rangeKey).join(",");
   useEffect(() => {
+    if (!missing.length) return;
     let live = true;
-    const nums = Array.from({ length: Math.min(verseEnd - verseStart + 1, 10) }, (_, i) => verseStart + i);
-    Promise.all(nums.map((n) => kjvVerse(book, chapter, n))).then((parts) => {
-      const t = parts.filter(Boolean).join(" ");
-      if (live && t) setText(t);
-    });
+    fetchTexts(missing)
+      .catch(() => {})
+      .then(() => live && setVersion((v) => v + 1));
     return () => {
       live = false;
     };
-  }, [book, chapter, verseStart, verseEnd]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- refetch only when the set of missing ranges changes
+  }, [missingKey]);
+  return (h: VerseRange) => verseTexts.get(rangeKey(shownRange(h))) ?? null;
+}
+
+/** The words of a highlighted verse (or range), so the row shows what was highlighted. Nothing when offline. */
+function HighlightedText({ text }: { text: string | null }) {
   if (!text) return null;
   return (
     <span className="font-scripture text-[1.0625rem] leading-[1.6] text-text">
@@ -91,6 +109,7 @@ export default function NotesPage() {
     matches.sort((a, b) => bookIndex(a.book) - bookIndex(b.book) || a.chapter - b.chapter || a.verseStart - b.verseStart);
     return byBook(matches);
   }, [highlights, query]);
+  const textOf = useHighlightTexts(highlights);
   const empty = notes.length === 0 && highlights.length === 0;
   const both = notes.length > 0 && highlights.length > 0;
 
@@ -178,7 +197,7 @@ export default function NotesPage() {
                             {ref}
                             <span className="sr-only">, {SWATCH[h.color].label.toLowerCase()} highlight</span>
                           </span>
-                          <HighlightedText book={h.book} chapter={h.chapter} verseStart={h.verseStart} verseEnd={h.verseEnd} />
+                          <HighlightedText text={textOf(h)} />
                           {h.summary ? (
                             <>
                               <span className="border-l-2 border-divider pl-3 text-callout">{h.summary}</span>
