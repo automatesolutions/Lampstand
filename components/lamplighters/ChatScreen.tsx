@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { Button, IconButton } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
@@ -15,7 +16,9 @@ import {
   friendly,
   getCircle,
   getMessage,
+  lastReadAt,
   markChatRead,
+  openedFromCircles,
   messagesBefore,
   reportMessage,
   sendMessage,
@@ -27,6 +30,7 @@ import {
 } from "@/lib/lamplighters/client";
 import { LAMPLIGHTERS } from "@/lib/lamplighters/config";
 import { supabase } from "@/lib/supabase/client";
+import { loadedEnough, openingPoint } from "@/lib/lamplighters/chat-open";
 import { Avatar } from "./Avatar";
 import { ErrorState, LoadingRows } from "./States";
 
@@ -83,21 +87,42 @@ export function ChatScreen({ id }: { id: string }) {
   // One id per message being sent: trying again after a failure reuses it, so the
   // server never posts (or emails) it twice.
   const pending = useRef<{ key: string; id: string } | null>(null);
+  const router = useRouter();
+  // Opened from the Circles list (Back returns there through history) or from a link.
+  const [fromList] = useState(openedFromCircles);
+  // Where to open: the first unread message (with a "New messages" line above it), or the
+  // message a notification pointed at (?m=), or else the newest.
+  const [firstUnread, setFirstUnread] = useState<string | null>(null);
+  const [target, setTarget] = useState<string | null>(null);
+  const scrolledTo = useRef(false);
 
   const byId = useMemo(() => new Map((people.data ?? []).map((p) => [p.user_id, p])), [people.data]);
   const owner = (people.data ?? []).some((p) => p.is_me && p.role === "owner");
 
-  // First page.
+  // First page, plus enough earlier pages to reach the first unread message or the one a
+  // notification opened (at most 5 pages). Where I'd read up to is read before anything
+  // is marked read.
   const loadFirst = useCallback(() => {
     if (!uid) return;
-    messagesBefore(id, null, LAMPLIGHTERS.chatPageSize).then(
-      (page) => {
-        setMessages((m) => mergeMessages(m, page));
-        setHasMore(page.length === LAMPLIGHTERS.chatPageSize);
-        setLoaded("ready");
-      },
-      () => setLoaded("error"),
-    );
+    const wanted = new URLSearchParams(location.search).get("m");
+    (async () => {
+      const [readUpTo, wantedMessage] = await Promise.all([lastReadAt(id, uid).catch(() => null), wanted ? getMessage(wanted) : null]);
+      let all: Message[] = [];
+      let more = true;
+      for (let pages = 0; pages < 5 && more; pages++) {
+        const page = await messagesBefore(id, all.length ? all[0].created_at : null, LAMPLIGHTERS.chatPageSize);
+        all = mergeMessages(all, page);
+        more = page.length === LAMPLIGHTERS.chatPageSize;
+        if (loadedEnough(all, readUpTo, wantedMessage?.id ?? null)) break;
+      }
+      const open = openingPoint(all, readUpTo, uid, wantedMessage?.id ?? null);
+      setFirstUnread(open.firstUnread);
+      setTarget(open.target);
+      if (wanted) history.replaceState(history.state, "", location.pathname); // a reload opens at the newest
+      setMessages((m) => mergeMessages(m, all));
+      setHasMore(more);
+      setLoaded("ready");
+    })().catch(() => setLoaded("error"));
   }, [id, uid]);
   useEffect(loadFirst, [loadFirst]);
 
@@ -152,17 +177,27 @@ export function ChatScreen({ id }: { id: string }) {
     if (uid && loaded === "ready" && document.visibilityState === "visible") markChatRead(id, uid).catch(() => {});
   }, [id, uid, loaded, messages.length]);
 
-  // Stay at the bottom for new messages; keep the place when older ones load above.
+  // Stay at the bottom for new messages; keep the place when older ones load above. On
+  // opening, start at the target message instead (once).
   useLayoutEffect(() => {
     const el = scroller.current;
     if (!el) return;
+    if (target && !scrolledTo.current && loaded === "ready") {
+      const row = document.getElementById(`msg-${target}`);
+      if (row) {
+        scrolledTo.current = true;
+        keepBottom.current = false;
+        row.scrollIntoView({ block: firstUnread === target ? "start" : "center" });
+        return;
+      }
+    }
     if (restoreFrom.current != null) {
       el.scrollTop = el.scrollHeight - restoreFrom.current;
       restoreFrom.current = null;
     } else if (keepBottom.current) {
       el.scrollTop = el.scrollHeight;
     }
-  }, [messages]);
+  }, [messages, target, firstUnread, loaded]);
 
   async function loadEarlier() {
     const el = scroller.current;
@@ -220,11 +255,21 @@ export function ChatScreen({ id }: { id: string }) {
   return (
     <div className="flex h-dvh flex-col bg-bg">
       <header className="glass z-10 flex shrink-0 items-center gap-2 border-b border-divider px-2 pt-[env(safe-area-inset-top)]">
-        <Link href={`/circles/${id}`} className="flex min-h-11 items-center gap-0.5 rounded-md pr-2 text-body text-gold-text">
+        <Link
+          href="/circles"
+          onClick={(e) => {
+            // From the list: go back through history, like the phone's back gesture.
+            if (fromList) {
+              e.preventDefault();
+              router.back();
+            }
+          }}
+          className="flex min-h-11 items-center gap-0.5 rounded-md pr-2 text-body text-gold-text"
+        >
           <Icon name="chevron-left" className="size-6" />
-          <span className="sr-only">Back to </span>Circle
+          <span className="sr-only">Back to </span>Circles
         </Link>
-        <div className="min-w-0 flex-1 py-1.5 text-center">
+        <Link href={`/circles/${id}`} aria-label={`${title}: members, shared highlights and settings`} className="min-w-0 flex-1 rounded-md py-1.5 text-center">
           <h1 className="truncate text-headline">{title}</h1>
           <p aria-live="polite" className="h-[18px] truncate text-footnote text-text-secondary">
             {typingNames.length ? (
@@ -242,12 +287,15 @@ export function ChatScreen({ id }: { id: string }) {
               ""
             )}
           </p>
-        </div>
-        <span aria-hidden="true" className="flex w-[76px] justify-end -space-x-2 pr-1">
-          {(people.data ?? []).slice(0, 3).map((p) => (
-            <Avatar key={p.user_id} id={p.avatar_id} size={28} className="rounded-full ring-2 ring-bg" />
-          ))}
-        </span>
+        </Link>
+        <Link href={`/circles/${id}`} aria-label={`About ${title}`} className="flex min-h-11 items-center gap-1 rounded-md pl-1 pr-1">
+          <span aria-hidden="true" className="flex -space-x-2">
+            {(people.data ?? []).slice(0, 2).map((p) => (
+              <Avatar key={p.user_id} id={p.avatar_id} size={28} className="rounded-full ring-2 ring-bg" />
+            ))}
+          </span>
+          <Icon name="info" className="size-6 text-gold-text" />
+        </Link>
       </header>
 
       <div
@@ -280,8 +328,15 @@ export function ChatScreen({ id }: { id: string }) {
                 const newDay = !prev || dayOf(prev.created_at) !== dayOf(m.created_at);
                 const grouped = !newDay && prev?.sender_id === m.sender_id && Date.parse(m.created_at) - Date.parse(prev.created_at) < 5 * 60_000;
                 return (
-                  <div key={m.id} className="flex flex-col">
+                  <div key={m.id} id={`msg-${m.id}`} className={`flex scroll-mt-4 flex-col rounded-lg ${target === m.id && firstUnread !== m.id ? "outline-2 outline-offset-2 outline-gold" : ""}`}>
                     {newDay && <p className="my-3 self-center rounded-full bg-surface px-3 py-1 text-footnote text-text-secondary">{dayOf(m.created_at)}</p>}
+                    {firstUnread === m.id && (
+                      <p className="my-2 flex items-center gap-3 text-footnote font-semibold text-gold-text">
+                        <span aria-hidden="true" className="h-px flex-1 bg-gold" />
+                        New messages
+                        <span aria-hidden="true" className="h-px flex-1 bg-gold" />
+                      </p>
+                    )}
                     <div className={`flex items-end gap-2 ${mine ? "flex-row-reverse" : ""} ${grouped ? "" : "mt-2"}`}>
                       {!mine && (grouped ? <span className="w-8 shrink-0" /> : <Avatar id={person?.avatar_id} size={32} />)}
                       <button

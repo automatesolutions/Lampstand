@@ -137,7 +137,7 @@ export function CircleScreen({ id }: { id: string }) {
 
   return (
     <div className="arrive flex flex-col gap-7">
-      <PageTitle back={{ href: "/circles", label: "Circles" }} eyebrow={c.kind === "pair" ? "Lamplighter pair" : `Circle · ${list.length} of ${c.max_members}`}>
+      <PageTitle back={{ href: `/chat/${id}`, label: "Chat" }} eyebrow={c.kind === "pair" ? "Lamplighter pair" : `Circle · ${list.length} of ${c.max_members}`}>
         {c.name}
       </PageTitle>
       {c.description && <p className="-mt-4 text-body text-text-secondary">{c.description}</p>}

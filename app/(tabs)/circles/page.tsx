@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { PageTitle } from "@/components/ui/NavBar";
 import { useNotifications } from "@/lib/lamplighters/badge";
-import { myCircles, myNudges, useLampProfile, useLampVersion, useLoad } from "@/lib/lamplighters/client";
+import { cameFromCircles, myCircles, myNudges, useLampProfile, useLampVersion, useLoad } from "@/lib/lamplighters/client";
 import { accountsEnabled } from "@/lib/supabase/client";
 import { useHydrated } from "@/lib/store";
 
@@ -146,7 +146,7 @@ export default function CirclesPage() {
           <ul className="flex flex-col gap-2.5">
             {list.map((c) => (
               <li key={c.id}>
-                <Link href={`/circles/${c.id}`} className="flex min-h-[76px] items-center gap-3.5 rounded-lg bg-surface-raised px-4 py-3 shadow-soft ring-1 ring-divider/60 active:bg-gold-wash">
+                <Link href={`/chat/${c.id}`} onClick={cameFromCircles} className="flex min-h-[76px] items-center gap-3.5 rounded-lg bg-surface-raised px-4 py-3 shadow-soft ring-1 ring-divider/60 active:bg-gold-wash">
                   <span aria-hidden="true" className="flex shrink-0 -space-x-3">
                     {c.avatars.slice(0, 3).map((a, i) => (
                       <Avatar key={i} id={a || null} size={36} className="rounded-full ring-2 ring-surface-raised" />

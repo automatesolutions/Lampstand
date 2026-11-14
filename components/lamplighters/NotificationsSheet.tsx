@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { Sheet } from "@/components/ui/Sheet";
-import { markNotificationsRead, type LampNotification } from "@/lib/lamplighters/client";
+import { cameFromCircles, markNotificationsRead, type LampNotification } from "@/lib/lamplighters/client";
 import { Avatar } from "./Avatar";
 import { timeAgo } from "./States";
 
@@ -29,7 +29,10 @@ export function NotificationsSheet({
   function openItem(n: LampNotification) {
     if (!n.read_at) markNotificationsRead([n.id]).catch(() => {});
     onOpenChange(false);
-    if (n.kind === "message") router.push(`/chat/${n.circle_id}`);
+    if (n.kind === "message") {
+      cameFromCircles();
+      router.push(`/chat/${n.circle_id}${n.message_id ? `?m=${n.message_id}` : ""}`);
+    }
     else if (n.nudge_id) onShowNudge(n.nudge_id);
   }
 

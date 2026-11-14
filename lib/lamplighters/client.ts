@@ -498,6 +498,23 @@ export const sendMessage = (id: string, circleId: string, body: string, verse: M
 export const deleteMessage = (id: string) => rpc<void>("delete_message", { p_message: id });
 export const reportMessage = (id: string, reason: string) => rpc<void>("report_message", { p_message: id, p_reason: reason || null });
 
+/** Where I'd read up to in this Circle's chat, before opening it now (null: never opened). */
+export async function lastReadAt(circleId: string, userId: string): Promise<string | null> {
+  const { data } = await db().from("circle_members").select("last_read_message_at").eq("circle_id", circleId).eq("user_id", userId).maybeSingle();
+  return (data as { last_read_message_at: string } | null)?.last_read_message_at ?? null;
+}
+
+// Back from a chat: return to the Circles list the way the browser would (so the phone's
+// back gesture and the Back button agree), unless the chat was opened from a link.
+// A time, not a flag that's used up: React may call a state initializer twice in development.
+let fromCirclesAt = 0;
+/** Called when a chat is opened from the Circles list or its notifications. */
+export const cameFromCircles = () => {
+  fromCirclesAt = Date.now();
+};
+/** True when the chat was just opened from inside the app's Circles screens. */
+export const openedFromCircles = () => Date.now() - fromCirclesAt < 5000;
+
 export async function markChatRead(circleId: string, userId: string) {
   await db().from("circle_members").update({ last_read_message_at: new Date().toISOString() }).eq("circle_id", circleId).eq("user_id", userId);
   changed();
