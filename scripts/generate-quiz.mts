@@ -86,7 +86,7 @@ if (args[0] === "--estimate") {
 } else if (args[0] === "--batch") {
   const client = new Anthropic();
   const list = todo(books(args[1]));
-  const batch = await client.messages.batches.create({ requests: list.map((c) => ({ custom_id: `${c.code}.${c.chapter}`, params: quizParams(nameOf(c.code), c.chapter, c.verses) })) });
+  const batch = await client.messages.batches.create({ requests: list.map((c) => ({ custom_id: `${c.code}-${c.chapter}`, params: quizParams(nameOf(c.code), c.chapter, c.verses) })) });
   console.log(`Sent ${list.length} chapters as batch ${batch.id}. When it's done: npx tsx scripts/generate-quiz.mts --collect ${batch.id}`);
 } else if (args[0] === "--collect") {
   const client = new Anthropic();
@@ -100,7 +100,7 @@ if (args[0] === "--estimate") {
   let total = 0;
   const failed: string[] = [];
   for await (const r of await client.messages.batches.results(id)) {
-    const [code, ch] = r.custom_id.split(".");
+    const [code, ch] = r.custom_id.split("-");
     if (r.result.type !== "succeeded") {
       failed.push(`${r.custom_id} (${r.result.type})`);
       continue;

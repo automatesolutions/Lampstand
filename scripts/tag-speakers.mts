@@ -85,7 +85,7 @@ if (args[0] === "--estimate") {
   const client = new Anthropic();
   const todo = chaptersOf(books(args[1]));
   const batch = await client.messages.batches.create({
-    requests: todo.map((c) => ({ custom_id: `${c.code}.${c.chapter}`, params: tagParams(nameOf(c.code), c.chapter, c.verses, jesusIn(c.code, c.chapter)) })),
+    requests: todo.map((c) => ({ custom_id: `${c.code}-${c.chapter}`, params: tagParams(nameOf(c.code), c.chapter, c.verses, jesusIn(c.code, c.chapter)) })),
   });
   console.log(`Sent ${todo.length} chapters as batch ${batch.id}. When it's done: npx tsx scripts/tag-speakers.mts --collect ${batch.id}`);
 } else if (args[0] === "--collect") {
@@ -100,7 +100,7 @@ if (args[0] === "--estimate") {
   let placedCount = 0;
   let rejectedCount = 0;
   for await (const r of await client.messages.batches.results(id)) {
-    const [code, ch] = r.custom_id.split(".");
+    const [code, ch] = r.custom_id.split("-");
     if (r.result.type !== "succeeded") {
       failed.push(`${r.custom_id} (${r.result.type})`);
       continue;
