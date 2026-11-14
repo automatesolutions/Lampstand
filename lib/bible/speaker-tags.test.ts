@@ -69,7 +69,9 @@ describe("the request", () => {
 describe("the words-of-God pass", () => {
   it("only sends chapters where God may speak (a free check of the text)", () => {
     expect(GOD_SPEAKS.test("And God said, Let there be light: and there was light.")).toBe(true);
-    expect(GOD_SPEAKS.test("Thus saith the LORD, Let my people go.")).toBe(true);
+    expect(GOD_SPEAKS.test("And the LORD spake unto Moses, saying, Speak unto the children of Israel")).toBe(true);
+    // A prophet's "Thus saith the LORD" isn't God speaking directly.
+    expect(GOD_SPEAKS.test("Thus saith the LORD of hosts, the God of Israel; Amend your ways and your doings")).toBe(false);
     expect(GOD_SPEAKS.test("And lo a voice from heaven, saying, This is my beloved Son")).toBe(true);
     expect(GOD_SPEAKS.test("These are the generations of Shem: Shem was an hundred years old.")).toBe(false);
   });

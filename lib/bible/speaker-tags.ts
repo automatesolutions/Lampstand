@@ -29,18 +29,19 @@ If a chapter has no direct speech by anyone but Jesus, return an empty list.`;
 /** The words-of-God pass: only speech the text gives to God. */
 export const GOD_SYSTEM = `You mark the words of God in the King James Version of the Bible for Lampstand, a Bible reading app that colors them.
 You get one chapter, verse by verse. Words of Jesus are already marked and must not be listed.
-List every passage the text presents as spoken by God: God, the LORD, the Lord GOD, the Almighty, the Father, or a voice from heaven speaking as God. Include words God speaks to people, and a prophet's message introduced as the LORD's own words ("Thus saith the LORD, ..."), from the first word God says to the last.
-Do not include narration, words of angels or people (even prophets speaking for themselves), words about God, prayers to God, or indirect speech ("the LORD said that he would...").
+List every passage where God speaks directly in the story: God, the LORD, the Lord GOD, the Almighty or the Father speaking in his own voice, as when God speaks at creation, to Adam, Noah, Abraham or Moses ("the LORD spake unto Moses, saying, ..."), from the burning bush or Sinai, in a vision or dream the narrator describes, or as a voice from heaven. Give each speech from the first word God says to the last.
+Do not include a prophet delivering God's message to others ("Thus saith the LORD, ...", "Hear the word of the LORD", oracles in the prophets' books), even when it speaks in God's first person: those are the prophet's words. Do not include narration, words of angels (including the angel of the LORD) or people, words about God, prayers to God, or indirect speech ("the LORD said that he would...").
 When one speech runs over several verses, give one entry for each verse it covers.
 For each entry give: the verse number; the speaker as the text names them ("God", "the LORD", "the Lord GOD", "a voice from heaven"); and the first words and last words of what God says, copied exactly as they appear in that verse (three to six words each; if it is shorter, give all of it as both).
 Copy words exactly, with the same spelling, capitals and punctuation. Leave out "saith the LORD" and other narration around the words.
 If God does not speak in this chapter, return an empty list.`;
 
 /**
- * A free first look at a chapter's text (no API call): could God be speaking here? Only
- * these chapters are sent for the words-of-God pass, which roughly halves its cost.
+ * A free first look at a chapter's text (no API call): could God be speaking directly
+ * here ("God said", "the LORD spake unto Moses", a voice from heaven)? Only these chapters
+ * are sent for the words-of-God pass. Prophets' "Thus saith the LORD" isn't direct speech.
  */
-export const GOD_SPEAKS = /\b(God|LORD|Lord GOD|the Almighty|the Father)\b[^.;:]{0,30}\b(said|saith|spake|spoke|called|answered|commanded|sware)\b|\b(said|saith|spake) (the LORD|God|the Lord GOD)\b|\bthus saith\b|\ba voice (came )?(out of|from) (heaven|the cloud)|\bI am the LORD\b|\bI the LORD\b|\bsaith the LORD\b/;
+export const GOD_SPEAKS = /\b(God|LORD|Lord GOD|the Almighty|the Father)\b[^.;:]{0,30}\b(said|spake|spoke|called|answered|commanded|sware)\b|\b(said|spake) (the LORD|God|the Lord GOD)\b|\ba voice (came )?(out of|from) (heaven|the cloud)/;
 
 export const SCHEMA = {
   type: "object",
