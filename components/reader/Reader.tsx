@@ -38,6 +38,7 @@ import {
 import { useReadingSummary } from "@/lib/store/hooks";
 import { ShareHighlightSheet } from "@/components/lamplighters/ShareHighlightSheet";
 import { NoteSheet } from "./NoteSheet";
+import { ListenPlayer } from "./Listen";
 import { ReaderSettings } from "./ReaderSettings";
 import { useRangeSelect } from "./useRangeSelect";
 import { VersionSheet } from "./VersionSheet";
@@ -104,6 +105,16 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
 
   const [noteTarget, setNoteTarget] = useState<NoteTarget | null>(null);
   const [sharing, setSharing] = useState<Highlight | null>(null);
+  // Listen: the player is open, and which verse it's reading (underlined and kept in view).
+  const [listening, setListening] = useState(false);
+  const [spoken, setSpoken] = useState<number | null>(null);
+  useEffect(() => {
+    if (spoken == null) return;
+    const el = document.getElementById(`v${spoken}`);
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < 90 || r.bottom > innerHeight * 0.6) el.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }, [spoken]);
   const [versionOpen, setVersionOpen] = useState(false);
   const [textOpen, setTextOpen] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -321,7 +332,7 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-[760px] px-gutter pb-[calc(57px+61px+40px+env(safe-area-inset-bottom))] min-[960px]:pb-16">
+      <main className={`mx-auto w-full max-w-[760px] px-gutter min-[960px]:pb-16 ${listening ? "pb-[calc(57px+61px+180px+env(safe-area-inset-bottom))] min-[960px]:pb-48" : "pb-[calc(57px+61px+40px+env(safe-area-inset-bottom))]"}`}>
         <header className="flex flex-col items-center gap-1.5 pb-7 pt-10 text-center">
           <p className="text-eyebrow text-text-secondary">{bookName}</p>
           <h1 className="text-numeral text-gold-text">
@@ -329,6 +340,12 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
             {chapter.chapter}
           </h1>
           <Fleuron className="mt-2 w-[180px]" />
+          {!listening && (
+            <button type="button" onClick={() => setListening(true)} className="mt-2 inline-flex min-h-11 items-center gap-1.5 rounded-md px-3 font-medium text-gold-text">
+              <span aria-hidden="true" className="icon-[lucide--headphones] size-5" />
+              Listen
+            </button>
+          )}
         </header>
 
         {(note || card) && (
@@ -450,6 +467,7 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
               // The NLT sometimes joins a verse with the one before it; that verse has no text of its own.
               if (!v.text) return null;
               const isSelected = !!sel && v.number >= sel.start && v.number <= sel.end;
+              const isSpoken = spoken === v.number;
               const hl = highlights.get(v.number);
               const noted = notedVerses.has(v.number);
               return (
@@ -460,6 +478,7 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
                   role="button"
                   tabIndex={0}
                   aria-pressed={isSelected}
+                  aria-current={isSpoken ? "true" : undefined}
                   aria-label={`Verse ${v.number}${hl ? `, ${SWATCH[hl].label.toLowerCase()} highlight` : ""}${noted ? ", has a note" : ""}`}
                   onClick={(e) => onVerseClick(e, v.number)}
                   onKeyDown={(e) => {
@@ -470,7 +489,7 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
                     }
                   }}
                   style={hl ? { background: HL_BG[hl] } : undefined}
-                  className={`scroll-mt-24 cursor-pointer rounded-[4px] py-px transition-colors duration-150 [box-decoration-break:clone] ${
+                  className={`scroll-mt-24 cursor-pointer rounded-[4px] py-px transition-colors duration-150 [box-decoration-break:clone] ${isSpoken ? "underline decoration-gold decoration-2 underline-offset-[6px]" : ""} ${
                     isSelected ? (hl ? "outline-2 outline-offset-1 outline-gold" : "bg-gold-wash") : hl ? "" : "[@media(hover:hover)]:hover:bg-gold-wash/55"
                   }`}
                 >
@@ -606,13 +625,22 @@ export function Reader({ chapter, bookName, card, note, speakers = null, plate, 
         <ThumbLink href={nextHref} label={next ? `Next chapter: ${formatRef(next)}` : "No next chapter"} icon="chevron-right" />
       </nav>
 
-      {/* Verse bar: docked low, above the thumb bar (DESIGN.md §8). Acts on every selected verse. */}
+      {/* Listen: docked low, above the thumb bar (DESIGN.md §8 Listen). */}
+      {listening && (
+        <div className="fixed bottom-[calc(57px+61px+10px+env(safe-area-inset-bottom))] left-1/2 z-[34] w-[min(520px,calc(100%-32px))] -translate-x-1/2 min-[960px]:bottom-6 min-[960px]:ml-[116px]">
+          <ListenPlayer chapter={chapter} onVerse={setSpoken} onClose={() => setListening(false)} />
+        </div>
+      )}
+
+      {/* Verse bar: docked low, above the thumb bar (DESIGN.md §8). Acts on every selected verse. Sits above the player while listening. */}
       <div
         role="toolbar"
         aria-label={sel ? `Actions for ${label(sel)}` : "Verse actions"}
         aria-hidden={!sel}
         inert={!sel}
-        className={`fixed bottom-[calc(57px+61px+10px+env(safe-area-inset-bottom))] left-1/2 z-[35] flex w-[min(520px,calc(100%-32px))] -translate-x-1/2 flex-col gap-2.5 rounded-[22px] bg-surface-raised p-3 shadow-float transition-[translate,opacity] duration-300 ease-out min-[960px]:bottom-6 min-[960px]:ml-[116px] ${
+        className={`fixed left-1/2 z-[35] flex w-[min(520px,calc(100%-32px))] -translate-x-1/2 flex-col gap-2.5 rounded-[22px] bg-surface-raised p-3 shadow-float transition-[translate,opacity] duration-300 ease-out min-[960px]:ml-[116px] ${
+          listening ? "bottom-[calc(57px+61px+150px+env(safe-area-inset-bottom))] min-[960px]:bottom-[166px]" : "bottom-[calc(57px+61px+10px+env(safe-area-inset-bottom))] min-[960px]:bottom-6"
+        } ${
           sel ? "" : "pointer-events-none translate-y-[140%] opacity-0"
         }`}
       >

@@ -70,7 +70,18 @@ export interface AppState {
    * `mascot`: the Lamplighters mascot's messages and celebrations.
    * `speakerColors`: words of Jesus and other speakers in color (KJV). This device only.
    */
-  prefs: { theme: Theme; textSize: number; leading: number; scriptureFont: ScriptureFont; version: VersionId; mascot: boolean; speakerColors?: boolean };
+  prefs: {
+    theme: Theme;
+    textSize: number;
+    leading: number;
+    scriptureFont: ScriptureFont;
+    version: VersionId;
+    mascot: boolean;
+    speakerColors?: boolean;
+    /** Listen: the last voice chosen and the reading speed. This device only. */
+    listenVoice?: "device" | "natural";
+    listenSpeed?: number;
+  };
   goals: Goal[];
   reads: ChapterRead[];
   position: Position | null;

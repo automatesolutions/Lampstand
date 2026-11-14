@@ -6,6 +6,7 @@ Built with Next.js 16, TypeScript, Tailwind CSS 4 and Supabase. Every screen fol
 
 ## What it does
 
+- **Listen:** every chapter can be read aloud, with the current verse underlined and followed. The device voice is free; the natural voice (ElevenLabs Flash, KJV) records each chapter once and replays it for everyone.
 - **Read:** KJV (built in), NLT and ESV, with a thumb-first reader on phones. In the KJV, words of Jesus show in green and other speakers in blue (with a legend; turn it off in Text settings). The tab bar (Today, Read, Notes, Circles, Me) and the reader's controls stay on screen while you scroll.
 - **Understand:** "In this chapter" notes, "Before you read" context cards, and "Explain in depth" for every chapter.
 - **Pray:** a short prayer written from the chapters you read recently.
@@ -42,6 +43,10 @@ DAILY_SONG_LIMIT=3              # songs a day for the whole app (default 3); 0 t
 SONG_LIMIT_PER_USER=3           # songs a day per person (default 3)
 SONG_LIMIT_PER_IP=6             # songs a day per network address (default 6)
 HIGHLIGHT_SUMMARIES_PER_IP=40   # new highlight summaries a day per network address (default 40); cached ones are free
+NARRATION_CHAPTERS_PER_DAY=4    # new chapters recorded in the natural voice a day, whole app (default 4); replays are free
+NARRATION_CHAPTERS_PER_USER=3   # new chapters a day per person (default 3)
+NARRATION_MONTHLY_CHARS=400000  # characters recorded a month, whole app (default 400,000: under the Creator plan's 550,000 Flash characters, leaving room for songs)
+NARRATION_VOICE_ID=...          # optional: an ElevenLabs voice id (default: the standard "Rachel" voice)
 TRUSTED_PROXY_HOPS=1            # proxies that add to X-Forwarded-For: 1 on Cloud Run, 2 with a Google load balancer in front
 USAGE_HASH_SECRET=...           # optional: the key used to hash network addresses (defaults to one made from SUPABASE_SECRET_KEY)
 
@@ -69,6 +74,7 @@ EMAIL_FROM="Lampstand <hello@your-domain>"  # a sender on a domain verified in R
 
 - **Claude** (Sonnet 5.5): a prayer or song lyrics cost about $0.01 to $0.02. A highlight summary costs about $0.0015 and is written once per verse for every reader. All of it counts toward `DAILY_AI_BUDGET_USD`.
 - **ElevenLabs:** each song is about 70 seconds of music on your ElevenLabs plan. It is **not** counted in the Claude budget; instead songs need an account and have their own daily limits (`DAILY_SONG_LIMIT` for the whole app, `SONG_LIMIT_PER_USER`, `SONG_LIMIT_PER_IP`), checked before every ElevenLabs call. A recording that fails gives its place back. Also set a usage limit in your ElevenLabs account as a backstop.
+- **Listen (natural voice):** ElevenLabs Flash, about $0.04 per 1,000 characters (about $0.14 for an average chapter, $0.52 for Psalm 119). Each chapter is recorded once per voice and stored in the public `narration` Storage bucket, so replays cost nothing. Recording stops at `NARRATION_CHAPTERS_PER_DAY`, `NARRATION_CHAPTERS_PER_USER` and `NARRATION_MONTHLY_CHARS`; then the device voice reads. Also set a usage limit in ElevenLabs so the plan is never exceeded.
 - **Highlight summaries** work for guests, so each network address has a burst limit (10 in 10 minutes) and a daily cap (`HIGHLIGHT_SUMMARIES_PER_IP`). That way one stranger can't use up the budget Pray, Explain and songs share.
 - Set a monthly spend limit in the Claude Console as a backstop too.
 
@@ -90,6 +96,7 @@ Run the migrations in order in the SQL Editor:
 | `0010_notification_email_retry.sql` | A Circle message email that failed to send goes out with the sender's next message (within an hour) |
 | `0011_highlight_shares.sql` | Sharing highlights to Circles (as chat messages that follow their highlight) and the per-Circle auto-share choice |
 | `0012_bible_challenge.sql` | The Circle Bible challenge: the question bank (server only), sets, live games, players, answers and play-on-your-own scores, with the timing and scoring in the database |
+| `0013_narration.sql` | Listen: the list of recorded chapters (server only), the monthly count, and the public `narration` Storage bucket |
 
 The app keeps working if a newer migration hasn't run yet (no notifications, no saved summaries), but run them before you deploy.
 
