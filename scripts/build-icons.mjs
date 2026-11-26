@@ -1,9 +1,10 @@
 // Builds the site icons and the link preview image from the lamp mark
 // (components/brand/LampMark.tsx), in the dark theme's colors.
 // Run: node scripts/build-icons.mjs. Writes app/favicon.ico, app/icon.png,
-// app/apple-icon.png and app/opengraph-image.png (Next.js picks these up by name).
+// app/apple-icon.png and app/opengraph-image.png (Next.js picks these up by name),
+// and the home screen icons in public/icons/ (listed in app/manifest.ts).
 
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
 const C = { bg: "#16120d", gold: "#dcaf55", leaf1: "#f0cd7a", leaf2: "#b8862c", leaf3: "#ffe3a1", text: "#f3e9d6", muted: "#bfae92" };
@@ -33,6 +34,15 @@ const iconSvg = (size, { rounded = true, stroke = 2.25 } = {}) =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 64 64">${defs}
   <rect width="64" height="64" rx="${rounded ? 14 : 0}" fill="${C.bg}"/>
   <g transform="translate(5.5 3) scale(.86)">${lamp(stroke)}</g></svg>`;
+
+/**
+ * Android crops maskable icons to its own shape, so the page fills the square and the
+ * lamp stays inside the middle 80% (the safe zone).
+ */
+const maskableSvg = (size) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 64 64">${defs}
+  <rect width="64" height="64" fill="${C.bg}"/>
+  <g transform="translate(11.1 8.6) scale(.78)">${lamp()}</g></svg>`;
 
 const png = (svg) => sharp(Buffer.from(svg)).png().toBuffer();
 
@@ -71,4 +81,8 @@ await writeFile("app/favicon.ico", ico([{ size: 16, data: i16 }, { size: 32, dat
 await writeFile("app/icon.png", await png(iconSvg(512)));
 await writeFile("app/apple-icon.png", await png(iconSvg(180, { rounded: false })));
 await writeFile("app/opengraph-image.png", await png(og));
-console.log("Icons written: app/favicon.ico, app/icon.png, app/apple-icon.png, app/opengraph-image.png");
+await mkdir("public/icons", { recursive: true });
+await writeFile("public/icons/icon-192.png", await png(iconSvg(192)));
+await writeFile("public/icons/icon-512.png", await png(iconSvg(512)));
+await writeFile("public/icons/icon-maskable-512.png", await png(maskableSvg(512)));
+console.log("Icons written: app/favicon.ico, app/icon.png, app/apple-icon.png, app/opengraph-image.png, public/icons/");

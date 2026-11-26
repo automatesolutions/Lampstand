@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { DayLamp, Lamp } from "@/components/brand/LampMark";
+import { InstallAppButton } from "@/components/InstallAppButton";
 import { BibleCompleteCard } from "@/components/StartOver";
 import { TodayMascot } from "@/components/lamplighters/TodayMascot";
 import { ButtonLink } from "@/components/ui/Button";
@@ -234,6 +235,8 @@ export default function TodayPage() {
               <Icon name="chevron-right" className="size-[18px] text-text-secondary" />
             </button>
           )}
+
+          <InstallAppButton variant="card" />
         </div>
       </div>
     </div>

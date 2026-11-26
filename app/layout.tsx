@@ -8,6 +8,7 @@ import { PrayerSheet } from "@/components/prayer/PrayerSheet";
 import { SongSheet } from "@/components/song/SongSheet";
 import { SyncAgent } from "@/components/SyncAgent";
 import { ThemeSync, themeBootScript } from "@/components/ThemeSync";
+import { installBootScript } from "@/lib/install-boot";
 import "./globals.css";
 
 // The three faces of the illuminated page (DESIGN.md §3), self-hosted.
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   title: { default: "Lampstand", template: "%s · Lampstand" },
   description: "Read the Bible daily and understand what you read.",
   applicationName: "Lampstand",
-  appleWebApp: { title: "Lampstand", statusBarStyle: "default" },
+  appleWebApp: { capable: true, title: "Lampstand", statusBarStyle: "default" },
   // Link previews need full image URLs. Icons and the preview image are made by
   // scripts/build-icons.mjs (app/icon.png, app/opengraph-image.png).
   metadataBase: new URL(process.env.APP_URL || "https://lampstand.dev"),
@@ -58,6 +59,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${display.variable} ${literata.variable} ${ui.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
+        {/* Keeps Chrome's install prompt if it arrives before React (lib/install-boot.ts). */}
+        <script dangerouslySetInnerHTML={{ __html: installBootScript }} />
       </head>
       <body className="min-h-dvh">
         <ThemeSync />

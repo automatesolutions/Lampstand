@@ -9,6 +9,7 @@ import { Stepper } from "@/components/ui/Stepper";
 import { ReaderSettings } from "@/components/reader/ReaderSettings";
 import { VERSIONS } from "@/lib/bible/provider";
 import { AccountSheet, useAccountSummary } from "@/components/AccountSheet";
+import { InstallAppButton } from "@/components/InstallAppButton";
 import { StartOverSheet, useBibleProgress } from "@/components/StartOver";
 import { LamplighterSettings, MascotSetting } from "@/components/lamplighters/Settings";
 import { currentGoal, setGoal, useHydrated, useStore } from "@/lib/store";
@@ -35,6 +36,8 @@ export default function MePage() {
       <ListGroup label="Account">
         <ListRow title={account.title} subtitle={account.subtitle} icon="user" chevron onClick={() => setSaveOpen(true)} />
       </ListGroup>
+
+      <InstallAppButton variant="row" />
 
       <LamplighterSettings />
 
